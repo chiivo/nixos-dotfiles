@@ -1,0 +1,149 @@
+/******************************************************************************
+ * ROFI Color theme
+ * User: Chivo
+ ******************************************************************************/
+
+configuration {
+	display-drun: "Apps";
+	display-window: "Windows";
+	display-ssh: "SSH";
+	show-icons: true;
+	drun-display-format: "{icons} {name}";
+}
+
+*{
+	font: "Fira Code Nerd Font 12";
+	foreground: #f5d1c8;
+	background: #262727;
+	border-color: @foreground;
+	separatorcolor: @foreground;
+	background-color: @background;
+}
+
+window {
+	background-color: @background;
+	border: 2;
+	padding: 4;
+}
+
+mainbox {
+	border: 0;
+	padding: 0;
+}
+message {
+	border: 1px dash 0px 0px ;
+	border-color: @foreground;
+	padding: 0px ;
+}
+
+textbox {
+	text-color: @foreground;
+}
+
+listview {
+	fixed-height: 0;
+	border: 2px dash 0px 0px ;
+	border-color: @foreground;
+	spacing: 2px ;
+	scrollbar: false;
+	padding: 2px 0px 0px ;
+}
+
+element {
+	border: 0;
+	padding: 1px ;
+}
+
+element.normal.normal {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+element.normal.urgent {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+element.normal.active {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+element.selected.normal {
+	background-color: @foreground;
+	text-color: @background;
+}
+
+element.selected.urgent {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+element.selected.active {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+element.alternate.normal {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+element.alternate.urgent {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+element.alternate.active {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+scrollbar {
+	width: 4px ;
+	border: 2;
+	handle-width: 4px ;
+	padding: 4;
+}
+
+mode-switcher {
+	border: 2px dash 0px 0px ;
+	border-color: @foreground;
+}
+
+button.selected {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+inputbar {
+	spacing: 8;
+	text-color: @foreground;
+	padding: 8px ;
+}
+
+case-indicator {
+	spacing: 0;
+	text-color: @foreground;
+}
+
+entry {
+	spacing: 0;
+	text-color: @foreground;
+}
+
+prompt {
+	spacing: 0;
+	text-color: @foreground;
+}
+
+textbox-prompt-colon {
+	expand: false;
+	str: ":";
+	margin: 0px 0.3em 0em 0em ;
+	text-color: @foreground;
+}
+
+inputbar {
+	children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
