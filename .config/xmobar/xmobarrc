@@ -1,0 +1,58 @@
+Config { font = "xft:scientifica:style=Medium:pixelsize=18:antialiasing=false:hinting:false"
+	, additionalFonts = ["xft:Font Awesome 5 Free Solid:pixelsize=12:antialiasing=false:hinting=false"]
+	, borderColor = "#f5d1c8"
+	, borderWidth = 2
+	, border = NoBorder
+	, bgColor = "#f5d1c8"
+	, fgColor = "#262727"
+	, alpha = 255
+	, position = TopW C 96
+	, textOffset = -1
+	, iconOffset = -1
+	, lowerOnStart = True
+	, pickBroadest = False
+	, persistent = False
+	, hideOnStart = False
+	, iconRoot = "."
+	, allDesktops = True
+	, overrideRedirect = True
+	, commands = [ Run Cpu ["-t","<fn=1>\xf2db</fn> <total>%",
+				"-L","30",
+				"-H","70",
+				"--normal","#262727",
+				"--high","#262727",
+				"--low","#262727"] 10
+
+		     , Run Memory ["-t","<fn=1>\xf538</fn> <usedratio>%"] 10
+
+		     , Run StdinReader
+
+		     , Run Alsa "default" "Master" []
+
+		     , Run Weather "KSLI" ["-t","<fn=1>\xf769</fn> <tempF>F",
+					   "-L","60","-H","85",
+					   "--normal","#262727",
+					   "--high","#262727",
+					   "--low","#262727"] 600
+
+		     , Run DynNetwork ["-t", "<fn=1>\xf0aa</fn> <tx> KB/s <fn=1>\xf0ab</fn> <rx> KB/s"] 10
+
+		     , Run Date "<fn=1>\xf133</fn> %b %d" "date" 10
+
+		     , Run Date "<fn=1>\xf017</fn> %H:%M" "time" 10
+
+		     , Run Battery ["-t","<fn=1>\xf240</fn> <left>%",
+				    "-L","20",
+				    "-H","80",
+				    "-h","#262727",
+				    "-n","#262727",
+				    "-l","#262727"] 10
+
+]
+       , sepChar = "%"
+
+       , alignSep = "}{"
+
+       , template = " <fc=#262727>%cpu%</fc> | <fc=#262727>%memory%</fc> | %stdinReader% }{ <fc=#262727>%alsa:default:Master%</fc> | <fc=#262727>%KSLI%</fc> | <fc=#262727>%dynnetwork%</fc> | <fc=#262727>%date%</fc> | <fc=#262727>%time%</fc> | <fc=#262727>%battery%</fc> "
+
+}
