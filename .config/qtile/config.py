@@ -114,8 +114,9 @@ keys = [
 
     # Toggle between different layouts as defined below
 
-    # Key([mod], "space", lazy.next_layout(),
-            # desc="Toggle between layouts"),
+    Key([mod], "space", lazy.next_layout(),
+	    lazy.hide_show_bar(),
+            desc="Toggle between layouts"),
 
     Key([mod, "shift"], "c", lazy.window.kill(),
             desc="Kill focused window"),
@@ -130,8 +131,7 @@ keys = [
 
     Key([mod], "p", lazy.spawn("rofi -show drun -icon-theme Flatery-Blue-Dark")),
 
-    Key([mod, "shift"], "p", lazy.spawn("scrot Images/Screenshots/"),
-            lazy.spawn("notify-send 'Screenshot Captured'")),
+    Key([mod, "shift"], "p", lazy.spawn("scrot -s Images/Screenshots/scrot.png")),
 
     Key([mod], "Up", lazy.spawn("amixer -c 0 sset Master 10%+ unmute")),
 
@@ -139,7 +139,7 @@ keys = [
 
     Key([mod, "shift"], "Down", lazy.spawn("amixer set Master toggle")),
 
-    Key ([mod], "space", lazy.window.toggle_fullscreen()),
+    # Key ([mod], "space", lazy.window.toggle_fullscreen()),
 ]
 
 ###############################################################################
@@ -178,7 +178,7 @@ layouts = [
         border_normal=black,
         margin=8),
 
-    # layout.Max(),
+    layout.Max(),
 
     # layout.Stack(
     #     border_width=2,
@@ -188,7 +188,6 @@ layouts = [
 
     # layout.Bsp(),
     # layout.Matrix(),
-
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
@@ -303,6 +302,10 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='branchdialog'),
 
     Match(title='pinentry'),
+
+    Match(wm_class='Places'),
+
+    Match("Confirm File Replacing"),
 ],
 
 border_width=2,
