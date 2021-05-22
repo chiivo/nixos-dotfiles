@@ -22,13 +22,14 @@ Text Editor: gvim
 
 Browser: firefox
 
-  Addons: fblock, dark reader, ffz, tree style tabs, tabliss
+  -Addons: fblock, dark reader, ffz, tree style tabs, tabliss
   
 File Manager: pcmanfmgtk, ranger(xarchiver + unzip)
 
 Video Player: vlc
 
-USB Mount: udisk2, udiskie (autostart: udiskie)
+USB Mount: udisk2, udiskie
+  -Add to autostart: `udiskie &`
 
 Fonts: Fira Sans, Fira Code Nerd Font, Scientifica
 
