@@ -37,7 +37,7 @@
 
 - Fonts: Fira Sans, Fira Code Nerd Font, Scientifica, NotoSansJP
 
-- Terminal Apps: neofetch, cbonsai, alsamixer, cava, cmatrix
+- Terminal Apps: neofetch, cbonsai, alsamixer, cava, cmatrix, shell-color-scripts
 
 - Apps: blender, da vinci resolve, discord (Add to autostart: `discord &`), spotify (spicetify), armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
 
