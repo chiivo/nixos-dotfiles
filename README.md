@@ -30,6 +30,7 @@
 - Text Editor: gvim
 
 - Browser: firefox
+	- CSS: flyingfox
 	- Addons: fblock, dark reader, ffz, tree style tabs, tabliss
   
 - File Manager: pcmanfmgtk, ranger (xarchiver + unzip)
