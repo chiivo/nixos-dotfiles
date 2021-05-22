@@ -1,6 +1,6 @@
 # bliss-dotfiles
 
-![alt text](https://github.com/Chiivo/bliss-dotfiles/blob/main/SakuraBlissEdit.png?raw=true)
+![alt text](https://github.com/Chiivo/bliss-dotfiles/blob/main/SakuraBlissEdit.png?raw=false)
 
 - Distro: Arch Linux
 
@@ -23,7 +23,7 @@
 - Browser: firefox
 	- Addons: fblock, dark reader, ffz, tree style tabs, tabliss
   
-- File Manager: pcmanfmgtk, ranger(xarchiver + unzip)
+- File Manager: pcmanfmgtk, ranger (xarchiver + unzip)
 
 - Video Player: vlc
 
