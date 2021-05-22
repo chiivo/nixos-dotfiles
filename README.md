@@ -1,4 +1,4 @@
-# bliss-dotfiles
+#bliss-dotfiles
 
 ![alt text](https://github.com/Chiivo/bliss-dotfiles/blob/main/SakuraBlissEdit.png?raw=true)
 
@@ -40,3 +40,6 @@
 - Terminal Apps: neofetch, cbonsai, alsamixer, cava, cmatrix
 
 - Apps: blender, da vinci resolve, discord (Add to autostart: `discord &`), spotify (spicetify), armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
+
+###Reminders
+- To make executable bash file: `chmod -x script.sh`
