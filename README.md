@@ -35,7 +35,7 @@
 - USB Mount: udisk2, udiskie
 	- Add to autostart: `udiskie &`
 
-- Fonts: Fira Sans, Fira Code Nerd Font, Scientifica
+- Fonts: Fira Sans, Fira Code Nerd Font, Scientifica, NotoSansJP
 
 - Terminal Apps: neofetch, cbonsai, alsamixer, cava, cmatrix
 
