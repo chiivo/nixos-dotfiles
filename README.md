@@ -41,5 +41,5 @@
 
 - Apps: blender, da vinci resolve, discord (Add to autostart: `discord &`), spotify (spicetify), armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
 
-### Reminders
+###### Reminders
 - To make executable bash file: `chmod -x script.sh`
