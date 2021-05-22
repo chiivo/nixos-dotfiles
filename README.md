@@ -32,7 +32,7 @@
 
 - Video Player: vlc
 
-- USB Mount: udisk2, udiskie
+- USB Mount: udisks2, udiskie
 	- Add to autostart: `udiskie &`
 
 - Fonts: Fira Sans, Fira Code Nerd Font, Scientifica, NotoSansJP
