@@ -13,6 +13,11 @@
 - AUR Helper: yay
 
 - Compositer: nitrogen, picom-jonaburg-git
+	- Add to autostart:
+	```
+	nitrogen --restore &
+	picom &
+	```
 
 - Theme: Flatery
 
@@ -34,4 +39,4 @@
 
 - Terminal Apps: neofetch, cbonsai, alsamixer, cava, cmatrix
 
-- Apps: blender, da vinci resolve, discord, spotify (spicetify), armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
+- Apps: blender, da vinci resolve, discord (Add to autostart: `discord &`), spotify (spicetify), armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
