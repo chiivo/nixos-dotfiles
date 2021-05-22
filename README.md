@@ -1,6 +1,6 @@
 # bliss-dotfiles
 
-![alt text](https://github.com/Chiivo/bliss-dotfiles/blob/main/SakuraBlissEdit.png?raw=true)
+![alt text](https://github.com/Chiivo/bliss-dotfiles/blob/main/screenshot.png?raw=true)
 
 - Distro: Arch Linux
 
