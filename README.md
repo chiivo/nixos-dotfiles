@@ -19,7 +19,11 @@
 	picom &
 	```
 
-- Theme: Flatery
+- Icon Theme: Flatery
+
+- Widget Theme: Orchis
+
+- Theme Manager: LXDE
 
 - Terminal: kitty
 
