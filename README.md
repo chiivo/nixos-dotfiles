@@ -43,3 +43,4 @@
 
 ###### Reminders
 - To make executable bash file: `chmod +x script.sh`
+- Uncomment multilib in `/etc/pacman.conf`
