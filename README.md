@@ -12,12 +12,11 @@
 
 - AUR Helper: yay
 
-- Compositer: nitrogen, picom-jonaburg-git
-	- Add to autostart:
-	```
-	nitrogen --restore &
-	picom &
-	```
+- Wallpaper Drawer: nitrogen
+	- Add to autostart: `nitrogen --restore &`
+
+- Compositer: picom-jonaburg-git
+	- Add to autostart: `picom &`
 
 - Icon Theme: Flatery
 
