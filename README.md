@@ -22,7 +22,7 @@
 
 - Widget Theme: Orchis
 
-- Theme Manager: LXDE
+- Theme Manager: lxappearance
 
 - Terminal: kitty
 
