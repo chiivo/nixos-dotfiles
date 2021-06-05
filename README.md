@@ -47,6 +47,6 @@
 
 ###### Reminders
 - To make executable bash file: `chmod +x script.sh`
-- Change ownership: 'chown username `/file/directory`
+- Change ownership: `chown username /file/directory`
 - Uncomment multilib in `/etc/pacman.conf`
 - Remove battery widget in bar and add network widget
