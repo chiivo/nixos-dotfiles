@@ -39,13 +39,14 @@
 - USB Mount: udisks2, udiskie
 	- Add to autostart: `udiskie &`
 
-- Fonts: Fira Sans, Fira Code Nerd Font, Scientifica, NotoSansJP
+- Fonts: Fira Sans, Fira Code Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR
 
-- Terminal Apps: neofetch, cbonsai, alsamixer, cava, cmatrix, shell-color-scripts
+- Terminal Apps: neofetch, cbonsai, alsamixer, cava, unimatrix, shell-color-scripts
 
 - Apps: blender, da vinci resolve, discord (Add to autostart: `discord &`), spotify (spicetify), armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
 
 ###### Reminders
 - To make executable bash file: `chmod +x script.sh`
+- Change ownership: 'chown username `/file/directory`
 - Uncomment multilib in `/etc/pacman.conf`
 - Remove battery widget in bar and add network widget
