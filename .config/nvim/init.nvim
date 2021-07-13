@@ -1,0 +1,45 @@
+" Vim Plug
+call plug#begin()
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'junegunn/limelight.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/rainbow_parentheses.vim'
+call plug#end()
+
+" Starup Commands
+autocmd VimEnter * Limelight
+autocmd VimEnter * RainbowParenthesesToggle 
+let g:indentLine_char='│'
+set cursorline
+set clipboard=unnamedplus
+set guicursor=
+set mouse=a
+set nohlsearch
+set number
+set scrolloff=999
+syntax on
+
+
+" StatuslineLeft
+set statusline=
+set statusline+=\ %M " Change Indicator
+set statusline+=\  " Icon
+set statusline+=\  " Extra Space 
+set statusline+=\ %Y " File Type
+set statusline+=\ %r " Read Only Indicator
+set statusline+=\ %F " File Path
+set statusline+=%= " StatuslineRight
+set statusline+=\ [%c] " Current Column
+set statusline+=\ [%l/%L] " Current Line / Total Lines
+
+" Color Settings
+hi comment ctermfg=8 " Comment Color
+hi cursorline cterm=none ctermbg=8 " "Cursor Line Highlight Color
+hi cursorlinenr ctermfg=4 " Active Line Number Color
+hi indentblanklinechar ctermfg=8 " Indent Character Color
+hi linenr ctermfg=8 " Inactive Line Number Color
+hi statusline ctermbg=0 ctermfg=7 " Status Line Colors
+let g:limelight_conceal_ctermfg=8 " Inactive Paragraph Limelight Color
+
+" Remaps
+cabbrev sv source $MYVIMRC
