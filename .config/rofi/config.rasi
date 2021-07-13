@@ -4,26 +4,33 @@
  ******************************************************************************/
 
 configuration {
+	display-run: "Run";
 	display-drun: "Apps";
 	display-window: "Windows";
 	display-ssh: "SSH";
+	display-combi: "Combi";
 	show-icons: true;
 	drun-display-format: "{icons} {name}";
 }
 
 *{
-	font: "Fira Code Nerd Font 12";
+	font: "Comfortaa 16";
 	foreground: #f5d1c8;
 	background: #262727;
 	border-color: @foreground;
 	separatorcolor: @foreground;
 	background-color: @background;
+	lines: 10;
 }
 
 window {
+	location: center;
+	anchor: center;
 	background-color: @background;
 	border: 2;
-	padding: 4;
+	border-radius: 10;
+	padding: 10;
+	width: 400;
 }
 
 mainbox {
@@ -31,7 +38,7 @@ mainbox {
 	padding: 0;
 }
 message {
-	border: 1px dash 0px 0px ;
+	border: 1px 0px 0px 0px ;
 	border-color: @foreground;
 	padding: 0px ;
 }
@@ -40,70 +47,20 @@ textbox {
 	text-color: @foreground;
 }
 
-listview {
-	fixed-height: 0;
-	border: 2px dash 0px 0px ;
-	border-color: @foreground;
-	spacing: 2px ;
-	scrollbar: false;
-	padding: 2px 0px 0px ;
-}
-
 element {
+	text-color: @foreground;
 	border: 0;
-	padding: 1px ;
+	border-radius: 10;
+	padding: 10;
 }
 
-element.normal.normal {
-	background-color: @background;
-	text-color: @foreground;
-}
-
-element.normal.urgent {
-	background-color: @background;
-	text-color: @foreground;
-}
-
-element.normal.active {
-	background-color: @background;
-	text-color: @foreground;
+element-icon {
+	size: 24px;
 }
 
 element.selected.normal {
 	background-color: @foreground;
 	text-color: @background;
-}
-
-element.selected.urgent {
-	background-color: @background;
-	text-color: @foreground;
-}
-
-element.selected.active {
-	background-color: @background;
-	text-color: @foreground;
-}
-
-element.alternate.normal {
-	background-color: @background;
-	text-color: @foreground;
-}
-
-element.alternate.urgent {
-	background-color: @background;
-	text-color: @foreground;
-}
-
-element.alternate.active {
-	background-color: @background;
-	text-color: @foreground;
-}
-
-scrollbar {
-	width: 4px ;
-	border: 2;
-	handle-width: 4px ;
-	padding: 4;
 }
 
 mode-switcher {
@@ -117,9 +74,9 @@ button.selected {
 }
 
 inputbar {
-	spacing: 8;
+	spacing: 10;
 	text-color: @foreground;
-	padding: 8px ;
+	padding: 10px;
 }
 
 case-indicator {
