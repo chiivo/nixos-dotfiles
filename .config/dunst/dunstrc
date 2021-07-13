@@ -15,7 +15,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    follow = none
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "350x0-20+40"
+    geometry = "350x0-20+50"
 
     # Turn on the progess bar
     progress_bar = true
@@ -71,10 +71,10 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 10
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 10
 
     # Padding between text and icon.
     text_icon_padding = 0
@@ -106,7 +106,7 @@
 
     ### Text ###
 
-    font = Fira Code Nerd Font 12
+    font = Comfortaa 12
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -242,7 +242,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 10
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -329,6 +329,7 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#262727"
     foreground = "#f5d1c8"
+    frame_color = "#f5d1c8"
     timeout = 8
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -336,6 +337,7 @@
 [urgency_normal]
     background = "#262727"
     foreground = "#f5d1c8"
+    frame_color = "#f5d1c8"
     timeout = 8
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
@@ -343,7 +345,7 @@
 [urgency_critical]
     background = "#262727"
     foreground = "#f5d1c8"
-    frame_color = "#f5d1c8"
+    frame_color = "#FF1311"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
