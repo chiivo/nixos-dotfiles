@@ -26,11 +26,10 @@
 
 - Terminal: kitty
 
-- Text Editor: gvim
+- Text Editor: neovim
 
-- Browser: firefox
-	- CSS: flyingfox
-	- Addons: fblock, dark reader, ffz, tree style tabs, tabliss
+- Browser: qutebrowser
+	- greasemonkey script: ffz
   
 - File Manager: pcmanfmgtk, ranger (xarchiver + unzip)
 
@@ -39,14 +38,13 @@
 - USB Mount: udisks2, udiskie
 	- Add to autostart: `udiskie &`
 
-- Fonts: Fira Sans, Fira Code Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR
+- Fonts: Fira Sans, CaskaydiaCove Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR, Noto Color Emoji
 
-- Terminal Apps: neofetch, cbonsai, alsamixer, cava, unimatrix, shell-color-scripts
+- Terminal Apps: neofetch, cbonsai, alsamixer, shell-color-scripts
 
-- Apps: blender, da vinci resolve, discord (Add to autostart: `discord &`), spotify (spicetify), armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
+- Apps: blender, da vinci resolve, discord (Add to autostart: `discord &`), spotify, armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
 
 ###### Reminders
 - To make executable bash file: `chmod +x script.sh`
 - Change ownership: `chown username /file/directory`
 - Uncomment multilib in `/etc/pacman.conf`
-- Remove battery widget in bar and add network widget
