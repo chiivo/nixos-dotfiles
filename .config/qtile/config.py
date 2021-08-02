@@ -23,41 +23,42 @@ terminal=guess_terminal("kitty")
 ###############################################################################
 
 #Keybinds
-
 keys=[
     #Switch between windows
-    Key([mod], "j", lazy.layout.left(),
+    Key([mod], "h", lazy.layout.left(),
         desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(),
         desc='Move focus to right'),
-    Key([mod], "k", lazy.layout.down(),
+    Key([mod], "j", lazy.layout.down(),
         desc="Move focus down"),
-    Key([mod], "i", lazy.layout.up(),
+    Key([mod], "k", lazy.layout.up(),
         desc="Move focus up"),
     Key([mod], "Tab", lazy.layout.next(),
         desc="Move window focus to other window"),
     #Move windows between left/right columns or move up/down in current stack.
     #Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "j", lazy.layout.shuffle_left(),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
         desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
         desc="Move window to the right"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_down(),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down(),
         desc="Move window down"),
-    Key([mod, "shift"], "i", lazy.layout.shuffle_up(),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up(),
         desc="Move window up"),
     #Grow windows. If current window is on the edge of screen and direction
     #will be to screen edge - window would shrink.
-    Key([mod, "control"], "j", lazy.layout.grow_left(),
+    Key([mod, "control"], "h", lazy.layout.grow_left(),
         desc="Grow window to the left"),
     Key([mod, "control"], "l", lazy.layout.grow_right(),
         desc="Grow window to the right"),
-    Key([mod, "control"], "k", lazy.layout.grow_down(),
+    Key([mod, "control"], "j", lazy.layout.grow_down(),
         desc="Grow window down"),
-    Key([mod, "control"], "i", lazy.layout.grow_up(),
+    Key([mod, "control"], "k", lazy.layout.grow_up(),
         desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(),
         desc="Reset all window sizes"),
+    Key([mod], "space", lazy.next_layout(),
+        desc="Next Layout"),
     #Toggle between split and unsplit sides of stack.
     #Split=all windows displayed
     #Unsplit=1 window displayed, like Max layout, but still with
@@ -106,9 +107,9 @@ groups=[ScratchPad("scratchpad",
         terminal,
         terminal,
         x=.2,
-        y=.01,
+        y=.2,
         width=.6,
-        height=.5,
+        height=.6,
         opacity=1)]),
     Group("I",
         label="●",
@@ -118,25 +119,32 @@ groups=[ScratchPad("scratchpad",
         matches=[Match(wm_class=["discord"])]),
     Group("III",
         label="●",
-        matches=[Match(wm_class=["Blender", "gimp-2.10", "lutris", "Steam", "minecraft-launcher", "retroarch", "rpcs3"])]),
+        matches=[Match(wm_class=["Blender", "kdenlive", "gimp-2.10", "lutris", "Steam", "minecraft-launcher", "retroarch", "rpcs3"])]),
     Group("IV",
         label="●",
         matches=[Match(wm_class=["obs", "chatterino"])]),
     Group("V",
         label="●",
-        matches=[Match(wm_class=["pcmanfm", "spotify", "blueman-manager", "pentablet", "piper", "Zathura", "vlc", "pavucontrol", "via", "lxappearance"])])
+        matches=[Match(wm_class=["pcmanfm", "spotify", "blueman-manager", "pentablet", "piper", "Zathura", "vlc", "pavucontrol-qt", "via", "lxappearance", "qt5ct"])])
 ]
 
 ###############################################################################
 
 #Layouts
 layouts=[
-    layout.Columns(
+    #layout.Columns(
+        #border_width=2,
+        #border_focus=pink,
+        #border_normal=darkgray,
+        #border_on_single="true",
+        #margin=10
+        #),
+    layout.RatioTile(
         border_width=2,
         border_focus=pink,
         border_normal=darkgray,
-        border_on_single="true",
-        margin=20),
+        margin=10,
+        )
 ]
 
 ###############################################################################
@@ -146,7 +154,7 @@ widget_defaults=dict(
     foreground=darkgray,
     font="Comfortaa",
     fontsize=16,
-     padding=10,)
+    padding=10,)
 extension_defaults = widget_defaults.copy()
 screens=[
     Screen(
@@ -168,17 +176,16 @@ screens=[
                 this_current_screen_border=darkgray,
                 this_screen_border=darkgray,
                 use_mouse_wheel=False,),
-            widget.Spacer(
-                length=20),
-            widget.TaskList(
-                border=darkgray,
-                max_title_width=200,
-                txt_floating="",
-                txt_maximized=" ",
-                txt_minimized=" ",
-                margin=2,
-                padding=2),
             widget.Spacer(),
+            widget.WindowName(
+                format='{name}'),
+            widget.Spacer(),
+            widget.Volume(
+                get_volume_command='amixer -D pulse get Master'.split(),
+                padding=0,
+                theme_path='.icons/Flatery-Blue/'),
+            widget.Volume(
+                get_volume_command='amixer -D pulse get Master'.split()),
             widget.Clock(
                 format="%m/%d"),
             widget.Clock(
@@ -187,8 +194,12 @@ screens=[
                 length=10),
         ],
         26,
-        margin=[10,20,0,20], #NESW
-        background=pink)),
+        margin=[10,20,10,20], #NESW
+        background=pink),
+        right=bar.Gap(10),
+        bottom=bar.Gap(10),
+        left=bar.Gap(10)
+    ),
     Screen(
         top=bar.Bar([
             widget.Spacer(
@@ -208,16 +219,9 @@ screens=[
                 this_current_screen_border=darkgray,
                 this_screen_border=darkgray,
                 use_mouse_wheel=False,),
-            widget.Spacer(
-                length=20),
-            widget.TaskList(
-                border=darkgray,
-                max_title_width=200,
-                txt_floating="",
-                txt_maximized=" ",
-                txt_minimized=" ",
-                margin=2,
-                padding=2),
+            widget.Spacer(),
+            widget.WindowName(
+                format='{name}'),
             widget.Spacer(),
             widget.Volume(
                 get_volume_command='amixer -D pulse get Master'.split(),
@@ -242,8 +246,12 @@ screens=[
                 background=darkgray),
         ],
         26,
-        margin=[10,20,0,20], #NESW
-        background=pink)),
+        margin=[10,20,10,20], #NESW
+        background=pink),
+        right=bar.Gap(10),
+        bottom=bar.Gap(10),
+        left=bar.Gap(10)
+    ),
 ]
 
 ###############################################################################
@@ -252,17 +260,17 @@ screens=[
 floating_layout = layout.Floating(float_rules=[
     #Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
+    Match(title="Friends List"),
+    Match(title="Steam - News"),
+    Match(title="Steam - Self Updater"),
+    Match(title='branchdialog'),
+    Match(title='pinentry'),
     Match(wm_class='confirmreset'),
     Match(wm_class='makebranch'),
     Match(wm_class='maketag'),
     Match(wm_class='ssh-askpass'),
-    Match(title='branchdialog'),
-    Match(title='pinentry'),
     Match(wm_class='Places'),
     Match(wm_class="Confirm File Replacing"),
-    Match(title="Friends List"),
-    Match(title="Steam - News"),
-    Match(title="Steam - Self Updater"),
 ],
 border_width=2,
 border_focus=pink,
