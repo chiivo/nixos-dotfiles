@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+#set background
+if [ -x "$(command -v feh)" ]; then
+  ~/.fehbg
+fi
+
+pkill picom
+if [ -x "$(command -v eww)" ]; then
+  eww kill
+fi
