@@ -3,48 +3,28 @@
 ![alt text](https://github.com/Chiivo/bliss-dotfiles/blob/main/dualscreen.png?raw=true)
 
 - Distro: Arch Linux
-
-- Display Manager: lightdm, lightdm-webkit2, glorious
-
-- Window Manager: qtile
-
+- Display Manager: LightDM, lightdm-webkit2, glorious
+- Window Manager: LeftWM
 - Application Manager: rofi
-
-- AUR Helper: yay
-
-- Wallpaper Drawer: nitrogen
-	- Add to autostart: `nitrogen --restore &`
-
+- AUR Helper: paru
+- Wallpaper Drawer: feh
 - Compositer: picom-jonaburg-git
-	- Add to autostart: `picom &`
-
 - Icon Theme: Flatery
-
 - Widget Theme: Orchis
-
-- Theme Manager: lxappearance
-
+- Theme Manager: Lxappearance
 - Terminal: kitty
-
 - Text Editor: neovim
-
 - Browser: qutebrowser
-	- greasemonkey script: ffz
-  
-- File Manager: pcmanfmgtk, ranger (xarchiver + unzip)
-
-- Video Player: vlc
-
-- USB Mount: udisks2, udiskie
-	- Add to autostart: `udiskie &`
-
-- Fonts: Fira Sans, CaskaydiaCove Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR, Noto Color Emoji
+- File Manager: pcmanfmgtk, Ranger (p7zip)
+- Video Player: VLC
+- USB Mount: udiskie
+- Fonts: CaskaydiaCove Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR, Noto Color Emoji, Dotsies
 
 - Terminal Apps: neofetch, cbonsai, alsamixer, shell-color-scripts
 
-- Apps: blender, da vinci resolve, discord (Add to autostart: `discord &`), spotify, armorpaint, steam, minecraft, via, obs, xppen driver, zathura (zathura-pdf-mupdf), dunst
+- Apps: Blender, Discord, Spotify, Armorpaint, Steam, Minecraft, OBS-Studio, xp-pen-tablet, Zathura (zathura-pdf-mupdf), Dunst
 
 ###### Reminders
 - To make executable bash file: `chmod +x script.sh`
-- Change ownership: `chown username /file/directory`
+- Change ownership: `chown *username* /file/directory`
 - Uncomment multilib in `/etc/pacman.conf`
