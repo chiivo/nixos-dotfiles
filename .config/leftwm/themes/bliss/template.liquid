@@ -1,25 +1,24 @@
+{% assign mine_open = '<button class="ws-button-mine" onclick="wmctrl -s ' %}
+{% assign visible_open = '<button class="ws-button-visible" onclick="wmctrl -s ' %}
+{% assign busy_open = '<button class="ws-button-busy" onclick="wmctrl -s ' %}
+{% assign close = '</button>' %}
+{% assign unoccupied = '<button class="ws-button" onclick="wmctrl -s ' %}
+{{'<box orientation="h" class="workspaces" space-evenly="true">'}}
+
 {% for tag in workspace.tags %}
 
 {% if tag.mine %}
-%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#f5d1c8}%{B#555657}  %{B-}%{F-}
-%{A}
+	{{mine_open}} {{tag.index | append: '">'}} {{""}} {{close}}
 
 {% elsif tag.visible  %}
-%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#f5d1c8}%{B#555657}  %{B-}%{F-}
-%{A}
+	{{visible_open}} {{tag.index | append: '">'}} {{""}} {{close}}
 
-{% elsif tag.busy %}
-%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#f5d1c8}  %{F-}
-%{A}
+{% elsif tag.busy  %}
+	{{busy_open}} {{tag.index | append: '">'}} {{""}} {{close}}
 
 {% else tag.visible  %}
-%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#f5d1c8}  %{F-}
-%{A}
+	{{unoccupied}} {{tag.index | append: '">'}} {{""}} {{close}}
 
 {% endif %}
 {% endfor %}
-%{c}
+{{"</box>"}}
