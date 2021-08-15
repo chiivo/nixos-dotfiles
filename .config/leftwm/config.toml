@@ -3,21 +3,28 @@ modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
 tags = ["1", "2", "3", "4", "5"]
-layouts = ["Fibonacci"]
+layouts = ["MainAndVertStack"]
 disable_current_tag_swap = false
 focus_behaviour = "Sloppy"
 focus_new_windows = true
 
-### Scratchpad ###
+### Scratchpads ###
 [[scratchpad]]
 name = "Kitty"
 value = "kitty"
-
 [[keybind]]
 command = "ToggleScratchPad"
 value = "Kitty"
 modifier = ["modkey"]
 key = "Return"
+[[scratchpad]]
+name = "Bottom"
+value = "kitty btm"
+[[keybind]]
+command = "ToggleScratchPad"
+value = "Bottom"
+modifier = ["modkey", "Shift"]
+key = "Escape"
 
 ### Rofi ###
 [[keybind]]
@@ -44,57 +51,67 @@ key = "c"
 command = "SoftReload"
 modifier = ["modkey"]
 key = "q"
-
 [[keybind]]
 command = "Execute"
 value = "loginctl kill-session $XDG_SESSION_ID"
 modifier = ["modkey", "Shift"]
 key = "q"
 
-### Move Window ###
-[[keybind]]
-command = "MoveWindowUp"
-modifier = ["modkey", "Shift"]
-key = "k"
-
-[[keybind]]
-command = "MoveWindowDown"
-modifier = ["modkey", "Shift"]
-key = "j"
-
-[[keybind]]
-command = "MoveWindowTop"
-modifier = ["modkey", "Shift"]
-key = "t"
-
 ### Focus Window ###
 [[keybind]]
 command = "FocusWindowUp"
 modifier = ["modkey"]
 key = "k"
-
 [[keybind]]
 command = "FocusWindowDown"
 modifier = ["modkey"]
 key = "j"
 
+### Move Window ###
+[[keybind]]
+command = "MoveWindowUp"
+modifier = ["modkey", "Shift"]
+key = "k"
+[[keybind]]
+command = "MoveWindowDown"
+modifier = ["modkey", "Shift"]
+key = "j"
+[[keybind]]
+command = "MoveWindowTop"
+modifier = ["modkey", "Shift"]
+key = "t"
+
+### Resize Window ###
+[[keybind]]
+command = "IncreaseMainWidth"
+value = "5"
+modifier = ["modkey", "Shift"]
+key = "l"
+[[keybind]]
+command = "DecreaseMainWidth"
+value = "5"
+modifier = ["modkey", "Shift"]
+key = "h"
+
 ### Layouts ###
 [[keybind]]
 command = "NextLayout"
 modifier = ["modkey"]
-key = "Space"
-
+key = "Tab"
 [[keybind]]
 command = "PreviousLayout"
 modifier = ["modkey", "Control"]
-key = "Space"
+key = "Tab"
+[[keybind]]
+command = "ToggleFullScreen"
+modifier = ["modkey"]
+key = "f"
 
 ### Focus Workspace ###
 [[keybind]]
 command = "FocusWorkspaceNext"
 modifier = ["modkey"]
 key = "l"
-
 [[keybind]]
 command = "FocusWorkspacePrevious"
 modifier = ["modkey"]
@@ -106,25 +123,21 @@ command = "GotoTag"
 value = "1"
 modifier = ["modkey"]
 key = "1"
-
 [[keybind]]
 command = "GotoTag"
 value = "2"
 modifier = ["modkey"]
 key = "2"
-
 [[keybind]]
 command = "GotoTag"
 value = "3"
 modifier = ["modkey"]
 key = "3"
-
 [[keybind]]
 command = "GotoTag"
 value = "4"
 modifier = ["modkey"]
 key = "4"
-
 [[keybind]]
 command = "GotoTag"
 value = "5"
@@ -137,25 +150,21 @@ command = "MoveToTag"
 value = "1"
 modifier = ["modkey", "Shift"]
 key = "1"
-
 [[keybind]]
 command = "MoveToTag"
 value = "2"
 modifier = ["modkey", "Shift"]
 key = "2"
-
 [[keybind]]
 command = "MoveToTag"
 value = "3"
 modifier = ["modkey", "Shift"]
 key = "3"
-
 [[keybind]]
 command = "MoveToTag"
 value = "4"
 modifier = ["modkey", "Shift"]
 key = "4"
-
 [[keybind]]
 command = "MoveToTag"
 value = "5"
@@ -165,49 +174,28 @@ key = "5"
 ### Volume ###
 [[keybind]]
 command = "Execute"
-value = "pactl set-sink-volume bluez_sink.5C_C6_E9_14_A8_15.a2dp_sink +5%"
-modifier = ["modkey", "Control"]
-key = "Up"
-
-[[keybind]]
-command = "Execute"
-value = "pactl set-sink-volume bluez_sink.5C_C6_E9_14_A8_15.a2dp_sink -5%"
-modifier = ["modkey", "Control"]
-key = "Down"
-
-[[keybind]]
-command = "Execute"
-value = "pactl set-sink-mute bluez_sink.5C_C6_E9_14_A8_15.a2dp_sink toggle"
-modifier = ["modkey", "Shift", "Control"]
-key = "Down"
-
-[[keybind]]
-command = "Execute"
-value = "pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5%"
+value = "pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5% & pactl set-sink-volume bluez_sink.5C_C6_E9_14_A8_15.a2dp_sink +5% & pactl set-sink-volume bluez_sink.CC_A7_C1_FF_CC_91.a2dp_sink +5%"
 modifier = ["modkey"]
 key = "Up"
-
 [[keybind]]
 command = "Execute"
-value = "pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5%"
+value = "pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5% & pactl set-sink-volume bluez_sink.5C_C6_E9_14_A8_15.a2dp_sink -5% & pactl set-sink-volume bluez_sink.CC_A7_C1_FF_CC_91.a2dp_sink -5%"
 modifier = ["modkey"]
 key = "Down"
-
 [[keybind]]
 command = "Execute"
-value = "pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle"
+value = "pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle & pactl set-sink-mute bluez_sink.5C_C6_E9_14_A8_15.a2dp_sink toggle & pactl set-sink-mute bluez_sink.CC_A7_C1_FF_CC_91.a2dp_sink toggle"
 modifier = ["modkey", "Shift"]
 key = "Down"
 
 ### Screenshot ###
 [[keybind]]
 command = "Execute"
-value = "maim -usb 2 | xclip -selection clipboard -t image/png && notify-send 'Screenshot Selected!'"
+value = "maim -usb 2 | xclip -selection clipboard -t image/png && notify-send 'Screenshot' 'Selection Captured'"
 modifier = []
 key = "Print"
-
 [[keybind]]
 command = "Execute"
-value = "maim -u /mnt/HDD/Images/Screenshots/maim-$(date +%m-%d-%T).png && notify-send 'Screenshot Captured!'"
+value = "maim -u /mnt/HDD/Images/Screenshots/maim-$(date +%m-%d-%T).png && notify-send 'Screenshot' 'Selection Captured'"
 modifier = ["modkey"]
 key = "Print"
