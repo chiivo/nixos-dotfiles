@@ -1,0 +1,87 @@
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+window {
+  background-color: #555657;
+  color: #f5d1c8;
+  font-family: CaskaydiaCove Nerd Font;
+  border-radius: 10;
+}
+
+// Styles on classes (see eww.xml for more information)
+
+// Icon
+.icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+// Base Slider
+.sidestuff slider {
+  all: unset;
+  color: #f5d1c8;
+}
+
+// Volume Slider
+.slider-vol scale trough highlight {
+  all: unset;
+  background-color: #f5d1c8;
+  color: #262627;
+  border-radius: 10px;
+}
+.slider-vol scale trough {
+  all: unset;
+  background-color: #262727;
+  border-radius: 10px;
+  min-height: 6px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.label-vol {
+  font-size: large;
+}
+
+// RAM Slider
+.slider-ram scale trough highlight {
+  all: unset;
+  background-color: #f5d1c8;
+  color: #262727;
+  border-radius: 10px;
+}
+.slider-ram scale trough {
+  all: unset;
+  background-color: #262727;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.label-ram {
+  font-size: large;
+}
+
+// Time
+.time {
+  all: unset;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+// Workspaces
+.workspaces {
+  all: unset;
+}
+.workspaces button {
+  all: unset;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+.workspaces button:hover {
+  all: unset;
+  color: #f5d1c8;
+}
