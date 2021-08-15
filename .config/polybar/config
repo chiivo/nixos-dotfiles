@@ -29,6 +29,11 @@ alert = #bd2c40
 monitor = ${env:MONITOR:DP-2}
 inherit = bar/barbase
 modules-center = workspace0
+width = 1889
+tray-background = #0e0e0e
+tray-offset-x = -9
+tray-position = right
+tray-padding = 1
 [module/workspace0]
 type = custom/script
 exec = leftwm-state -w 0 -t $SCRIPTPATH/template.liquid
@@ -38,9 +43,6 @@ tail = true
 monitor = ${env:MONITOR:HDMI-0}
 inherit = bar/barbase
 modules-center = workspace1
-tray-position = right
-tray-padding = 2
-tray-background = #262727
 [module/workspace1]
 type = custom/script
 exec = leftwm-state -w 1 -t $SCRIPTPATH/template.liquid
@@ -63,9 +65,9 @@ tail = true
 #tail = true
 
 [bar/barbase]
-width = 1900px
+width = 1880
 height = 26
-offset-x = 10
+offset-x = 20
 offset-y = 10
 radius = 10
 fixed-center = true
@@ -75,25 +77,26 @@ line-size = 3
 line-color = #f00
 border-size = 0
 border-color = #f5d1c8
-padding-left = 2
-padding-right = 2
-module-margin-left = 2
-module-margin-right = 2
-font-0 = CaskaydiaCove Nerd Font:size=12;3
-font-1 = Comfortaa:size=10;3
-font-2 = Scientifica:size=12:antialias=false;2
-modules-left = xwindow
-modules-center = 
+padding-left = 1
+padding-right = 1
+modules-left = text
 modules-right = pulseaudio date
-;wm-restack = bspwm
-;wm-restack = i3
-;override-redirect = true
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+module-margin-left = 1
+module-margin-right = 1
+font-0 = CaskaydiaCove Nerd Font:size=12;2
+font-1 = Comfortaa:size=12;2
+font-2 = Scientifica:size=16:antialias=false;3
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/text]
+type = custom/text
+content = " "
+click-left = rofi -show drun -icon-theme Flatery-Blue-Dark
+click-middle = 
+click-right = 
+scroll-up = 
+scroll-down = 
 
 [module/xwindow]
 type = internal/xwindow
@@ -258,12 +261,12 @@ time-alt = %H:%M:%S
 format-prefix = 
 format-prefix-foreground = #f5d1c8
 ;format-underline = #0a6cf5
-label =  %date%   %time%
+label = " %date%   %time% "
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume = <ramp-volume> <bar-volume>
-label-volume = 
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
@@ -286,7 +289,7 @@ bar-volume-fill-font = 1
 bar-volume-empty = " "
 bar-volume-empty-font = 1
 bar-volume-empty-foreground = #f5d1c8
-click-right = pavucontrol-qt
+click-right = pavucontrol
 
 [module/alsa]
 type = internal/alsa
