@@ -19,12 +19,10 @@
 - Video Player: VLC
 - USB Mount: udiskie
 - Fonts: CaskaydiaCove Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR, Noto Color Emoji, Dotsies
-
 - Terminal Apps: neofetch, cbonsai, alsamixer, shell-color-scripts
-
 - Apps: Blender, Discord, Spotify, Armorpaint, Steam, Minecraft, OBS-Studio, xp-pen-tablet, Zathura (zathura-pdf-mupdf), Dunst
 
-###### Reminders
+### Reminders
 - To make executable bash file: `chmod +x script.sh`
 - Change ownership: `chown *username* /file/directory`
 - Uncomment multilib in `/etc/pacman.conf`
