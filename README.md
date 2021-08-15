@@ -24,5 +24,5 @@
 
 ### Reminders
 - To make executable bash file: `chmod +x script.sh`
-- Change ownership: `chown *username* /file/directory`
+- Change ownership: `chown (username) /file/path`
 - Uncomment multilib in `/etc/pacman.conf`
