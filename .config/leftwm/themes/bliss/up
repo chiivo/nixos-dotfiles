@@ -4,43 +4,33 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 ### Refresh Rate ###
 xrandr --output DP-2 --mode 1920x1080 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 60.00 &
 
+### Disable Screen Timeout ###
+xset -dpms;
+xset s off & 
+
 ### Wallpaper ###
-~/.fehbg &
+feh --no-fehbg --bg-tile /mnt/HDD/Images/Wallpapers/BlissPixelsGray.png &
 
 ### Compositor ###
 picom --experimental-backends &
 
 ### Udiskie ###
-killall -q udiskie ;
+killall -q udiskie;
 udiskie &
 
 ### LeftWM Theme ###
 leftwm-command "LoadTheme $SCRIPTPATH/theme.toml" &
 
-### Polybar ###
-#killall -q polybar ;
-#index=0
-#monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
-#leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | while read -r width x y
-#do 
-#  barname="mainbar$index"
-#  monitor=$monitor offsetx=$x width=$width polybar -c ~/.config/polybar/config $barname &> /dev/null &
-#  let index=index+1
-#done
-
 ### Eww ###
-killall -q eww ;
-eww daemon ;
-while [[ -z "$(eww windows | grep '[*]')" ]]; do
-  eww open-many bar0 bar1
-done &
+killall -q eww;
+eww open-many bar0 bar1 &
 
 ### Bluetooth ###
-killall -q blueman-applet
-blueman-applet
-if blueman-applet
-  then bluetoothctl connect 5C:C6:E9:14:A8:15
-fi &
+killall -q blueman-applet;
+blueman-applet;
+while ! bluetoothctl connect 5C:C6:E9:14:A8:15;
+	do sleep 2;
+done &
 
 ### Discord ###
 discord &
