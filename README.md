@@ -1,6 +1,7 @@
 # bliss-dotfiles
 
-![alt text](https://github.com/Chiivo/bliss-dotfiles/blob/main/dualscreen.png?raw=true)
+![image](https://user-images.githubusercontent.com/13358601/130374249-bb2043e4-f0db-4bdc-b697-3f409b361707.png)
+
 
 - Distro: Arch Linux
 - Display Manager: LightDM, lightdm-webkit2, glorious
