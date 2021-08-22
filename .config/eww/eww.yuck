@@ -1,0 +1,122 @@
+(defwidget bar []
+  (centerbox :orientation "h"
+    (power-button)
+    (workspaces)
+    (sidestuff)
+  )
+)
+
+(defwidget power-button []
+  (button
+    :class "icon"
+    :orientation "h"
+    :halign "start"
+    :onclick "rofi -show drun"
+    :onmiddleclick "shutdown now"
+    ""
+  )
+)
+
+(defwidget workspaces []
+  (box
+    :class "workspaces"
+    :orientation "h"
+    :halign "center"
+    :valign "center"
+    :space-evenly true
+    (literal
+      :content leftwm-tags
+    )
+  )
+)
+
+(defwidget sidestuff []
+  (box
+    :class "sidestuff"
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+    (slider-vol)
+    (date)
+    (time)
+  )
+)
+
+(defwidget slider-vol []
+  (box 
+    :class "slider-vol"
+    :orientation "h"
+    :space-evenly false
+    (box
+      :class "label-vol"
+      ""
+    )
+    (scale
+      :min "0"
+      :max "101"
+      :value volume
+      :onchange "amixer -D pulse sset Master {}%"
+    )
+  )
+)
+
+(defwidget date []
+  (box
+    :class "date"
+    date
+  )
+)
+
+(defwidget time []
+  (box
+    :class "time"
+    time
+  )
+)
+
+(deflisten leftwm-tags
+  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template.liquid"
+)
+
+(defpoll volume
+  :interval "10ms"
+  "~/.config/eww/scripts/getvol"
+)
+
+(defpoll date
+  :interval "10ms"
+  "date '+%m/%d'"
+)
+
+(defpoll time
+  :interval "10ms"
+  "date '+%H:%M'"
+)
+
+(defwindow bar0
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry 
+    :x "20px"
+    :y "10px"
+    :width "1880px"
+    :height "26px")
+  :reserve (struts
+    :side "top"
+    :distance "26px")
+  (bar)
+)
+
+(defwindow bar1
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry 
+    :x "20px"
+    :y "10px"
+    :width "1880px"
+    :height "26px")
+  :reserve (struts
+    :side "top"
+    :distance "26px")
+  (bar)
+)
