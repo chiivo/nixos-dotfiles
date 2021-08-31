@@ -26,7 +26,7 @@ set font "CaskaydiaCove Nerd Font 12"
 set default-bg "#262727" #00
 set default-fg "#f5d1c8" #01
 
-set statusbar-fg "#f5d1c1" #04
+set statusbar-fg "#f5d1c8" #04
 set statusbar-bg "#262727" #01
 
 set inputbar-bg "#262727" #00 currently not used
