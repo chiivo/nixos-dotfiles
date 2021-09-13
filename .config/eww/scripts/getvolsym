@@ -1,0 +1,20 @@
+#!/bin/sh
+
+checkmute=$(amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $4 }')
+getvol=$(amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%')
+
+if [ $checkmute != on ]
+then echo ' '
+else
+	if [ $getvol -lt 30 ]
+	then echo ' '
+	else
+		if [ $getvol -lt 50 ]
+		then echo ' '
+		else
+			if [ $getvol -ge 50 ]
+			then echo ' '
+			fi
+		fi
+	fi
+fi
