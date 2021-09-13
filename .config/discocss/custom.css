@@ -1,0 +1,78 @@
+/*Font*/
+body, button, input, select, textarea {
+font-family: 'CaskaydiaCove Nerd Font';
+}
+
+/*Colors*/
+.theme-dark {
+    --background-primary: #262727;
+    --background-secondary: #0e0e0e;
+    --background-secondary-alt: #0e0e0e;
+    --background-tertiary: #262727;
+    --background-mobile-primary: #0e0e0e;
+    --background-mobile-secondary: #262727;
+    --channeltextarea-background: #55565755;
+    --background-accent: #f5d1c8;
+    --background-message-hover: #55565755;
+    --background-modifier-hover: #55565755;
+    --background-modifier-active: transparent;
+    --background-modifier-selected: #262727;
+    --deprecated-card-bg: #262727;
+    --background-floating: #262727;
+    --deprecated-quickswitcher-input-background:#262727;
+    --elevation-low: none;
+    --scrollbar-auto-thumb: #555657;
+    --scrollbar-auto-track: #0e0e0e;
+    --scrollbar-thin-thumb: #555657;
+    --activity-card-background: #262727;
+}
+.peopleList-3c4jOR.auto-Ge5KZx.scrollerBase-289Jih {
+    background-color: #262727;
+}
+.peopleColumn-29fq28 {
+    background-color: #262727;
+}
+.item-2hkk8m {
+    background-color: #555657;
+}
+
+/*Hover Reveal Servers*/
+nav[aria-label="Servers sidebar"] {
+    width: 12px;
+    transition: width 0.2s;
+}
+
+nav[aria-label="Servers sidebar"]:hover {
+    width: 70px;
+}
+
+/*Hide Discord List Avatars*/
+.layout-2DM8Md .avatar-3uk_u9, .subText-1KtqkB{
+    display:none !important;
+}
+
+/*Hide Scrollbars*/
+::-webkit-scrollbar {
+    display: none;
+}
+.content-1x5b-n {
+    margin: 0 !important;
+    border-radius: 0;
+}
+.mainContent-u_9PKf {
+    padding-left: 8px;
+}
+.container-2Pjhx- {
+    margin: 0;
+    max-width: unset;
+}
+.layout-2DM8Md {
+    border-radius: 0;
+    padding: 0 16px;
+}
+.unread-2lAfLh {
+    z-index: 1;
+}
+.buttons-3JBrkn {
+    padding-right: 10px !important;
+}
