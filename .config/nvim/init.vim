@@ -17,6 +17,7 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'glepnir/dashboard-nvim'
 Plug 'Pocco81/TrueZen.nvim'
 Plug 'sheerun/vim-polyglot'
+Plug 'elkowar/yuck.vim'
 call plug#end()
 
 " Color Settings
@@ -30,9 +31,6 @@ let cyan='#ffc178'
 let fg='#f5d1c8'
 let gray='#555657'
 let white='#dddddd'
-
-" Remaps
-map! sv source $MYVIMRC
 
 " Starup Commands
 colorscheme dark
