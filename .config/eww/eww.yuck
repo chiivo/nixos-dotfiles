@@ -1,22 +1,22 @@
+;;;Widgets;;;
 (defwidget bar []
-  (centerbox :orientation "h"
-    (power-button)
+  (box
+    :orientation "h"
+    :class "bar"
+    (left-group)
     (workspaces)
-    (sidestuff)
+    (right-group)
   )
 )
-
-(defwidget power-button []
-  (button
-    :class "icon"
+(defwidget left-group []
+  (box
     :orientation "h"
     :halign "start"
-    :onclick "rofi -show drun"
-    :onmiddleclick "shutdown now"
-    ""
+    :space-evenly false
+    (power-button)
+    (current-window)
   )
 )
-
 (defwidget workspaces []
   (box
     :class "workspaces"
@@ -29,94 +29,132 @@
     )
   )
 )
-
-(defwidget sidestuff []
+(defwidget right-group []
   (box
-    :class "sidestuff"
+    :class "right-group"
     :orientation "h"
-    :space-evenly false
     :halign "end"
+    :space-evenly false
+    (bluetooth-button)
     (slider-vol)
     (date)
     (time)
   )
 )
-
+(defwidget power-button []
+  (button
+    :class "power-button"
+    :orientation "h"
+    :onclick "rofi -show drun &"
+    :onmiddleclick "shutdown now"
+    ""
+  )
+)
+(defwidget current-window []
+  (box
+    :class "current-window"
+    :orientation "h"
+    :space-evenly "false"
+    getwindow
+  )
+)
+(defwidget bluetooth-button []
+  (button
+    :class "bluetooth-button"
+    :onclick "bluetoothctl connect 5C:C6:E9:14:A8:15"
+    :onmiddleclick "bluetoothctl disconnect 5C:C6:E9:14:A8:15 & bluetoothctl disconnect CC:A7:C1:FF:CC:91 &"
+    :onrightclick "bluetoothctl connect CC:A7:C1:FF:CC:91"
+    ""
+  )
+)
 (defwidget slider-vol []
   (box 
     :class "slider-vol"
     :orientation "h"
     :space-evenly false
-    (box
+    (button
       :class "label-vol"
-      ""
+      :onclick "amixer -D pulse sset Master toggle"
+      :onrightclick "pavucontrol &"
+      getvolsym
     )
     (scale
       :min "0"
       :max "101"
-      :value volume
+      :value getvol
       :onchange "amixer -D pulse sset Master {}%"
     )
   )
 )
-
 (defwidget date []
   (box
     :class "date"
     date
   )
 )
-
 (defwidget time []
   (box
     :class "time"
     time
   )
 )
+(defwidget spacer []
+  (box
+    :class "spacer"
+    :space-evenly "false"
+    "|"
+  )
+)
 
+;;;Variables;;;
+(defpoll getwindow
+  :interval "20ms"
+  "~/.config/eww/scripts/getwindow"
+)
 (deflisten leftwm-tags
   "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template.liquid"
 )
-
-(defpoll volume
-  :interval "10ms"
+(defpoll getvolsym
+  :interval "20ms"
+  "~/.config/eww/scripts/getvolsym"
+)
+(defpoll getvol
+  :interval "20ms"
   "~/.config/eww/scripts/getvol"
 )
-
 (defpoll date
   :interval "10ms"
   "date '+%m/%d'"
 )
-
 (defpoll time
   :interval "10ms"
   "date '+%H:%M'"
 )
 
+;;;Windows;;;
 (defwindow bar0
   :monitor 0
   :windowtype "dock"
   :geometry (geometry 
-    :x "20px"
+    :x "30px"
     :y "10px"
-    :width "1880px"
-    :height "26px")
+    :width "1860px"
+    :height "30px")
   :reserve (struts
     :side "top"
-    :distance "26px")
+    :distance "40px")
   (bar)
 )
-
 (defwindow bar1
   :monitor 1
   :windowtype "dock"
   :geometry (geometry 
-    :x "20px"
+    :x "30px"
     :y "10px"
-    :width "1880px"
-    :height "26px")
+    :width "1860px"
+    :height "30px")
   :reserve (struts
     :side "top"
-    :distance "26px")
+    :distance "40px")
   (bar)
 )
