@@ -168,6 +168,10 @@ settings:
     global: '#f5d1c8'
   colors.webpage.bg:
     global: '#dddddd'
+  downloads.position:
+    global: bottom
+  downloads.remove_finished:
+    global: 5000
   fileselect.multiple_files.command:
     global:
     - kitty
