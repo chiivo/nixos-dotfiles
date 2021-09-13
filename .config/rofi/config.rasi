@@ -14,7 +14,7 @@ configuration {
 }
 
 *{
-	font: "Comfortaa 16";
+	font: "CaskaydiaCove Nerd Font 12";
 	foreground: #f5d1c8;
 	background: #262727;
 	border-color: @foreground;
@@ -27,8 +27,7 @@ window {
 	location: center;
 	anchor: center;
 	background-color: @background;
-	border: 2;
-	border-radius: 10;
+	border: 4;
 	padding: 10;
 	width: 400;
 }
@@ -37,6 +36,7 @@ mainbox {
 	border: 0;
 	padding: 0;
 }
+
 message {
 	border: 1px 0px 0px 0px ;
 	border-color: @foreground;
@@ -49,18 +49,22 @@ textbox {
 
 element {
 	text-color: @foreground;
-	border: 0;
-	border-radius: 10;
-	padding: 10;
+	margin: 4;
+	padding: 4;
+}
+
+element.selected.normal {
+	background-color: var(foreground);
+	text-color: var(background);
+}
+
+element.alternate.normal {
+	background-color: @background;
+	text-color: @foreground;
 }
 
 element-icon {
 	size: 24px;
-}
-
-element.selected.normal {
-	background-color: @foreground;
-	text-color: @background;
 }
 
 mode-switcher {
@@ -79,11 +83,6 @@ inputbar {
 	padding: 10px;
 }
 
-case-indicator {
-	spacing: 0;
-	text-color: @foreground;
-}
-
 entry {
 	spacing: 0;
 	text-color: @foreground;
@@ -97,7 +96,6 @@ prompt {
 textbox-prompt-colon {
 	expand: false;
 	str: ":";
-	margin: 0px 0.3em 0em 0em ;
 	text-color: @foreground;
 }
 
