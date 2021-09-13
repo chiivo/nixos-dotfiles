@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x0-20+46"
+    geometry = "300x0-30+70"
 
     # Turn on the progess bar
     progress_bar = true
@@ -68,7 +68,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 4
 
     # Padding between text and separator.
     padding = 10
@@ -81,7 +81,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 4
 
     # Defines color of the frame around the notification window.
     frame_color = "#f5d1c8"
@@ -195,7 +195,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = .icons/Flatery-Blue-Dark/status/48:.icons/Flatery-Blue-Dark/devices/48 
+    icon_path = .icons/Flatery-Black-Dark/status/48:.icons/Flatery-Black-Dark/devices/48 
 
     ### History ###
 
@@ -242,7 +242,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 10
+    corner_radius = 0
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
