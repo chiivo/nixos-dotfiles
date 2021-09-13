@@ -27,10 +27,11 @@ eww open-many bar0 bar1 &
 
 ### Bluetooth ###
 killall -q blueman-applet;
-blueman-applet;
-while ! bluetoothctl connect 5C:C6:E9:14:A8:15;
-	do sleep 2;
+blueman-applet &
+while ! $(bluetoothctl connect 5C:C6:E9:14:A8:15);
+do sleep 2;
+	break
 done &
 
 ### Discord ###
-discord &
+discocss &
