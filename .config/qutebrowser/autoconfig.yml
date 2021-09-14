@@ -192,6 +192,8 @@ settings:
     global: CaskaydiaCove Nerd Font
   fonts.default_size:
     global: 12pt
+  scrolling.smooth:
+    global: true
   statusbar.widgets:
     global:
     - progress
