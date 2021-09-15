@@ -168,6 +168,8 @@ settings:
     global: '#f5d1c8'
   colors.webpage.bg:
     global: '#dddddd'
+  content.javascript.can_access_clipboard:
+    global: true
   downloads.position:
     global: bottom
   downloads.remove_finished:
@@ -192,6 +194,8 @@ settings:
     global: CaskaydiaCove Nerd Font
   fonts.default_size:
     global: 12pt
+  hints.border:
+    global: '2px solid #eadc84'
   scrolling.smooth:
     global: true
   statusbar.widgets:
@@ -214,4 +218,4 @@ settings:
   url.start_pages:
     global: https://monkeytype.com/
   window.title_format:
-    global: qutebrowser
+    global: qutebrowser - {current_title}
