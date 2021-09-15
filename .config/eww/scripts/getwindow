@@ -1,3 +1,8 @@
 #!/bin/sh
 
-xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME | cut -c30- | sed 's/.$//'
+getcharactercount=$(echo -n $(xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME | cut -c30- | sed 's/.$//') | wc -c)
+
+if (( $getcharactercount > 40 ))
+then xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME | cut -c30- | sed 's/.$//' | sed -r 's/(.{40}).*/\1/' | sed -e 's/$/.../'
+else xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME | cut -c30- | sed 's/.$//'
+fi
