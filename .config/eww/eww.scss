@@ -3,10 +3,10 @@
 }
 
 //Global Styles
-window {
+.bar {
+  font-family: CaskaydiaCove Nerd Font;
   background-color: #555657;
   color: #f5d1c8;
-  font-family: CaskaydiaCove Nerd Font;
 }
 
 // Icon
@@ -22,7 +22,9 @@ window {
 }
 
 // Workspaces
-.workspaces {
+.ws-button {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .ws-button-mine {
   margin-left: 10px;
@@ -36,7 +38,9 @@ window {
   margin-left: 10px;
   margin-right: 10px;
 }
-.ws-button {
+
+//Check Updates
+.checkupdates {
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -79,4 +83,5 @@ window {
 .spacer {
   margin-left: 10px;
   margin-right: 10px;
+  color: #262727;
 }
