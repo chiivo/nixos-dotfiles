@@ -19,7 +19,6 @@
 )
 (defwidget workspaces []
   (box
-    :class "workspaces"
     :orientation "h"
     :halign "center"
     :valign "center"
@@ -35,6 +34,7 @@
     :orientation "h"
     :halign "end"
     :space-evenly false
+    (checkupdates)
     (bluetooth-button)
     (slider-vol)
     (date)
@@ -58,12 +58,18 @@
     getwindow
   )
 )
+(defwidget checkupdates []
+  (box
+    :class "checkupdates"
+    :space-evenly false
+    " " checkupdates
+  )
+)
 (defwidget bluetooth-button []
   (button
     :class "bluetooth-button"
-    :onclick "bluetoothctl connect 5C:C6:E9:14:A8:15"
-    :onmiddleclick "bluetoothctl disconnect 5C:C6:E9:14:A8:15 & bluetoothctl disconnect CC:A7:C1:FF:CC:91 &"
-    :onrightclick "bluetoothctl connect CC:A7:C1:FF:CC:91"
+    :onclick "bluetoothctl disconnect CC:A7:C1:FF:CC:91 & bluetoothctl connect 5C:C6:E9:14:A8:15 &"
+    :onrightclick "bluetoothctl disconnect 5C:C6:E9:14:A8:15 & bluetoothctl connect CC:A7:C1:FF:CC:91 &"
     ""
   )
 )
@@ -108,18 +114,22 @@
 
 ;;;Variables;;;
 (defpoll getwindow
-  :interval "20ms"
+  :interval "10ms"
   "~/.config/eww/scripts/getwindow"
 )
 (deflisten leftwm-tags
   "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template.liquid"
 )
+(defpoll checkupdates
+  :interval "3600000ms"
+  "~/.config/eww/scripts/checkupdates"
+)
 (defpoll getvolsym
-  :interval "20ms"
+  :interval "10ms"
   "~/.config/eww/scripts/getvolsym"
 )
 (defpoll getvol
-  :interval "20ms"
+  :interval "10ms"
   "~/.config/eww/scripts/getvol"
 )
 (defpoll date
@@ -135,26 +145,30 @@
 (defwindow bar0
   :monitor 0
   :windowtype "dock"
-  :geometry (geometry 
+  :geometry (geometry
     :x "30px"
     :y "10px"
     :width "1860px"
-    :height "30px")
+    :height "30px"
+  )
   :reserve (struts
     :side "top"
-    :distance "40px")
+    :distance "40px"
+  )
   (bar)
 )
 (defwindow bar1
   :monitor 1
   :windowtype "dock"
-  :geometry (geometry 
+  :geometry (geometry
     :x "30px"
     :y "10px"
     :width "1860px"
-    :height "30px")
+    :height "30px"
+  )
   :reserve (struts
     :side "top"
-    :distance "40px")
+    :distance "40px"
+  )
   (bar)
 )
