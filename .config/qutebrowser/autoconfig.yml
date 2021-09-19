@@ -168,6 +168,8 @@ settings:
     global: '#f5d1c8'
   colors.webpage.bg:
     global: '#dddddd'
+  completion.timestamp_format:
+    global: '%H:%M %m-%d-%Y'
   content.javascript.can_access_clipboard:
     global: true
   downloads.position:
