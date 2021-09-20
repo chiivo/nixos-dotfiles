@@ -34,7 +34,6 @@
     :orientation "h"
     :halign "end"
     :space-evenly false
-    (checkupdates)
     (bluetooth-button)
     (slider-vol)
     (date)
@@ -56,13 +55,6 @@
     :orientation "h"
     :space-evenly "false"
     getwindow
-  )
-)
-(defwidget checkupdates []
-  (box
-    :class "checkupdates"
-    :space-evenly false
-    " " checkupdates
   )
 )
 (defwidget bluetooth-button []
@@ -104,13 +96,6 @@
     time
   )
 )
-(defwidget spacer []
-  (box
-    :class "spacer"
-    :space-evenly "false"
-    "|"
-  )
-)
 
 ;;;Variables;;;
 (defpoll getwindow
@@ -119,10 +104,6 @@
 )
 (deflisten leftwm-tags
   "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template.liquid"
-)
-(defpoll checkupdates
-  :interval "3600000ms"
-  "~/.config/eww/scripts/checkupdates"
 )
 (defpoll getvolsym
   :interval "10ms"
