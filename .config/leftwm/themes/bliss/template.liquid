@@ -8,13 +8,13 @@
 {% for tag in workspace.tags %}
 
 {% if tag.mine %}
-	{{mine_open}} {{tag.index | append: '"'}} {{"''"}} {{close}}
+	{{mine_open}} {{tag.index | append: '"'}} {{"' '"}} {{close}}
 
 {% elsif tag.visible  %}
-	{{visible_open}} {{tag.index | append: '"'}} {{"''"}} {{close}}
+	{{visible_open}} {{tag.index | append: '"'}} {{"' '"}} {{close}}
 
 {% elsif tag.busy  %}
-	{{busy_open}} {{tag.index | append: '"'}} {{"''"}} {{close}}
+	{{busy_open}} {{tag.index | append: '"'}} {{"' '"}} {{close}}
 
 {% else tag.visible  %}
 	{{unoccupied}} {{tag.index | append: '"'}} {{"''"}} {{close}}
