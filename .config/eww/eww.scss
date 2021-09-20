@@ -14,11 +14,17 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+.power-button:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #ff8278;
+}
 
 // Current Window
 .current-window {
   margin-left: 10px;
   margin-right: 10px;
+  color: #dddddd;
 }
 
 // Workspaces
@@ -39,16 +45,15 @@
   margin-right: 10px;
 }
 
-//Check Updates
-.checkupdates {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 // Bluetooth Button
 .bluetooth-button {
   margin-left: 10px;
   margin-right: 10px;
+}
+.bluetooth-button:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #77bee0;
 }
 
 // Volume Slider
@@ -56,15 +61,23 @@
   font-size: large;
   margin-left: 10px;
 }
+.label-vol:hover {
+  font-size: large;
+  margin-left: 10px;
+  color: #bde077;
+}
 .slider-vol scale trough highlight {
   background-color: #f5d1c8;
-  color: #262627;
+  border-radius: 10px;
+}
+.slider-vol scale trough highlight:hover {
+  background-color: #bde077;
   border-radius: 10px;
 }
 .slider-vol scale trough {
   background-color: #262727;
   border-radius: 10px;
-  min-height: 4px;
+  min-height: 6px;
   min-width: 50px;
   margin-right: 10px;
 }
@@ -77,11 +90,4 @@
 .time {
   margin-left: 10px;
   margin-right: 10px;
-}
-
-// Spacer
-.spacer {
-  margin-left: 10px;
-  margin-right: 10px;
-  color: #262727;
 }
