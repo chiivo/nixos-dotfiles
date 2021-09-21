@@ -127,7 +127,7 @@ settings:
   colors.statusbar.passthrough.fg:
     global: '#77bee0'
   colors.statusbar.progress.bg:
-    global: '#262727'
+    global: '#f5d1c8'
   colors.statusbar.url.error.fg:
     global: '#ffc178'
   colors.statusbar.url.fg:
