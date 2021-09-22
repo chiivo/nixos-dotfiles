@@ -95,12 +95,12 @@ key = "h"
 
 ### Layouts ###
 [[keybind]]
-command = "NextLayout"
-modifier = ["modkey"]
-key = "Tab"
-[[keybind]]
 command = "PreviousLayout"
 modifier = ["modkey", "Control"]
+key = "Tab"
+[[keybind]]
+command = "NextLayout"
+modifier = ["modkey"]
 key = "Tab"
 [[keybind]]
 command = "ToggleFullScreen"
