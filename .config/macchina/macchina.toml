@@ -44,7 +44,7 @@ random_sep_color = false
 #   - Yellow
 #   - Red
 #   - Magenta
-color = "Blue"
+#color = "Blue"
 
 # Specify a color for the separator.
 # Accepted values (case-sensitive):
@@ -56,7 +56,7 @@ color = "Blue"
 #   - Yellow
 #   - Red
 #   - Magenta
-separator_color = "Blue"
+#separator_color = "Blue"
 
 # Shorten uptime format
 short_uptime = true
@@ -69,7 +69,7 @@ long_shell = false
 # current_shell = false 
 
 # Specify the title of the box
-box_title = "┤ Macchina ├"
+#box_title = "┤ Macchina ├"
 
 # Specify the horizontal inner margin value of the box surrounding system information.
 box_inner_margin_x = 1
@@ -91,7 +91,7 @@ box_inner_margin_y = 0
 # To set 'foobar' as a theme, place foobar.json
 # in $XDG_DATA_HOME/macchina/themes
 # and set theme = "foobar" (case-sensitive)
-theme = "Beryllium"
+theme = "Bliss"
 
 # Hides the specified readouts.
 # Conflicts with: show_only
@@ -116,7 +116,7 @@ theme = "Beryllium"
 #   - Battery
 # Example:
 #   hide = ["Battery", "Memory", ...]
-# hide = []
+#hide = []
 
 # Displays only the specified readouts.
 # Conflicts with: hide
