@@ -7,6 +7,7 @@
   font-family: CaskaydiaCove Nerd Font;
   background-color: #555657;
   color: #f5d1c8;
+  border-radius: 5px;
 }
 
 // Icon
@@ -88,16 +89,16 @@
 }
 .slider-vol scale trough highlight {
   background-color: #f5d1c8;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .slider-vol scale trough highlight:hover {
   background-color: #bde077;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .slider-vol scale trough {
   background-color: #262727;
-  border-radius: 10px;
-  min-height: 6px;
+  border-radius: 5px;
+  min-height: 4px;
   min-width: 50px;
   margin-right: 10px;
 }
