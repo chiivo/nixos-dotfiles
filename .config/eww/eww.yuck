@@ -127,9 +127,9 @@
   :monitor 0
   :windowtype "dock"
   :geometry (geometry
-    :x "30px"
+    :x "300px"
     :y "10px"
-    :width "1860px"
+    :width "1320px"
     :height "30px"
   )
   :reserve (struts
@@ -142,9 +142,9 @@
   :monitor 1
   :windowtype "dock"
   :geometry (geometry
-    :x "30px"
+    :x "300px"
     :y "10px"
-    :width "1860px"
+    :width "1320px"
     :height "30px"
   )
   :reserve (struts
