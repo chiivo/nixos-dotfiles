@@ -88,6 +88,7 @@ inputbar {
 entry {
 	spacing: 0;
 	text-color: @foreground;
+	placeholder: "";
 }
 
 prompt {
@@ -103,4 +104,9 @@ textbox-prompt-colon {
 
 inputbar {
 	children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+listview {
+	border: 0px;
+	scrollbar: false;
 }
