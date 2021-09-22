@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x0-30+70"
+    geometry = "300x0-30+10"
 
     # Turn on the progess bar
     progress_bar = true
