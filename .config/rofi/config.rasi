@@ -5,7 +5,7 @@
 
 configuration {
 	display-run: "Run";
-	display-drun: "Apps";
+	display-drun: "";
 	display-window: "Windows";
 	display-ssh: "SSH";
 	display-combi: "Combi";
@@ -28,6 +28,7 @@ window {
 	anchor: center;
 	background-color: @background;
 	border: 4;
+	border-radius: 5;
 	padding: 10;
 	width: 400;
 }
@@ -49,6 +50,7 @@ textbox {
 
 element {
 	text-color: @foreground;
+	border-radius: 5;
 	margin: 4;
 	padding: 4;
 }
@@ -95,7 +97,7 @@ prompt {
 
 textbox-prompt-colon {
 	expand: false;
-	str: ":";
+	str: "";
 	text-color: @foreground;
 }
 
