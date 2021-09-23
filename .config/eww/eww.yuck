@@ -46,7 +46,7 @@
     :orientation "h"
     :onclick "rofi -show drun &"
     :onmiddleclick "shutdown now"
-    ""
+    " "
   )
 )
 (defwidget current-window []
