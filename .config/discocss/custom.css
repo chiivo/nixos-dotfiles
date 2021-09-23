@@ -1,7 +1,7 @@
 /*Font*/
-#body, button, input, select, textarea {
-#font-family: 'CaskaydiaCove Nerd Font';
-#}
+/*body, button, input, select, textarea {
+font-family: 'CaskaydiaCove Nerd Font';
+}*/
 
 /*Colors*/
 .theme-dark {
@@ -9,8 +9,18 @@
     --background-secondary: #0e0e0e;
     --background-secondary-alt: #0e0e0e;
     --background-tertiary: #262727;
+    --background-floating: #262727;
     --background-mobile-primary: #0e0e0e;
     --background-mobile-secondary: #262727;
+    --header-primary : #f5d1c8;
+    --interactive-normal : #f5d1c8;
+    --interactive-hover : #dddddd;
+    --interactive-active : #f5d1c8;
+    --interactive-muted : #555657;
+    --text-normal : #dddddd;
+    --text-link : #77bee0;
+    --text-muted : #555657;
+    --text-warning : #ff8278;
     --channeltextarea-background: #55565755;
     --background-accent: #f5d1c8;
     --background-message-hover: #55565755;
@@ -18,13 +28,13 @@
     --background-modifier-active: transparent;
     --background-modifier-selected: #262727;
     --deprecated-card-bg: #262727;
-    --background-floating: #262727;
     --deprecated-quickswitcher-input-background:#262727;
     --elevation-low: none;
     --scrollbar-auto-thumb: #555657;
     --scrollbar-auto-track: #0e0e0e;
     --scrollbar-thin-thumb: #555657;
     --activity-card-background: #262727;
+    --brand-experiment : #555657 !important;
 }
 .peopleList-3c4jOR.auto-Ge5KZx.scrollerBase-289Jih {
     background-color: #262727;
