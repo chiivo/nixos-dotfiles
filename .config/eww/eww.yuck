@@ -128,13 +128,13 @@
   :windowtype "dock"
   :geometry (geometry
     :x "350px"
-    :y "10px"
+    :y "30px"
     :width "1220px"
     :height "30px"
   )
   :reserve (struts
     :side "top"
-    :distance "40px"
+    :distance "60px"
   )
   (bar)
 )
@@ -143,13 +143,13 @@
   :windowtype "dock"
   :geometry (geometry
     :x "350px"
-    :y "10px"
+    :y "30px"
     :width "1220px"
     :height "30px"
   )
   :reserve (struts
     :side "top"
-    :distance "40px"
+    :distance "60px"
   )
   (bar)
 )
