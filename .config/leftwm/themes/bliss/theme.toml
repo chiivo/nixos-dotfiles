@@ -1,9 +1,9 @@
-border_width = 2
-margin = 10
+border_width = 4
+margin = 20
 default_border_color = "#262727"
 floating_border_color = "#262727"
 focused_border_color = "#f5d1c8"
 
-#[[gutter]]
-#side = "Top"
-#value = 24
+[[gutter]]
+side = "Top"
+value = 60
