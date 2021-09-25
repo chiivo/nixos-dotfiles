@@ -127,10 +127,10 @@
   :monitor 0
   :windowtype "dock"
   :geometry (geometry
-    :x "350px"
     :y "30px"
     :width "1220px"
     :height "30px"
+    :anchor "top center"
   )
   :reserve (struts
     :side "top"
@@ -142,10 +142,10 @@
   :monitor 1
   :windowtype "dock"
   :geometry (geometry
-    :x "350px"
     :y "30px"
     :width "1220px"
     :height "30px"
+    :anchor "top center"
   )
   :reserve (struts
     :side "top"
