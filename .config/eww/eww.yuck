@@ -136,7 +136,6 @@
     :side "top"
     :distance "60px"
   )
-  :wm-ignore true
   (bar)
 )
 (defwindow bar1
@@ -152,6 +151,5 @@
     :side "top"
     :distance "60px"
   )
-  :wm-ignore true
   (bar)
 )
