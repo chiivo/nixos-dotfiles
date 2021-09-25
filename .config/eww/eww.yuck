@@ -128,7 +128,7 @@
   :windowtype "dock"
   :geometry (geometry
     :y "30px"
-    :width "1220px"
+    :width "1170px"
     :height "30px"
     :anchor "top center"
   )
@@ -143,7 +143,7 @@
   :windowtype "dock"
   :geometry (geometry
     :y "30px"
-    :width "1220px"
+    :width "1170px"
     :height "30px"
     :anchor "top center"
   )
