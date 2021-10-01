@@ -4,23 +4,24 @@
  ******************************************************************************/
 
 configuration {
+	font: "CaskaydiaCove Nerd Font 12";
 	display-run: "Run";
 	display-drun: "";
-	display-window: "Windows";
+	display-window: "";
 	display-ssh: "SSH";
 	display-combi: "Combi";
 	show-icons: true;
 	drun-display-format: "{icons} {name}";
+  window-format: "{t}";
+	scroll-method: 1;
 }
 
 *{
-	font: "CaskaydiaCove Nerd Font 12";
 	foreground: #f5d1c8;
 	background: #262727;
 	border-color: @foreground;
 	separatorcolor: @foreground;
 	background-color: @background;
-	lines: 10;
 }
 
 window {
@@ -49,19 +50,34 @@ textbox {
 }
 
 element {
-	text-color: @foreground;
 	border-radius: 5;
 	margin: 4;
 	padding: 4;
 }
 
-element.selected.normal {
-	background-color: var(foreground);
-	text-color: var(background);
+element.normal.normal {
+	background-color: @background;
+	text-color: @foreground;
 }
-
+element.selected.normal {
+	background-color: @foreground;
+	text-color: @background;
+}
 element.alternate.normal {
 	background-color: @background;
+	text-color: @foreground;
+}
+
+element.normal.active {
+	background-color: transparent;
+	text-color: @foreground;
+}
+element.selected.active {
+	background-color: @foreground;
+	text-color: @background;
+}
+element.alternate.active {
+	background-color: transparent;
 	text-color: @foreground;
 }
 
@@ -107,6 +123,7 @@ inputbar {
 }
 
 listview {
+	lines: 10;
 	border: 0px;
 	scrollbar: false;
 }
