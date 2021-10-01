@@ -32,6 +32,11 @@ command = "Execute"
 value = "rofi -show drun"
 modifier = ["modkey"]
 key = "p"
+[[keybind]]
+command = "Execute"
+value = "rofi -show window"
+modifier = ["modkey"]
+key = "Tab"
 
 ### Spawn Terminal ###
 [[keybind]]
@@ -94,14 +99,6 @@ modifier = ["modkey", "Shift"]
 key = "h"
 
 ### Layouts ###
-[[keybind]]
-command = "PreviousLayout"
-modifier = ["modkey", "Control"]
-key = "Tab"
-[[keybind]]
-command = "NextLayout"
-modifier = ["modkey"]
-key = "Tab"
 [[keybind]]
 command = "ToggleFullScreen"
 modifier = ["modkey"]
