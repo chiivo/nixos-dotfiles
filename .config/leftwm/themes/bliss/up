@@ -9,10 +9,12 @@ xset -dpms;
 xset s off & 
 
 ### Wallpaper ###
-feh --no-fehbg --bg-tile /mnt/HDD/Images/Wallpapers/BlissPixelsGray.png &
+feh --no-fehbg --bg-tile /mnt/HDD/Images/Wallpapers/BlissRet.jpg &
+#feh --no-fehbg --bg-scale --no-xinerama /mnt/HDD/Images/Wallpapers/StarrySky1440p.jpg &
 
 ### Compositor ###
-picom --experimental-backends &
+killall -q picom;
+picom &
 
 ### Udiskie ###
 killall -q udiskie;
