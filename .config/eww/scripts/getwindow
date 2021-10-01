@@ -1,6 +1,6 @@
 #!/bin/sh
 
-getcharactercount=$(echo -n $(xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_NAME | cut -c30- | sed 's/.$//') | wc -c)
+getcharactercount=$(echo -n $(xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_NAME | cut -c20- | sed 's/.$//') | wc -c)
 
 if (( $getcharactercount > 30 ))
 then xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) '\t$0' WM_NAME | cut -f 2 | cut -c2- | sed 's/.$//' | sed -r 's/(.{30}).*/\1/' | sed 's/ $//'| sed 's/$/.../'
