@@ -4,8 +4,9 @@
  ******************************************************************************/
 
 configuration {
+	modi: "window,drun";
 	font: "CaskaydiaCove Nerd Font 12";
-	display-run: "Run";
+	display-run: "";
 	display-drun: "";
 	display-window: "";
 	display-ssh: "SSH";
@@ -14,6 +15,7 @@ configuration {
 	drun-display-format: "{icons} {name}";
   window-format: "{t}";
 	scroll-method: 1;
+	sidebar-mode: true;
 }
 
 *{
@@ -86,13 +88,22 @@ element-icon {
 }
 
 mode-switcher {
-	border: 2px dash 0px 0px ;
+	border: 2px solid 0px 0px ;
 	border-color: @foreground;
 }
 
+button {
+  border-radius: 5px;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 10px 5px 10px 5px;
+  padding: 5px;
+  text-color: @foreground;
+}
+
 button.selected {
-	background-color: @background;
-	text-color: @foreground;
+	background-color: @foreground;
+	text-color: @background;
 }
 
 inputbar {
