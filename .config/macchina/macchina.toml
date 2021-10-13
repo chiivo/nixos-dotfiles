@@ -17,7 +17,7 @@ no_box = false
 no_ascii = false
 
 # Specify your own ASCII art from a text file (supports ANSI escape codes)
-# custom_ascii = "/path/to/text/file"
+custom_ascii = ".config/macchina/ascii/arch-ascii"
 
 # Prefer small ASCII variant.
 small_ascii = false
