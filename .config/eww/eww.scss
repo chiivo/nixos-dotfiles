@@ -85,14 +85,14 @@
 .label-vol:hover {
   font-size: large;
   margin-left: 10px;
-  color: #bde077;
+  color: #dd91f3;
 }
 .slider-vol scale trough highlight {
   background-color: #f5d1c8;
   border-radius: 5px;
 }
 .slider-vol scale trough highlight:hover {
-  background-color: #bde077;
+  background-color: #dd91f3;
   border-radius: 5px;
 }
 .slider-vol scale trough {
@@ -111,4 +111,15 @@
 .time {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+// Reload
+.reload {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.reload:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #bde077;
 }
