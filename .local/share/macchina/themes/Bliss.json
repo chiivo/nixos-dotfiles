@@ -8,14 +8,14 @@
     }
   },
   "color": {
-    "Rgb": [119, 190, 224]
+    "Rgb": [245, 209, 200]
   },
   "separator": "~",
   "separator_color": {
-    "Rgb": [245, 209, 200]
+    "Rgb": [221, 221, 221]
   },
   "spacing": 2,
   "padding": 0,
-  "block_title": "┤ Bliss ├",
+  "block_title": "─",
   "abbreviation": "Classic"
 }
