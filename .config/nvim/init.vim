@@ -101,7 +101,7 @@ nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_
 
 " Nvim-Tree
 let g:nvim_tree_side = 'left' "left by default
-let g:nvim_tree_width = 40 "30 by default, can be width_in_columns or 'width_in_percent%'
+let g:nvim_tree_width = 20 "30 by default, can be width_in_columns or 'width_in_percent%'
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
 let g:nvim_tree_gitignore = 1 "0 by default
 let g:open_on_setup = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
@@ -118,7 +118,7 @@ let g:tab_open = 1 "0 by default, will open the tree when entering a new tab and
 let g:auto_resize = 0 "1 by default, will resize the tree to its saved width when opening a file
 let g:disable_netrw = 0 "1 by default, disables netrw
 let g:hijack_netrw = 0 "1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
-let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
+let g:nvim_tree_add_trailing = 0 "0 by default, append a trailing slash to folder names
 let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
 let g:lsp_diagnostics = 1 "0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
 let g:nvim_tree_disable_window_picker = 1 "0 by default, will disable the window picker.
@@ -205,9 +205,17 @@ require'nvim-tree'.setup {
     },
     auto_close          = false,
     open_on_tab         = false,
-    hijack_cursor       = false,
+    hijack_cursor       = true,
     update_cwd          = false,
-    lsp_diagnostics     = false,
+    diagnostics         = {
+        enable = true,
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
+        }
+    },
     update_focused_file = {
         enable      = false,
         update_cwd  = false,
@@ -225,8 +233,8 @@ require'nvim-tree'.setup {
             custom_only = false,
             list = {}
         }
-      }
     }
+}
 EOF
 
 " Nvim-Compe
