@@ -188,6 +188,6 @@ key = "Down"
 ### Screenshot ###
 [[keybind]]
 command = "Execute"
-value = "maim -usb 2 /tmp/clipboard.png; sleep .1; xclip -selection clipboard < /tmp/clipboard.png -t image/png && notify-send -i /tmp/clipboard.png 'Screenshot' 'Selection Captured'"
+value = ".config/leftwm/scripts/screenshot"
 modifier = []
 key = "Print"
