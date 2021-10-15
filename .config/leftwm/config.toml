@@ -4,7 +4,7 @@ mousekey = "Mod4"
 workspaces = []
 tags = ["1", "2", "3", "4", "5"]
 layouts = ["MainAndVertStack"]
-disable_current_tag_swap = false
+disable_current_tag_swap = true
 focus_behaviour = "Sloppy"
 focus_new_windows = true
 
