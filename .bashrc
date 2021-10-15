@@ -14,12 +14,8 @@ alias btctl='bluetoothctl'
 export EDITOR='nvim'
 
 #Prompt
-#PS1='\e[37m [\u@\h \W] \$ \e[0m'
-PS1='\e[37m \w   \e[0m'
-#PS1='\e[37m ╭[\u][\w]
-# ╰➔ \e[0m'
-#PS1='\e[37m ╭[\w]
-# ╰➔ \e[0m'
+PS1='\[\e[37m\] \w   \[\e[0m\]'
+
 
 #Startup
 r=$((RANDOM%15))
