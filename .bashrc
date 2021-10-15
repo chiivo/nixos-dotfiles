@@ -5,13 +5,12 @@
 alias ls='ls --color=auto'
 alias pw='nvim /mnt/HDD/thewords.txt'
 alias v='nvim'
-alias sv='sudo nvim'
+alias sv='sudoedit'
 alias shutdown='shutdown now'
 alias update='sudo pacman -Syu'
 alias install='sudo pacman -S'
 alias remove='sudo pacman -Rs'
 alias btctl='bluetoothctl'
-alias sv='sudoedit'
 export EDITOR='nvim'
 
 #Prompt
