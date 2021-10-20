@@ -1,11 +1,21 @@
 ;;;Widgets;;;
-(defwidget bar []
+(defwidget bar1 []
   (box
     :orientation "h"
     :class "bar"
     :hexpand "false"
     (left-group)
-    (workspaces)
+    (workspaces1)
+    (right-group)
+  )
+)
+(defwidget bar2 []
+  (box
+    :orientation "h"
+    :class "bar"
+    :hexpand "false"
+    (left-group)
+    (workspaces2)
     (right-group)
   )
 )
@@ -18,14 +28,25 @@
     ;(current-window)
   )
 )
-(defwidget workspaces []
+(defwidget workspaces1 []
   (box
     :orientation "h"
     :halign "center"
     :valign "center"
     :space-evenly true
     (literal
-      :content leftwm-tags
+      :content leftwm-tags1
+    )
+  )
+)
+(defwidget workspaces2 []
+  (box
+    :orientation "h"
+    :halign "center"
+    :valign "center"
+    :space-evenly true
+    (literal
+      :content leftwm-tags2
     )
   )
 )
@@ -113,8 +134,11 @@
   :interval "10ms"
   "~/.config/eww/scripts/getwindow"
 )
-(deflisten leftwm-tags
-  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template.liquid"
+(deflisten leftwm-tags1
+  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template1.liquid"
+)
+(deflisten leftwm-tags2
+  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template2.liquid"
 )
 (defpoll getvolsym
   :interval "10ms"
@@ -134,7 +158,7 @@
 )
 
 ;;;Windows;;;
-(defwindow bar0
+(defwindow bar1
   :monitor 0
   :windowtype "dock"
   :geometry (geometry
@@ -147,9 +171,9 @@
     :side "top"
     :distance "60px"
   )
-  (bar)
+  (bar1)
 )
-(defwindow bar1
+(defwindow bar2
   :monitor 1
   :windowtype "dock"
   :geometry (geometry
@@ -162,5 +186,5 @@
     :side "top"
     :distance "60px"
   )
-  (bar)
+  (bar2)
 )
