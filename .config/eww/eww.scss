@@ -32,12 +32,15 @@
 .ws-button {
   margin-left: 10px;
   margin-right: 10px;
+  color: #555657;
 }
 .ws-button:hover {
   margin-left: 10px;
   margin-right: 10px;
   color: #dddddd;
 }
+
+//Screen1 Workspaces
 .ws-button-mine {
   margin-left: 10px;
   margin-right: 10px;
@@ -50,6 +53,7 @@
 .ws-button-visible {
   margin-left: 10px;
   margin-right: 10px;
+  color: #555657;
 }
 .ws-button-visible:hover {
   margin-left: 10px;
@@ -59,8 +63,40 @@
 .ws-button-busy {
   margin-left: 10px;
   margin-right: 10px;
+  color: #555657;
 }
 .ws-button-busy:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #dddddd;
+}
+
+//Screen2 Workspaces
+.ws-button-mine2 {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #555657;
+}
+.ws-button-mine2:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #dddddd;
+}
+.ws-button-visible2 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.ws-button-visible2:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #dddddd;
+}
+.ws-button-busy2 {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #555657;
+}
+.ws-button-busy2:hover {
   margin-left: 10px;
   margin-right: 10px;
   color: #dddddd;
