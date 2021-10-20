@@ -220,4 +220,4 @@ settings:
   url.start_pages:
     global: https://monkeytype.com/
   window.title_format:
-    global: qutebrowser - {current_title}
+    global: '{current_title}'
