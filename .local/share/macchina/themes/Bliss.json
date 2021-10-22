@@ -7,6 +7,26 @@
       "symbol_close": "]"
     }
   },
+  "keys": {
+    "host": "host",
+    "kernel": "kern",
+    "battery": "bat",
+    "os": "os",
+    "de": "de",
+    "wm": "wm",
+    "distro": "dist",
+    "terminal": "term",
+    "shell": "sh",
+    "packages": "pkg",
+    "uptime": "up",
+    "memory": "mem",
+    "machine": "mach",
+    "local_ip": "ip",
+    "backlight": "bri",
+    "resolution": "res",
+    "cpu_load": "cpu load",
+    "cpu": "cpu"
+  },
   "color": {
     "Rgb": [245, 209, 200]
   },
