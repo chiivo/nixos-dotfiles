@@ -1,0 +1,46 @@
+spacing = 2
+padding = 0
+separator = "~"
+color = "Magenta"
+separator_color = "White"
+
+[bar]
+glyph = "ߋ"
+symbol_open = '['
+symbol_close = ']'
+visible = true
+
+[box]
+title = "─"
+visible = true
+
+[box.inner_margin]
+x = 2
+y = 1
+
+#[custom_ascii]
+#color = "Green"
+
+[randomize]
+key_color = false
+separator_color = false
+
+[keys]
+host = "host"
+kernel = "kern"
+battery = "bat"
+os = "os"
+de = "de"
+wm = "wm"
+distro = "dist"
+terminal = "term"
+shell = "sh"
+packages = "pkgs"
+uptime = "up"
+memory = "mem"
+machine = "mach"
+local_ip = "ip"
+backlight = "brgh"
+resolution = "res"
+cpu_load = "load"
+cpu = "cpu"
