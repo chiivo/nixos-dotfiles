@@ -1,17 +1,8 @@
-# Disables color.
-no_color = false
+# Specifies the network interface to use for the LocalIP readout
+interface = "wlan0"
 
-# Hides the separator.
-no_separator = false
-
-# Hides bar delimiters
-no_bar_delimiter = true
-
-# Hides the title of the box surrounding system information
-no_title = false
-
-# Disables the box surrounding system information.
-no_box = false
+# Prefer small ASCII variant.
+small_ascii = false
 
 # Disables ASCII art
 no_ascii = false
@@ -19,63 +10,21 @@ no_ascii = false
 # Specify your own ASCII art from a text file (supports ANSI escape codes)
 custom_ascii = ".config/macchina/ascii/arch-ascii"
 
-# Prefer small ASCII variant.
-small_ascii = false
-
 # Displays a palette of your active colorscheme
-palette = true
+palette = "Full"
 
-# Turns data into bars for specific readouts
-bar = true
-
-# Randomizes the color of the keys each time your run the program
-random_color = false
-
-# Randomizes the color of the separator each time your run the program
-random_sep_color = false
-
-# Specify a color for the keys.
-# Accepted values (case-sensitive):
-#   - White
-#   - Black
-#   - Blue
-#   - Cyan
-#   - Green
-#   - Yellow
-#   - Red
-#   - Magenta
-#color = "Blue"
-
-# Specify a color for the separator.
-# Accepted values (case-sensitive):
-#   - White
-#   - Black
-#   - Blue
-#   - Cyan
-#   - Green
-#   - Yellow
-#   - Red
-#   - Magenta
-#separator_color = "Blue"
-
-# Shorten uptime format
-short_uptime = true
+# Lengthen uptime format
+long_uptime = false
 
 # Lengthen shell output
 long_shell = false
 
+# Lengthen shell output
+long_kernel = false
+
 # Toggle between the current shell or the default one
 # This feature has not yet landed in a release, only uncomment if using upstream
-# current_shell = false 
-
-# Specify the title of the box
-#box_title = "┤ Macchina ├"
-
-# Specify the horizontal inner margin value of the box surrounding system information.
-box_inner_margin_x = 1
-
-# Specify the vertical inner margin value of the box surrounding system information.
-box_inner_margin_y = 0
+current_shell = true 
 
 # Specify the theme to use
 # Accepted values (case-insensitive):
@@ -85,38 +34,10 @@ box_inner_margin_y = 0
 #   - Beryllium
 #   - Boron
 #
-# Custom themes are also supported, they should be placed
-# in $XDG_DATA_HOME/macchina/themes and must be a JSON file.
-#
-# To set 'foobar' as a theme, place foobar.json
-# in $XDG_DATA_HOME/macchina/themes
-# and set theme = "foobar" (case-sensitive)
+# Custom themes are also supported, they
+# need to be placed in $XDG_CONFIG_DIR for
+# macchina to find and parse them.
 theme = "Bliss"
-
-# Hides the specified readouts.
-# Conflicts with: show_only
-# Accepted values (case-sensitive):
-#   - Host
-#   - Machine
-#   - Kernel
-#   - Distribution
-#   - OperatingSystem
-#   - DesktopEnvironment
-#   - WindowManager
-#   - Resolution
-#   - Backlight
-#   - Packages
-#   - LocalIP
-#   - Terminal
-#   - Shell
-#   - Uptime
-#   - Processor
-#   - ProcessorLoad
-#   - Memory
-#   - Battery
-# Example:
-#   hide = ["Battery", "Memory", ...]
-#hide = []
 
 # Displays only the specified readouts.
 # Conflicts with: hide
@@ -140,5 +61,5 @@ theme = "Bliss"
 #   - Memory
 #   - Battery
 # Example:
-#   show_only = ["Battery", "Memory", ...]
-show_only = ["Distribution", "Packages", "DesktopEnvironment", "Terminal"]
+#   show = ["Battery", "Memory", ...]
+show = ["Distribution", "Packages", "WindowManager", "Terminal"]
