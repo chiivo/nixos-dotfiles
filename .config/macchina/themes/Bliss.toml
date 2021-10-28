@@ -5,7 +5,7 @@ color = "Blue"
 separator_color = "White"
 
 [bar]
-glyph = "ߋ"
+glyph = "ﱣ"
 symbol_open = '['
 symbol_close = ']'
 visible = true
