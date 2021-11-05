@@ -89,8 +89,8 @@ require("bufferline").setup{}
 EOF
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-nnoremap <silent>b[ :BufferLineCycleNext<CR>
-nnoremap <silent>b] :BufferLineCyclePrev<CR>
+nnoremap <silent>b] :BufferLineCycleNext<CR>
+nnoremap <silent>b[ :BufferLineCyclePrev<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent>b> :BufferLineMoveNext<CR>
 nnoremap <silent>b< :BufferLineMovePrev<CR>
@@ -102,7 +102,6 @@ nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_
 " Nvim-Tree
 let g:nvim_tree_side = 'left' "left by default
 let g:nvim_tree_width = 20 "30 by default, can be width_in_columns or 'width_in_percent%'
-let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
 let g:nvim_tree_gitignore = 1 "0 by default
 let g:open_on_setup = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
 let g:auto_close = 1 "0 by default, closes the tree when it's the last window
@@ -110,7 +109,6 @@ let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ] "empty by default, 
 let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:update_focused_file = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
-let g:nvim_tree_hide_dotfiles = 0 "0 by default, this option hides files and folders starting with a dot `.`
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -217,13 +215,17 @@ require'nvim-tree'.setup {
         }
     },
     update_focused_file = {
-        enable      = false,
+        enable      = true,
         update_cwd  = false,
         ignore_list = {}
     },
     system_open = {
         cmd  = nil,
         args = {}
+    },
+    filters = {
+        dotfiles = false,
+        custom = {}
     },
     view = {
         width = 30,
