@@ -1,18 +1,6 @@
 # Specifies the network interface to use for the LocalIP readout
 interface = "wlan0"
 
-# Prefer small ASCII variant.
-small_ascii = false
-
-# Disables ASCII art
-no_ascii = false
-
-# Specify your own ASCII art from a text file (supports ANSI escape codes)
-custom_ascii = ".config/macchina/ascii/arch-ascii"
-
-# Displays a palette of your active colorscheme
-palette = "Full"
-
 # Lengthen uptime format
 long_uptime = false
 
@@ -37,7 +25,7 @@ current_shell = true
 # Custom themes are also supported, they
 # need to be placed in $XDG_CONFIG_DIR for
 # macchina to find and parse them.
-theme = "Bliss"
+#theme = "Bliss"
 
 # Displays only the specified readouts.
 # Conflicts with: hide
@@ -62,4 +50,4 @@ theme = "Bliss"
 #   - Battery
 # Example:
 #   show = ["Battery", "Memory", ...]
-show = ["Distribution", "Packages", "WindowManager", "Terminal"]
+show = ["Distribution", "Packages", "DesktopEnvironment", "Terminal"]
