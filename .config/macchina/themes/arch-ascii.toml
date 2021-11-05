@@ -1,8 +1,12 @@
 spacing = 2
 padding = 0
+hide_ascii = false
+hide_bar_delimiters = false
+prefer_small_ascii = false
 separator = "~"
-color = "Blue"
+key_color = "Blue"
 separator_color = "White"
+palette = "Full"
 
 [bar]
 glyph = "ﱣ"
@@ -18,8 +22,9 @@ visible = true
 x = 1
 y = 0
 
-#[custom_ascii]
-#color = "Green"
+[custom_ascii]
+#color = "Blue"
+path = ".config/macchina/ascii/arch-ascii"
 
 [randomize]
 key_color = false
@@ -32,7 +37,7 @@ battery = "bat"
 os = "os"
 de = "de"
 wm = "wm"
-distro = "dist"
+distro = "dst"
 terminal = "term"
 shell = "sh"
 packages = "pkgs"
