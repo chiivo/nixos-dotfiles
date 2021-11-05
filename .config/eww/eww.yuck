@@ -94,18 +94,30 @@
     :class "slider-vol"
     :orientation "h"
     :space-evenly false
-    (button
-      :class "label-vol"
-      :onclick "amixer -D pulse sset Master toggle"
-      :onmiddleclick "amixer -D pulse sset Master 50%"
-      :onrightclick "pavucontrol &"
-      getvolsym
-    )
-    (scale
-      :min "0"
-      :max "101"
-      :value getvol
-      :onchange "amixer -D pulse sset Master {}%"
+    (eventbox
+      :onhover "eww update vol-revealer=true"
+      :onhoverlost "eww update vol-revealer=false"
+      (box
+        :space-evenly "false"
+        (button
+          :class "label-vol"
+          :onclick "amixer -D pulse sset Master toggle"
+          :onmiddleclick "amixer -D pulse sset Master 50%"
+          :onrightclick "pavucontrol &"
+          getvolsym
+        )
+        (revealer
+          :transition "slideright"
+          :reveal vol-revealer
+          :duration "200ms"
+          (scale
+            :min "0"
+            :max "101"
+            :value getvol
+            :onchange "amixer -D pulse sset Master {}%"
+          )
+        )
+      )
     )
   )
 )
@@ -148,6 +160,8 @@
   :interval "10ms"
   "~/.config/eww/scripts/getvol"
 )
+(defvar vol-revealer
+  false)
 (defpoll date
   :interval "10ms"
   "date '+%m/%d'"
