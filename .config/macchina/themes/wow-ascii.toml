@@ -1,0 +1,51 @@
+spacing = 2
+padding = 0
+hide_ascii = false
+hide_bar_delimiters = false
+prefer_small_ascii = false
+separator = "~"
+key_color = "Blue"
+separator_color = "White"
+palette = "Full"
+
+[bar]
+glyph = "ﱣ"
+symbol_open = '['
+symbol_close = ']'
+visible = true
+
+[box]
+title = "─"
+visible = true
+
+[box.inner_margin]
+x = 1
+y = 0
+
+[custom_ascii]
+#color = "Blue"
+path = ".config/macchina/ascii/wow-ascii"
+
+[randomize]
+key_color = false
+separator_color = false
+
+[keys]
+host = "host"
+kernel = "kern"
+battery = "bat"
+os = "os"
+de = "de"
+wm = "wm"
+distro = "dst"
+terminal = "term"
+shell = "sh"
+packages = "pkgs"
+uptime = "up"
+memory = "mem"
+machine = "mach"
+local_ip = "ip"
+backlight = "brgh"
+resolution = "res"
+cpu_load = "load"
+cpu = "cpu"
