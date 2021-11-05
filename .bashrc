@@ -16,14 +16,13 @@ export EDITOR='nvim'
 #Prompt
 PS1='\[\e[37m\]\w   \[\e[0m\]'
 
-
 #Startup
 r=$((RANDOM%15))
-	command[0]='macchina'
-	command[1]='macchina --custom-ascii .config/macchina/ascii/smeg-ascii'
-	command[2]='macchina --custom-ascii .config/macchina/ascii/wow-ascii'
-	command[3]='macchina --custom-ascii .config/macchina/ascii/borpa-ascii'
-	command[4]='macchina --custom-ascii .config/macchina/ascii/pyramid-ascii'
+	command[0]='macchina -t arch-ascii'
+	command[1]='macchina -t borpa-ascii'
+	command[2]='macchina -t pyramid-ascii'
+	command[3]='macchina -t smeg-ascii'
+	command[4]='macchina -t wow-ascii'
 	command[5]='cbonsai -L 30 -p'
 	command[6]='cbonsai -L 30 -p'
 	command[7]='cbonsai -L 30 -p'
