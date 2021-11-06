@@ -99,13 +99,6 @@
       :onhoverlost "eww update vol-revealer=false"
       (box
         :space-evenly "false"
-        (button
-          :class "label-vol"
-          :onclick "amixer -D pulse sset Master toggle"
-          :onmiddleclick "amixer -D pulse sset Master 50%"
-          :onrightclick "pavucontrol &"
-          getvolsym
-        )
         (revealer
           :transition "slideright"
           :reveal vol-revealer
@@ -116,6 +109,13 @@
             :value getvol
             :onchange "amixer -D pulse sset Master {}%"
           )
+        )
+        (button
+          :class "label-vol"
+          :onclick "amixer -D pulse sset Master toggle"
+          :onmiddleclick "amixer -D pulse sset Master 50%"
+          :onrightclick "pavucontrol &"
+          getvolsym
         )
       )
     )
