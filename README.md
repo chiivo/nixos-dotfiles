@@ -1,6 +1,6 @@
 # bliss-dotfiles
 
-![image](https://user-images.githubusercontent.com/13358601/130374249-bb2043e4-f0db-4bdc-b697-3f409b361707.png)
+![clipboard](https://user-images.githubusercontent.com/13358601/140627535-fae3c984-dfb8-4fe9-b07a-e3e5de4bf4a2.png)
 
 
 - Distro: Arch Linux
