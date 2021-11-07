@@ -1,7 +1,6 @@
 # bliss-dotfiles
 
-![image](https://user-images.githubusercontent.com/13358601/140627552-63af5e98-2e5d-4c92-8457-c160295dfae3.png)
-
+![image](https://user-images.githubusercontent.com/13358601/140627581-fd05e4db-fefc-491e-b4de-3e0cff3916bc.png)
 
 - Distro: Arch Linux
 - Display Manager: LightDM, lightdm-webkit2, glorious
