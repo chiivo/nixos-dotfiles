@@ -7,7 +7,7 @@
 - Display Manager: LightDM, lightdm-webkit2, glorious
 - Window Manager: LeftWM
 - Application Manager: rofi
-- AUR Helper: paru
+- AUR Helper: yay
 - Wallpaper Drawer: feh
 - Compositer: picom-jonaburg-git
 - Icon Theme: Flatery
@@ -15,13 +15,13 @@
 - Theme Manager: Lxappearance
 - Terminal: kitty
 - Text Editor: neovim
-- Browser: qutebrowser
+- Browser: vivaldi
 - File Manager: pcmanfmgtk, Ranger (p7zip)
-- Video Player: VLC
+- Video Player: mpv
 - USB Mount: udiskie
 - Fonts: CaskaydiaCove Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR, Noto Color Emoji, Dotsies
-- Terminal Apps: neofetch, cbonsai, alsamixer, shell-color-scripts
-- Apps: Blender, Discord, Spotify, Armorpaint, Steam, Minecraft, OBS-Studio, xp-pen-tablet, Zathura (zathura-pdf-mupdf), Dunst
+- Terminal Stuff: macchina, cbonsai, alsamixer, shell-color-scripts
+- Apps: Blender, Eww, Discord (discocss), Spotify, Steam, MultiMC, OBS-Studio, Chatterino, xp-pen-tablet, Zathura (zathura-pdf-mupdf), Dunst
 
 ### Reminders
 - To make executable bash file: `chmod +x script.sh`
