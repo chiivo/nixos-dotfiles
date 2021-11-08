@@ -1,4 +1,4 @@
-#🌸 Bliss 🌸
+# 🌸 Bliss 🌸
 ![image](https://user-images.githubusercontent.com/13358601/140627581-fd05e4db-fefc-491e-b4de-3e0cff3916bc.png)
 
 - Distro: Arch Linux
