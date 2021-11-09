@@ -31,7 +31,7 @@ window {
 	anchor: center;
 	background-color: @background;
 	border: 4;
-	border-radius: 5;
+	border-radius: 10;
 	padding: 10;
 	width: 400;
 }
@@ -52,9 +52,9 @@ textbox {
 }
 
 element {
-	border-radius: 5;
-	margin: 4;
-	padding: 4;
+	border-radius: 10;
+	margin: 5;
+	padding: 5;
 }
 
 element.normal.normal {
@@ -93,7 +93,7 @@ mode-switcher {
 }
 
 button {
-  border-radius: 5px;
+  border-radius: 10px;
   horizontal-align: 0.5;
   vertical-align: 0.5;
   padding: 10px;
