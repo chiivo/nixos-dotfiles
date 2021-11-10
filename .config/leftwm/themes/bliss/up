@@ -14,7 +14,7 @@ feh --no-fehbg --bg-tile /mnt/HDD/Images/Wallpapers/BlissRet.jpg &
 
 ### Compositor ###
 killall -q picom;
-picom &
+picom --experimental-backends &
 
 ### Udiskie ###
 killall -q udiskie;
