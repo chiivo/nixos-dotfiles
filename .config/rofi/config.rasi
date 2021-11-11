@@ -33,7 +33,7 @@ window {
 	border: 4;
 	border-radius: 10;
 	padding: 10;
-	width: 350;
+	width: 300;
 }
 
 mainbox {
