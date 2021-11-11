@@ -114,15 +114,6 @@
 }
 
 // Volume Slider
-.label-vol {
-  font-size: large;
-  margin-left: 10px;
-}
-.label-vol:hover {
-  font-size: large;
-  margin-left: 10px;
-  color: #dd91f3;
-}
 .slider-vol scale trough highlight {
   background-color: #f5d1c8;
   border-radius: 10px;
@@ -137,6 +128,17 @@
   min-height: 4px;
   min-width: 50px;
   margin-left: 10px;
+}
+.label-vol {
+  font-size: large;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.label-vol:hover {
+  font-size: large;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #dd91f3;
 }
 
 // Date & Time
