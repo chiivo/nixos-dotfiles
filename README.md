@@ -21,7 +21,8 @@
 - Terminal Stuff: macchina, cbonsai, alsamixer, shell-color-scripts
 - Apps: Blender, Eww, Discord (discocss), Spotify, Steam, Retroarch, RPCS3, MultiMC, OBS-Studio, Chatterino, xp-pen-tablet, Zathura (zathura-pdf-mupdf), Dunst
 
-### Reminders
+### Notes
 - To make executable bash file: `chmod +x /script/path`
 - Change ownership: `chown (username) /file/path`
 - Uncomment multilib in `/etc/pacman.conf`
+- Out of sync kernel and driver updates can cause system to break
