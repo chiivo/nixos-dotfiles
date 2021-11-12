@@ -3,7 +3,7 @@
 
 - Distro: Arch Linux
 - AUR Helper: yay
-- Display Manager: LightDM, lightdm-webkit2, glorious
+- Display Manager: LightDM, lightdm-webkit2, glorious, numlockx
 - Window Manager: LeftWM
 - Wallpaper Drawer: feh
 - Compositer: picom-jonaburg-git
@@ -22,6 +22,6 @@
 - Apps: Blender, Eww, Discord (discocss), Spotify, Steam, Retroarch, RPCS3, MultiMC, OBS-Studio, Chatterino, xp-pen-tablet, Zathura (zathura-pdf-mupdf), Dunst
 
 ### Reminders
-- To make executable bash file: `chmod +x script.sh`
+- To make executable bash file: `chmod +x /script/path`
 - Change ownership: `chown (username) /file/path`
 - Uncomment multilib in `/etc/pacman.conf`
