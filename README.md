@@ -6,7 +6,7 @@
 - Display Manager: LightDM, lightdm-webkit2, glorious, numlockx
 - Window Manager: LeftWM
 - Wallpaper Drawer: feh
-- Compositer: picom-jonaburg-git
+- Compositer: picom-ibhagwan-git
 - Application Manager: rofi
 - Icon Theme: Flatery
 - Widget Theme: Orchis
