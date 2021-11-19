@@ -150,9 +150,9 @@ let g:nvim_tree_show_icons = {
 " default will show icon by default if no icon is provided
 " default shows no icon by default
 let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
+    \'default': '',
+    \'symlink': '',
+    \'git': {
     \   'unstaged': "✗",
     \   'staged': "✓",
     \   'unmerged': "",
@@ -160,8 +160,8 @@ let g:nvim_tree_icons = {
     \   'untracked': "★",
     \   'deleted': "",
     \   'ignored': "◌"
-    \   },
-    \ 'folder': {
+    \},
+    \'folder': {
     \   'arrow_open': "",
     \   'arrow_closed': "",
     \   'default': "",
@@ -170,14 +170,14 @@ let g:nvim_tree_icons = {
     \   'empty_open': "",
     \   'symlink': "",
     \   'symlink_open': "",
-    \   },
-    \   'lsp': {
-    \     'hint': "",
-    \     'info': "",
-    \     'warning': "",
-    \     'error': "",
-    \   }
-    \ }
+    \},
+    \'lsp': {
+    \   'hint': "",
+    \   'info': "",
+    \   'warning': "",
+    \   'error': "",
+    \}
+    \}
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
@@ -193,19 +193,19 @@ hi NvimTreeRootFolder guifg=#f5d1c8
 hi NvimTreeSymlink guifg=#ffc178
 lua << EOF
 require'nvim-tree'.setup {
-    disable_netrw       = true,
-    hijack_netrw        = true,
-    open_on_setup       = false,
-    ignore_ft_on_setup  = {},
-    update_to_buf_dir   = {
+    disable_netrw = true,
+    hijack_netrw = true,
+    open_on_setup = false,
+    ignore_ft_on_setup = {},
+    update_to_buf_dir = {
         enable = true,
         auto_open = true,
     },
-    auto_close          = false,
-    open_on_tab         = false,
-    hijack_cursor       = true,
-    update_cwd          = false,
-    diagnostics         = {
+    auto_close = false,
+    open_on_tab = false,
+    hijack_cursor = true,
+    update_cwd = false,
+    diagnostics = {
         enable = true,
         icons = {
             hint = "",
@@ -215,8 +215,8 @@ require'nvim-tree'.setup {
         }
     },
     update_focused_file = {
-        enable      = true,
-        update_cwd  = false,
+        enable = true,
+        update_cwd = false,
         ignore_list = {}
     },
     system_open = {
@@ -266,7 +266,7 @@ let g:compe.source.luasnip = v:true
 let g:compe.source.emoji = v:true
 
 " Auto-Pairs
-let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '*/':'/*', '/*':'*/', '<':'>'}
+let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '/*':'*/', '<':'>'}
 
 " IndentBlankLine
 let g:indent_blankline_use_treesitter=v:true
