@@ -28,13 +28,13 @@ scrolling:
 font:
   normal:
     family: Victor Mono Nerd Font
-    style: SemiBold
+    style: Medium
   bold:
     family: Victor Mono Nerd Font
     style: Bold
   italic:
     family: Victor Mono Nerd Font
-    style: SemiBold Italic
+    style: Italic
   bold_italic:
     family: Victor Mono Nerd Font
     style: Bold Italic
@@ -241,7 +241,7 @@ key_bindings:
   - { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
   - { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
   - { key: Insert,         mods: Shift,                           action: PasteSelection   }
-  - { key: Key0,           mods: Control,                         action: ResetFontSize    }
+  - { key: Numpad0,        mods: Control,                         action: ResetFontSize    }
   - { key: Equals,         mods: Control,                         action: IncreaseFontSize }
   - { key: Plus,           mods: Control,                         action: IncreaseFontSize }
   - { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
