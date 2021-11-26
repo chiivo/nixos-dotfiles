@@ -7,7 +7,6 @@ Plug 'luochen1990/rainbow'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/limelight.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'lifepillar/vim-colortemplate'
 Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -18,6 +17,8 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'Pocco81/TrueZen.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'elkowar/yuck.vim'
+Plug 'rktjmp/lush.nvim'
+Plug '~/.config/nvim/colors/bliss'
 call plug#end()
 
 " Color Settings
@@ -33,7 +34,7 @@ let gray='#555657'
 let white='#dddddd'
 
 " Starup Commands
-colorscheme dark
+colorscheme bliss
 let g:mapleader="\<Space>"
 set autoindent
 set clipboard=unnamedplus
@@ -273,7 +274,7 @@ let g:indent_blankline_use_treesitter=v:true
 let g:indent_blankline_space_char="."
 let g:indent_blankline_space_char_blankline=" "
 let g:indentLine_char="│"
-let g:indent_blankline_char_highlight_list = ['Constant', 'Special', 'Statement', 'Type', 'Underlined', 'PreProc']
+let g:indent_blankline_char_highlight_list = ['Constant', 'Special', 'Statement', 'Type', 'Identifier', 'PreProc']
 let g:indentLine_fileTypeExclude = ['dashboard']
 
 " Rainbow
