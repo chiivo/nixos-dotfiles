@@ -80,7 +80,7 @@ local theme = lush(function()
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     ErrorMsg     {bg = '#ff8278', fg = '#dddddd'}, -- error messages on the command line
     VertSplit    {fg = '#555657'}, -- the column separating vertically split windows
-    -- Folded       { }, -- line used for closed folds
+    Folded       {fg = '#555657'}, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
     -- SignColumn   { }, -- column where |signs| are displayed
     IncSearch    {fg = '#262727', bg = '#555657'}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
