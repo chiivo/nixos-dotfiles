@@ -1,7 +1,7 @@
 /*Font*/
-/*body, button, input, select, textarea {
-font-family: 'CaskaydiaCove Nerd Font';
-}*/
+body, button, input, select, textarea {
+font-family: 'VictorMono Nerd Font';
+}
 
 /*Colors*/
 .theme-dark {
