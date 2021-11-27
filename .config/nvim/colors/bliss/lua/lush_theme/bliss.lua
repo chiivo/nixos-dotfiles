@@ -94,7 +94,7 @@ local theme = lush(function()
     Folded       {fg = gray}, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
     -- SignColumn   { }, -- column where |signs| are displayed
-    IncSearch    {fg = black, bg = gray}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch    {fg = pink, bg = gray}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     LineNr       {fg = gray}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr {fg = pink, gui = 'bold'}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
