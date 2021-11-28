@@ -178,14 +178,14 @@
   :monitor 0
   :windowtype "dock"
   :geometry (geometry
-    :y "30px"
+    :y "10px"
     :width "1104px"
     :height "30px"
     :anchor "top center"
   )
   :reserve (struts
     :side "top"
-    :distance "60px"
+    :distance "40px"
   )
   (bar1)
 )
@@ -193,14 +193,14 @@
   :monitor 1
   :windowtype "dock"
   :geometry (geometry
-    :y "30px"
+    :y "10px"
     :width "1104px"
     :height "30px"
     :anchor "top center"
   )
   :reserve (struts
     :side "top"
-    :distance "60px"
+    :distance "40px"
   )
   (bar2)
 )
