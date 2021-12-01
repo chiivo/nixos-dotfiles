@@ -14,7 +14,7 @@
 - Terminal: kitty
 - Text Editor: neovim
 - Browser: vivaldi
-- File Manager: pcmanfmgtk, Ranger (ueberzug, p7zip)
+- File Manager: pcmanfmgtk, Ranger (p7zip)
 - Video Player: mpv
 - USB Mount: udiskie
 - Fonts: CaskaydiaCove Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR, Noto Color Emoji, Dotsies
