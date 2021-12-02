@@ -1,4 +1,4 @@
-" Vim Plug
+" Vim-Plug
 call plug#begin()
 Plug 'ap/vim-css-color'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
@@ -7,7 +7,6 @@ Plug 'luochen1990/rainbow'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/limelight.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -22,7 +21,7 @@ Plug '~/.config/nvim/colors/bliss'
 Plug 'Manas140/run.nvim'
 call plug#end()
 
-" Color Settings
+" Colors
 let bg='#262727'
 let red='#ff8278'
 let green='#bde077'
@@ -34,7 +33,7 @@ let fg='#f5d1c8'
 let gray='#555657'
 let white='#dddddd'
 
-" Starup Commands
+" Starup
 colorscheme bliss
 let g:mapleader="\<Space>"
 set autoindent
@@ -191,7 +190,7 @@ require'nvim-tree'.setup {
     ignore_ft_on_setup = {},
     auto_close = false,
     open_on_tab = false,
-    hijack_cursor = false,
+    hijack_cursor = true,
     update_cwd = false,
     update_to_buf_dir = {
         enable = true,
@@ -243,32 +242,6 @@ require'nvim-tree'.setup {
     }
 }
 EOF
-
-" Nvim-Compe
-let g:compe = {}
-let g:compe.enabled = v:true
-let g:compe.autocomplete = v:true
-let g:compe.debug = v:false
-let g:compe.min_length = 1
-let g:compe.preselect = 'enable'
-let g:compe.throttle_time = 80
-let g:compe.source_timeout = 200
-let g:compe.resolve_timeout = 800
-let g:compe.incomplete_delay = 400
-let g:compe.max_abbr_width = 100
-let g:compe.max_kind_width = 100
-let g:compe.max_menu_width = 100
-let g:compe.documentation = v:true
-let g:compe.source = {}
-let g:compe.source.path = v:true
-let g:compe.source.buffer = v:true
-let g:compe.source.calc = v:true
-let g:compe.source.nvim_lsp = v:true
-let g:compe.source.nvim_lua = v:true
-let g:compe.source.vsnip = v:true
-let g:compe.source.ultisnips = v:true
-let g:compe.source.luasnip = v:true
-let g:compe.source.emoji = v:true
 
 " Auto-Pairs
 let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '/*':'*/', '<':'>'}
