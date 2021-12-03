@@ -26,6 +26,7 @@
     :valign "center"
     :space-evenly false
     (power-button)
+    (notification-revealer)
     ;(current-window)
   )
 )
@@ -72,6 +73,25 @@
     :onclick "rofi -show drun &"
     :onmiddleclick "shutdown now"
     ""
+  )
+)
+(defwidget notification-revealer []
+  (box
+    :class "notification-revealer"
+    :orientation "h"
+    :space-evenly false
+    (revealer
+      :reveal {notifications_listen.show} 
+      :transition "slideright"
+      (box
+        :class "notification-box"
+        :space-evenly false
+        "   "
+        (literal
+          :content {notifications_listen.content}
+        )
+      )
+    )
   )
 )
 (defwidget current-window []
@@ -144,6 +164,10 @@
 )
 
 ;;;Variables;;;
+(deflisten notifications_listen
+  :initial '{"show": false, "content": ""}'
+  "~/.config/eww/scripts/notifications"
+)
 (defpoll getwindow
   :interval "10ms"
   "~/.config/eww/scripts/getwindow"
