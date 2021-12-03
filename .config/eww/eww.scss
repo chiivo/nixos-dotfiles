@@ -4,7 +4,7 @@
 
 //Global Styles
 .bar {
-  font-family: Victor Mono Nerd Font;
+  font-family: VictorMono Nerd Font;
   font-style: normal;
   font-weight: bold;
   background-color: #262727;
@@ -21,6 +21,17 @@
   margin-left: 10px;
   margin-right: 10px;
   color: #ff8278;
+}
+
+//Notification Revealer
+.notification-revealer {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #262727;
+}
+.notification-box {
+  border-radius: 10px;
+  background-color: #f5d1c8;
 }
 
 //Current Window
