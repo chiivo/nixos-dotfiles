@@ -200,7 +200,6 @@
 ;;;Windows;;;
 (defwindow bar1
   :monitor 0
-  :windowtype "dock"
   :geometry (geometry
     :y "10px"
     :width "1136px"
@@ -215,7 +214,6 @@
 )
 (defwindow bar2
   :monitor 1
-  :windowtype "dock"
   :geometry (geometry
     :y "10px"
     :width "1136px"
