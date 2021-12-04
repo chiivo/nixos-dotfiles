@@ -86,7 +86,7 @@
       (box
         :class "notification-box"
         :space-evenly false
-        "   "
+        "  "
         (literal
           :content {notifications_listen.content}
         )
