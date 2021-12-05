@@ -63,7 +63,7 @@
     (slider-vol)
     (date)
     (time)
-    ;(reload)
+    (reload)
   )
 )
 (defwidget power-button []
