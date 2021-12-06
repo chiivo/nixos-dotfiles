@@ -50,4 +50,4 @@ current_shell = true
 #   - Battery
 # Example:
 #   show = ["Battery", "Memory", ...]
-show = ["Distribution", "Packages", "DesktopEnvironment", "Terminal"]
+show = ["Distribution", "Packages", "WindowManager", "Terminal"]
