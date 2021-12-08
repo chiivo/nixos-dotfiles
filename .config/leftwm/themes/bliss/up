@@ -23,6 +23,9 @@ udiskie &
 ### LeftWM Theme ###
 leftwm-command "LoadTheme $SCRIPTPATH/theme.toml" &
 
+### Tiramisu ###
+killall -q tiramisu &
+
 ### Eww ###
 killall -q eww;
 eww open-many bar1 bar2 &
