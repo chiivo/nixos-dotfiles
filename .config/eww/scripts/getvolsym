@@ -9,11 +9,15 @@ else
 	if [ $getvol -lt 30 ]
 	then echo ''
 	else
-		if [ $getvol -lt 50 ]
+		if [ $getvol -lt 40 ]
 		then echo ''
 		else
-			if [ $getvol -ge 50 ]
-			then echo ''
+			if [ $getvol -lt 50 ]
+			then echo '墳'
+			else
+				if [ $getvol -ge 50 ]
+				then echo ''
+				fi
 			fi
 		fi
 	fi
