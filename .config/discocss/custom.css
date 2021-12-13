@@ -120,6 +120,47 @@ nav[aria-label="Servers sidebar"]:hover {
     padding-right: 10px !important;
 }
 
+/*Clickable Search*/
+.search-36MZv- .search-2oPWTC .searchBar-3dMhjb {
+  width: 24px;
+  padding: 0;
+  background: none;
+  transition: width 350ms ease;
+  border-radius: 12px;
+}
+.search-36MZv- .search-2oPWTC .searchBar-3dMhjb .icon-38sknP {
+  cursor: pointer;
+}
+.search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb .icon-38sknP {
+  cursor: text;
+}
+.search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb .icon-38sknP.clear-1pMieT {
+  cursor: pointer;
+}
+.search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb {
+  width: 192px;
+  padding: 0 8px;
+  background-color: var(--background-secondary);
+}
+.search-36MZv- .search-2oPWTC .icon-3cZ1F_ {
+  color: var(--interactive-normal);
+}
+.search-36MZv-:hover .search-2oPWTC .icon-3cZ1F_ {
+  color: var(--interactive-hover);
+}
+.search-36MZv- .search-2oPWTC.open-6_Y_aH.focused-31_ccS .icon-3cZ1F_ {
+  color: var(--text-muted);
+}
+.search-2oPWTC.open-6_Y_aH .iconContainer-O4O2CN {
+  width: 16px;
+  height: 16px;
+}
+.iconContainer-O4O2CN {
+  width: 22px;
+  height: 22px;
+}
+
+
 /*Radial Status Icon*/
 #app-mount .wrapper-3t9DeA {
   border-radius: var(--rs-avatar-shape);
