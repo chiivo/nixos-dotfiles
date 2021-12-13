@@ -1,10 +1,7 @@
-/*Font*/
-/*body, button, input, select, textarea {
-font-family: 'VictorMono Nerd Font';
-}*/
-
-/*Colors*/
+/*Theme*/
 .theme-dark {
+    --font-primary: 'VictorMono Nerd Font';
+    --font-display: 'Scientifica';
     --background-primary: #262727;
     --background-secondary: #0e0e0e;
     --background-secondary-alt: #0e0e0e;
@@ -51,15 +48,52 @@ nav[aria-label="Servers sidebar"] {
     width: 12px;
     transition: width 0.2s;
 }
-
 nav[aria-label="Servers sidebar"]:hover {
     width: 70px;
 }
 
-/*Hide Discord List Avatars*/
-.layout-2DM8Md .avatar-3uk_u9, .subText-1KtqkB{
-    display:none !important;
+/* Minified Members and Search */
+/* By Fitil, Search fix by Cryptogenic */
+.members-1998pB, .membersWrap-2h-GB4, .searchResultsWrap-3-pOjs {
+  z-index: 3;
+  /*border-radius: 18px 0px 0px 18px !important;*/
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 62px;
+  min-width: 60px;
+  transition-property: width, min-width;
+  transition-duration: 0.2s;
 }
+.members-1998pB:hover, .membersWrap-2h-GB4:hover {
+  width: 240px;
+  min-width: 240px;
+}
+.searchResultsWrap-3-pOjs:hover {
+  width: 418px;
+  min-width: 418px;
+}
+.searchResultGroup-1DphGG {
+  width: 394px;
+}
+.membersWrap-2h-GB4, .searchResultsWrap-3-pOjs {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  box-shadow: none;
+}
+.chatContent-a9vAAp {
+  min-width: calc(100% - 60px);
+  max-width: calc(100% - 60px);
+}
+.chatContent-a9vAAp[aria-label=" (channel)"] {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+/*Hide Discord List Avatars*/
+/*.layout-2DM8Md .avatar-3uk_u9, .subText-1KtqkB{
+    display:none !important;
+}*/
 
 /*Hide Scrollbars*/
 ::-webkit-scrollbar {
