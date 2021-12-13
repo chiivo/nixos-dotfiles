@@ -126,7 +126,7 @@ nav[aria-label="Servers sidebar"]:hover {
   padding: 0;
   background: none;
   transition: width 350ms ease;
-  border-radius: 12px;
+  border-radius: 6px;
 }
 .search-36MZv- .search-2oPWTC .searchBar-3dMhjb .icon-38sknP {
   cursor: pointer;
