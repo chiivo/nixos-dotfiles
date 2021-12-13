@@ -43,7 +43,7 @@
     background-color: #555657;
 }
 
-/*Hover Reveal Servers*/
+/*Collapsable Server List*/
 nav[aria-label="Servers sidebar"] {
     width: 12px;
     transition: width 0.2s;
@@ -52,8 +52,7 @@ nav[aria-label="Servers sidebar"]:hover {
     width: 70px;
 }
 
-/* Minified Members and Search */
-/* By Fitil, Search fix by Cryptogenic */
+/*Collapsable Members List*/
 .members-1998pB, .membersWrap-2h-GB4, .searchResultsWrap-3-pOjs {
   z-index: 3;
   /*border-radius: 18px 0px 0px 18px !important;*/
