@@ -1,6 +1,6 @@
 " Vim-Plug
 call plug#begin()
-Plug 'ap/vim-css-color'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
@@ -55,6 +55,9 @@ set smartindent
 set termguicolors
 syntax on
 
+" Colorizer
+lua require'colorizer'.setup()
+
 " Dashboard
 let g:dashboard_default_executive ='telescope'
 let g:dashboard_custom_shortcut={
@@ -85,9 +88,7 @@ let g:dashboard_custom_header = [
 \]
 
 " Bufferline
-lua << EOF
-require("bufferline").setup{}
-EOF
+lua require("bufferline").setup{}
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 nnoremap <silent>b] :BufferLineCycleNext<CR>
@@ -116,6 +117,7 @@ let g:nvim_tree_create_in_closed_folder = 0 "1 by default, When creating files, 
 let g:nvim_tree_refresh_wait = 500 "1000 by default, control how often the tree can be refreshed, 1000 means the tree can be refresh once per 1000ms.
 let g:nvim_tree_window_picker_exclude = {
     \   'filetype': [
+    \     'notify',
     \     'packer',
     \     'qf'
     \   ],
@@ -191,7 +193,7 @@ require'nvim-tree'.setup {
     auto_close = false,
     open_on_tab = false,
     hijack_cursor = true,
-    update_cwd = false,
+    update_cwd = true,
     update_to_buf_dir = {
         enable = true,
         auto_open = true,
@@ -207,7 +209,7 @@ require'nvim-tree'.setup {
     },
     update_focused_file = {
         enable = true,
-        update_cwd = false,
+        update_cwd = true,
         ignore_list = {}
     },
     system_open = {
