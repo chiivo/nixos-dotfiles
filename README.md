@@ -19,7 +19,7 @@
 - USB Mount: udiskie
 - Fonts: CaskaydiaCove Nerd Font, Scientifica, Comfortaa, NotoSansJP, NotoSansKR, Noto Color Emoji, Dotsies
 - Terminal Stuff: macchina, cbonsai, alsamixer, shell-color-scripts
-- Apps: Blender, Krita, Eww, Discord (discocss), Spotify, Steam, Retroarch, RPCS3, MultiMC, OBS-Studio, Chatterino, xp-pen-tablet, Zathura (zathura-pdf-mupdf), Dunst
+- Apps: Blender, Krita, Eww, Discord (discocss), Spotify, Steam, Retroarch, RPCS3, MultiMC (tarball, jre-openjdk), OBS-Studio, Chatterino, xp-pen-tablet, Zathura (zathura-pdf-mupdf), Dunst
 
 ### Notes
 - To make executable bash file: `chmod +x /script/path`
