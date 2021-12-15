@@ -8,11 +8,11 @@ separator_color = "White"
 
 [palette]
 type = "Full"
-glyph = "● "
+glyph = " "
 visible = true
 
 [bar]
-glyph = "● "
+glyph = " "
 symbol_open = '['
 symbol_close = ']'
 visible = true
