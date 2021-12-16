@@ -6,6 +6,6 @@ Comment=Free, open source launcher and instance manager for Minecraft.
 Type=Application
 Terminal=false
 Exec=/home/chivo/MultiMC/MultiMC
-Icon=/home/chivo/MultiMC/icons/MultiMc.png
+Icon=/home/chivo/MultiMC/icons/MultiMC.svg
 Categories=Game
 Keywords=game;minecraft;
