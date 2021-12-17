@@ -171,23 +171,28 @@ key = "5"
 ### Volume ###
 [[keybind]]
 command = "Execute"
-value = "amixer -D pulse sset Master 5%+"
+value = ".config/leftwm/scripts/volume -u"
 modifier = ["modkey"]
 key = "Up"
 [[keybind]]
 command = "Execute"
-value = "amixer -D pulse sset Master 5%-"
+value = ".config/leftwm/scripts/volume -d"
 modifier = ["modkey"]
 key = "Down"
 [[keybind]]
 command = "Execute"
-value = "amixer -D pulse sset Master toggle"
+value = ".config/leftwm/scripts/volume -m"
 modifier = ["modkey", "Shift"]
 key = "Down"
 
 ### Screenshot ###
 [[keybind]]
 command = "Execute"
-value = ".config/leftwm/scripts/screenshot"
+value = ".config/leftwm/scripts/screenshot -a"
 modifier = []
+key = "Print"
+[[keybind]]
+command = "Execute"
+value = ".config/leftwm/scripts/screenshot -f"
+modifier = ["modkey"]
 key = "Print"
