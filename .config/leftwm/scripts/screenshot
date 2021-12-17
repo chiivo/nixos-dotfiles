@@ -14,3 +14,5 @@ while getopts af flag; do
 		f) fullshot;;
 	esac
 done
+
+mpv .local/share/sounds/freedesktop/stereo/camera-shutter.oga
