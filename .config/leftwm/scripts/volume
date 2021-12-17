@@ -1,0 +1,23 @@
+#!/bin/sh
+
+volup () {	
+	amixer -D pulse sset Master 5%+
+}
+
+voldown () {
+	amixer -D pulse sset Master 5%-
+}
+
+volmute () {
+	amixer -D pulse sset Master toggle
+}
+
+while getopts udm flag; do
+	case "$flag" in
+		u) volup;;
+		d) voldown;;
+		m) volmute;;
+	esac
+done
+
+mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
