@@ -13,5 +13,5 @@ tiramisu -o '#summary' | while read -r line; do
   (sleep 10; print_notification "$line" "false") &
   pid="$!"
   
-mpv /usr/share/sounds/freedesktop/stereo/complete.oga
+mpv /usr/share/sounds/freedesktop/stereo/message.oga
 done
