@@ -1,0 +1,18 @@
+#!/bin/sh
+
+areashot () {	
+	maim -usb 2 /tmp/clipboard.png; sleep .1; xclip -selection clipboard < /tmp/clipboard.png -t image/png && notify-send -i /tmp/clipboard.png 'Screenshot' 'Selection Copied'
+}
+
+fullshot () {
+	maim -u /tmp/clipboard.png; sleep .1; xclip -selection clipboard < /tmp/clipboard.png -t image/png && notify-send -i /tmp/clipboard.png 'Screenshot' 'Selection Copied'
+}
+
+while getopts af flag; do
+	case "$flag" in
+		a) areashot;;
+		f) fullshot;;
+	esac
+done
+
+mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
