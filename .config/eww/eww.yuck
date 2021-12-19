@@ -166,11 +166,11 @@
 ;;;Variables;;;
 (deflisten notifications_listen
   :initial '{"show": false, "content": ""}'
-  "scripts/notifications"
+  "~/scripts/notifications"
 )
 (defpoll getwindow
   :interval "10ms"
-  "scripts/getwindow"
+  "~/scripts/getwindow"
 )
 (deflisten leftwm-tags1
   "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template1.liquid"
@@ -180,11 +180,11 @@
 )
 (defpoll getvolsym
   :interval "10ms"
-  "scripts/getvolsym"
+  "~/scripts/getvolsym"
 )
 (defpoll getvol
   :interval "10ms"
-  "scripts/getvol"
+  "~/scripts/getvol"
 )
 (defvar vol-revealer
   false)
