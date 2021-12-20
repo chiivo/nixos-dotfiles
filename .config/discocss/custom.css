@@ -1,55 +1,55 @@
 /*Theme*/
 .theme-dark {
-    --font-primary: 'VictorMono Nerd Font';
-    --font-display: 'Scientifica';
-    --background-primary: #262727;
-    --background-secondary: #0e0e0e;
-    --background-secondary-alt: #0e0e0e;
-    --background-tertiary: #262727;
-    --background-floating: #262727;
-    --background-mobile-primary: #0e0e0e;
-    --background-mobile-secondary: #262727;
-    --header-primary : #f5d1c8;
-    --interactive-normal : #f5d1c8;
-    --interactive-hover : #dddddd;
-    --interactive-active : #f5d1c8;
-    --interactive-muted : #555657;
-    --text-normal : #dddddd;
-    --text-link : #77bee0;
-    --text-muted : #555657;
-    --text-warning : #ff8278;
-    --channeltextarea-background: #55565755;
-    --background-accent: #f5d1c8;
-    --background-message-hover: #55565755;
-    --background-modifier-hover: #55565755;
-    --background-modifier-active: transparent;
-    --background-modifier-selected: #262727;
-    --deprecated-card-bg: #262727;
-    --deprecated-quickswitcher-input-background:#262727;
-    --elevation-low: none;
-    --scrollbar-auto-thumb: #555657;
-    --scrollbar-auto-track: #0e0e0e;
-    --scrollbar-thin-thumb: #555657;
-    --activity-card-background: #262727;
-    --brand-experiment : #555657 !important;
+  --font-primary: 'VictorMono Nerd Font';
+  --font-display: 'Comfortaa';
+  --background-primary: #262727;
+  --background-secondary: #0e0e0e;
+  --background-secondary-alt: #0e0e0e;
+  --background-tertiary: #262727;
+  --background-floating: #262727;
+  --background-mobile-primary: #0e0e0e;
+  --background-mobile-secondary: #262727;
+  --header-primary : #f5d1c8;
+  --interactive-normal : #f5d1c8;
+  --interactive-hover : #dddddd;
+  --interactive-active : #f5d1c8;
+  --interactive-muted : #555657;
+  --text-normal : #dddddd;
+  --text-link : #77bee0;
+  --text-muted : #555657;
+  --text-warning : #ff8278;
+  --channeltextarea-background: #55565755;
+  --background-accent: #f5d1c8;
+  --background-message-hover: #55565755;
+  --background-modifier-hover: #55565755;
+  --background-modifier-active: transparent;
+  --background-modifier-selected: #262727;
+  --deprecated-card-bg: #262727;
+  --deprecated-quickswitcher-input-background:#262727;
+  --elevation-low: none;
+  --scrollbar-auto-thumb: #555657;
+  --scrollbar-auto-track: #0e0e0e;
+  --scrollbar-thin-thumb: #555657;
+  --activity-card-background: #262727;
+  --brand-experiment : #555657 !important;
 }
 .peopleList-3c4jOR.auto-Ge5KZx.scrollerBase-289Jih {
-    background-color: #262727;
+  background-color: #262727;
 }
 .peopleColumn-29fq28 {
-    background-color: #262727;
+  background-color: #262727;
 }
 .item-2hkk8m {
-    background-color: #555657;
+  background-color: #555657;
 }
 
 /*Collapsable Server List*/
 nav[aria-label="Servers sidebar"] {
-    width: 12px;
-    transition: width 0.2s;
+  width: 12px;
+  transition: width 0.2s;
 }
 nav[aria-label="Servers sidebar"]:hover {
-    width: 70px;
+  width: 70px;
 }
 
 /*Collapsable Members List*/
@@ -96,28 +96,28 @@ nav[aria-label="Servers sidebar"]:hover {
 
 /*Hide Scrollbars*/
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .content-1x5b-n {
-    margin: 0 !important;
-    border-radius: 0;
+  margin: 0 !important;
+  border-radius: 0;
 }
 .mainContent-u_9PKf {
-    padding-left: 8px;
+  padding-left: 8px;
 }
 .container-2Pjhx- {
-    margin: 0;
-    max-width: unset;
+  margin: 0;
+  max-width: unset;
 }
 .layout-2DM8Md {
-    border-radius: 0;
-    padding: 0 16px;
+  border-radius: 0;
+  padding: 0 16px;
 }
 .unread-2lAfLh {
-    z-index: 1;
+  z-index: 1;
 }
 .buttons-3JBrkn {
-    padding-right: 10px !important;
+  padding-right: 10px !important;
 }
 
 /*Clickable Search*/
