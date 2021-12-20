@@ -75,7 +75,7 @@ local theme = lush(function()
 
     Comment      {fg = gray, gui = 'italic'}, -- any comment
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
-    Conceal      {fg = '#262727'}, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal      {fg = black}, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
     -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
