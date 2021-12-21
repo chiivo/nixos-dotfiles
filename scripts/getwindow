@@ -2,7 +2,8 @@
 
 getcharactercount=$(xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) '\t$0' WM_NAME | cut -f 2 | sed -e 's/.//' -e 's/.$//' | wc -c)
 
-if (( $getcharactercount > 30 ))
-then xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) '\t$0' WM_NAME | cut -f 2 | sed -e 's/.//' -e 's/.$//' | sed -r 's/(.{30}).*/\1/' | sed 's/ $//'| sed 's/$/.../'
-else xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) '\t$0' WM_NAME | cut -f 2 | sed -e 's/.//' -e 's/.$//'
+if (( $getcharactercount > 30 )); then
+  xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) '\t$0' WM_NAME | cut -f 2 | sed -e 's/.//' -e 's/.$//' | sed -r 's/(.{30}).*/\1/' | sed 's/ $//'| sed 's/$/.../'
+else
+  xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) '\t$0' WM_NAME | cut -f 2 | sed -e 's/.//' -e 's/.$//'
 fi
