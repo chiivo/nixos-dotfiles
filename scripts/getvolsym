@@ -3,20 +3,20 @@
 checkmute=$(amixer -D pulse sget Master | grep 'Front Left:' | awk -F'[][]' '{ print $4 }')
 getvol=$(amixer -D pulse sget Master | grep 'Front Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%')
 
-if [ $checkmute != on ]
-then echo ''
+if [ $checkmute != on ]; then
+	echo ''
 else
-	if [ $getvol -lt 30 ]
-	then echo ''
+	if [ $getvol -lt 30 ]; then
+		echo ''
 	else
-		if [ $getvol -lt 40 ]
-		then echo ''
+		if [ $getvol -lt 40 ]; then
+			echo ''
 		else
-			if [ $getvol -lt 50 ]
-			then echo '墳'
+			if [ $getvol -lt 50 ]; then
+				echo '墳'
 			else
-				if [ $getvol -ge 50 ]
-				then echo ''
+				if [ $getvol -ge 50 ]; then
+					echo ''
 				fi
 			fi
 		fi
