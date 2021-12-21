@@ -100,7 +100,10 @@
     :orientation "h"
     :space-evenly "false"
     :hexpand "false"
-    getwindow
+    (label
+      :limit-width 27
+      :text getwindow
+    )
   )
 )
 (defwidget bluetooth-button []
