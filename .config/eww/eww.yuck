@@ -101,7 +101,7 @@
     :space-evenly "false"
     :hexpand "false"
     (label
-      :limit-width 27
+      :limit-width 20
       :text getwindow
     )
   )
