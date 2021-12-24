@@ -54,10 +54,11 @@ nav[aria-label="Servers sidebar"]:hover {
 
 /*Collapsable Members List*/
 .members-1998pB, .membersWrap-2h-GB4, .searchResultsWrap-3-pOjs {
+  border-radius: 10px 0 0 10px;
   z-index: 3;
   /*border-radius: 18px 0px 0px 18px !important;*/
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 12px;
   width: 62px;
   min-width: 60px;
   transition-property: width, min-width;
@@ -398,4 +399,11 @@ nav[aria-label="Servers sidebar"]:hover {
   --rs-invisible-color: #747f8d; /* Colour for invisible status - Note: this will only show for your own invisibility */
   --rs-phone-color: var(--rs-online-color); /* Colour of the ring and phone icon when a user is on their phone |  */
   --rs-phone-visible: none; /* Visibility of the phone icon next to a users avatar. | block = visible | none = hidden */
+}
+
+.sidebar-2K8pFh, .panels-j1Uci_, .container-3baos1, .container-3baos1 .avatar-SmRMf2 {
+  border-radius: 10px;
+}
+.sidebar-2K8pFh {
+  margin: 12px 0 12px 0;
 }
