@@ -45,7 +45,7 @@
 
 /*Collapsable Server List*/
 nav[aria-label="Servers sidebar"] {
-  width: 12px;
+  width: 10px;
   transition: width 0.2s;
 }
 nav[aria-label="Servers sidebar"]:hover {
@@ -58,7 +58,7 @@ nav[aria-label="Servers sidebar"]:hover {
   z-index: 3;
   /*border-radius: 18px 0px 0px 18px !important;*/
   margin-top: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   width: 62px;
   min-width: 60px;
   transition-property: width, min-width;
@@ -405,5 +405,5 @@ nav[aria-label="Servers sidebar"]:hover {
   border-radius: 10px;
 }
 .sidebar-2K8pFh {
-  margin: 12px 0 12px 0;
+  margin: 10px 0 10px 0;
 }
