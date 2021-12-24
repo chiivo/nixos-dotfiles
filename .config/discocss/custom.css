@@ -3,11 +3,11 @@
   --font-primary: 'VictorMono Nerd Font';
   --font-display: 'Comfortaa';
   --background-primary: #262727;
-  --background-secondary: #0e0e0e;
-  --background-secondary-alt: #0e0e0e;
+  --background-secondary: #141515;
+  --background-secondary-alt: #141515;
   --background-tertiary: #262727;
   --background-floating: #262727;
-  --background-mobile-primary: #0e0e0e;
+  --background-mobile-primary: #141515;
   --background-mobile-secondary: #262727;
   --header-primary : #f5d1c8;
   --interactive-normal : #f5d1c8;
@@ -28,7 +28,7 @@
   --deprecated-quickswitcher-input-background:#262727;
   --elevation-low: none;
   --scrollbar-auto-thumb: #555657;
-  --scrollbar-auto-track: #0e0e0e;
+  --scrollbar-auto-track: #141515;
   --scrollbar-thin-thumb: #555657;
   --activity-card-background: #262727;
   --brand-experiment : #555657 !important;
@@ -125,7 +125,7 @@ nav[aria-label="Servers sidebar"]:hover {
   width: 24px;
   padding: 0;
   background: none;
-  transition: width 0.2ms ease;
+  transition: width 0.2s ease;
   border-radius: 6px;
 }
 .search-36MZv- .search-2oPWTC .searchBar-3dMhjb .icon-38sknP {
