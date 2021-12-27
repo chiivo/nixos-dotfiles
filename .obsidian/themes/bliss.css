@@ -1,4 +1,4 @@
-{
+.theme-dark {
     --dark-black: #141515;
     --black: #262727;
     --gray: #555657;
@@ -74,8 +74,10 @@ div {
 
 .markdown-preview-view code {
     font-family: "VictorMono Nerd Font";
-    color: var(--pink);
-    background-color: var(--gray);
+    border-radius: 10px;
+    padding: 4px;
+    color: var(--red);
+    background-color: var(--dark-black);
 }
 .cm-s-obsidian span.cm-inline-code {
     font-family: "VictorMono Nerd Font";
@@ -108,7 +110,8 @@ h5 {
 .markdown-preview-view mark {
     background-color: var(--gray);
     color: var(--pink);
-    border-radius: 4px;
+    padding: 4px;
+    border-radius: 10px;
 }
 .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight {
     background-color: var(--gray);
