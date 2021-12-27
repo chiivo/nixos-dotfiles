@@ -10,6 +10,7 @@
   --background-mobile-primary: #141515;
   --background-mobile-secondary: #262727;
   --header-primary : #f5d1c8;
+  --header-secondary : #555657;
   --interactive-normal : #f5d1c8;
   --interactive-hover : #dddddd;
   --interactive-active : #f5d1c8;
@@ -18,10 +19,11 @@
   --text-link : #77bee0;
   --text-muted : #555657;
   --text-warning : #ff8278;
+  --channels-default: #555657;
   --channeltextarea-background: #55565755;
   --background-accent: #f5d1c8;
   --background-message-hover: #55565755;
-  --background-modifier-hover: #55565755;
+  --background-modifier-hover: #262727;
   --background-modifier-active: transparent;
   --background-modifier-selected: #262727;
   --deprecated-card-bg: #262727;
@@ -41,6 +43,26 @@
 }
 .item-2hkk8m {
   background-color: #555657;
+}
+
+.sidebar-2K8pFh, .panels-j1Uci_, .container-3baos1, .container-3baos1 .avatar-SmRMf2 {
+  border-radius: 10px;
+}
+.sidebar-2K8pFh {
+  margin: 10px 0 10px 0;
+}
+
+.name-23GUGE.channelName-2YrOjO.overflow-WK9Ogt {
+  margin: 0 0 0 25px;
+}
+
+.lookFilled-1Gx00P.colorBrand-3pXr91 {
+  color: var(--interactive-muted);
+  background-color: var(--background-primary);
+}
+.lookFilled-1Gx00P.colorBrand-3pXr91:hover {
+  color: var(--background-primary);
+  background-color: var(--interactive-normal);
 }
 
 /*Collapsable Server List*/
@@ -391,19 +413,12 @@ nav[aria-label="Servers sidebar"]:hover {
   --rs-medium-width: 3px; /* Thickness of status border for User popout | MUST end in px */
   --rs-large-width: 4px; /* Thickness of status border for User profile | MUST end in px */
   --rs-avatar-shape: 50%; /* 50% for round - 0% for square */
-  --rs-online-color: #43b581; /* Colour for online status */
-  --rs-idle-color: #faa61a; /* Colour for idle status */
-  --rs-dnd-color: #f04747; /* Colour for dnd status */
-  --rs-offline-color: #636b75; /* Colour for offline status */
-  --rs-streaming-color: #643da7; /* Colour for streaming status */
-  --rs-invisible-color: #747f8d; /* Colour for invisible status - Note: this will only show for your own invisibility */
+  --rs-online-color: #bde077; /* Colour for online status */
+  --rs-idle-color: #ffc178; /* Colour for idle status */
+  --rs-dnd-color: #ff8278; /* Colour for dnd status */
+  --rs-offline-color: #555657; /* Colour for offline status */
+  --rs-streaming-color: #dd91f3; /* Colour for streaming status */
+  --rs-invisible-color: #555657; /* Colour for invisible status - Note: this will only show for your own invisibility */
   --rs-phone-color: var(--rs-online-color); /* Colour of the ring and phone icon when a user is on their phone |  */
   --rs-phone-visible: none; /* Visibility of the phone icon next to a users avatar. | block = visible | none = hidden */
-}
-
-.sidebar-2K8pFh, .panels-j1Uci_, .container-3baos1, .container-3baos1 .avatar-SmRMf2 {
-  border-radius: 10px;
-}
-.sidebar-2K8pFh {
-  margin: 10px 0 10px 0;
 }
