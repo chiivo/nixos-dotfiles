@@ -26,6 +26,11 @@ div {
     -webkit-font-smoothing: antialiased;
 }
 
+.empty-state {
+    background-color: var(--black);
+    color: var(--white);
+}
+
 .titlebar {
     background-color: var(--dark-black);
 }
