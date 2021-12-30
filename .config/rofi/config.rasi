@@ -13,7 +13,7 @@ configuration {
 	display-combi: "Combi";
 	show-icons: true;
 	drun-display-format: "{icons} {name}";
-  window-format: "{t}";
+	window-format: "{t}";
 	scroll-method: 0;
 	sidebar-mode: true;
 }
