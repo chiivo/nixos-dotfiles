@@ -77,7 +77,7 @@
 }
 
 svg[class="homeIcon-AaowEC"] {
-  color: #dddddd;
+  color: var(--text-normal);
 }
 
 /*Collapsable Server List*/
