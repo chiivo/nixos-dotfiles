@@ -84,13 +84,13 @@ svg[class="homeIcon-AaowEC"] {
 }
 
 /*Collapsable Server List*/
-/*nav[aria-label="Servers sidebar"] {
+nav[aria-label="Servers sidebar"] {
   width: 10px;
   transition: width 0.2s;
 }
 nav[aria-label="Servers sidebar"]:hover {
   width: 70px;
-}*/
+}
 
 /*Collapsable Members List*/
 .members-1998pB, .membersWrap-2h-GB4, .searchResultsWrap-3-pOjs {
