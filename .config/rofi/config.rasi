@@ -1,11 +1,11 @@
-/******************************************************************************
+/******************
  * ROFI Color theme
  * User: Chivo
- ******************************************************************************/
+ *****************/
 
 configuration {
-	modi: "window,drun";
-	font: "CaskaydiaCove Nerd Font 12";
+	modi: "drun,window";
+	font: "Victor Mono Nerd Font 12";
 	display-run: "";
 	display-drun: "";
 	display-window: "";
@@ -14,7 +14,7 @@ configuration {
 	show-icons: true;
 	drun-display-format: "{icons} {name}";
   window-format: "{t}";
-	scroll-method: 1;
+	scroll-method: 0;
 	sidebar-mode: true;
 }
 
@@ -33,7 +33,7 @@ window {
 	border: 4;
 	border-radius: 10;
 	padding: 10;
-	width: 300;
+	width: 600;
 }
 
 mainbox {
@@ -135,6 +135,7 @@ inputbar {
 
 listview {
 	lines: 10;
+	columns: 2;
 	border: 0px;
 	scrollbar: false;
 }
