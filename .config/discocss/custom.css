@@ -72,6 +72,10 @@
   background-color: var(--interactive-normal);
 }
 
+.closedFolderIconWrapper-1I9YfS {
+  background-color: var(--background-secondary);
+}
+
 /*Collapsable Server List*/
 nav[aria-label="Servers sidebar"] {
   width: 10px;
