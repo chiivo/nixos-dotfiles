@@ -45,6 +45,9 @@
   background-color: #555657;
 }
 
+.avatarWrapper-2yR4wp{
+  margin: 0 10px;
+}
 .sidebar-2K8pFh, .panels-j1Uci_, .container-3baos1, .container-3baos1 .avatar-SmRMf2 {
   border-radius: 10px;
 }
@@ -90,6 +93,15 @@ nav[aria-label="Servers sidebar"] {
 }
 nav[aria-label="Servers sidebar"]:hover {
   width: 70px;
+}
+
+/*Collapsable  DMs*/
+.sidebar-2K8pFh {
+  width: 10px;
+  transition: width 0.2s;
+}
+.sidebar-2K8pFh:hover {
+  width: 240px;
 }
 
 /*Collapsable Members List*/
