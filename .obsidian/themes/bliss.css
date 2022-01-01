@@ -128,12 +128,24 @@ h5 {
     background-color: transparent !important;
 }
 
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+    background-color: var(--dark-black);
+    border-radius: 0px;
+    border-top: none;
+    border-bottom: 2px solid var(--dark-black);
+}
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
+    background: none;
+}
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
 .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
     border-right: 0px solid var(--black);
 }
 
+.workspace-tabs {
+    background-color: var(--dark-black);
+}
 .workspace-tab-header-container {
     background-color: var(--dark-black);
 }
@@ -270,6 +282,7 @@ h5 {
 }
 
 .view-action {
+    background-color: none;
     color: var(--gray);
 }
 .view-action:hover {
