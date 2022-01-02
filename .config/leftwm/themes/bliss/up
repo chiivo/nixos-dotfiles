@@ -12,6 +12,9 @@ xset s off &
 feh --no-fehbg --bg-tile /mnt/HDD/Images/Wallpapers/BlissRet.jpg &
 #feh --no-fehbg --bg-scale --no-xinerama /mnt/HDD/Images/Wallpapers/StarrySky1440p.jpg &
 
+### Mouse Settings ###
+~/scripts/mousesettings
+
 ### Compositor ###
 killall -q picom;
 picom --experimental-backends &
