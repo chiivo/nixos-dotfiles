@@ -95,15 +95,6 @@ nav[aria-label="Servers sidebar"]:hover {
   width: 70px;
 }
 
-/*Collapsable  DMs*/
-.sidebar-2K8pFh {
-  width: 10px;
-  transition: width 0.2s;
-}
-.sidebar-2K8pFh:hover {
-  width: 240px;
-}
-
 /*Collapsable Members List*/
 .members-1998pB, .membersWrap-2h-GB4, .searchResultsWrap-3-pOjs {
   border-radius: 10px 0 0 10px;
