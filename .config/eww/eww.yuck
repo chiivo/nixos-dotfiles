@@ -71,7 +71,7 @@
     :class "power-button"
     :orientation "h"
     :onclick "rofi -show drun &"
-    :onmiddleclick "shutdown now"
+    :onmiddleclick "poweroff"
     ""
   )
 )
