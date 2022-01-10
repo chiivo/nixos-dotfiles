@@ -117,7 +117,7 @@ bell:
   animation: EaseOutExpo
   duration: 0
   color: '#dddddd'
-  command: None
+  command: mpv /usr/share/sounds/freedesktop/stereo/bell.oga
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
