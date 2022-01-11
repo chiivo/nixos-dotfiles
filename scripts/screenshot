@@ -1,11 +1,11 @@
 #!/bin/sh
 
 areashot () {	
-	maim -usb 2 /tmp/clipboard.png; sleep .1; xclip -selection clipboard < /tmp/clipboard.png -t image/png && notify-send -i /tmp/clipboard.png 'Screenshot' 'Selection Copied'
+	maim -usb 2 /tmp/clipboard.png; sleep .1; xclip -selection clipboard < /tmp/clipboard.png -t image/png && notify-send -i /tmp/screenshot.png 'Screenshot' 'Selection Copied'
 }
 
 fullshot () {
-	maim -usb 2 /mnt/HDD/Images/Screenshots/clipboard.png; sleep .1; notify-send -i /mnt/HDD/Images/Screenshots/clipboard.png 'Screenshot' 'Selection Saved'
+	maim -usb 2 /mnt/HDD/Images/Screenshots/screenshot.png; sleep .1; notify-send -i /mnt/HDD/Images/Screenshots/clipboard.png 'Screenshot' 'Selection Saved'
 }
 
 while getopts af flag; do
