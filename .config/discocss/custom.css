@@ -100,6 +100,10 @@ code {
 .peopleColumn-1wMU14 {
   background-color: var(--black);
 }
+.sidebar-1tnWFu {
+  margin: 10px 0;
+  border-radius: 10px;
+}
 
 /*Collapsable Server List*/
 nav[aria-label="Servers sidebar"] {
