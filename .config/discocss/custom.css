@@ -63,7 +63,7 @@
   --control-brand-foreground-new: hsl(235,calc(var(--saturation-factor, 1)*86.1%),77.5%);
   --background-mentioned: hsla(38,calc(var(--saturation-factor, 1)*95.7%),54.1%,0.1);
   --background-mentioned-hover: hsla(38,calc(var(--saturation-factor, 1)*95.7%),54.1%,0.08);
-  --background-message-hover: rgba(4,4,5,0.07);
+  --background-message-hover: var(--black);
   --channels-default: var(--gray);
   --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
   --channeltextarea-background: var(--dark-black);
@@ -97,12 +97,25 @@
 code {
   font-family: 'VictorMono Nerd Font';
 }
+.scrollerInner-2PPAp2 {
+  background: var(--dark-black);
+  margin: 10px;
+  border-radius: 10px;
+}
+.chatHeaderBar-2fUORh.narrow-2jjOvw {
+  border-radius: 10px;
+  margin: 10px;
+}
 .peopleColumn-1wMU14 {
   background-color: var(--black);
 }
 .sidebar-1tnWFu {
   margin: 10px 0;
   border-radius: 10px;
+}
+.form-3gdLxP {
+  margin: 0 10px;
+  padding: 0;
 }
 button[aria-label="Select emoji"] {
   padding: 4px 10px 4px 4px;
