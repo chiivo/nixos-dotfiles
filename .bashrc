@@ -5,9 +5,9 @@
 alias ls='ls --color=auto'
 alias pw='nvim /mnt/HDD/thewords.txt'
 alias v='nvim'
-alias sv='sudoedit'
+alias se='sudoedit'
 alias shutdown='shutdown now'
-alias update='sudo pacman -Syu'
+alias update='sudo pacman -Syyu && yay'
 alias install='sudo pacman -S'
 alias remove='sudo pacman -Rs'
 alias btctl='bluetoothctl'
@@ -36,3 +36,8 @@ r=$((RANDOM%15))
 	command[14]='colorscript -e 50'
 eval ${command[$r]}
 unset command r
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
