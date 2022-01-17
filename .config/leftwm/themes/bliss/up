@@ -27,7 +27,7 @@ udiskie &
 leftwm-command "LoadTheme $SCRIPTPATH/theme.toml" &
 
 ### Tiramisu ###
-killall -q tiramisu &
+#killall -q tiramisu &
 
 ### Eww ###
 killall -q eww;
