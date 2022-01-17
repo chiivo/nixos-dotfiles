@@ -378,6 +378,9 @@
 #    msg_urgency = critical
 #    fullscreen = show
 
+[sound]
+    script = ~/scripts/notifications
+
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
