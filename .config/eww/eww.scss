@@ -4,7 +4,7 @@
 
 //Global Styles
 .bar {
-  font-family: VictorMono Nerd Font;
+  font-family: 'VictorMono Nerd Font';
   font-style: normal;
   font-weight: bold;
   background-color: #262727;
@@ -33,7 +33,10 @@
 //Current Window
 .current-window {
   margin: 0 10px;
-  color: #dddddd;
+  padding: 0 10px;
+  border-radius: 6px;
+  background-color: #f5d1c8;
+  color: #262727;
 }
 
 //Workspaces

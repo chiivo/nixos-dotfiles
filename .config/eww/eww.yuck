@@ -26,8 +26,8 @@
     :valign "center"
     :space-evenly false
     (power-button)
-    (notification-revealer)
-    ;(current-window)
+    ;(notification-revealer)
+    (current-window)
   )
 )
 (defwidget workspaces1 []
@@ -99,9 +99,9 @@
     :class "current-window"
     :orientation "h"
     :space-evenly "false"
-    :hexpand "false"
+    :hexpand "true"
     (label
-      :limit-width 20
+      :limit-width 30
       :text getwindow
     )
   )
