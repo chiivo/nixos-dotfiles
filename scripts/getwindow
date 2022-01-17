@@ -6,7 +6,7 @@ xprop -id $(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) '\t$0' WM_NAME | c
 
 window=$(getwindow)
 
-if [ "$window" = "M_NAM" ]; then
+if [ $window = M_NAM ]; then
 	echo 'LeftWM'
 else
 	getwindow
