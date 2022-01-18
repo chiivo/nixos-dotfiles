@@ -172,7 +172,7 @@
     ignore_newline = yes
 
     # Stack together notifications with the same content
-    stack_duplicates = false
+    stack_duplicates = true
 
     # Hide the count of stacked notifications with the same content
     hide_duplicate_count = false
@@ -378,7 +378,8 @@
 #    msg_urgency = critical
 #    fullscreen = show
 
-[sound]
+[all_notifications]
+    highlight = "#f5d1c8"
     script = ~/scripts/notifications
 
 #[espeak]
