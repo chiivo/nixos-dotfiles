@@ -1,11 +1,17 @@
 #!/bin/sh
 
+getvol() {
+	~/scripts/getvol
+}
+
 volup () {	
 	amixer -D pulse sset Master 5%+
+	notify-send Volume -h int:value:$(getvol)
 }
 
 voldown () {
 	amixer -D pulse sset Master 5%-
+	notify-send Volume -h int:value:$(getvol)
 }
 
 volmute () {
