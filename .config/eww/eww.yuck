@@ -4,6 +4,7 @@
     :orientation "h"
     :class "bar"
     :hexpand "false"
+    :vexpand "false"
     (left-group)
     (workspaces1)
     (right-group)
@@ -14,6 +15,7 @@
     :orientation "h"
     :class "bar"
     :hexpand "false"
+    :vexpand "false"
     (left-group)
     (workspaces2)
     (right-group)
