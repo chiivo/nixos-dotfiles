@@ -4,14 +4,18 @@ getvol() {
 	~/scripts/getvol
 }
 
-get
+getvolsym() {
+	~/scripts/getvolsym
+}
 
 volup () {	
 	amixer -D pulse sset Master 5%+
+	notify-send "$(getvolsym) Volume" -i none -h int:value:$(getvol)
 }
 
 voldown () {
 	amixer -D pulse sset Master 5%-
+	notify-send "$(getvolsym) Volume" -i none -h int:value:$(getvol)
 }
 
 volmute () {
