@@ -379,54 +379,12 @@
 #    fullscreen = show
 
 [all_notifications]
-    highlight = "#f5d1c8"
     script = ~/scripts/notifications
 
-#[espeak]
-#    summary = "*"
-#    script = dunst_espeak.sh
-
-#[script-test]
-#    summary = "*script*"
-#    script = dunst_test.sh
-
-#[ignore]
-#    # This notification will not be displayed
-#    summary = "foobar"
-#    skip_display = true
-
-#[history-ignore]
-#    # This notification will not be saved in history
-#    summary = "foobar"
-#    history_ignore = yes
-
-#[skip-display]
-#    # This notification will not be displayed, but will be included in the history
-#    summary = "foobar"
-#    skip_display = yes
-
-#[signed_on]
-#    appname = Pidgin
-#    summary = "*signed on*"
-#    urgency = low
-#
-#[signed_off]
-#    appname = Pidgin
-#    summary = *signed off*
-#    urgency = low
-#
-#[says]
-#    appname = Pidgin
-#    summary = *says*
-#    urgency = critical
-#
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
-#
-#[stack-volumes]
-#    appname = "some_volume_notifiers"
-#    set_stack_tag = "volume"
+[volume]
+    summary = "*Volume*"
+    highlight = "#f5d1c8"
+    set_stack_tag = "Volume"
+    timeout = 2
 #
 # vim: ft=cfg
