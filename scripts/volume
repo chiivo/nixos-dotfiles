@@ -33,7 +33,7 @@ volumebar () {
   full=""
   half=""
   empty=""
-  volume=$(~/scripts/getvol)
+  volume=$(~/scripts/volume -v)
   total_half_dots=$(( $(echo ${volume} / 10 | cut -f1 -d ".") ))
   half_dots=$(( ${total_half_dots} % 2 ))
   full_dots=$(( ( ${total_half_dots} - $(( ${total_half_dots} % 2 )) ) / 2))
