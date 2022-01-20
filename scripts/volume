@@ -29,15 +29,15 @@ getvolsym() {
 }
 
 volumebar () {
-  # This is for 5
+  # Change total_half_dots number and empty dots number to change number of output characters
   full=""
   half=""
   empty=""
   volume=$(getvol)
-  total_half_dots=$(( $(echo ${volume} / 10 | cut -f1 -d ".") ))
+  total_half_dots=$(( $(echo ${volume} / 5 | cut -f1 -d ".") ))
   half_dots=$(( ${total_half_dots} % 2 ))
   full_dots=$(( ( ${total_half_dots} - $(( ${total_half_dots} % 2 )) ) / 2))
-  empty_dots=$(( 5 - ( ${full_dots} + half_dots ) ))
+  empty_dots=$(( 10 - ( ${full_dots} + half_dots ) ))
 	bar=$(echo $(echo $(seq -s " " $((${full_dots}+1)) )$(seq -s " " $((${half_dots}+1)) )$(seq -s " " $(($empty_dots + 1)) ) ) | sed 's/[0-9]//g')
 
 	echo $bar
@@ -57,6 +57,8 @@ voldown () {
 
 volmute () {
 	amixer -D pulse sset Master toggle
+	notify-send "$(getvolsym) Volume" "$(getvolsym)" -i none
+	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 while getopts vsudm flag; do
