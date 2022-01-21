@@ -38,7 +38,7 @@ colorscheme bliss
 let g:mapleader="\<Space>"
 set autoindent
 set clipboard=unnamedplus
-set completeopt=menuone,noselect
+set completeopt=menu,menuone,noselect
 set cursorline
 "set expandtab
 set guicursor=
@@ -279,4 +279,4 @@ true_zen.setup({
 EOF
 
 " Source
-source ~/.config/nvim/plugged/galaxyline.nvim/example/blissline.lua
+source ~/.local/share/nvim/plugged/galaxyline.nvim/example/blissline.lua
