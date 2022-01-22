@@ -37,28 +37,28 @@ volumebar () {
   total_half_dots=$(( $(echo ${volume} / 5 | cut -f1 -d ".") ))
   half_dots=$(( ${total_half_dots} % 2 ))
   full_dots=$(( ( ${total_half_dots} - $(( ${total_half_dots} % 2 )) ) / 2))
-  empty_dots=$(( 10 - ( ${full_dots} + half_dots ) ))
+	empty_dots=$(( 10 - ( ${full_dots} + half_dots ) ))
 	bar=$(echo $(echo $(seq -s " " $((${full_dots}+1)) )$(seq -s " " $((${half_dots}+1)) )$(seq -s " " $(($empty_dots + 1)) ) ) | sed 's/[0-9]//g')
 
 	echo $bar
 }
 
-volup () {	
+volup () {
+	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master 5%+
 	notify-send "$(getvolsym) Volume" "$(volumebar)" -i none
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 voldown () {
+	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master 5%-
 	notify-send "$(getvolsym) Volume" "$(volumebar)" -i none
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 volmute () {
+	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master toggle
 	notify-send "$(getvolsym) Volume" "$(getvolsym)" -i none
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 while getopts vsudm flag; do
