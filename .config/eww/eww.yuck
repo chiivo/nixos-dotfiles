@@ -96,18 +96,18 @@
 ;    )
 ;  )
 ;)
-(defwidget current-window []
-  (box
-    :class "current-window"
-    :orientation "h"
-    :space-evenly "false"
-    :hexpand "true"
-    (label
-      :limit-width 30
-      :text getwindow
-    )
-  )
-)
+;(defwidget current-window []
+;  (box
+;    :class "current-window"
+;    :orientation "h"
+;    :space-evenly "false"
+;    :hexpand "true"
+;    (label
+;      :limit-width 30
+;      :text getwindow
+;    )
+;  )
+;)
 (defwidget bluetooth-button []
   (button
     :class "bluetooth-button"
@@ -160,13 +160,13 @@
     time
   )
 )
-(defwidget reload []
-  (button
-    :class "reload"
-    :onclick "eww reload"
-    " "
-  )
-)
+;(defwidget reload []
+;  (button
+;    :class "reload"
+;    :onclick "eww reload"
+;    " "
+;  )
+;)
 
 ;;;Variables;;;
 ;(deflisten notifications_listen
