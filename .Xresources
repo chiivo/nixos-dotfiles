@@ -1,3 +1,4 @@
 *.background: #262727
 *.foreground: #f5d1c8
 *.font: VictorMono Nerd Font:12
+Xcursor.size: 32
