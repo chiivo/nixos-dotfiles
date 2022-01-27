@@ -1,7 +1,7 @@
 # <p align="center">🌸 Bliss 🌸</p>
 ![image](https://user-images.githubusercontent.com/13358601/151288533-13cb7909-76f0-4588-8466-d4e5186b05e6.png)
 
-### Info Stuff
+## Info Stuff
 ---
 - Distro: arch
 - AUR Helper: yay
@@ -25,7 +25,7 @@
 - Terminal Stuff: macchina, cbonsai, shell-color-scripts
 - Apps: Blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3, multimc (tarball, jre-openjdk), obs-studio, chatterino (gst-plugins-good), xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst
 
-### Notes
+## Notes
 ---
 - To make executable bash file: `chmod +x /script/path`
 - Change ownership: `chown (username) /file/path`
