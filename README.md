@@ -1,7 +1,7 @@
 # <p align="center">🌸 Bliss 🌸</p>
 ![image](https://user-images.githubusercontent.com/13358601/151288533-13cb7909-76f0-4588-8466-d4e5186b05e6.png)
 
-## Info Stuff
+## Packages and stuff
 - Distro: arch
 - AUR Helper: yay
 - Display Manager: lightdm, lightdm-webkit2, glorious, numlockx
