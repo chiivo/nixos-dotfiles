@@ -22,7 +22,7 @@
 - Video Player: mpv
 - Fonts: victormono nerd font, scientifica, comfortaa, noto color emoji, dotsies, other noto languages
 - Terminal Stuff: macchina, cbonsai, shell-color-scripts
-- Apps: Blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3, multimc (tarball, jre-openjdk), obs-studio, chatterino (gst-plugins-good), xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst
+- Apps: Blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3, multimc (tarball, jre-openjdk), obs-studio, chatterino (gst-plugins-good), xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst, jp2a
 
 ## Notes
 - To make executable bash file: `chmod +x /script/path`
