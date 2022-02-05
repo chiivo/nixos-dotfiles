@@ -25,5 +25,5 @@
 ## Reminders
 - To make executable bash file: `chmod +x /script/path`
 - Change ownership: `chown (username) /file/path`
-- Uncomment multilib in `/etc/pacman.conf`
+- In `/etc/pacman.conf`: ParallelDownloads=4, uncomment multilib and color
 - Out of sync kernel and driver updates can cause system to break
