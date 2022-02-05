@@ -1,6 +1,6 @@
 #!/bin/sh
 
-checkupdates=$(yay -Qu | wc -l)
+checkupdates=$(paru -Qu | wc -l)
 
 if (( $checkupdates == 0 )); then
   echo "No Updates"
