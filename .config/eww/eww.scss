@@ -1,3 +1,16 @@
+// Colors
+  $dark-black: #141515;
+  $black: #262727;
+  $gray: #555657;
+  $white: #dddddd;
+  $pink: #f5d1c8;
+  $red: #ff8278;
+  $orange: #ffc178;
+  $yellow: #eadc84;
+  $green: #bde077;
+  $blue: #77bee0;
+  $purple: #dd91f3;
+
 * {
   all: unset;
 }
@@ -7,8 +20,8 @@
   font-family: 'VictorMono Nerd Font';
   font-style: normal;
   font-weight: bold;
-  background-color: #262727;
-  color: #f5d1c8;
+  background-color: $black;
+  color: $pink;
   border-radius: 10px;
 }
 
@@ -17,17 +30,17 @@
   margin: 0 10px;
 }
 .power-button:hover {
-  color: #ff8278;
+  color: $red;
 }
 
 //Notification Revealer
 .notification-revealer {
   margin: 0 10px;
-  color: #262727;
+  color: $black;
 }
 .notification-box {
   border-radius: 6px;
-  background-color: #f5d1c8;
+  background-color: $pink;
 }
 
 //Current Window
@@ -35,17 +48,17 @@
   margin: 0 10px;
   padding: 0 10px;
   border-radius: 6px;
-  background-color: #f5d1c8;
-  color: #262727;
+  background-color: $pink;
+  color: $black;
 }
 
 //Workspaces
 .ws-button {
   margin: 0 10px;
-  color: #555657;
+  color: $gray;
 }
 .ws-button:hover {
-  color: #dddddd;
+  color: $white;
 }
 
 //Screen1 Workspaces
@@ -53,43 +66,43 @@
   margin: 0 10px;
 }
 .ws-button-mine:hover {
-  color: #dddddd;
+  color: $white;
 }
 .ws-button-visible {
   margin: 0 10px;
-  color: #555657;
+  color: $gray;
 }
 .ws-button-visible:hover {
-  color: #dddddd;
+  color: $white;
 }
 .ws-button-busy {
   margin: 0 10px;
-  color: #555657;
+  color: $gray;
 }
 .ws-button-busy:hover {
-  color: #dddddd;
+  color: $white;
 }
 
 //Screen2 Workspaces
 .ws-button-mine2 {
   margin: 0 10px;
-  color: #555657;
+  color: $gray;
 }
 .ws-button-mine2:hover {
-  color: #dddddd;
+  color: $white;
 }
 .ws-button-visible2 {
   margin: 0 10px;
 }
 .ws-button-visible2:hover {
-  color: #dddddd;
+  color: $white;
 }
 .ws-button-busy2 {
   margin: 0 10px;
-  color: #555657;
+  color: $gray;
 }
 .ws-button-busy2:hover {
-  color: #dddddd;
+  color: $white;
 }
 
 //Bluetooth Button
@@ -97,19 +110,19 @@
   margin: 0 10px;
 }
 .bluetooth-button:hover {
-  color: #77bee0;
+  color: $blue;
 }
 
 //Volume Slider
 .slider-vol scale trough highlight {
-  background-color: #f5d1c8;
+  background-color: $pink;
   border-radius: 10px;
 }
 .slider-vol scale trough highlight:hover {
-  background-color: #dd91f3;
+  background-color: $purple;
 }
 .slider-vol scale trough {
-  background-color: #555657;
+  background-color: $gray;
   border-radius: 10px;
   min-height: 4px;
   min-width: 50px;
@@ -119,15 +132,20 @@
   margin: 0 10px;
 }
 .label-vol:hover {
-  color: #dd91f3;
+  color: $purple;
 }
 
 //Date & Time
 .date {
   margin: 0 10px;
 }
-.time {
+
+//Notification Center
+.notificationcenter {
   margin: 0 10px;
+}
+.notificationcenter:hover {
+  color: $green;
 }
 
 //Reload
@@ -135,5 +153,5 @@
   margin: 0 10px;
 }
 .reload:hover {
-  color: #bde077;
+  color: $green;
 }

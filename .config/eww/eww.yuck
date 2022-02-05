@@ -61,10 +61,10 @@
     :halign "end"
     :valign "center"
     :space-evenly false
-    (bluetooth-button)
+    ;(bluetooth-button)
     (slider-vol)
     (date)
-    (time)
+    (notificationcenter)
     ;(reload)
   )
 )
@@ -74,7 +74,7 @@
     :orientation "h"
     :onclick "rofi -show drun &"
     :onmiddleclick "poweroff"
-    ""
+    " "
   )
 )
 ;(defwidget notification-revealer []
@@ -108,14 +108,14 @@
 ;    )
 ;  )
 ;)
-(defwidget bluetooth-button []
-  (button
-    :class "bluetooth-button"
-    :onclick "bluetoothctl disconnect CC:A7:C1:FF:CC:91 & bluetoothctl connect 5C:C6:E9:14:A8:15 &"
-    :onrightclick "bluetoothctl disconnect 5C:C6:E9:14:A8:15 & bluetoothctl connect CC:A7:C1:FF:CC:91 &"
-    ""
-  )
-)
+;(defwidget bluetooth-button []
+;  (button
+;    :class "bluetooth-button"
+;    :onclick "bluetoothctl disconnect CC:A7:C1:FF:CC:91 & bluetoothctl connect 5C:C6:E9:14:A8:15 &"
+;    :onrightclick "bluetoothctl disconnect 5C:C6:E9:14:A8:15 & bluetoothctl connect CC:A7:C1:FF:CC:91 &"
+;    ""
+;  )
+;)
 (defwidget slider-vol []
   (box 
     :class "slider-vol"
@@ -154,10 +154,11 @@
     date
   )
 )
-(defwidget time []
-  (box
-    :class "time"
-    time
+(defwidget notificationcenter []
+  (button
+    :class "notificationcenter"
+    :onclick "~/scripts/notificationcenter"
+    " "
   )
 )
 ;(defwidget reload []
@@ -196,11 +197,7 @@
 )
 (defpoll date
   :interval "10ms"
-  "date '+%m/%d'"
-)
-(defpoll time
-  :interval "10ms"
-  "date '+%H:%M'"
+  "date +'%m/%d %H:%M'"
 )
 
 ;;;Windows;;;
