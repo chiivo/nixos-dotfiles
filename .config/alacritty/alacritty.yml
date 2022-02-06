@@ -115,11 +115,11 @@ colors:
 
 bell:
   animation: EaseOutExpo
-  duration: 0
+  duration: 1
   color: '#dddddd'
   command:
-    program: notify-send
-    args: ["Hello, World!"]
+    program: mpv
+    args: ["/usr/share/sounds/freedesktop/stereo/bell.oga"]
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
