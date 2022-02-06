@@ -13,7 +13,7 @@
 - Icon Theme: flatery
 - Widget Theme: orchis
 - Mouse Cursor: phinger
-- Terminal: kitty
+- Terminal: alacritty
 - Text Editor: neovim
 - Browser: vivaldi
 - File Managers: pcmangtk, ranger (p7zip)
