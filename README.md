@@ -10,7 +10,7 @@
 - Compositer: picom-jonaburg-fix
 - App Launcher: rofi
 - Theme Manager: lxappearance
-- Icon Theme: flatery
+- Icon Theme: flatery, papirus
 - Widget Theme: orchis
 - Mouse Cursor: phinger
 - Terminal: alacritty
