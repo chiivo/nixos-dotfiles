@@ -46,19 +46,19 @@ volumebar () {
 volup () {
 	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master 5%+
-	notify-send "$(getvolsym) Volume" "$(volumebar)" -i none
+	dunstify "$(getvolsym) Volume" "$(volumebar)" -i none
 }
 
 voldown () {
 	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master 5%-
-	notify-send "$(getvolsym) Volume" "$(volumebar)" -i none
+	dunstify "$(getvolsym) Volume" "$(volumebar)" -i none
 }
 
 volmute () {
 	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master toggle
-	notify-send "$(getvolsym) Volume" "$(getvolsym)" -i none
+	dunstify "$(getvolsym) Volume" "$(getvolsym)" -i none
 }
 
 while getopts vsudm flag; do
