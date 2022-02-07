@@ -10,16 +10,16 @@ focus_new_windows = true
 
 ### Scratchpads ###
 [[scratchpad]]
-name = "Kitty"
-value = "kitty"
+name = "Alacritty"
+value = "alacritty"
 [[keybind]]
 command = "ToggleScratchPad"
-value = "Kitty"
+value = "Alacritty"
 modifier = ["modkey"]
 key = "Return"
 [[scratchpad]]
 name = "Bottom"
-value = "kitty btm"
+value = "alacritty -e btm"
 [[keybind]]
 command = "ToggleScratchPad"
 value = "Bottom"
@@ -41,7 +41,7 @@ key = "Tab"
 ### Spawn Terminal ###
 [[keybind]]
 command = "Execute"
-value = "kitty"
+value = "alacritty"
 modifier = ["modkey", "Shift"]
 key = "Return"
 
