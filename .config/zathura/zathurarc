@@ -22,7 +22,7 @@ set window-height 1000
 
 # zathurarc-bliss
 
-set font "CaskaydiaCove Nerd Font 12"
+set font "VictorMono Nerd Font 12"
 set default-bg "#262727" #00
 set default-fg "#f5d1c8" #01
 
