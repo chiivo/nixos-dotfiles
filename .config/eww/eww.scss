@@ -135,9 +135,12 @@
   color: $purple;
 }
 
-//Date & Time
-.date {
+//Time
+.time {
   margin: 0 10px;
+}
+.time:hover {
+  color: $blue;
 }
 
 //Notification Center
@@ -154,4 +157,28 @@
 }
 .reload:hover {
   color: $green;
+}
+
+//Calendar
+.cal {
+  background-color: $black;
+  color: $pink;
+}
+.cal:selected {
+  border-radius: 10px;
+  background-color: $pink;
+  color: $black;
+}
+.cal.header {
+  font-weight: bold;
+  color: $blue;
+}
+.cal.button {
+color: $purple;
+}
+.cal.highlight {
+  color: $purple;
+}
+.cal:indeterminate {
+color: $black;
 }

@@ -28,8 +28,6 @@
     :valign "center"
     :space-evenly false
     (power-button)
-    ;(notification-revealer)
-    ;(current-window)
   )
 )
 (defwidget workspaces1 []
@@ -63,7 +61,7 @@
     :space-evenly false
     ;(bluetooth-button)
     (slider-vol)
-    (date)
+    (time)
     (notificationcenter)
     ;(reload)
   )
@@ -77,37 +75,6 @@
     " "
   )
 )
-;(defwidget notification-revealer []
-;  (box
-;    :class "notification-revealer"
-;    :orientation "h"
-;    :space-evenly false
-;    (revealer
-;      :reveal {notifications_listen.show} 
-;      :transition "slideright"
-;      (box
-;        :class "notification-box"
-;        :space-evenly false
-;        "  "
-;        (literal
-;          :content {notifications_listen.content}
-;        )
-;      )
-;    )
-;  )
-;)
-;(defwidget current-window []
-;  (box
-;    :class "current-window"
-;    :orientation "h"
-;    :space-evenly "false"
-;    :hexpand "true"
-;    (label
-;      :limit-width 30
-;      :text getwindow
-;    )
-;  )
-;)
 ;(defwidget bluetooth-button []
 ;  (button
 ;    :class "bluetooth-button"
@@ -148,10 +115,14 @@
     )
   )
 )
-(defwidget date []
-  (box
-    :class "date"
-    date
+(defwidget time []
+  (eventbox
+    :onhover "eww open calendar"
+    :onhoverlost "eww close calendar"
+    (button
+      :class "time"
+      time
+    )
   )
 )
 (defwidget notificationcenter []
@@ -168,16 +139,23 @@
 ;    " "
 ;  )
 ;)
+(defwidget cal []
+	(box 
+    :class "cal-box" 
+    :orientation "v"
+	  (box 
+      :class "cal-inner-box"
+	    (calendar 
+        :class "cal" 
+		    :day day 
+			  :month month 
+			  :year year
+      )
+    )
+  )
+)
 
 ;;;Variables;;;
-;(deflisten notifications_listen
-;  :initial '{"show": false, "content": ""}'
-;  "~/scripts/notifications"
-;)
-;(defpoll getwindow
-;  :interval "10ms"
-;  "~/scripts/getwindow"
-;)
 (deflisten leftwm-tags1
   "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/template1.liquid"
 )
@@ -195,9 +173,23 @@
 (defvar vol-revealer
   false
 )
-(defpoll date
-  :interval "10ms"
-  "date +'%m/%d %H:%M'"
+(defpoll time
+  :interval "1s"
+  "date +'%H:%M'"
+)
+(defpoll day 
+  :interval "10h"
+  "date '+%d'"
+)
+(defpoll month 
+  :interval "10h"
+  "month=$(date +%m)
+  month=$((month-1))
+  echo $month"
+)
+(defpoll year 
+  :interval "10h"
+  "date '+%Y'"
 )
 
 ;;;Windows;;;
@@ -228,4 +220,13 @@
     :distance "40px"
   )
   (bar2)
+)
+(defwindow calendar
+	:geometry (geometry
+    :x "1340px" 
+		:y "50px" 
+		:width "270px" 
+		:height "60px"
+  )
+  (cal)
 )
