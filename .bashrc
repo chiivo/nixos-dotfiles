@@ -1,5 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+#Variables
+export EDITOR='nvim'
 
 #Aliases
 alias ls='ls --color=auto'
@@ -12,7 +14,6 @@ alias install='sudo pacman -S'
 alias remove='sudo pacman -Rs'
 alias clean='sudo pacman -Rsn $(paru -Qdtq)'
 alias btctl='bluetoothctl'
-export EDITOR='nvim'
 
 #Prompt
 PS1='\[\e[37m\]\[\e[0m\]\[\e[47;1m\]\[\e[30m\]\w  \[\e[0m\]\[\e[37m\]\[\e[0m\] '
