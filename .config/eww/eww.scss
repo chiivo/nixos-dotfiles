@@ -161,6 +161,7 @@
 
 //Calendar
 .cal {
+  font-weight: bold;
   background-color: $black;
   color: $pink;
 }
@@ -170,7 +171,6 @@
   color: $black;
 }
 .cal.header {
-  font-weight: bold;
   color: $blue;
 }
 .cal.button {
