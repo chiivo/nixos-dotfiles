@@ -223,7 +223,7 @@
 )
 (defwindow calendar
 	:geometry (geometry
-    :x "1340px" 
+    :x "1258px" 
 		:y "50px" 
 		:width "270px" 
 		:height "60px"
