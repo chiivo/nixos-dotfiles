@@ -167,17 +167,17 @@
 }
 .cal:selected {
   border-radius: 10px;
-  background-color: $pink;
+  background-color: $white;
   color: $black;
 }
 .cal.header {
-  color: $blue;
+  color: $purple;
 }
 .cal.button {
-color: $purple;
+color: $black;
 }
 .cal.highlight {
-  color: $purple;
+  color: $blue;
 }
 .cal:indeterminate {
 color: $black;
