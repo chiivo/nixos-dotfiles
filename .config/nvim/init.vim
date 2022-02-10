@@ -14,11 +14,13 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'glepnir/dashboard-nvim'
 Plug 'Pocco81/TrueZen.nvim'
-Plug 'sheerun/vim-polyglot'
 Plug 'elkowar/yuck.vim'
 Plug 'rktjmp/lush.nvim'
 Plug '~/.config/nvim/colors/bliss'
 Plug 'Manas140/run.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-orgmode/orgmode'
 call plug#end()
 
 " Colors
@@ -40,6 +42,7 @@ set autoindent
 set clipboard=unnamedplus
 set completeopt=menu,menuone,noselect
 set cursorline
+set tabstop=2
 "set expandtab
 set guicursor=
 set ignorecase
@@ -278,5 +281,33 @@ true_zen.setup({
 })
 EOF
 
-" Source
+"Org Mode
+lua << EOF
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.org = {
+  install_info = {
+    url = 'https://github.com/milisims/tree-sitter-org',
+    revision = 'f110024d539e676f25b72b7c80b0fd43c34264ef',
+    files = {'src/parser.c', 'src/scanner.cc'},
+  },
+  filetype = 'org',
+}
+
+require'nvim-treesitter.configs'.setup {
+  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+  highlight = {
+    enable = true,
+    disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
+    additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
+  },
+  ensure_installed = {'org'}, -- Or run :TSUpdate org
+}
+
+require('orgmode').setup({
+  org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
+  org_default_notes_file = '~/Dropbox/org/refile.org',
+})
+EOF
+
+"Source
 source ~/.local/share/nvim/plugged/galaxyline.nvim/example/blissline.lua
