@@ -28,7 +28,7 @@ scrolling:
 font:
   normal:
     family: Victor Mono Nerd Font
-    style: Medium
+    style: Normal
   bold:
     family: Victor Mono Nerd Font
     style: Bold
