@@ -27,3 +27,4 @@
 - Change ownership: `chown (username) /file/path`
 - In `/etc/pacman.conf`: ParallelDownloads=4, uncomment multilib and color
 - Out of sync kernel and driver updates can cause system to break
+- Remove gnu-free-fonts, install ttf-symbola (aur) (for alacritty braille to render as dots on graphs)
