@@ -4,7 +4,7 @@
  *****************/
 
 configuration {
-	modi: "drun,window";
+	modi: "drun";
 	font: "Victor Mono Nerd Font 12";
 	display-run: "";
 	display-drun: "";
@@ -14,7 +14,7 @@ configuration {
 	show-icons: true;
 	drun-display-format: "{icons} {name}";
 	window-format: "{t}";
-	scroll-method: 0;
+	scroll-method: 1;
 	sidebar-mode: true;
 }
 
@@ -33,7 +33,7 @@ window {
 	border: 4;
 	border-radius: 10;
 	padding: 10;
-	width: 600;
+	width: 372px;
 }
 
 mainbox {
@@ -93,6 +93,7 @@ mode-switcher {
 }
 
 button {
+	enabled: false;
   border-radius: 10px;
   horizontal-align: 0.5;
   vertical-align: 0.5;
@@ -135,7 +136,9 @@ inputbar {
 
 listview {
 	lines: 10;
-	columns: 2;
+  fixed-height: false;
+  dynamic: true;
+	columns: 1;
 	border: 0px;
 	scrollbar: false;
 }
