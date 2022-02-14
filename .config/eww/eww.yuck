@@ -157,10 +157,10 @@
 
 ;;;Variables;;;
 (deflisten leftwm-tags1
-  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/bar1.liquid"
+  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/tags1.liquid"
 )
 (deflisten leftwm-tags2
-  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/bar2.liquid"
+  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/tags2.liquid"
 )
 (defpoll getvolsym
   :interval "10ms"
