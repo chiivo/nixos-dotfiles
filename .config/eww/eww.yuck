@@ -59,10 +59,9 @@
     :halign "end"
     :valign "center"
     :space-evenly false
-    ;(bluetooth-button)
     (slider-vol)
     (time)
-    (notificationcenter)
+    ;(bluetooth-button)
     ;(reload)
   )
 )
@@ -75,14 +74,6 @@
     " "
   )
 )
-;(defwidget bluetooth-button []
-;  (button
-;    :class "bluetooth-button"
-;    :onclick "bluetoothctl disconnect CC:A7:C1:FF:CC:91 & bluetoothctl connect 5C:C6:E9:14:A8:15 &"
-;    :onrightclick "bluetoothctl disconnect 5C:C6:E9:14:A8:15 & bluetoothctl connect CC:A7:C1:FF:CC:91 &"
-;    ""
-;  )
-;)
 (defwidget slider-vol []
   (box 
     :class "slider-vol"
@@ -125,13 +116,14 @@
     )
   )
 )
-(defwidget notificationcenter []
-  (button
-    :class "notificationcenter"
-    :onclick "~/scripts/notificationcenter"
-    " "
-  )
-)
+;(defwidget bluetooth-button []
+;  (button
+;    :class "bluetooth-button"
+;    :onclick "bluetoothctl disconnect CC:A7:C1:FF:CC:91 & bluetoothctl connect 5C:C6:E9:14:A8:15 &"
+;    :onrightclick "bluetoothctl disconnect 5C:C6:E9:14:A8:15 & bluetoothctl connect CC:A7:C1:FF:CC:91 &"
+;    ""
+;  )
+;)
 ;(defwidget reload []
 ;  (button
 ;    :class "reload"
@@ -222,11 +214,11 @@
   (bar2)
 )
 (defwindow calendar
-	:geometry (geometry
+  :geometry (geometry
     :x "1258px" 
-		:y "50px" 
-		:width "270px" 
-		:height "60px"
+    :y "50px" 
+    :width "270px"
+    :height "60px"
   )
   (cal)
 )
