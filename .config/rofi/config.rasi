@@ -55,7 +55,7 @@ textbox {
 
 element {
 	border-radius: 10;
-	margin: 0px;
+	margin: 5px;
 	padding: 5px;
 }
 
@@ -112,7 +112,7 @@ inputbar {
 	border: 0px 0px 0px solid 0px;
 	spacing: 10;
 	text-color: @foreground;
-	padding: 5px;
+	padding: 10px;
 }
 
 entry {
