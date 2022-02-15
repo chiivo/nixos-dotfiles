@@ -1,5 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
 #Variables
 export EDITOR='nvim'
 
@@ -10,9 +11,8 @@ alias v='nvim'
 alias se='sudoedit'
 alias shutdown='shutdown now'
 alias update='sudo pacman -Syyu && paru -Syua --skipreview && sudo pacman -Rsn $(paru -Qdtq)'
-alias install='sudo pacman -S || paru -S'
+alias install='sudo pacman -S || paru -S --skipreview'
 alias remove='sudo pacman -Rs'
-alias clean='sudo pacman -Rsn $(paru -Qdtq)'
 alias btctl='bluetoothctl'
 
 #Prompt
@@ -26,11 +26,11 @@ r=$((RANDOM%15))
 	command[2]='macchina -t pyramid-ascii'
 	command[3]='macchina -t smeg-ascii'
 	command[4]='macchina -t wow-ascii'
-	command[5]='cbonsai -L 27 -p'
-	command[6]='cbonsai -L 27 -p'
-	command[7]='cbonsai -L 27 -p'
-	command[8]='cbonsai -L 27 -p'
-	command[9]='cbonsai -L 27 -p'
+	command[5]='sleep .1; cbonsai -L 27 -p'
+	command[6]='sleep .1; cbonsai -L 27 -p'
+	command[7]='sleep .1; cbonsai -L 27 -p'
+	command[8]='sleep .1; cbonsai -L 27 -p'
+	command[9]='sleep .1; cbonsai -L 27 -p'
 	command[10]='colorscript -e 15'
 	command[11]='colorscript -e 21'
 	command[12]='colorscript -e 35'
@@ -41,5 +41,7 @@ unset command r
 
 
 # BEGIN_KITTY_SHELL_INTEGRATION
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then
+  source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash";
+fi
 # END_KITTY_SHELL_INTEGRATION
