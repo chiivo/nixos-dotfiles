@@ -34,13 +34,13 @@ window {
 	background-color: @background;
 	border: 0;
 	border-radius: 10;
-	padding: 10;
+	padding: 5px;
 	width: 372px;
 }
 
 mainbox {
 	border: 0;
-	padding: 0;
+	padding: 0px;
 }
 
 message {
@@ -55,8 +55,8 @@ textbox {
 
 element {
 	border-radius: 10;
-	margin: 5;
-	padding: 5;
+	margin: 0px;
+	padding: 5px;
 }
 
 element.normal.normal {
@@ -99,7 +99,7 @@ button {
   border-radius: 10px;
   horizontal-align: 0.5;
   vertical-align: 0.5;
-  padding: 10px;
+  padding: 0px;
   text-color: @foreground;
 }
 
@@ -112,7 +112,7 @@ inputbar {
 	border: 0px 0px 0px solid 0px;
 	spacing: 10;
 	text-color: @foreground;
-	padding: 10px;
+	padding: 5px;
 }
 
 entry {
