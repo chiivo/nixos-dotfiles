@@ -38,10 +38,3 @@ r=$((RANDOM%15))
 	command[14]='colorscript -e 50'
 eval ${command[$r]}
 unset command r
-
-
-# BEGIN_KITTY_SHELL_INTEGRATION
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then
-  source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash";
-fi
-# END_KITTY_SHELL_INTEGRATION
