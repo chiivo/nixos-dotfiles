@@ -69,9 +69,8 @@
   (button
     :class "power-button"
     :orientation "h"
-    :onclick "rofi -show drun &"
-    :onmiddleclick "poweroff"
-    " "
+    :onclick "poweroff"
+    " "
   )
 )
 (defwidget slider-vol []
