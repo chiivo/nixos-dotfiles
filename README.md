@@ -9,7 +9,7 @@
 - Image Viewer: sxiv
 - Compositer: picom-jonaburg-fix
 - App Launcher: rofi
-- Theme Manager: lxappearance
+- Theme Manager: lxappearance, qt5ct
 - Icon Theme: flatery, papirus
 - Widget Theme: orchis
 - Mouse Cursor: phinger
