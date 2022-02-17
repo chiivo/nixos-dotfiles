@@ -194,7 +194,7 @@ min_icon_size = 16
 max_icon_size = 48
 
 # Paths to default icons.
-icon_path = .icons/Papirus/48x48
+icon_path = ~/.local/share/icons/Papirus/48x48/status/:~/.local/share/icons/Papirus/48x48/devices/
 
 ### History ###
 
