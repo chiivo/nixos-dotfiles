@@ -6,7 +6,7 @@
 - Display Manager: lightdm, lightdm-webkit2, glorious, numlockx
 - Window Manager: leftwm
 - Wallpaper Drawer: feh
-- Image Viewer: sxiv
+- Image Viewer: nsxiv
 - Compositer: picom-jonaburg-fix
 - App Launcher: rofi
 - Theme Manager: lxappearance, qt5ct
