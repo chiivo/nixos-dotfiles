@@ -8,11 +8,13 @@ fullshot () {
 	maim -usb 2 /mnt/HDD/Images/Screenshots/screenshot.png; sleep .1; dunstify -i /mnt/HDD/Images/Screenshots/screenshot.png 'Screenshot' 'Selection Saved'
 }
 
-while getopts af flag; do
-	case "$flag" in
-		a) areashot;;
-		f) fullshot;;
-	esac
-done
+case "$1" in
+	-a)
+    areashot
+    ;;
+	-f)
+    fullshot
+    ;;
+esac
 
 mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga

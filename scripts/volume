@@ -61,12 +61,20 @@ volmute () {
 	dunstify -a Volume "$(getvolsym) Volume" "$(getvolsym)" -i none
 }
 
-while getopts vsudm flag; do
-	case "$flag" in
-		v) getvol;;
-		s) getvolsym;;
-		u) volup;;
-		d) voldown;;
-		m) volmute;;
-	esac
-done
+case "$1" in
+	-v)
+    getvol
+    ;;
+	-s)
+    getvolsym
+    ;;
+	-u)
+    volup
+    ;;
+	-d)
+    voldown
+    ;;
+	-m)
+    volmute
+    ;;
+esac
