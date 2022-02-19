@@ -18,7 +18,6 @@ Plug 'elkowar/yuck.vim'
 Plug 'rktjmp/lush.nvim'
 Plug '~/.config/nvim/colors/bliss'
 Plug 'Manas140/run.nvim'
-
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-orgmode/orgmode'
 call plug#end()
@@ -43,7 +42,8 @@ set clipboard=unnamedplus
 set completeopt=menu,menuone,noselect
 set cursorline
 set tabstop=2
-"set expandtab
+set shiftwidth=2
+set expandtab
 set guicursor=
 set ignorecase
 set mouse=a
@@ -52,7 +52,6 @@ set nohlsearch
 "set nowrap
 set number
 set scrolloff=999
-"set shiftwidth=8
 set smartcase
 set smartindent
 set termguicolors
@@ -91,7 +90,9 @@ let g:dashboard_custom_header = [
 \]
 
 " Bufferline
-lua require("bufferline").setup{}
+lua << EOF
+require('bufferline').setup {}
+EOF
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 nnoremap <silent>b] :BufferLineCycleNext<CR>
@@ -281,18 +282,11 @@ true_zen.setup({
 })
 EOF
 
-"Org Mode
+" Orgmode
 lua << EOF
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.org = {
-  install_info = {
-    url = 'https://github.com/milisims/tree-sitter-org',
-    revision = 'f110024d539e676f25b72b7c80b0fd43c34264ef',
-    files = {'src/parser.c', 'src/scanner.cc'},
-  },
-  filetype = 'org',
-}
-
+-- Load custom tree-sitter grammar for org filetype
+require('orgmode').setup_ts_grammar()
+-- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {
   -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
   highlight = {
@@ -302,12 +296,11 @@ require'nvim-treesitter.configs'.setup {
   },
   ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
-
 require('orgmode').setup({
   org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
   org_default_notes_file = '~/Dropbox/org/refile.org',
 })
 EOF
 
-"Source
+" Source
 source ~/.local/share/nvim/plugged/galaxyline.nvim/example/blissline.lua
