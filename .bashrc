@@ -32,11 +32,11 @@ r=$((RANDOM%15))
 	command[7]='sleep .1; cbonsai -L 27 -p'
 	command[8]='sleep .1; cbonsai -L 27 -p'
 	command[9]='sleep .1; cbonsai -L 27 -p'
-  command[10]='crunchbang'
-  command[11]='faces'
-  command[12]='rails'
-  command[13]='square'
-  command[14]='zwaves'
+  command[10]='colorscript -e crunchbang'
+  command[11]='colorscript -e faces'
+  command[12]='colorscript -e rails'
+  command[13]='colorscript -e square'
+  command[14]='colorscript -e zwaves'
 
 eval ${command[$r]}
 unset command r
