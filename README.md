@@ -3,7 +3,7 @@
 ## Software
 - Distro: arch
 - AUR Helper: paru
-- Display Manager: lightdm, lightdm-webkit2, glorious, numlockx
+- Display Manager: lightdm, lightdm-mini-greeter, numlockx
 - Window Manager: leftwm
 - Wallpaper Drawer: feh
 - Image Viewer: nsxiv
