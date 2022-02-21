@@ -172,18 +172,18 @@ key = "5"
 [[keybind]]
 command = "Execute"
 value = "scripts/volume -u"
-modifier = ["modkey"]
-key = "Up"
+modifier = []
+key = "XF86XK_AudioRaiseVolume"
 [[keybind]]
 command = "Execute"
 value = "scripts/volume -d"
-modifier = ["modkey"]
-key = "Down"
+modifier = []
+key = "XF86XK_AudioLowerVolume"
 [[keybind]]
 command = "Execute"
 value = "scripts/volume -m"
-modifier = ["modkey", "Shift"]
-key = "Down"
+modifier = []
+key = "XF86XK_AudioMute"
 
 ### Screenshot ###
 [[keybind]]
