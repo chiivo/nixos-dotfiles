@@ -37,6 +37,5 @@ r=$((RANDOM%15))
   command[12]='colorscript -e rails'
   command[13]='colorscript -e square'
   command[14]='colorscript -e zwaves'
-
 eval ${command[$r]}
 unset command r
