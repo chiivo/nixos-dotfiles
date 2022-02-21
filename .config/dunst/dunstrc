@@ -2,7 +2,7 @@
 ### Display ###
 
 # Which monitor should the notifications be displayed on.
-monitor = 1
+monitor = 0
 
 # Display notification on focused monitor.  Possible modes are:
 #   mouse: follow mouse pointer
@@ -22,16 +22,16 @@ follow = none
 # dynamic width from 0 to 300
 # width = (0, 300)
 # constant width of 300
-width = 360
+width = 372
 
 # The maximum height of a single notification, excluding the frame.
 height = 300
 
 # Position the notification in the top right corner
-origin = top-left
+origin = top-right
 
 # Offset from the origin (x,y)
-offset = 10x50
+offset = 10x10
 
 # Scale factor. It is auto-detected if value is 0.
 scale = 0
