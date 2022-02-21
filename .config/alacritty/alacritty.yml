@@ -45,6 +45,7 @@ font:
   glyph_offset:
     x: 0
     y: 0
+  builtin_box_drawing: true
 
 draw_bold_text_with_bright_colors: false
 
