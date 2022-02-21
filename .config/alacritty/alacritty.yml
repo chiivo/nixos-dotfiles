@@ -27,16 +27,16 @@ scrolling:
 
 font:
   normal:
-    family: Victor Mono Nerd Font
-    style: Normal
+    family: VictorMono Nerd Font
+    style: Medium
   bold:
-    family: Victor Mono Nerd Font
+    family: VictorMono Nerd Font
     style: Bold
   italic:
-    family: Victor Mono Nerd Font
+    family: VictorMono Nerd Font
     style: Italic
   bold_italic:
-    family: Victor Mono Nerd Font
+    family: VictorMono Nerd Font
     style: Bold Italic
   size: 12.0
   offset:
@@ -116,7 +116,7 @@ colors:
 
 bell:
   animation: EaseOutExpo
-  duration: 1
+  duration: 0
   color: '#dddddd'
   command:
     program: mpv
