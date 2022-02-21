@@ -27,9 +27,9 @@ configuration {
 }
 
 window {
-	location: northeast;
-	anchor: northeast;
-  x-offset: -10px;
+	location: northwest;
+	anchor: northwest;
+  x-offset: 10px;
   y-offset: 10px;
 	background-color: @background;
 	border: 0;
