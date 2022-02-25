@@ -386,7 +386,7 @@ timeout = 0
 script = ~/scripts/notifications
 
 [volume]
-summary = "*Volume"
+summary = ".*Volume"
 set_stack_tag = "Volume"
 timeout = 2
 #
