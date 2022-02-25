@@ -44,21 +44,21 @@ volumebar () {
 }
 
 volup () {
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master 5%+
 	dunstify -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
+	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 voldown () {
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master 5%-
 	dunstify -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
+	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 volmute () {
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	amixer -D pulse sset Master toggle
 	dunstify -a Volume "$(getvolsym) Volume" "$(getvolsym)" -i none
+	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 case "$1" in
