@@ -19,7 +19,7 @@
 - File Managers: thunar, ranger (p7zip)
 - USB Mount: udiskie
 - Video Player: mpv
-- Fonts: victormono nerd font, scientifica, comfortaa, noto color emoji, dotsies, other noto languages
+- Fonts: victormono nerd font, scientifica, comfortaa, noto color emoji, ttf-liberation, ttf-symbola, dotsies, other noto languages
 - Terminal Stuff: macchina, cbonsai, shell-color-scripts
 - Apps: Blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3, multimc (tarball, jre-openjdk), obs-studio, chatterino (gst-plugins-good), bottom, blueman, xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst, jp2a, wmctrl, playerctl
 ## Reminders
@@ -28,3 +28,4 @@
 - In `/etc/pacman.conf`: ParallelDownloads=4, uncomment multilib and color
 - Out of sync kernel and driver updates can cause system to break
 - Remove gnu-free-fonts, install ttf-symbola (aur) (for alacritty braille to render as dots on graphs)
+- Install ttf-liberation for steam
