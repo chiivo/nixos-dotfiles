@@ -118,11 +118,11 @@ let g:nvim_tree_respect_buf_cwd = 1 "0 by default, will change cwd of nvim-tree 
 let g:nvim_tree_create_in_closed_folder = 1 "0 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
 let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
 let g:nvim_tree_show_icons = {
-    \ 'git': 1,
-    \ 'folders': 0,
-    \ 'files': 0,
-    \ 'folder_arrows': 0,
-    \ }
+  \ 'git': 1,
+  \ 'folders': 1,
+  \ 'files': 1,
+  \ 'folder_arrows': 0,
+  \ }
 "If 0, do not show the icons for one of 'git' 'folder' and 'files'
 "1 by default, notice that if 'files' is 1, it will only display
 "if nvim-web-devicons is installed and on your runtimepath.
@@ -132,38 +132,46 @@ let g:nvim_tree_show_icons = {
 " default will show icon by default if no icon is provided
 " default shows no icon by default
 let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
-    \ }
+  \ 'default': '',
+  \ 'symlink': '',
+  \ 'git': {
+  \   'unstaged': "✗",
+  \   'staged': "✓",
+  \   'unmerged': "",
+  \   'renamed': "➜",
+  \   'untracked': "★",
+  \   'deleted': "",
+  \   'ignored': "◌"
+  \   },
+  \ 'folder': {
+  \   'arrow_open': "",
+  \   'arrow_closed': "",
+  \   'default': "",
+  \   'open': "",
+  \   'empty': "",
+  \   'empty_open': "",
+  \   'symlink': "",
+  \   'symlink_open': "",
+  \   }
+  \ }
 
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 
-set termguicolors " this variable must be enabled for colors to be applied properly
-
 " a list of groups can be found at `:help nvim_tree_highlight`
-highlight NvimTreeFolderIcon guibg=blue
+highlight NvimTreeSymlink guifg='#eadc84'
+highlight NvimTreeRootFolder guifg='#ff8278'
+highlight NvimTreeFolderIcon guifg='#77bee0'
+highlight NvimTreeFolderName guifg='#77bee0'
+highlight NvimTreeEmptyFolderName guifg='#555657'
+highlight NvimTreeOpenedFolderName guifg='#77bee0'
+highlight NvimTreeExecFile guifg='#bde077'
+highlight NvimTreeOpenedFile guifg='#dddddd'
+highlight NvimTreeSpecialFile guifg='#ffc178'
+highlight NvimTreeImageFile guifg='#dd91f3'
+highlight NvimTreeIndentMarker guifg='#f5d1c8'
 
 lua << EOF
 require'nvim-tree'.setup {
@@ -175,7 +183,7 @@ require'nvim-tree'.setup {
   auto_close           = false,
   auto_reload_on_write = true,
   open_on_tab          = false,
-  hijack_cursor        = false,
+  hijack_cursor        = true,
   update_cwd           = false,
   hijack_unnamed_buffer_when_opening = false,
   hijack_directories   = {
