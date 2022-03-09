@@ -107,10 +107,10 @@
 )
 (defwidget time []
   (eventbox
+    :onhover "eww open calendar"
     :onhoverlost "eww close calendar"
     (button
       :class "time"
-      :onclick "eww open calendar"
       time
     )
   )
