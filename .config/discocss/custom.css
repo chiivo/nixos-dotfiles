@@ -131,20 +131,11 @@ nav[aria-label="Servers sidebar"]:hover {
   width: 70px;
 }
 
-/*Server List Dot Fade*/
-nav[aria-label="Servers sidebar"] span.item-2LIpTv {
-  transition: all .2s;
-  background-color: transparent;
-}
-nav[aria-label="Servers sidebar"]:hover span.item-2LIpTv {
-  background-color: var(--white);
-}
-
 /*Collapsable Channel List*/
 div.sidebar-1tnWFu {
   width: 10px;
   /*transition: width 0.4s;*/
-	transition: all .2s;
+	transition: width .2s;
 	opacity: 0;
 }
 div.sidebar-1tnWFu:hover {
@@ -165,13 +156,11 @@ div.sidebar-1tnWFu:hover div.unread-36eUEm {
 
 /*Collapsable Member List*/
 div.container-2o3qEW {
-  width: 10px;
-  transition: all 500ms ease-in;
-	opacity: 0;
+  width: 60px;
+  transition: all .2s;
 }
 div.container-2o3qEW:hover {
   width: 250px;
-	opacity: 100%;
 }
 
 /*Hide Scrollbars*/
