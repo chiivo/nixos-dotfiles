@@ -1,0 +1,201 @@
+/*Theme*/
+.theme-dark {
+  --font-primary: 'VictorMono Nerd Font';
+  --font-display: 'Comfortaa';
+  --white: #dddddd;
+  --gray: #555657;
+  --black: #262727;
+  --dark-black: #141515;
+  --pink: #f5d1c8;
+  --red: #ff8278;
+  --orange: #ffc178;
+  --yellow: #eadc84;
+  --green: #bde077;
+  --blue: #77bee0;
+  --purple: #dd91f3;
+
+  --header-primary: var(--white);
+  --header-secondary: var(--gray);
+  --text-normal: var(--white);
+  --text-muted: var(--gray);
+  --text-link: var(--blue);
+  --text-link-low-saturation: var(--gray);
+  --text-positive: hsl(139,calc(var(--saturation-factor, 1)*66.8%),58.6%);
+  --text-warning: hsl(38,calc(var(--saturation-factor, 1)*95.7%),54.1%);
+  --text-danger: hsl(359,calc(var(--saturation-factor, 1)*82.6%),59.4%);
+  --text-brand: hsl(235,calc(var(--saturation-factor, 1)*86.1%),77.5%);
+  --interactive-normal: var(--gray);
+  --interactive-hover: var(--pink);
+  --interactive-active: var(--white);
+  --interactive-muted: var(--gray);
+  --background-primary: var(--black);
+  --background-secondary: var(--dark-black);
+  --background-secondary-alt: var(--dark-black);
+  --background-tertiary: var(--black);
+  --background-accent: var(--gray);
+  --background-floating: var(--dark-black);
+  --background-nested-floating: var(--black);
+  --background-mobile-primary: var(--black);
+  --background-mobile-secondary: var(--black);
+  --background-modifier-hover: var(--gray);
+  --background-modifier-active: var(--gray);
+  --background-modifier-selected: var(--black);
+  --background-modifier-accent: var(--gray);
+  --info-positive-text: var(--white);
+  --info-warning-text: var(--white);
+  --info-danger-text: var(--white);
+  --info-help-background: hsla(197,calc(var(--saturation-factor, 1)*100%),47.8%,0.1);
+  --info-help-foreground: hsl(197,calc(var(--saturation-factor, 1)*100%),47.8%);
+  --info-help-text: var(--white);
+  --status-warning-text: var(--dark-black);
+  --scrollbar-thin-thumb: #202225;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: #202225;
+  --scrollbar-auto-track: hsl(210,calc(var(--saturation-factor, 1)*9.8%),20%);
+  --scrollbar-auto-scrollbar-color-thumb: #202225;
+  --scrollbar-auto-scrollbar-color-track: #2f3136;
+  --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+  --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+  --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+  --logo-primary: var(--red);
+  --control-brand-foreground: hsl(235,calc(var(--saturation-factor, 1)*86.1%),77.5%);
+  --control-brand-foreground-new: hsl(235,calc(var(--saturation-factor, 1)*86.1%),77.5%);
+  --background-mentioned: hsla(38,calc(var(--saturation-factor, 1)*95.7%),54.1%,0.1);
+  --background-mentioned-hover: hsla(38,calc(var(--saturation-factor, 1)*95.7%),54.1%,0.08);
+  --background-message-hover: var(--black);
+  --channels-default: var(--gray);
+  --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  --channeltextarea-background: var(--dark-black);
+  --activity-card-background: var(--red);
+  --textbox-markdown-syntax: var(--red);
+  --deprecated-card-bg: rgba(32,34,37,0.6);
+  --deprecated-card-editable-bg: rgba(32,34,37,0.3);
+  --deprecated-store-bg: #36393f;
+  --deprecated-quickswitcher-input-background: #72767d;
+  --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+  --deprecated-text-input-bg: rgba(0,0,0,0.1);
+  --deprecated-text-input-border: rgba(0,0,0,0.3);
+  --deprecated-text-input-border-hover: var(--dark-black);
+  --deprecated-text-input-border-disabled: var(--black);
+  --deprecated-text-input-prefix: var(--white);
+}
+.theme-dark, .theme-light {
+  --info-positive-background: hsla(139,calc(var(--saturation-factor, 1)*47.3%),43.9%,0.1);
+  --info-positive-foreground: hsl(139,calc(var(--saturation-factor, 1)*47.3%),43.9%);
+  --info-warning-background: hsla(38,calc(var(--saturation-factor, 1)*95.7%),54.1%,0.1);
+  --info-warning-foreground: hsl(38,calc(var(--saturation-factor, 1)*95.7%),54.1%);
+  --info-danger-background: hsla(359,calc(var(--saturation-factor, 1)*82.6%),59.4%,0.1);
+  --info-danger-foreground: hsl(359,calc(var(--saturation-factor, 1)*82.6%),59.4%);
+  --status-positive-background: hsl(139,calc(var(--saturation-factor, 1)*47.3%),43.9%);
+  --status-positive-text: #fff;
+  --status-warning-background: hsl(38,calc(var(--saturation-factor, 1)*95.7%),54.1%);
+  --status-danger-background: hsl(359,calc(var(--saturation-factor, 1)*82.6%),59.4%);
+  --status-danger-text: #fff;
+  --focus-primary: hsl(197,calc(var(--saturation-factor, 1)*100%),47.8%);
+}
+code {
+  font-family: 'VictorMono Nerd Font';
+}
+.scrollerInner-2PPAp2 {
+  overflow: auto;
+    background: var(--dark-black);
+    margin: 10px;
+    border-radius: 10px;
+}
+.chatHeaderBar-2fUORh.narrow-2jjOvw {
+  border-radius: 10px;
+  margin: 10px;
+}
+.peopleColumn-1wMU14 {
+  background-color: var(--black);
+}
+.sidebar-1tnWFu {
+  margin: 10px 0;
+  border-radius: 10px;
+}
+.form-3gdLxP {
+  margin: 0 10px;
+  padding: 0;
+}
+button[aria-label="Select emoji"] {
+  padding: 4px 10px 4px 4px;
+}
+
+/*Collapsable Server List*/
+nav[aria-label="Servers sidebar"] {
+  width: 10px;
+  transition: width 0.2s;
+}
+nav[aria-label="Servers sidebar"]:hover {
+  width: 70px;
+}
+
+/*Server List Dot Fade*/
+nav[aria-label="Servers sidebar"] span.item-2LIpTv {
+  transition: all .2s;
+  background-color: transparent;
+}
+nav[aria-label="Servers sidebar"]:hover span.item-2LIpTv {
+  background-color: var(--white);
+}
+
+/*Collapsable Channel List*/
+div.sidebar-1tnWFu {
+  width: 10px;
+  /*transition: width 0.4s;*/
+	transition: all .2s;
+	opacity: 0;
+}
+div.sidebar-1tnWFu:hover {
+  width: 240px;
+	opacity: 100%;
+}
+
+/*Channel Unread Badges*/
+div.sidebar-1tnWFu div.unread-36eUEm {
+  background-color: transparent !important;
+  color: transparent !important;
+  transition: background-color 0.2s;
+}
+div.sidebar-1tnWFu:hover div.unread-36eUEm {
+  background-color: var(--white) !important;
+  color: var(--white) !important;
+}
+
+/*Collapsable Member List*/
+div.container-2o3qEW {
+  width: 10px;
+  transition: all 500ms ease-in;
+	opacity: 0;
+}
+div.container-2o3qEW:hover {
+  width: 250px;
+	opacity: 100%;
+}
+
+/*Hide Scrollbars*/
+::-webkit-scrollbar {
+  display: none;
+}
+.content-1x5b-n {
+  margin: 0 !important;
+  border-radius: 0;
+}
+.mainContent-u_9PKf {
+  padding-left: 8px;
+}
+.container-2Pjhx- {
+  margin: 0;
+  max-width: unset;
+}
+.layout-2DM8Md {
+  border-radius: 0;
+  padding: 0 16px;
+}
+.unread-2lAfLh {
+  z-index: 1;
+}
+.buttons-3JBrkn {
+  padding-right: 10px !important;
+}
