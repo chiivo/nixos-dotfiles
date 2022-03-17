@@ -98,9 +98,10 @@ code {
   font-family: 'VictorMono Nerd Font';
 }
 .scrollerInner-2PPAp2 {
-  background: var(--dark-black);
-  margin: 10px;
-  border-radius: 10px;
+  overflow: auto;
+    background: var(--dark-black);
+    margin: 10px;
+    border-radius: 10px;
 }
 .chatHeaderBar-2fUORh.narrow-2jjOvw {
   border-radius: 10px;
@@ -128,6 +129,49 @@ nav[aria-label="Servers sidebar"] {
 }
 nav[aria-label="Servers sidebar"]:hover {
   width: 70px;
+}
+
+/*Server List Dot Fade*/
+nav[aria-label="Servers sidebar"] span.item-2LIpTv {
+  transition: all .2s;
+  background-color: transparent;
+}
+nav[aria-label="Servers sidebar"]:hover span.item-2LIpTv {
+  background-color: var(--white);
+}
+
+/*Collapsable Channel List*/
+div.sidebar-1tnWFu {
+  width: 10px;
+  /*transition: width 0.4s;*/
+	transition: all .2s;
+	opacity: 0;
+}
+div.sidebar-1tnWFu:hover {
+  width: 240px;
+	opacity: 100%;
+}
+
+/*Channel Unread Badges*/
+div.sidebar-1tnWFu div.unread-36eUEm {
+  background-color: transparent !important;
+  color: transparent !important;
+  transition: background-color 0.2s;
+}
+div.sidebar-1tnWFu:hover div.unread-36eUEm {
+  background-color: var(--white) !important;
+  color: var(--white) !important;
+}
+
+/*Collapsable Member List*/
+div.container-2o3qEW {
+  width: 10px;
+  transition: all 500ms ease-in;
+	opacity: 0;
+}
+div.container-2o3qEW:hover {
+  width: 250px;
+	opacity: 100%;
 }
 
 /*Hide Scrollbars*/
