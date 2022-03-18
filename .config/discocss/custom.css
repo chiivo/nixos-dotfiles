@@ -97,11 +97,10 @@
 code {
   font-family: 'VictorMono Nerd Font';
 }
-.scrollerInner-2PPAp2 {
-  overflow: auto;
-  background: var(--dark-black);
+.chatContent-3KubbW {
   margin: 10px;
   border-radius: 10px;
+  background-color: #141515;
 }
 .chatHeaderBar-2fUORh.narrow-2jjOvw {
   border-radius: 10px;
