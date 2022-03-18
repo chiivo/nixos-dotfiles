@@ -99,9 +99,9 @@ code {
 }
 .scrollerInner-2PPAp2 {
   overflow: auto;
-    background: var(--dark-black);
-    margin: 10px;
-    border-radius: 10px;
+  background: var(--dark-black);
+  margin: 10px;
+  border-radius: 10px;
 }
 .chatHeaderBar-2fUORh.narrow-2jjOvw {
   border-radius: 10px;
@@ -133,8 +133,12 @@ nav[aria-label="Servers sidebar"]:hover {
 
 /*Collapsable Member List*/
 div.container-2o3qEW {
+  height: 95.7%;
   width: 60px;
-  transition: all .2s;
+  border-radius: 10px 0 0 10px;
+  transition: width .2s;
+  margin: 10px 0;
+  padding: 10px;
 }
 div.container-2o3qEW:hover {
   width: 250px;
