@@ -29,3 +29,4 @@
 - Out of sync kernel and driver updates can cause system to break
 - Remove gnu-free-fonts, install ttf-symbola (aur) (for alacritty braille to render as dots on graphs)
 - Install ttf-liberation for steam
+- If you need to edit an AUR PKBUILD, use 'paru --fm nvim -S (pakage name)'
