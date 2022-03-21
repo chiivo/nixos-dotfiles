@@ -97,28 +97,35 @@
 code {
   font-family: 'VictorMono Nerd Font';
 }
+/*Chat Background*/
 .chatContent-3KubbW {
   margin: 10px;
   border-radius: 10px;
   background-color: #141515;
 }
-.chatHeaderBar-2fUORh.narrow-2jjOvw {
-  border-radius: 10px;
-  margin: 10px;
-}
+/*Main Page Background*/
 .peopleColumn-1wMU14 {
   background-color: var(--black);
 }
+/*Sidebar*/
 .sidebar-1tnWFu {
   margin: 10px 0;
   border-radius: 10px;
 }
+/*Chat Input*/
 .form-3gdLxP {
   margin: 0 10px;
   padding: 0;
 }
 button[aria-label="Select emoji"] {
   padding: 4px 10px 4px 4px;
+}
+/*Mentioned Messages*/
+.mentioned-Tre-dv:before {
+  display: none;
+}
+.mentioned-Tre-dv {
+  border-radius: 10px;
 }
 
 /*Collapsable Server List*/
