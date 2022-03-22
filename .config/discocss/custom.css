@@ -127,6 +127,9 @@ button[aria-label="Select emoji"] {
 .mentioned-Tre-dv {
   border-radius: 10px;
 }
+.message-2CShn3.cozyMessage-1DWF9U.mentioned-Tre-dv.groupStart-3Mlgv1.wrapper-30-Nkg.cozy-VmLDNB.zalgo-26OfGz {
+  margin: 0 10px;
+}
 
 /*Collapsable Server List*/
 nav[aria-label="Servers sidebar"] {
@@ -139,7 +142,7 @@ nav[aria-label="Servers sidebar"]:hover {
 
 /*Collapsable Member List*/
 div.container-2o3qEW {
-  height: 95.7%;
+  height: 932px;
   width: 60px;
   border-radius: 10px 0 0 10px;
   transition: width .2s;
