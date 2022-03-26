@@ -1,0 +1,93 @@
+* {
+    background:                     #262727;
+    background-alt:                 #141515;
+    background-alt2:                #555657;
+    foreground:                     #dddddd;
+    foreground-alt:                 #f5d1c8;
+    accent:                         #f5d1c8;
+    transparent:                    #00000000;
+    text-color:                     @foreground;
+}
+
+configuration {
+    font:                           "VictorMono Nerd Font 10";
+    show-icons:                     true;
+    drun-display-format:            "{name}";
+    disable-history:                false;
+    hide-scrollbar:                 true;
+    sidebar-mode: 					        false;
+    scroll-method:                  1;
+}
+
+window {    
+    location:	                      northeast;
+    anchor:		                      northeast;
+    x-offset:                       -10px;
+    y-offset:                       10px;
+    transparency:                   "real";
+    line-margin:                    0;
+    line-padding:                   0;
+    width:                          372px;
+}
+
+prompt {
+    enabled:                        false;
+}
+
+inputbar {
+    enabled:                        false;
+}
+
+listview {
+    background-color:               @background;
+    padding:                        0px;
+    columns:                        1;
+    lines:                          5;
+    spacing:                        0%;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ listview ];
+    spacing:                       	0%;
+    padding:                        5px 0;
+}
+
+element {
+    orientation:                    horizontal;
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    border-radius:                  10px;
+    padding:                        0px;
+    margin:                         5px 10px;
+}
+
+element-icon, element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+}
+
+element-icon {
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           48px;
+    margin:                         0px 0px 0px 0px;
+    border:                         10px;
+    border-color:                   transparent;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         10px;
+}
+
+element selected {
+    background-color:               @background-alt2;
+    text-color:                     @accent;
+    border-radius:                  10px;
+}
