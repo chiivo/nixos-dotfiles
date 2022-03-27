@@ -16,7 +16,7 @@
 - Terminal: alacritty
 - Text Editor: neovim
 - Browser: vivaldi
-- File Managers: thunar, ranger (p7zip)
+- File Managers: thunar (gvfs), ranger (p7zip)
 - USB Mount: udiskie
 - Video Player: mpv
 - Fonts: victormono nerd font, scientifica, comfortaa, noto color emoji, ttf-liberation, ttf-symbola, dotsies, other noto languages
