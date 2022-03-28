@@ -1,25 +1,25 @@
 // Colors
-	$dark-black: #141515;
-	$black: #262727;
-	$gray: #555657;
-	$white: #dddddd;
-	$pink: #f5d1c8;
-	$red: #ff8278;
-	$orange: #ffc178;
-	$yellow: #eadc84;
-	$green: #bde077;
-	$blue: #77bee0;
-	$purple: #dd91f3;
+$dark-black: #141515;
+$black: #262727;
+$gray: #555657;
+$white: #dddddd;
+$pink: #f5d1c8;
+$red: #ff8278;
+$orange: #ffc178;
+$yellow: #eadc84;
+$green: #bde077;
+$blue: #77bee0;
+$purple: #dd91f3;
 
 * {
 	all: unset;
+	font-family: 'VictorMono Nerd Font';
+	font-style: normal;
+	font-weight: bold;
 }
 
 //Global Styles
 .bar {
-	font-family: 'VictorMono Nerd Font';
-	font-style: normal;
-	font-weight: bold;
 	background-color: $black;
 	color: $pink;
 	border-radius: 10px;
@@ -36,16 +36,16 @@
 //Current Window
 .current-window {
 	margin: 0 10px;
-  	padding: 0 10px;
-  	border-radius: 6px;
-  	background-color: $pink;
-  	color: $black;
+  padding: 0 10px;
+  border-radius: 6px;
+  background-color: $pink;
+  color: $black;
 }
 
 //Workspaces
 .ws-button {
 	margin: 0 10px;
-  	color: $gray;
+  color: $gray;
 }
 .ws-button:hover {
 	color: $white;
@@ -60,14 +60,14 @@
 }
 .ws-button-visible {
 	margin: 0 10px;
-  	color: $gray;
+  color: $gray;
 }
 .ws-button-visible:hover {
 	color: $white;
 }
 .ws-button-busy {
 	margin: 0 10px;
-  	color: $gray;
+  color: $gray;
 }
 .ws-button-busy:hover {
 	color: $white;
@@ -76,7 +76,7 @@
 //Screen2 Workspaces
 .ws-button-mine2 {
 	margin: 0 10px;
-  	color: $gray;
+  color: $gray;
 }
 .ws-button-mine2:hover {
 	color: $white;
@@ -104,11 +104,11 @@
 	background-color: $purple;
 }
 .slider-vol scale trough {
-  	background-color: $gray;
-  	border-radius: 10px;
-  	min-height: 4px;
-  	min-width: 50px;
-  	margin-left: 10px;
+  background-color: $gray;
+  border-radius: 10px;
+  min-height: 4px;
+  min-width: 50px;
+  margin-left: 10px;
 }
 .label-vol {
 	margin: 0 10px;
@@ -151,15 +151,13 @@
 
 //Calendar
 .cal {
-	font-family: 'VictorMono Nerd Font';
-  	font-weight: bold;
-  	background-color: $black;
-  	color: $pink;
+  background-color: $black;
+  color: $pink;
 }
 .cal:selected {
 	border-radius: 10px;
-  	background-color: $pink;
-  	color: $black;
+  background-color: $pink;
+  color: $black;
 }
 .cal.header {
 	color: $blue;
