@@ -34,7 +34,7 @@ font:
     style: Bold
   italic:
     family: VictorMono Nerd Font
-    style: Italic
+    style: Medium Italic
   bold_italic:
     family: VictorMono Nerd Font
     style: Bold Italic
