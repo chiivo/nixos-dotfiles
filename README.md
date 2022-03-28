@@ -18,7 +18,7 @@
 - Browser: vivaldi
 - File Managers: thunar (gvfs), ranger (p7zip)
 - Video Player: mpv
-- Fonts: victormono nerd font, scientifica, comfortaa, noto color emoji, ttf-liberation, ttf-symbola, dotsies, other noto languages
+- Font Packages: ttf-liberation, ttf-symbola
 - Terminal Stuff: macchina, cbonsai, shell-color-scripts
 - Apps: Blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3, polymc (jre-openjdk), obs-studio, chatterino (gst-plugins-good), bottom, blueman, xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst, jp2a, wmctrl, playerctl
 ## Reminders
