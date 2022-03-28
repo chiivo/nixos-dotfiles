@@ -34,7 +34,7 @@ let fg='#f5d1c8'
 let gray='#555657'
 let white='#dddddd'
 
-" Starup
+" Startup
 colorscheme bliss
 let g:mapleader="\<Space>"
 set autoindent
