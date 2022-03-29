@@ -43,7 +43,7 @@ set completeopt=menu,menuone,noselect
 set cursorline
 set tabstop=2
 set shiftwidth=2
-set expandtab
+"set expandtab
 set guicursor=
 set ignorecase
 set mouse=a
