@@ -45,6 +45,7 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
+local darkblack = '#141515'
 local black = '#262727'
 local gray = '#555657'
 local red = '#ff8278'
@@ -138,40 +139,40 @@ local theme = lush(function()
     -- Uncomment and edit if you want more specific syntax highlighting.
 
     Constant       {fg = red}, -- (preferred) any constant
-    String         {fg = red}, --   a string constant: "this is a string"
-    Character      {fg = red}, --  a character constant: 'c', '\n'
-    Number         {fg = red}, --   a number constant: 234, 0xff
-    Boolean        {fg = red}, --  a boolean constant: TRUE, false
-    Float          {fg = red}, --    a floating point constant: 2.3e10
+    String         {fg = red}, -- a string constant: "this is a string"
+    Character      {fg = red}, -- a character constant: 'c', '\n'
+    Number         {fg = red}, -- a number constant: 234, 0xff
+    Boolean        {fg = red}, -- a boolean constant: TRUE, false
+    Float          {fg = red}, -- a floating point constant: 2.3e10
 
     Identifier     {fg = blue}, -- (preferred) any variable name
     Function       {fg = blue}, -- function name (also: methods for classes)
 
     Statement      {fg = yellow}, -- (preferred) any statement
-    Conditional    {fg = yellow}, --  if, then, else, endif, switch, etc.
-    Repeat         {fg = yellow}, --   for, do, while, etc.
-    Label          {fg = yellow}, --    case, default, etc.
+    Conditional    {fg = yellow}, -- if, then, else, endif, switch, etc.
+    Repeat         {fg = yellow}, -- for, do, while, etc.
+    Label          {fg = yellow}, -- case, default, etc.
     Operator       {fg = yellow}, -- "sizeof", "+", "*", etc.
-    Keyword        {fg = yellow}, --  any other keyword
-    Exception      {fg = yellow}, --  try, catch, throw
+    Keyword        {fg = yellow}, -- any other keyword
+    Exception      {fg = yellow}, -- try, catch, throw
 
     PreProc        {fg = magenta}, -- (preferred) generic Preprocessor
-    Include        {fg = magenta}, --  preprocessor #include
-    Define         {fg = magenta}, --   preprocessor #define
-    Macro          {fg = magenta}, --    same as Define
-    PreCondit      {fg = magenta}, --  preprocessor #if, #else, #endif, etc.
+    Include        {fg = magenta}, -- preprocessor #include
+    Define         {fg = magenta}, -- preprocessor #define
+    Macro          {fg = magenta}, -- same as Define
+    PreCondit      {fg = magenta}, -- preprocessor #if, #else, #endif, etc.
 
     Type           {fg = green}, -- (preferred) int, long, char, etc.
     StorageClass   {fg = green}, -- static, register, volatile, etc.
-    Structure      {fg = green}, --  struct, union, enum, etc.
-    Typedef        {fg = green}, --  A typedef
+    Structure      {fg = green}, -- struct, union, enum, etc.
+    Typedef        {fg = green}, -- A typedef
 
     Special        {fg = orange}, -- (preferred) any special symbol
-    SpecialChar    {fg = orange}, --  special character in a constant
-    Tag            {fg = orange}, --    you can use CTRL-] on this
-    Delimiter      {fg = orange}, --  character that needs attention
+    SpecialChar    {fg = orange}, -- special character in a constant
+    Tag            {fg = orange}, -- you can use CTRL-] on this
+    Delimiter      {fg = orange}, -- character that needs attention
     SpecialComment {fg = orange}, -- special things inside a comment
-    Debug          {fg = orange}, --    debugging statements
+    Debug          {fg = orange}, -- debugging statements
 
     Underlined  {fg = blue, gui = "underline"}, -- (preferred) text that stands out, HTML links
     Bold        {gui = "bold"},
