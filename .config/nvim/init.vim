@@ -100,6 +100,10 @@ require('bufferline').setup {
     	guifg = '#141515',
     	guibg = '#262727'
  		},
+		separator_visible = {
+    	guifg = '#141515',
+    	guibg = '#262727'
+ 		},
 		separator = {
     	guifg = '#141515',
     	guibg = '#262727'
