@@ -37,23 +37,21 @@ let white='#dddddd'
 " Startup
 colorscheme bliss
 let g:mapleader="\<Space>"
-set autoindent
 set clipboard=unnamedplus
 set completeopt=menu,menuone,noselect
+set autoindent
+set smartindent
 set cursorline
 set tabstop=2
 set shiftwidth=2
-"set expandtab
 set guicursor=
 set ignorecase
 set mouse=a
 set nocompatible
 set nohlsearch
-"set nowrap
 set number
 set scrolloff=999
 set smartcase
-set smartindent
 set termguicolors
 syntax on
 
