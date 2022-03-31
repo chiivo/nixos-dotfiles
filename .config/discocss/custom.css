@@ -129,11 +129,9 @@ button[aria-label="Select emoji"] {
 .mentioned-Tre-dv:before {
 	display: none;
 }
-.mentioned-Tre-dv {
-	border-radius: 10px;
-}
-.message-2CShn3.cozyMessage-1DWF9U.mentioned-Tre-dv.groupStart-3Mlgv1.wrapper-30-Nkg.cozy-VmLDNB.zalgo-26OfGz {
+.message-2CShn3.cozyMessage-1DWF9U {
 	margin: 10px;
+	border-radius: 10px;
 }
 
 /*Collapsable Server List*/
