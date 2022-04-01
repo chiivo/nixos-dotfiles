@@ -156,7 +156,7 @@
 
 ;;;Variables;;;
 (defpoll caps-lock-checker
-  :interval "1s"
+  :interval "10ms"
   "~/scripts/caps-lock-checker"
 )
 (deflisten leftwm-tags1
