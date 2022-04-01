@@ -28,6 +28,7 @@
     :valign "center"
     :space-evenly false
     (power-button)
+    (caps-lock-checker)
   )
 )
 (defwidget workspaces1 []
@@ -71,6 +72,13 @@
     :orientation "h"
     :onclick "poweroff"
     " "
+  )
+)
+(defwidget caps-lock-checker []
+  (label
+    :class "caps-lock-checker"
+    :orientation "h"
+    :text caps-lock-checker
   )
 )
 (defwidget slider-vol []
@@ -147,6 +155,10 @@
 )
 
 ;;;Variables;;;
+(defpoll caps-lock-checker
+  :interval "1s"
+  "~/scripts/caps-lock-checker"
+)
 (deflisten leftwm-tags1
   "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/tags1.liquid"
 )
