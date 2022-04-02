@@ -93,7 +93,7 @@
             :class "lock-button"
             :orientation "h"
             :onclick "dm-tool lock"
-            " "
+            " "
           )
           (button
             :class "refresh-button"
