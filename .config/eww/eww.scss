@@ -25,12 +25,30 @@ $purple: #dd91f3;
 	border-radius: 10px;
 }
 
-//Icon
+//PowerMenu
 .power-button {
 	margin: 0 10px;
 }
 .power-button:hover {
 	color: $red;
+}
+.reboot-button {
+	margin: 0 10px;
+}
+.reboot-button:hover {
+	margin: 0 10px;
+	color: $orange;
+}
+.lock-button {
+	margin: 0 10px;
+}
+.lock-button:hover {
+	margin: 0 10px;
+	color: $yellow;
+}
+.refresh-button:hover {
+	margin: 0 10px;
+	color: $green;
 }
 
 //CapsLock Status

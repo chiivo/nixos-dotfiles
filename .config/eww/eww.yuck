@@ -27,7 +27,7 @@
     :halign "start"
     :valign "center"
     :space-evenly false
-    (power-button)
+    (powermenu)
     (capslockstatus)
   )
 )
@@ -66,12 +66,44 @@
     ;(reload)
   )
 )
-(defwidget power-button []
-  (button
-    :class "power-button"
-    :orientation "h"
-    :onclick "poweroff"
-    " "
+(defwidget powermenu []
+  (eventbox
+    :onhover "eww update powermenu-revealer=true"
+    :onhoverlost "eww update powermenu-revealer=false"
+    (box
+      :space-evenly false
+      (button
+        :class "power-button"
+        :orientation "h"
+        :onclick "poweroff"
+        " "
+      )
+      (revealer
+        :transition "slideleft"
+        :reveal powermenu-revealer
+        :duration "200ms"
+        (box
+          (button
+            :class "reboot-button"
+            :orientation "h"
+            :onclick "reboot"
+            "勒"
+          )
+          (button
+            :class "lock-button"
+            :orientation "h"
+            :onclick "dm-tool lock"
+            " "
+          )
+          (button
+            :class "refresh-button"
+            :orientation "h"
+            :onclick "leftwm command SoftReload"
+            " "
+          )
+        )
+      )
+    )
   )
 )
 (defwidget capslockstatus []
@@ -114,30 +146,12 @@
   )
 )
 (defwidget time []
-  (eventbox
-    :onhover "eww open calendar"
-    :onhoverlost "eww close calendar"
-    (button
-      :class "time"
-      time
-    )
+  (button
+    :class "time"
+    :onclick "eww open --toggle calendar"
+    time
   )
 )
-;(defwidget bluetooth-button []
-;  (button
-;    :class "bluetooth-button"
-;    :onclick "bluetoothctl disconnect CC:A7:C1:FF:CC:91 & bluetoothctl connect 5C:C6:E9:14:A8:15 &"
-;    :onrightclick "bluetoothctl disconnect 5C:C6:E9:14:A8:15 & bluetoothctl connect CC:A7:C1:FF:CC:91 &"
-;    ""
-;  )
-;)
-;(defwidget reload []
-;  (button
-;    :class "reload"
-;    :onclick "eww reload"
-;    " "
-;  )
-;)
 (defwidget cal []
 	(box 
     :class "cal-box" 
@@ -155,6 +169,9 @@
 )
 
 ;;;Variables;;;
+(defvar powermenu-revealer
+  false
+)
 (defpoll capslockstatus
   :interval "10ms"
   "~/scripts/statuschecker --capslock"
