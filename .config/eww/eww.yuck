@@ -28,7 +28,7 @@
     :valign "center"
     :space-evenly false
     (power-button)
-    (caps-lock-checker)
+    (capslockstatus)
   )
 )
 (defwidget workspaces1 []
@@ -74,11 +74,11 @@
     " "
   )
 )
-(defwidget caps-lock-checker []
+(defwidget capslockstatus []
   (label
-    :class "caps-lock-checker"
+    :class "capslockstatus"
     :orientation "h"
-    :text caps-lock-checker
+    :text capslockstatus
   )
 )
 (defwidget slider-vol []
@@ -155,9 +155,9 @@
 )
 
 ;;;Variables;;;
-(defpoll caps-lock-checker
+(defpoll capslockstatus
   :interval "10ms"
-  "~/scripts/caps-lock-checker"
+  "~/scripts/statuschecker --capslock"
 )
 (deflisten leftwm-tags1
   "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/tags1.liquid"
