@@ -27,21 +27,21 @@ scrolling:
 
 font:
   normal:
-    family: VictorMono Nerd Font
-    style: Medium
+    family: Cartograph CF Nerd Font
+    style: Light
   bold:
-    family: VictorMono Nerd Font
+    family: Cartograph CF Nerd Font
     style: Bold
   italic:
-    family: VictorMono Nerd Font
-    style: Medium Italic
+    family: Cartograph CF Nerd Font
+    style: Light Italic
   bold_italic:
-    family: VictorMono Nerd Font
+    family: Cartograph CF Nerd Font
     style: Bold Italic
   size: 12.0
   offset:
-    x: 0
-    y: 0
+    x: -1
+    y: 3
   glyph_offset:
     x: 0
     y: 0
