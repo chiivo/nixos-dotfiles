@@ -418,5 +418,5 @@ require('orgmode').setup({
 })
 EOF
 
-" Source
+"Source
 source ~/.local/share/nvim/plugged/galaxyline.nvim/example/blissline.lua
