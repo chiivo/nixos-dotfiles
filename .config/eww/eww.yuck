@@ -87,7 +87,7 @@
             :class "reboot-button"
             :orientation "h"
             :onclick "reboot"
-            "勒"
+            " "
           )
           (button
             :class "lock-button"
