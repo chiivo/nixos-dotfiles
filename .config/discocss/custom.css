@@ -1,7 +1,5 @@
 /*Theme*/
 .theme-dark {
-	--font-primary: 'VictorMono Nerd Font';
-	--font-display: 'Comfortaa';
 	--white: #dddddd;
 	--gray: #555657;
 	--black: #262727;
@@ -94,9 +92,6 @@
 	--status-danger-background: hsl(359,calc(var(--saturation-factor, 1)*82.6%),59.4%);
 	--status-danger-text: #fff;
 	--focus-primary: hsl(197,calc(var(--saturation-factor, 1)*100%),47.8%);
-}
-code {
-	font-family: 'VictorMono Nerd Font';
 }
 /*Chat Background*/
 .chatContent-3KubbW {
