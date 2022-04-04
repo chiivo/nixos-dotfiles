@@ -21,10 +21,6 @@ capslockcheck () {
 }
 
 case "$1" in
-	--camera)
-    cameracheck
-    ;;
-	--capslock)
-    capslockcheck
-    ;;
+	--camera) cameracheck;;
+	--capslock) capslockcheck;;
 esac
