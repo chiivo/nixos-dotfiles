@@ -62,19 +62,9 @@ volmute () {
 }
 
 case "$1" in
-	-v)
-    getvol
-    ;;
-	-s)
-    getvolsym
-    ;;
-	-u)
-    volup
-    ;;
-	-d)
-    voldown
-    ;;
-	-m)
-    volmute
-    ;;
+	-v) getvol;;
+	-s) getvolsym;;
+	-u) volup;;
+	-d) voldown;;
+	-m) volmute;;
 esac
