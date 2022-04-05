@@ -120,12 +120,12 @@ button[aria-label="Select emoji"] {
 .resizeHandle-PBRzPC {
 	display: none;
 }
-/*Mentioned Messages*/
+/*Messages*/
 .mentioned-Tre-dv:before {
 	display: none;
 }
 .message-2CShn3.cozyMessage-1DWF9U {
-	margin: 10px;
+	margin: 5px;
 	border-radius: 10px;
 }
 /*Right Click Menu*/
