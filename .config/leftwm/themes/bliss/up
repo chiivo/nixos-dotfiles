@@ -3,7 +3,6 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 ### Wallpaper ###
 feh --no-fehbg --bg-tile /mnt/HDD/Images/Wallpapers/BlissRet.jpg &
-#feh --no-fehbg --bg-scale --no-xinerama /mnt/HDD/Images/Wallpapers/StarrySky1440p.jpg &
 
 ### Mouse Settings ###
 ~/scripts/mousesettings
@@ -15,9 +14,6 @@ picom --experimental-backends &
 ### LeftWM Theme ###
 leftwm-command "LoadTheme $SCRIPTPATH/theme.toml" &
 
-### Tiramisu ###
-#killall -q tiramisu &
-
 ### Eww ###
 killall -q eww;
 eww open-many bar1 bar2 &
@@ -25,9 +21,6 @@ eww open-many bar1 bar2 &
 ### Bluetooth ###
 killall -q blueman-applet;
 blueman-applet &
-while ! bluetoothctl connect 5C:C6:E9:14:A8:15;
-do sleep 1;
-done &
 
 ### Discord ###
 discocss &
