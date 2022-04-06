@@ -1,7 +1,6 @@
 " Vim-Plug
 call plug#begin()
 Plug 'norcalli/nvim-colorizer.lua'
-" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'feline-nvim/feline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
@@ -417,7 +416,7 @@ lua << EOF
 local true_zen = require("true-zen")
 true_zen.setup({
 	integrations = {
-		galaxyline = true,
+		feline = true,
 	},
 })
 EOF
@@ -513,7 +512,6 @@ lua << EOF
 EOF
 
 "Source
-" source ~/.local/share/nvim/plugged/galaxyline.nvim/example/blissline.lua
 lua << EOF
 local colors = {
 	darkblack = '#141515',
@@ -565,16 +563,24 @@ local comps = {
 	cap = {
 		left = {
 			provider = "",
-			right_sep = " ",
+			right_sep = {
+				str = " ",
+				hl = {bg = colors.black}
+			},
 			hl = {
-				fg = colors.blue
+				fg = colors.blue,
+				bg = colors.black
 			}
 		},
 		right = {
 			provider = "",
-			left_sep = " ",
+			left_sep = {
+				str = " ",
+				hl = {bg = colors.black}
+			},
 			hl = {
-				fg = colors.blue
+				fg = colors.blue,
+				bg = colors.black
 			}
 		}
 	},
@@ -587,10 +593,14 @@ local comps = {
 				local val = {
 					name = vi_mode_utils.get_mode_highlight_name(),
 					fg = vi_mode_utils.get_mode_color(),
+					bg = colors.black
 				}
 				return val
 			end,
-			right_sep = ' '
+			right_sep = {
+				str = " ",
+				hl = {bg = colors.black}
+			}
 		}
 	},
 	file = {
@@ -605,22 +615,31 @@ local comps = {
 			},
 			hl = {
 				fg = colors.magenta,
+				bg = colors.black,
 				style = 'bold'
 			}
 		},
 		os = {
 			provider = file_osinfo,
-			left_sep = ' ',
+			left_sep = {
+				str = " ",
+				hl = {bg = colors.black}
+			},
 			hl = {
 				fg = colors.magenta,
+				bg = colors.black,
 				style = 'bold'
 			}
 		},
 		position = {
 			provider = 'position',
-			left_sep = ' ',
+			left_sep = {
+				str = " ",
+				hl = {bg = colors.black}
+			},
 			hl = {
 				fg = colors.orange,
+				bg = colors.black
 				-- style = 'bold'
 			}
 		}
