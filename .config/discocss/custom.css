@@ -109,25 +109,32 @@
 	border-radius: 10px;
 }
 /*Chat Input*/
+.inner-NQg18Y.sansAttachButton-1ERHue {
+	padding: 0;
+	background-color: var(--black);
+}
 .form-3gdLxP {
 	margin: 0 10px;
 	padding: 0;
 	border-radius: 10px;
 }
 .attachButton-_ACFSu.attachButton-1ijpt9.button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-2sR_-F {
-	background-color: var(--black);
+	padding: 10px;
 	border-radius: 10px;
+	background-color: var(--black);
 }
 .attachWrapper-3slhXI {
 	background-color: var(--black);
 }
-.markup-eYLPri.editor-H2NA06.slateTextArea-27tjG0.fontSize16Padding-XoMpjI {
-	background-color: var(--black); 
-}
 .expression-picker-chat-input-button.buttonContainer-2lnNiN {
 	background-color: var(--black);
 }
+.buttons-uaqb-5 {
+	background-color: var(--black);
+}
 .button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-2sR_-F {
+	margin: 0 2px;
+	border-radius: 10px;
 	background-color: var(--black);
 }
 button[aria-label="Select emoji"] {
