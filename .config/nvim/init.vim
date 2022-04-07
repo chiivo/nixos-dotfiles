@@ -6,7 +6,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/limelight.vim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -376,8 +376,8 @@ require'nvim-tree'.setup {
 }
 EOF
 
-" Auto-Pairs
-let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '/*':'*/', '<':'>'}
+" Nvim-AutoPairs
+lua require('nvim-autopairs').setup{}
 
 " IndentBlankLine
 let g:indent_blankline_use_treesitter=v:true
@@ -426,6 +426,11 @@ require'nvim-treesitter.configs'.setup {
 require('orgmode').setup({
 	org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
 	org_default_notes_file = '~/Dropbox/org/refile.org',
+})
+require'cmp'.setup({
+  sources = {
+    { name = 'orgmode' }
+  }
 })
 EOF
 
