@@ -1,6 +1,11 @@
 #!/bin/sh
 
-cameracheck () {
+help() {
+	echo '	--camera,			check camera status'
+	echo '	--capslock,			check caps lock status'
+}
+
+cameracheck() {
 	camera_status=$(lsmod | grep uvcvideo | head -n 1 | awk '{print $3}')
 	
 	if [ $camera_status == 1 ]; then
@@ -10,7 +15,7 @@ cameracheck () {
 	fi
 }
 
-capslockcheck () {
+capslockcheck() {
 	caps_lock_status=$(xset -q | sed -n 's/^.*Caps Lock:\s*\(\S*\).*$/\1/p')
 
 	if [ $caps_lock_status == "on" ]; then
@@ -23,4 +28,5 @@ capslockcheck () {
 case "$1" in
 	--camera) cameracheck;;
 	--capslock) capslockcheck;;
+	*) help;;
 esac

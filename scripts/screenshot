@@ -1,6 +1,11 @@
 #!/bin/sh
 
-areashot () {	
+help() {
+	echo '	-a,			screenshot area'
+	echo '	-f,			screenshot all monitors'
+}
+
+areashot() {	
 	maim -usb 2 /tmp/screenshot.png || exit 1;
 	sleep .1;
 	xclip -selection clipboard < /tmp/screenshot.png -t image/png
@@ -8,7 +13,7 @@ areashot () {
 	mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
 }
 
-fullshot () {
+fullshot() {
 	maim -usb 2 /mnt/HDD/Images/Screenshots/screenshot.png || exit 1;
 	sleep .1;
 	dunstify -i /mnt/HDD/Images/Screenshots/screenshot.png 'Screenshot' 'Selection Saved'
@@ -18,5 +23,5 @@ fullshot () {
 case "$1" in
 	-a) areashot;;
 	-f) fullshot;;
+	*) help;;
 esac
-

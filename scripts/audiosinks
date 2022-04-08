@@ -1,6 +1,12 @@
 #!/bin/sh
 
-makesink (){
+help() {
+	echo '	-m,			make a new sink'
+	echo '	-l,			list current sinks'
+	echo '	-u,			remove sink'
+}
+
+makesink() {
 	echo "Enter Main Sink Name"
 	read main_sink_name;
 	pactl load-module module-null-sink sink_name="$main_sink_name" sink_properties=device.description="$main_sink_name"
@@ -12,11 +18,11 @@ makesink (){
 	pactl load-module module-loopback latency_msec=1 source=$music_sink_name.monitor sink=bluez_sink.CC_A7_C1_FF_CC_91.a2dp_sink
 }
 
-listsinks () {
+listsinks() {
 	pactl list short sinks
 }
 
-unloadsink () {
+unloadsink() {
 	echo "Enter Module Number (1/4)"
 	read modulenum;
 	pactl unload-module $modulenum
@@ -34,10 +40,9 @@ unloadsink () {
 	pactl unload-module $modulenum
 }
 
-while getopts mlu flag; do
-	case "$flag" in
-		m) makesink;;
-		l) listsinks;;
-		u) unloadsink;;
-	esac
-done
+case "$1" in
+	-m) makesink;;
+	-l) listsinks;;
+	-u) unloadsink;;
+	*) help;;
+esac

@@ -3,7 +3,7 @@
 checkupdates=$(paru -Qu | wc -l)
 
 if (( $checkupdates == 0 )); then
-  echo "No Updates"
+	echo "No Updates"
 else
-  echo "Updates: $checkupdates"
+	echo "Updates: $checkupdates"
 fi
