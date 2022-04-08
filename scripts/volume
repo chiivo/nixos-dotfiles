@@ -1,5 +1,13 @@
 #!/bin/sh
 
+help() {
+	echo '	-v,			get current volume'
+	echo '	-s,			print symbol relative to current volume'
+	echo '	-u,			increase volume by 5%'
+	echo '	-d,			decrease volume by 5%'
+	echo '	-m,			mute audio'
+}
+
 getvol() {
 	amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'
 }
@@ -67,4 +75,5 @@ case "$1" in
 	-u) volup;;
 	-d) voldown;;
 	-m) volmute;;
+	*) help;;
 esac
