@@ -30,3 +30,4 @@
 - Install ttf-liberation for steam
 - If you need to edit an AUR PKBUILD, use 'paru --fm nvim -S (pakage name)'
 - `7z x *.zip -o\*` to extract zip into folder with same name
+- append `/mini` to the "Exec" line in `/etc/xdg/autostart/xppentablet.desktop` to start xpp-pen-tablet minimized
