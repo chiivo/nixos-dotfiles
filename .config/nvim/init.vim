@@ -213,7 +213,6 @@ nnoremap <silent>bd :BufferLineSortByDirectory<CR>
 nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
 
 " NvimTree
-let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -285,7 +284,7 @@ require'nvim-tree'.setup {
 	auto_reload_on_write = true,
 	disable_netrw = false,
 	hide_root_folder = false,
-	hijack_cursor = false,
+	hijack_cursor = true,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
 	ignore_buffer_on_setup = false,
@@ -297,7 +296,7 @@ require'nvim-tree'.setup {
 		width = 30,
 		height = 30,
 		side = 'left',
-		preserve_window_proportions = false,
+		preserve_window_proportions = true,
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
@@ -306,6 +305,16 @@ require'nvim-tree'.setup {
 			list = {},
 		},
 	},
+  renderer = {
+    indent_markers = {
+      enable = false,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
+  },
 	hijack_directories = {
 		enable = true,
 		auto_open = true,
