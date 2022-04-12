@@ -13,6 +13,7 @@ $purple: #dd91f3;
 
 * {
 	all: unset;
+	border-radius: 10px;
 	font-family: 'VictorMono Nerd Font';
 	font-style: normal;
 	font-weight: bold;
@@ -22,7 +23,6 @@ $purple: #dd91f3;
 .bar {
 	background-color: $black;
 	color: $pink;
-	border-radius: 10px;
 }
 
 //PowerMenu
