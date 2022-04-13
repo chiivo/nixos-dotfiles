@@ -5,12 +5,13 @@ Plug 'feline-nvim/feline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/limelight.vim'
 Plug 'windwp/nvim-autopairs'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-treesitter/playground'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'glepnir/dashboard-nvim'
 Plug 'Pocco81/TrueZen.nvim'
@@ -27,6 +28,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'folke/twilight.nvim'
 call plug#end()
 
 " Colors
@@ -405,8 +407,31 @@ let g:rainbow_conf={
 \}
 
 " Limelight
-autocmd VimEnter * Limelight
-let g:limelight_conceal_guifg=gray " Inactive Paragraph Limelight Color
+" autocmd VimEnter * Limelight
+" let g:limelight_conceal_guifg=gray " Inactive Paragraph Limelight Color
+lua << EOF
+	require("twilight").setup {
+	dimming = {
+		alpha = 1,
+		color = { "Comment" },
+		inactive = false
+	},
+	context = 0,
+	treesitter = false,
+	expand = {
+		"function",
+		"method",
+		"method_definition",
+		"table",
+		"if_statement",
+		"let_statement",
+		"lua_statement",
+		"call_statement",
+	},
+	exclude = {},
+	}
+EOF
+autocmd VimEnter * Twilight
 
 " TrueZen
 lua << EOF
@@ -691,4 +716,27 @@ require('feline').setup(
 	components = components,
 	vi_mode_colors = vi_mode_colors
 })
+EOF
+
+lua << EOF
+require "nvim-treesitter.configs".setup {
+	playground = {
+		enable = true,
+		disable = {},
+		updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+		persist_queries = false, -- Whether the query persists across vim sessions
+		keybindings = {
+			toggle_query_editor = 'o',
+			toggle_hl_groups = 'i',
+			toggle_injected_languages = 't',
+			toggle_anonymous_nodes = 'a',
+			toggle_language_display = 'I',
+			focus_language = 'f',
+			unfocus_language = 'F',
+			update = 'R',
+			goto_node = '<cr>',
+			show_help = '?',
+		},
+	}
+}
 EOF
