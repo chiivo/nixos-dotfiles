@@ -5,7 +5,6 @@ Plug 'feline-nvim/feline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
 Plug 'lukas-reineke/indent-blankline.nvim'
-" Plug 'junegunn/limelight.vim'
 Plug 'windwp/nvim-autopairs'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -32,17 +31,17 @@ Plug 'folke/twilight.nvim'
 call plug#end()
 
 " Colors
-let darkblack='#141515'
-let black='#262727'
-let red='#ff8278'
-let green='#bde077'
-let yellow='#eadc84'
-let blue='#77bee0'
-let magenta='#dd91f3'
-let cyan='#ffc178'
-let pink='#f5d1c8'
-let gray='#555657'
-let white='#dddddd'
+let darkblack = '#141515'
+let black = '#262727'
+let red = '#ff8278'
+let green = '#bde077'
+let yellow = '#eadc84'
+let blue = '#77bee0'
+let magenta = '#dd91f3'
+let cyan = '#ffc178'
+let pink = '#f5d1c8'
+let gray = '#555657'
+let white = '#dddddd'
 
 " Startup
 colorscheme bliss
@@ -84,7 +83,15 @@ let g:dashboard_custom_shortcut={
 \ 'find_word'          : 'SPC f a',
 \ 'book_marks'         : 'SPC f b',
 \ }
-let g:dashboard_default_executive ='telescope'
+let g:dashboard_custom_shortcut_icon={
+\ 'last_session'				: ' ',
+\ 'find_history'				: 'ﭯ ',
+\ 'find_file'						: ' ',
+\ 'new_file'						: ' ',
+\ 'change_colorscheme'	: ' ',
+\ 'find_word'						: ' ',
+\ 'book_marks'					: ' ',
+\ }
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>
 nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
@@ -93,6 +100,10 @@ nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
 nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
 nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
 nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+highlight DashboardHeader guifg = '#f5d1c8'
+highlight DashboardCenter guifg = '#77bee0'
+highlight DashboardShortcut guifg = '#ff8278'
+highlight DashboardFooter guifg = '#dd91f3'
 let g:dashboard_custom_header = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
@@ -401,14 +412,12 @@ let g:indentLine_fileTypeExclude = ['dashboard']
 " Rainbow
 let g:rainbow_active=1
 let g:rainbow_conf={
-\	'guifgs': [red, cyan, yellow, green, blue, magenta],
+\	'guifgs': [ red, cyan, yellow, green, blue, magenta ],
 \	'operators': '_,_',
 \	'parentheses': ['start=/</ end=/>/ fold'],
 \}
 
-" Limelight
-" autocmd VimEnter * Limelight
-" let g:limelight_conceal_guifg=gray " Inactive Paragraph Limelight Color
+" Twilight
 lua << EOF
 	require("twilight").setup {
 	dimming = {
@@ -428,7 +437,7 @@ lua << EOF
 		"lua_statement",
 		"call_statement",
 	},
-	exclude = {},
+	exclude = { "dashboard" },
 	}
 EOF
 autocmd VimEnter * Twilight
