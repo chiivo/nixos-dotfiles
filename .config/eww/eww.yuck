@@ -33,6 +33,7 @@
 )
 (defwidget workspaces1 []
   (box
+    :class "workspaces1"
     :orientation "h"
     :halign "center"
     :valign "center"
@@ -44,6 +45,7 @@
 )
 (defwidget workspaces2 []
   (box
+    :class "workspaces2"
     :orientation "h"
     :halign "center"
     :valign "center"
@@ -62,19 +64,17 @@
     :space-evenly false
     (slider-vol)
     (time)
-    ;(bluetooth-button)
-    ;(reload)
   )
 )
 (defwidget powermenu []
   (eventbox
+    :class "powermenu"
     :onhover "eww update powermenu-revealer=true"
     :onhoverlost "eww update powermenu-revealer=false"
     (box
       :space-evenly false
       (button
         :class "power-button"
-        :orientation "h"
         :onclick "poweroff"
         " "
       )
@@ -85,19 +85,16 @@
         (box
           (button
             :class "reboot-button"
-            :orientation "h"
             :onclick "reboot"
             " "
           )
           (button
             :class "lock-button"
-            :orientation "h"
             :onclick "dm-tool lock"
             " "
           )
           (button
             :class "refresh-button"
-            :orientation "h"
             :onclick "leftwm command SoftReload"
             " "
           )
@@ -114,33 +111,29 @@
   )
 )
 (defwidget slider-vol []
-  (box 
+  (eventbox
     :class "slider-vol"
-    :orientation "h"
-    :space-evenly false
-    (eventbox
-      :onhover "eww update vol-revealer=true"
-      :onhoverlost "eww update vol-revealer=false"
-      (box
-        :space-evenly "false"
-        (revealer
-          :transition "slideright"
-          :reveal vol-revealer
-          :duration "200ms"
-          (scale
-            :min "0"
-            :max "101"
-            :value getvol
-            :onchange "amixer -D pulse sset Master {}%"
-          )
+    :onhover "eww update vol-revealer=true"
+    :onhoverlost "eww update vol-revealer=false"
+    (box
+      :space-evenly "false"
+      (revealer
+        :transition "slideright"
+        :reveal vol-revealer
+        :duration "200ms"
+        (scale
+          :min "0"
+          :max "101"
+          :value getvol
+          :onchange "amixer -D pulse sset Master {}%"
         )
-        (button
-          :class "label-vol"
-          :onclick "amixer -D pulse sset Master toggle"
-          :onmiddleclick "amixer -D pulse sset Master 50%"
-          :onrightclick "pavucontrol &"
-          getvolsym
-        )
+      )
+      (button
+        :class "label-vol"
+        :onclick "amixer -D pulse sset Master toggle"
+        :onmiddleclick "amixer -D pulse sset Master 50%"
+        :onrightclick "pavucontrol &"
+        getvolsym
       )
     )
   )
