@@ -28,7 +28,6 @@
     :valign "center"
     :space-evenly false
     (powermenu)
-    (capslockstatus)
   )
 )
 (defwidget workspaces1 []
@@ -103,13 +102,6 @@
     )
   )
 )
-(defwidget capslockstatus []
-  (label
-    :class "capslockstatus"
-    :orientation "h"
-    :text capslockstatus
-  )
-)
 (defwidget slider-vol []
   (eventbox
     :class "slider-vol"
@@ -164,10 +156,6 @@
 ;;;Variables;;;
 (defvar powermenu-revealer
   false
-)
-(defpoll capslockstatus
-  :interval "10ms"
-  "~/scripts/statuschecker --capslock"
 )
 (deflisten leftwm-tags1
   "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/tags1.liquid"
