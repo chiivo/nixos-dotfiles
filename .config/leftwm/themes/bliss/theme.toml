@@ -2,7 +2,7 @@ border_width = 4
 margin = 5
 workspace_margin = 5
 default_border_color = "#262727"
-floating_border_color = "#555657"
+floating_border_color = "#262727"
 focused_border_color = "#f5d1c8"
 
 #[[gutter]]
