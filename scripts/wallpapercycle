@@ -1,0 +1,20 @@
+#!/bin/sh
+
+time=$(date +%H)
+morning='/mnt/HDD/Images/Wallpapers/Outset\ Island\ morning.jpg'
+day='/mnt/HDD/Images/Wallpapers/Outset\ Island\ day.jpg'
+evening='/mnt/HDD/Images/Wallpapers/Outset\ Island\ evening.jpg'
+night='/mnt/HDD/Images/Wallpapers/Outset\ Island\ night.jpg'
+
+while true; do
+	if [ $time -eq 6 ] || [ $time -lt 10 ]; then
+		feh --no-fehbg --bg-fill "$morning"
+	elif [ $time -eq 10 ] || [ $time -lt 17 ]; then
+		feh --no-fehbg --bg-fill "$day"
+	elif [ $time -eq 17 ] || [ $time -lt 19 ]; then
+		feh --no-fehbg --bg-fill "$evening"
+	else
+		feh --no-fehbg "$night"
+	fi
+	sleep 60
+done
