@@ -17,34 +17,26 @@ getvolsym() {
 	
 	if [ $checkmute != on ]; then
 		echo ' '
-	else
-		if [ $(getvol) -lt 30 ]; then
-			echo ' '
-		else
-			if [ $(getvol) -lt 40 ]; then
-				echo ' '
-			else
-				if [ $(getvol) -lt 50 ]; then
-					echo '墳 '
-				else
-					if [ $(getvol) -ge 50 ]; then
-						echo ' '
-					fi
-				fi
-			fi
-		fi
+	elif [ $(getvol) -lt 30 ]; then
+		echo ' '
+	elif [ $(getvol) -lt 40 ]; then
+		echo ' '
+	elif [ $(getvol) -lt 50 ]; then
+		echo '墳 '
+	elif [ $(getvol) -ge 50 ]; then
+		echo ' '
 	fi
 }
 
 volumebar () {
-  # Change total_half_dots number and empty dots number to change number of output characters
-  full=""
-  half=""
-  empty=""
-  volume=$(getvol)
-  total_half_dots=$(( $(echo ${volume} / 5 | cut -f1 -d ".") ))
-  half_dots=$(( ${total_half_dots} % 2 ))
-  full_dots=$(( ( ${total_half_dots} - $(( ${total_half_dots} % 2 )) ) / 2))
+	# Change total_half_dots number and empty dots number to change number of output characters
+	full=""
+	half=""
+	empty=""
+	volume=$(getvol)
+	total_half_dots=$(( $(echo ${volume} / 5 | cut -f1 -d ".") ))
+	half_dots=$(( ${total_half_dots} % 2 ))
+	full_dots=$(( ( ${total_half_dots} - $(( ${total_half_dots} % 2 )) ) / 2))
 	empty_dots=$(( 10 - ( ${full_dots} + half_dots ) ))
 	bar=$(echo $(echo $(seq -s " " $((${full_dots}+1)) )$(seq -s " " $((${half_dots}+1)) )$(seq -s " " $(($empty_dots + 1)) ) ) | sed 's/[0-9]//g')
 
