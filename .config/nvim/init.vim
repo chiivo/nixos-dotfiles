@@ -1,9 +1,8 @@
-" Vim-Plug
+"Vim-Plug
 call plug#begin()
 Plug 'NvChad/nvim-colorizer.lua'
 Plug 'feline-nvim/feline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'luochen1990/rainbow'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'nvim-lua/popup.nvim'
@@ -20,20 +19,10 @@ Plug '~/.config/nvim/colors/bliss'
 Plug 'Manas140/run.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-orgmode/orgmode'
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'folke/twilight.nvim'
 call plug#end()
 
-" Colors
+"Colors
 let darkblack = '#141515'
 let black = '#262727'
 let red = '#ff8278'
@@ -46,7 +35,7 @@ let pink = '#f5d1c8'
 let gray = '#555657'
 let white = '#dddddd'
 
-" Startup
+"Startup
 colorscheme bliss
 let g:mapleader="\<Space>"
 set clipboard=unnamedplus
@@ -68,14 +57,14 @@ set termguicolors
 syntax on
 nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 
-" Colorizer
+"Colorizer
 lua << EOF
 require'colorizer'.setup({
 	'*',
 })
 EOF
 
-" Dashboard
+"Dashboard
 let g:dashboard_default_executive ='telescope'
 let g:dashboard_custom_shortcut={
 \ 'last_session'       : 'SPC s l',
@@ -116,7 +105,7 @@ let g:dashboard_custom_header = [
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \]
 
-" Bufferline
+"Bufferline
 lua << EOF
 require('bufferline').setup {
 	highlights = {
@@ -216,8 +205,8 @@ require('bufferline').setup {
 	}
 }
 EOF
-" These commands will navigate through buffers in order regardless of which mode you are using
-" e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
+"These commands will navigate through buffers in order regardless of which mode you are using
+"e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 nnoremap <silent>b] :BufferLineCycleNext<CR>
 nnoremap <silent>b[ :BufferLineCyclePrev<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
@@ -228,7 +217,7 @@ nnoremap <silent>be :BufferLineSortByExtension<CR>
 nnoremap <silent>bd :BufferLineSortByDirectory<CR>
 nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
 
-" NvimTree
+"NvimTree
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -280,9 +269,9 @@ let g:nvim_tree_icons = {
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
-" NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
+"NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 
-" a list of groups can be found at `:help nvim_tree_highlight`
+"a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeSymlink guifg='#eadc84'
 highlight NvimTreeRootFolder guifg='#ff8278'
 highlight NvimTreeFolderIcon guifg='#77bee0'
@@ -404,23 +393,29 @@ EOF
 " Nvim-AutoPairs
 lua require('nvim-autopairs').setup{}
 
-" IndentBlankLine
-let g:indent_blankline_use_treesitter=v:true
-let g:indent_blankline_space_char="."
-let g:indent_blankline_space_char_blankline=" "
-let g:indentLine_char="│"
-let g:indent_blankline_char_highlight_list = ['Constant', 'Special', 'Statement', 'Type', 'Identifier', 'PreProc']
-let g:indentLine_fileTypeExclude = ['dashboard']
+"Indent-BlankLine
+lua << EOF
+vim.cmd [[highlight IndentBlanklineIndent1 guifg='#ff8278' gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guifg='#ffc178' gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guifg='#eadc84' gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guifg='#bde077' gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent5 guifg='#77bee0' gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent6 guifg='#dd91f3' gui=nocombine]]
+require("indent_blankline").setup {
+	space_char_blankline = " ",
+	char_highlight_list = {
+		"IndentBlanklineIndent1",
+		"IndentBlanklineIndent2",
+		"IndentBlanklineIndent3",
+		"IndentBlanklineIndent4",
+		"IndentBlanklineIndent5",
+		"IndentBlanklineIndent6",
+	},
+	filetype_exclude = {'dashboard'}
+}
+EOF
 
-" Rainbow
-let g:rainbow_active=1
-let g:rainbow_conf={
-\	'guifgs': [ red, cyan, yellow, green, blue, magenta ],
-\	'operators': '_,_',
-\	'parentheses': ['start=/</ end=/>/ fold'],
-\}
-
-" Twilight
+"Twilight
 lua << EOF
 	require("twilight").setup {
 	dimming = {
@@ -445,7 +440,7 @@ lua << EOF
 EOF
 autocmd VimEnter * Twilight
 
-" TrueZen
+"TrueZen
 lua << EOF
 local true_zen = require("true-zen")
 true_zen.setup({
@@ -455,7 +450,7 @@ true_zen.setup({
 })
 EOF
 
-" Orgmode
+"Orgmode
 lua << EOF
 -- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
@@ -473,84 +468,9 @@ require('orgmode').setup({
 	org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
 	org_default_notes_file = '~/Dropbox/org/refile.org',
 })
-require'cmp'.setup({
-  sources = {
-    { name = 'orgmode' }
-  }
-})
 EOF
 
-" Nvim Cmp
-lua << EOF
-	-- Setup nvim-cmp.
-	local cmp = require'cmp'
-
-	cmp.setup({
-		snippet = {
-			-- REQUIRED - you must specify a snippet engine
-			expand = function(args)
-				vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-				-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-				-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-				-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-			end,
-		},
-		mapping = {
-			['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-			['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-			['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-			['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-			['<C-e>'] = cmp.mapping({
-				i = cmp.mapping.abort(),
-				c = cmp.mapping.close(),
-			}),
-			['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		},
-		sources = cmp.config.sources({
-			{ name = 'nvim_lsp' },
-			{ name = 'vsnip' }, -- For vsnip users.
-			-- { name = 'luasnip' }, -- For luasnip users.
-			-- { name = 'ultisnips' }, -- For ultisnips users.
-			-- { name = 'snippy' }, -- For snippy users.
-		}, {
-			{ name = 'buffer' },
-		})
-	})
-
-	-- Set configuration for specific filetype.
-	cmp.setup.filetype('gitcommit', {
-		sources = cmp.config.sources({
-			{ name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-		}, {
-			{ name = 'buffer' },
-		})
-	})
-
-	-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-	cmp.setup.cmdline('/', {
-		sources = {
-			{ name = 'buffer' }
-		}
-	})
-
-	-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-	cmp.setup.cmdline(':', {
-		sources = cmp.config.sources({
-			{ name = 'path' }
-		}, {
-			{ name = 'cmdline' }
-		})
-	})
-
---  -- Setup lspconfig.
---  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
---  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
---  require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
---    capabilities = capabilities
---  }
-EOF
-
-"Source
+"Feline
 lua << EOF
 local colors = {
 	darkblack = '#141515',
@@ -730,6 +650,7 @@ require('feline').setup(
 })
 EOF
 
+"Treesitter Playground
 lua << EOF
 require "nvim-treesitter.configs".setup {
 	playground = {
