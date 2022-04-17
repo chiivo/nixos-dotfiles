@@ -1,3 +1,10 @@
+/* Font change */
+/*
+::-webkit-input-placeholder, body, button, input, select, textarea{
+font-family: 'VictorMono Nerd Font';
+}
+*/
+
 /*Theme*/
 .theme-dark {
 	--white: #dddddd;
