@@ -20,7 +20,7 @@
 - Video Player: mpv
 - Font Packages: ttf-liberation, ttf-symbola
 - Terminal Stuff: macchina, cbonsai, shell-color-scripts
-- Apps: Blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3-git, polymc (jre-openjdk), obs-studio, chatterino2-7tv-git (gst-plugins-good), bottom, blueman, xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst, jp2a, wmctrl, playerctl
+- Apps: Blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3-git, polymc (jre-openjdk), obs-studio, chatterino2-7tv-git (gst-plugins-good), bottom, blueman, xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst, jp2a, wmctrl, playerctl, graphicsmagick
 ## Reminders
 - To make executable bash file: `chmod +x /script/path`
 - Change ownership: `chown (username) /file/path`
