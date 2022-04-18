@@ -1,8 +1,8 @@
 ;;;Widgets;;;
 (defwidget bar1 []
   (box
-    :orientation "h"
     :class "bar"
+    :orientation "h"
     :hexpand "false"
     :vexpand "false"
     (left-group)
@@ -12,8 +12,8 @@
 )
 (defwidget bar2 []
   (box
-    :orientation "h"
     :class "bar"
+    :orientation "h"
     :hexpand "false"
     :vexpand "false"
     (left-group)
@@ -23,8 +23,8 @@
 )
 (defwidget left-group []
   (box
-    :orientation "h"
     :halign "start"
+    :orientation "h"
     :valign "center"
     :space-evenly false
     (powermenu)
@@ -116,6 +116,7 @@
         (scale
           :min "0"
           :max "101"
+          :flipped "true"
           :value getvol
           :onchange "amixer -D pulse sset Master {}%"
         )

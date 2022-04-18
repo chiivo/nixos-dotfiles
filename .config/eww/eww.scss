@@ -10,11 +10,13 @@ $yellow: #eadc84;
 $green: #bde077;
 $blue: #77bee0;
 $purple: #dd91f3;
+$margin: 0 10px;
 
 * {
 	all: unset;
 	border-radius: 10px;
 	font-family: 'VictorMono Nerd Font';
+	font-size: 16px;
 	font-style: normal;
 	font-weight: bold;
 }
@@ -27,40 +29,40 @@ $purple: #dd91f3;
 
 //PowerMenu
 .power-button {
-	margin: 0 10px;
+	margin: $margin;
 }
 .power-button:hover {
 	color: $red;
 }
 .reboot-button {
-	margin: 0 10px;
+	margin: $margin;
 }
 .reboot-button:hover {
-	margin: 0 10px;
+	margin: $margin;
 	color: $orange;
 }
 .lock-button {
-	margin: 0 10px;
+	margin: $margin;
 }
 .lock-button:hover {
-	margin: 0 10px;
+	margin: $margin;
 	color: $yellow;
 }
 .refresh-button:hover {
-	margin: 0 10px;
+	margin: $margin;
 	color: $green;
 }
 
 //CapsLock Status
 .capslockstatus {
 	color: $red;
-	margin: 0 10px;
+	margin: $margin;
 }
 
 //Current Window
 .current-window {
-	margin: 0 10px;
-  padding: 0 10px;
+	margin: $margin;
+  padding: $margin;
   border-radius: 6px;
   background-color: $pink;
   color: $black;
@@ -68,7 +70,7 @@ $purple: #dd91f3;
 
 //Workspaces
 .ws-button {
-	margin: 0 10px;
+	margin: $margin;
   color: $gray;
 }
 .ws-button:hover {
@@ -77,20 +79,20 @@ $purple: #dd91f3;
 
 //Screen1 Workspaces
 .ws-button-mine {
-	margin: 0 10px;
+	margin: $margin;
 }
 .ws-button-mine:hover {
 	color: $white;
 }
 .ws-button-visible {
-	margin: 0 10px;
+	margin: $margin;
   color: $gray;
 }
 .ws-button-visible:hover {
 	color: $white;
 }
 .ws-button-busy {
-	margin: 0 10px;
+	margin: $margin;
   color: $gray;
 }
 .ws-button-busy:hover {
@@ -99,27 +101,27 @@ $purple: #dd91f3;
 
 //Screen2 Workspaces
 .ws-button-mine2 {
-	margin: 0 10px;
+	margin: $margin;
   color: $gray;
 }
 .ws-button-mine2:hover {
 	color: $white;
 }
 .ws-button-visible2 {
-	margin: 0 10px;
+	margin: $margin;
 }
 .ws-button-visible2:hover {
 	color: $white;
 }
 .ws-button-busy2 {
-	margin: 0 10px;
+	margin: $margin;
 	color: $gray;
 }
 .ws-button-busy2:hover {
 	color: $white;
 }
 
-//Volume Slider
+//Volume
 .slider-vol scale trough highlight {
 	background-color: $pink;
 	border-radius: 10px;
@@ -130,12 +132,12 @@ $purple: #dd91f3;
 .slider-vol scale trough {
   background-color: $gray;
   border-radius: 10px;
-  min-height: 4px;
+  min-height: 5px;
   min-width: 50px;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 .label-vol {
-	margin: 0 10px;
+	margin: $margin;
 }
 .label-vol:hover {
 	color: $purple;
@@ -143,7 +145,7 @@ $purple: #dd91f3;
 
 //Time
 .time {
-	margin: 0 10px;
+	margin: $margin;
 }
 .time:hover {
 	color: $blue;
@@ -151,7 +153,7 @@ $purple: #dd91f3;
 
 //Bluetooth Button
 .bluetooth-button {
-	margin: 0 10px;
+	margin: $margin;
 }
 .bluetooth-button:hover {
 	color: $blue;
@@ -159,7 +161,7 @@ $purple: #dd91f3;
 
 //Notification Center
 .notificationcenter {
-	margin: 0 10px;
+	margin: $margin;
 }
 .notificationcenter:hover {
 	color: $green;
@@ -167,7 +169,7 @@ $purple: #dd91f3;
 
 //Reload
 .reload {
-	margin: 0 10px;
+	margin: $margin;
 }
 .reload:hover {
 	color: $green;
