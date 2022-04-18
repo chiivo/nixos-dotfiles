@@ -14,17 +14,17 @@ nightcheck='false'
 while true; do
 	#Set wallpaper on first run
 	if [ "$basecheck" = "true" ]; then
-		if [ $time -ge 6 ] && [ $time -le 9 ]; then
+		if [ $time -ge 6 ] && [ $time -le 8 ]; then
 			feh --bg-scale --no-fehbg "$morning"
 			morningcheck='false'
 			daycheck='true'
 			basecheck='false'
-		elif [ $time -ge 10 ] && [ $time -le 15 ]; then
+		elif [ $time -ge 9 ] && [ $time -le 16 ]; then
 			feh --bg-scale --no-fehbg "$day"
 			daycheck='false'
 			eveningcheck='true'
 			basecheck='false'
-		elif [ $time -ge 16 ] && [ $time -le 19 ]; then
+		elif [ $time -ge 17 ] && [ $time -le 19 ]; then
 			feh --bg-scale --no-fehbg "$evening"
 			eveningcheck='false'
 			nightcheck='true'
@@ -36,21 +36,21 @@ while true; do
 			basecheck='false'
 		fi
 	#Transition to morning wallpaper
-	elif [ $time -ge 6 ] && [ $time -le 9 ] && [ "$morningcheck" = "true" ]; then
+	elif [ $time -ge 6 ] && [ $time -le 8 ] && [ "$morningcheck" = "true" ]; then
 		for i in {100..0}; do
 			gm composite "$night" -dissolve "$i" "$morning" jpg:- | feh --bg-scale --no-fehbg -
 		done
 		morningcheck='false'
 		daycheck='true'
 	#Transition to day wallpaper
-	elif [ $time -ge 10 ] && [ $time -le 15 ] && [ "$daycheck" = "true" ]; then
+	elif [ $time -ge 9 ] && [ $time -le 16 ] && [ "$daycheck" = "true" ]; then
 		for i in {100..0}; do
 			gm composite "$morning" -dissolve "$i" "$day" jpg:- | feh --bg-scale --no-fehbg -
 		done
 		daycheck='false'
 		eveningcheck='true'
 	#Transition to evening wallpaper
-	elif [ $time -ge 16 ] && [ $time -le 19 ] && [ "$eveningcheck" = "true" ]; then
+	elif [ $time -ge 17 ] && [ $time -le 19 ] && [ "$eveningcheck" = "true" ]; then
 		for i in {100..0}; do
 			gm composite "$day" -dissolve "$i" "$evening" jpg:- | feh --bg-scale --no-fehbg -
 		done
