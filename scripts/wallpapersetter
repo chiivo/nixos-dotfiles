@@ -12,7 +12,7 @@ eveningcheck='false'
 nightcheck='false'
 
 while true; do
-	#Set Wallpaper on first run
+	#Set wallpaper on first run
 	if [ $basecheck == 'true' ]; then
 		if [ $time -ge 6 ] && [ $time -le 9 ]; then
 			feh --bg-scale --no-fehbg "$morning"
@@ -29,13 +29,12 @@ while true; do
 			eveningcheck='false'
 			nightcheck='true'
 			basecheck='false'
-		elif [ $time -ge 20 ] && [ $time -le 23 ] || [ $time -ge 00 ] && [ $time -le 5 ]; then
+		elif ([ $time -ge 20 ] && [ $time -le 23 ]) || ([ $time -ge 00 ] && [ $time -le 5 ]); then
 			feh --bg-scale --no-fehbg "$night"
 			nightcheck='false'
 			morningcheck='true'
 			basecheck='false'
 		fi
-		basecheck='false'
 	#Transition to morning wallpaper
 	elif [ $time -ge 6 ] && [ $time -le 9 ] && [ $morningcheck == 'true' ]; then
 		for i in {100..0}; do
@@ -58,7 +57,7 @@ while true; do
 		eveningcheck='false'
 		nightcheck='true'
 	#Transition to night wallpaper
-	elif [ $time -ge 20 ] && [ $time -le 23 ] && [ $nightcheck == 'true' ] || [ $time -ge 00 ] && [ $time -le 5 ] && [ $nightcheck == 'true' ]; then
+elif ([ $time -ge 20 ] && [ $time -le 23 ] && [ $nightcheck == 'true' ]) || ([ $time -ge 00 ] && [ $time -le 5 ] && [ $nightcheck == 'true' ]); then
 		for i in {100..0}; do
 			gm composite "$evening" -dissolve "$i" "$night" jpg:- | feh --bg-scale --no-fehbg -
 		done
