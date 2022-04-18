@@ -57,12 +57,12 @@ while true; do
 		eveningcheck='false'
 		nightcheck='true'
 	#Transition to night wallpaper
-elif ([ $time -ge 20 ] && [ $time -le 23 ] && [ $nightcheck == 'true' ]) || ([ $time -ge 00 ] && [ $time -le 5 ] && [ $nightcheck == 'true' ]); then
+	elif ([ $time -ge 20 ] && [ $time -le 23 ] && [ $nightcheck == 'true' ]) || ([ $time -ge 00 ] && [ $time -le 5 ] && [ $nightcheck == 'true' ]); then
 		for i in {100..0}; do
 			gm composite "$evening" -dissolve "$i" "$night" jpg:- | feh --bg-scale --no-fehbg -
 		done
 		nightcheck='false'
 		morningcheck='true'
 	fi
-	sleep 60
+	sleep 10
 done
