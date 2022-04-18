@@ -391,7 +391,21 @@ require'nvim-tree'.setup {
 EOF
 
 " Nvim-AutoPairs
-lua require('nvim-autopairs').setup{}
+lua << EOF
+require('nvim-autopairs').setup{
+	enable_check_bracket_line = false,
+	fast_wrap = {
+		map = '<A-e>',
+		chars = { '{', '[', '(', '"', "'" },
+		pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
+		end_key = '$',
+		keys = 'qwertyuiopasdfghjklzxcvbnm',
+		check_comma = true,
+		highlight = 'Search',
+		highlight_grey='Comment'
+	}
+}
+EOF
 
 "Indent-BlankLine
 lua << EOF
