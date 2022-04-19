@@ -1,63 +1,73 @@
 #!/bin/sh
 
+### Variables ###
 morning='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island morning.jpg'
 day='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island day.jpg'
 evening='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island evening.jpg'
 night='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island night.jpg'
-time=$(date +%H)
+time=$(date +%H%M)
 basecheck='true'
 morningcheck='false'
 daycheck='false'
 eveningcheck='false'
 nightcheck='false'
 
+### Script ###
 while true; do
 	#Set wallpaper on first run
 	if [ "$basecheck" = "true" ]; then
-		if [ $time -ge 6 ] && [ $time -le 8 ]; then
-			feh --bg-scale --no-fehbg "$morning"
+		if [ $time -ge 600 ] && [ $time -le 859 ]; then
+			for i in {100..0}; do
+				gm convert "$morning" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+			done
 			morningcheck='false'
 			daycheck='true'
 			basecheck='false'
-		elif [ $time -ge 9 ] && [ $time -le 16 ]; then
-			feh --bg-scale --no-fehbg "$day"
+		elif [ $time -ge 900 ] && [ $time -le 1659 ]; then
+			for i in {100..0}; do
+				gm convert "$day" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+			done
 			daycheck='false'
 			eveningcheck='true'
 			basecheck='false'
-		elif [ $time -ge 17 ] && [ $time -le 19 ]; then
-			feh --bg-scale --no-fehbg "$evening"
+		elif [ $time -ge 1700 ] && [ $time -le 1959 ]; then
+			for i in {100..0}; do
+				gm convert "$evening" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+			done
 			eveningcheck='false'
 			nightcheck='true'
 			basecheck='false'
-		elif ([ $time -ge 20 ] && [ $time -le 23 ]) || ([ $time -ge 00 ] && [ $time -le 5 ]); then
-			feh --bg-scale --no-fehbg "$night"
+		elif ([ $time -ge 2000 ] && [ $time -le 2359 ]) || ([ $time -ge 0000 ] && [ $time -le 559 ]); then
+			for i in {100..0}; do
+				gm convert "$night" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+			done
 			nightcheck='false'
 			morningcheck='true'
 			basecheck='false'
 		fi
 	#Transition to morning wallpaper
-	elif [ $time -ge 6 ] && [ $time -le 8 ] && [ "$morningcheck" = "true" ]; then
+	elif [ $time -ge 600 ] && [ $time -le 859 ] && [ "$morningcheck" = "true" ]; then
 		for i in {100..0}; do
 			gm composite "$night" -dissolve "$i" "$morning" jpg:- | feh --bg-scale --no-fehbg -
 		done
 		morningcheck='false'
 		daycheck='true'
 	#Transition to day wallpaper
-	elif [ $time -ge 9 ] && [ $time -le 16 ] && [ "$daycheck" = "true" ]; then
+	elif [ $time -ge 900 ] && [ $time -le 1659 ] && [ "$daycheck" = "true" ]; then
 		for i in {100..0}; do
 			gm composite "$morning" -dissolve "$i" "$day" jpg:- | feh --bg-scale --no-fehbg -
 		done
 		daycheck='false'
 		eveningcheck='true'
 	#Transition to evening wallpaper
-	elif [ $time -ge 17 ] && [ $time -le 19 ] && [ "$eveningcheck" = "true" ]; then
+	elif [ $time -ge 1700 ] && [ $time -le 1959 ] && [ "$eveningcheck" = "true" ]; then
 		for i in {100..0}; do
 			gm composite "$day" -dissolve "$i" "$evening" jpg:- | feh --bg-scale --no-fehbg -
 		done
 		eveningcheck='false'
 		nightcheck='true'
 	#Transition to night wallpaper
-	elif ([ $time -ge 20 ] && [ $time -le 23 ] && [ "$nightcheck" = "true" ]) || ([ $time -ge 00 ] && [ $time -le 5 ] && [ '$nightcheck' = 'true' ]); then
+	elif ([ $time -ge 2000 ] && [ $time -le 2359 ] && [ "$nightcheck" = "true" ]) || ([ $time -ge 0000 ] && [ $time -le 559 ] && [ '$nightcheck' = 'true' ]); then
 		for i in {100..0}; do
 			gm composite "$evening" -dissolve "$i" "$night" jpg:- | feh --bg-scale --no-fehbg -
 		done
