@@ -5,7 +5,6 @@ morning='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island morning.jpg'
 day='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island day.jpg'
 evening='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island evening.jpg'
 night='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island night.jpg'
-time=$(date +%H%M)
 basecheck='true'
 morningcheck='false'
 daycheck='false'
@@ -82,6 +81,7 @@ transnight() {
 }
 
 ### Script ###
+time=$(date +%H%M)
 while :
 do
 	#Set wallpaper based on time on first run
