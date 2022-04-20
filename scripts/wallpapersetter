@@ -81,9 +81,10 @@ transnight() {
 }
 
 ### Script ###
-time=$(date +%H%M)
 while :
 do
+	#Check time each loop
+	time=$(date +%H%M)
 	#Set wallpaper based on time on first run
 	if [ "$basecheck" = "true" ]; then
 		if [ $time -ge 600 ] && [ $time -le 859 ]; then
