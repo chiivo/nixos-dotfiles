@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#Requires graphicsmagick and feh
+#
 #Make sure to add 'kill $(pgrep -f path/to/script);' to your startup script before 'path/to/script &' to avoid weird flickering
 
 ### Variables ###
