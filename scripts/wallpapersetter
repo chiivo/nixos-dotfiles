@@ -12,67 +12,98 @@ daycheck='false'
 eveningcheck='false'
 nightcheck='false'
 
+### Functions ###
+checkmorning() {
+	for i in {100..0}; do
+		gm convert "$morning" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+	done
+	morningcheck='false'
+	daycheck='true'
+	basecheck='false'
+}
+
+checkday() {
+	for i in {100..0}; do
+		gm convert "$day" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+	done
+	daycheck='false'
+	eveningcheck='true'
+	basecheck='false'
+}
+
+checkevening() {
+	for i in {100..0}; do
+		gm convert "$evening" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+	done
+	eveningcheck='false'
+	nightcheck='true'
+	basecheck='false'
+}
+
+checknight() {
+	for i in {100..0}; do
+		gm convert "$night" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+	done
+	nightcheck='false'
+	morningcheck='true'
+	basecheck='false'
+}
+
+transmorning() {
+	for i in {100..0}; do
+		gm composite "$night" -dissolve "$i" "$morning" jpg:- | feh --bg-scale --no-fehbg -
+	done
+	morningcheck='false'
+	daycheck='true'
+}
+
+transday() {
+	for i in {100..0}; do
+		gm composite "$morning" -dissolve "$i" "$day" jpg:- | feh --bg-scale --no-fehbg -
+	done
+	daycheck='false'
+	eveningcheck='true'
+}
+
+transevening() {
+	for i in {100..0}; do
+		gm composite "$day" -dissolve "$i" "$evening" jpg:- | feh --bg-scale --no-fehbg -
+	done
+	eveningcheck='false'
+	nightcheck='true'
+}
+
+transnight() {
+	for i in {100..0}; do
+		gm composite "$evening" -dissolve "$i" "$night" jpg:- | feh --bg-scale --no-fehbg -
+	done
+	nightcheck='false'
+	morningcheck='true'
+}
+
 ### Script ###
-while true; do
-	#Set wallpaper on first run
+while :
+do
+	#Set wallpaper based on time on first run
 	if [ "$basecheck" = "true" ]; then
 		if [ $time -ge 600 ] && [ $time -le 859 ]; then
-			for i in {100..0}; do
-				gm convert "$morning" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
-			done
-			morningcheck='false'
-			daycheck='true'
-			basecheck='false'
+			checkmorning
 		elif [ $time -ge 900 ] && [ $time -le 1659 ]; then
-			for i in {100..0}; do
-				gm convert "$day" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
-			done
-			daycheck='false'
-			eveningcheck='true'
-			basecheck='false'
+			checkday
 		elif [ $time -ge 1700 ] && [ $time -le 1959 ]; then
-			for i in {100..0}; do
-				gm convert "$evening" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
-			done
-			eveningcheck='false'
-			nightcheck='true'
-			basecheck='false'
+			checkevening
 		elif ([ $time -ge 2000 ] && [ $time -le 2359 ]) || ([ $time -ge 0000 ] && [ $time -le 559 ]); then
-			for i in {100..0}; do
-				gm convert "$night" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
-			done
-			nightcheck='false'
-			morningcheck='true'
-			basecheck='false'
+			checknight
 		fi
-	#Transition to morning wallpaper
+	#Transition wallpaper based on time
 	elif [ $time -ge 600 ] && [ $time -le 859 ] && [ "$morningcheck" = "true" ]; then
-		for i in {100..0}; do
-			gm composite "$night" -dissolve "$i" "$morning" jpg:- | feh --bg-scale --no-fehbg -
-		done
-		morningcheck='false'
-		daycheck='true'
-	#Transition to day wallpaper
+		transmorning
 	elif [ $time -ge 900 ] && [ $time -le 1659 ] && [ "$daycheck" = "true" ]; then
-		for i in {100..0}; do
-			gm composite "$morning" -dissolve "$i" "$day" jpg:- | feh --bg-scale --no-fehbg -
-		done
-		daycheck='false'
-		eveningcheck='true'
-	#Transition to evening wallpaper
+		transday
 	elif [ $time -ge 1700 ] && [ $time -le 1959 ] && [ "$eveningcheck" = "true" ]; then
-		for i in {100..0}; do
-			gm composite "$day" -dissolve "$i" "$evening" jpg:- | feh --bg-scale --no-fehbg -
-		done
-		eveningcheck='false'
-		nightcheck='true'
-	#Transition to night wallpaper
+		transevening
 	elif ([ $time -ge 2000 ] && [ $time -le 2359 ] && [ "$nightcheck" = "true" ]) || ([ $time -ge 0000 ] && [ $time -le 559 ] && [ '$nightcheck' = 'true' ]); then
-		for i in {100..0}; do
-			gm composite "$evening" -dissolve "$i" "$night" jpg:- | feh --bg-scale --no-fehbg -
-		done
-		nightcheck='false'
-		morningcheck='true'
+		transnight
 	fi
 	sleep 10
 done
