@@ -2,10 +2,12 @@
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 ### Wallpaper ###
-feh --no-fehbg --bg-tile /mnt/HDD/Images/Wallpapers/BlissRet.jpg &
+#feh --no-fehbg --bg-tile /mnt/HDD/Images/Wallpapers/BlissRet.jpg &
+kill $(pgrep -f scripts/wallpapersetter);
+~/scripts/wallpapersetter &
 
 ### Mouse Settings ###
-~/scripts/mousesettings
+~/scripts/mousesettings &
 
 ### Compositor ###
 killall -q picom;
