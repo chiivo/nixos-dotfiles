@@ -109,17 +109,15 @@ $margin: 0 10px;
 //Volume
 .slider-vol scale trough highlight {
 	background-color: $pink;
-	border-radius: 10px;
 }
 .slider-vol scale trough highlight:hover {
 	background-color: $purple;
 }
 .slider-vol scale trough {
   background-color: $gray;
-  border-radius: 10px;
   min-height: 5px;
   min-width: 50px;
-  margin: 0 10px;
+  margin: $margin;
 }
 .label-vol {
 	margin: $margin;
@@ -142,7 +140,6 @@ $margin: 0 10px;
   color: $pink;
 }
 .cal:selected {
-	border-radius: 10px;
   background-color: $pink;
   color: $black;
 }
