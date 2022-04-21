@@ -5,10 +5,16 @@
 #Make sure to add 'kill $(pgrep -f path/to/script);' to your startup script before 'path/to/script &' to avoid weird flickering
 
 ### Variables ###
+#Change these to your liking
+morningtime=6
+daytime=9
+eveningtime=17
+nighttime=20
 morning='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island morning.jpg'
 day='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island day.jpg'
 evening='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island evening.jpg'
 night='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island night.jpg'
+#Don't touch these
 basecheck='true'
 morningcheck='false'
 daycheck='false'
@@ -88,26 +94,26 @@ transnight() {
 while :
 do
 	#Check time each loop
-	time=$(date +%H%M)
+	time=$(date +%H)
 	#Set wallpaper based on time on first run
 	if [ "$basecheck" = "true" ]; then
-		if [ $time -ge 600 ] && [ $time -le 859 ]; then
+		if [ $time -ge "$morningtime" ] && [ $time -lt "$daytime" ]; then
 			checkmorning
-		elif [ $time -ge 900 ] && [ $time -le 1659 ]; then
+		elif [ $time -ge "$daytime" ] && [ $time -lt "$eveningtime" ]; then
 			checkday
-		elif [ $time -ge 1700 ] && [ $time -le 1959 ]; then
+		elif [ $time -ge "$eveningtime" ] && [ $time -lt "$nighttime" ]; then
 			checkevening
-		elif ([ $time -ge 2000 ] && [ $time -le 2359 ]) || ([ $time -ge 0000 ] && [ $time -le 559 ]); then
+		elif ([ $time -ge "$nighttime" ] && [ $time -le 23 ]) || ([ $time -ge 00 ] && [ $time -lt "$morningtime" ]); then
 			checknight
 		fi
 	#Transition wallpaper based on time
-	elif [ $time -ge 600 ] && [ $time -le 859 ] && [ "$morningcheck" = "true" ]; then
+	elif [ $time -ge "$morningtime" ] && [ $time -lt "$daytime" ] && [ "$morningcheck" = "true" ]; then
 		transmorning
-	elif [ $time -ge 900 ] && [ $time -le 1659 ] && [ "$daycheck" = "true" ]; then
+	elif [ $time -ge "$daytime" ] && [ $time -lt "$eveningtime" ] && [ "$daycheck" = "true" ]; then
 		transday
-	elif [ $time -ge 1700 ] && [ $time -le 1959 ] && [ "$eveningcheck" = "true" ]; then
+	elif [ $time -ge "$eveningtime" ] && [ $time -lt "$nightime" ] && [ "$eveningcheck" = "true" ]; then
 		transevening
-	elif ([ $time -ge 2000 ] && [ $time -le 2359 ] && [ "$nightcheck" = "true" ]) || ([ $time -ge 0000 ] && [ $time -le 559 ] && [ '$nightcheck' = 'true' ]); then
+	elif ([ $time -ge "$nightime" ] && [ $time -le 23 ] && [ "$nightcheck" = "true" ]) || ([ $time -ge 00 ] && [ $time -lt "$morningtime" ] && [ "$nightcheck" = "true" ]); then
 		transnight
 	fi
 	sleep 10
