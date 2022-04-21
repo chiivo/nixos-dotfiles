@@ -198,28 +198,28 @@
 (defwindow bar1
   :monitor 0
   :geometry (geometry
-    :y "10px"
+    :y "20px"
     :width "1136px"
     :height "30px"
     :anchor "top center"
   )
   :reserve (struts
     :side "top"
-    :distance "40px"
+    :distance "50px"
   )
   (bar1)
 )
 (defwindow bar2
   :monitor 1
   :geometry (geometry
-    :y "10px"
+    :y "20px"
     :width "1136px"
     :height "30px"
     :anchor "top center"
   )
   :reserve (struts
     :side "top"
-    :distance "40px"
+    :distance "50px"
   )
   (bar2)
 )
