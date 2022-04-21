@@ -177,7 +177,7 @@
 )
 (defpoll time
   :interval "1s"
-  "date +'%H:%M'"
+  "date +'%R'"
 )
 (defpoll day 
   :interval "10h"
