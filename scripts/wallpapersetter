@@ -111,9 +111,9 @@ do
 		transmorning
 	elif [ $time -ge "$daytime" ] && [ $time -lt "$eveningtime" ] && [ "$daycheck" = "true" ]; then
 		transday
-	elif [ $time -ge "$eveningtime" ] && [ $time -lt "$nightime" ] && [ "$eveningcheck" = "true" ]; then
+	elif [ $time -ge "$eveningtime" ] && [ $time -lt "$nighttime" ] && [ "$eveningcheck" = "true" ]; then
 		transevening
-	elif ([ $time -ge "$nightime" ] && [ $time -le 23 ]) || ([ $time -ge 00 ] && [ $time -lt "$morningtime" ])  && [ "$nightcheck" = "true" ]; then
+	elif ([ $time -ge "$nighttime" ] && [ $time -le 23 ]) || ([ $time -ge 00 ] && [ $time -lt "$morningtime" ])  && [ "$nightcheck" = "true" ]; then
 		transnight
 	fi
 	sleep 10
