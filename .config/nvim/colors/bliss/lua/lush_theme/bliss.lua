@@ -96,7 +96,7 @@ local theme = lush(function()
 		-- FoldColumn   { }, -- 'foldcolumn'
 		-- SignColumn   { }, -- column where |signs| are displayed
 		IncSearch    {fg = pink, bg = gray}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		-- Substitute   { }, -- |:substitute| replacement text highlighting
+		Substitute   {fg = black, bg = yellow}, -- |:substitute| replacement text highlighting
 		LineNr       {fg = gray}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr {fg = pink, gui = 'bold'}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen   {fg = black, bg = pink}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -139,40 +139,40 @@ local theme = lush(function()
 		-- Uncomment and edit if you want more specific syntax highlighting.
 		
 		Constant       {fg = red}, -- (preferred) any constant
-		String         {fg = red}, -- a string constant: "this is a string"
-		Character      {fg = red}, -- a character constant: 'c', '\n'
-		Number         {fg = red}, -- a number constant: 234, 0xff
-		Boolean        {fg = red}, -- a boolean constant: TRUE, false
-		Float          {fg = red}, -- a floating point constant: 2.3e10
+		-- String         {fg = red}, -- a string constant: "this is a string"
+		-- Character      {fg = red}, -- a character constant: 'c', '\n'
+		-- Number         {fg = red}, -- a number constant: 234, 0xff
+		-- Boolean        {fg = red}, -- a boolean constant: TRUE, false
+		-- Float          {fg = red}, -- a floating point constant: 2.3e10
 		
 		Identifier     {fg = blue}, -- (preferred) any variable name
-		Function       {fg = blue}, -- function name (also: methods for classes)
+		-- Function       {fg = blue}, -- function name (also: methods for classes)
 		
 		Statement      {fg = yellow}, -- (preferred) any statement
-		Conditional    {fg = yellow}, -- if, then, else, endif, switch, etc.
-		Repeat         {fg = yellow}, -- for, do, while, etc.
-		Label          {fg = yellow}, -- case, default, etc.
-		Operator       {fg = yellow}, -- "sizeof", "+", "*", etc.
-		Keyword        {fg = yellow}, -- any other keyword
-		Exception      {fg = yellow}, -- try, catch, throw
+		-- Conditional    {fg = yellow}, -- if, then, else, endif, switch, etc.
+		-- Repeat         {fg = yellow}, -- for, do, while, etc.
+		-- Label          {fg = yellow}, -- case, default, etc.
+		-- Operator       {fg = yellow}, -- "sizeof", "+", "*", etc.
+		-- Keyword        {fg = yellow}, -- any other keyword
+		-- Exception      {fg = yellow}, -- try, catch, throw
 		
 		PreProc        {fg = magenta}, -- (preferred) generic Preprocessor
-		Include        {fg = magenta}, -- preprocessor #include
-		Define         {fg = magenta}, -- preprocessor #define
-		Macro          {fg = magenta}, -- same as Define
-		PreCondit      {fg = magenta}, -- preprocessor #if, #else, #endif, etc.
+		-- Include        {fg = magenta}, -- preprocessor #include
+		-- Define         {fg = magenta}, -- preprocessor #define
+		-- Macro          {fg = magenta}, -- same as Define
+		-- PreCondit      {fg = magenta}, -- preprocessor #if, #else, #endif, etc.
 		
 		Type           {fg = green}, -- (preferred) int, long, char, etc.
-		StorageClass   {fg = green}, -- static, register, volatile, etc.
-		Structure      {fg = green}, -- struct, union, enum, etc.
-		Typedef        {fg = green}, -- A typedef
+		-- StorageClass   {fg = green}, -- static, register, volatile, etc.
+		-- Structure      {fg = green}, -- struct, union, enum, etc.
+		-- Typedef        {fg = green}, -- A typedef
 		
 		Special        {fg = orange}, -- (preferred) any special symbol
-		SpecialChar    {fg = orange}, -- special character in a constant
-		Tag            {fg = orange}, -- you can use CTRL-] on this
-		Delimiter      {fg = orange}, -- character that needs attention
-		SpecialComment {fg = orange}, -- special things inside a comment
-		Debug          {fg = orange}, -- debugging statements
+		-- SpecialChar    {fg = orange}, -- special character in a constant
+		-- Tag            {fg = orange}, -- you can use CTRL-] on this
+		-- Delimiter      {fg = orange}, -- character that needs attention
+		-- SpecialComment {fg = orange}, -- special things inside a comment
+		-- Debug          {fg = orange}, -- debugging statements
 		
 		Underlined  {fg = blue, gui = "underline"}, -- (preferred) text that stands out, HTML links
 		Bold        {gui = "bold"},
