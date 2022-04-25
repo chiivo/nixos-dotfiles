@@ -16,7 +16,7 @@
 - Terminal: alacritty
 - Text Editor: neovim
 - Browser: vivaldi
-- File Managers: thunar (gvfs), ranger (p7zip)
+- File Managers: thunar (gvfs, tumbler), ranger (p7zip)
 - Video Player: mpv
 - Font Packages: ttf-liberation, ttf-symbola
 - Terminal Stuff: macchina, cbonsai, shell-color-scripts
