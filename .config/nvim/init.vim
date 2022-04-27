@@ -195,7 +195,7 @@ require('bufferline').setup {
 		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
 		-- can also be a table containing 2 custom separators
 		-- [focused and unfocused]. eg: { '|', '|' }
-		separator_style = "padded_slant", -- "slant" | "padded_slant" | "thick" | "thin" | { 'any', 'any' },
+		separator_style = "thin", -- "slant" | "padded_slant" | "thick" | "thin" | { 'any', 'any' },
 		enforce_regular_tabs = false, -- false | true,
 		always_show_bufferline = true, -- true | false,
 		sort_by = 'id' -- 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
@@ -288,18 +288,19 @@ lua << EOF
 require'nvim-tree'.setup {
 	auto_reload_on_write = true,
 	disable_netrw = false,
-	hide_root_folder = false,
 	hijack_cursor = true,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
 	ignore_buffer_on_setup = false,
 	open_on_setup = false,
+	open_on_setup_file = false,
 	open_on_tab = false,
 	sort_by = "name",
 	update_cwd = false,
 	view = {
 		width = 30,
 		height = 30,
+		hide_root_folder = false,
 		side = 'left',
 		preserve_window_proportions = true,
 		number = false,
