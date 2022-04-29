@@ -55,6 +55,7 @@ set scrolloff=999
 set smartcase
 set termguicolors
 syntax on
+set laststatus=3
 nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 
 "Colorizer
