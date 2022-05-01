@@ -21,7 +21,6 @@
 )
 (defwidget workspaces []
   (box
-    :class "workspaces1"
     :orientation "v"
     :halign "center"
     :valign "center"
@@ -115,16 +114,16 @@
 (defwidget time []
   (box
     :orientation "v"
-  (button
-    :class "hour"
-    :onclick "eww open --toggle calendar"
-    hour
-  )
-  (button
-    :class "minute"
-    :onclick "eww open --toggle calendar"
-    minute
-  )
+    (button
+      :class "hour"
+      :onclick "eww open --toggle calendar"
+      hour
+    )
+    (button
+      :class "minute"
+      :onclick "eww open --toggle calendar"
+      minute
+    )
   )
 )
 (defwidget cal []
