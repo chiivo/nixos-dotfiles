@@ -10,7 +10,7 @@ $yellow: #eadc84;
 $green: #bde077;
 $blue: #77bee0;
 $purple: #dd91f3;
-$margin: 0 10px;
+$margin: 10 0px;
 
 * {
 	all: unset;
@@ -61,8 +61,6 @@ $margin: 0 10px;
 .ws-button:hover {
 	color: $white;
 }
-
-//Screen1 Workspaces
 .ws-button-mine {
 	margin: $margin;
 }
@@ -84,28 +82,6 @@ $margin: 0 10px;
 	color: $white;
 }
 
-//Screen2 Workspaces
-.ws-button-mine2 {
-	margin: $margin;
-  color: $gray;
-}
-.ws-button-mine2:hover {
-	color: $white;
-}
-.ws-button-visible2 {
-	margin: $margin;
-}
-.ws-button-visible2:hover {
-	color: $white;
-}
-.ws-button-busy2 {
-	margin: $margin;
-	color: $gray;
-}
-.ws-button-busy2:hover {
-	color: $white;
-}
-
 //Volume
 .slider-vol scale trough highlight {
 	background-color: $pink;
@@ -115,8 +91,8 @@ $margin: 0 10px;
 }
 .slider-vol scale trough {
   background-color: $gray;
-  min-height: 5px;
-  min-width: 50px;
+  min-height: 50px;
+  min-width: 5px;
   margin: $margin;
 }
 .label-vol {
@@ -127,10 +103,16 @@ $margin: 0 10px;
 }
 
 //Time
-.time {
-	margin: $margin;
+.hour {
+	margin: 10px 0 0 0;
 }
-.time:hover {
+.hour:hover {
+	color: $blue;
+}
+.minute {
+	margin: 0 0 10px 0;
+}
+.minute:hover {
 	color: $blue;
 }
 

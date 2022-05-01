@@ -1,65 +1,42 @@
 ;;;Widgets;;;
-(defwidget bar1 []
+(defwidget bar []
   (box
     :class "bar"
-    :orientation "h"
+    :orientation "v"
     :hexpand "false"
     :vexpand "false"
     (left-group)
-    (workspaces1)
-    (right-group)
-  )
-)
-(defwidget bar2 []
-  (box
-    :class "bar"
-    :orientation "h"
-    :hexpand "false"
-    :vexpand "false"
-    (left-group)
-    (workspaces2)
+    (workspaces)
     (right-group)
   )
 )
 (defwidget left-group []
   (box
-    :halign "start"
-    :orientation "h"
-    :valign "center"
+    :orientation "v"
+    :halign "center"
+    :valign "start"
     :space-evenly false
     (powermenu)
   )
 )
-(defwidget workspaces1 []
+(defwidget workspaces []
   (box
     :class "workspaces1"
-    :orientation "h"
+    :orientation "v"
     :halign "center"
     :valign "center"
     :space-evenly true
     (literal
-      :content leftwm-tags1
-    )
-  )
-)
-(defwidget workspaces2 []
-  (box
-    :class "workspaces2"
-    :orientation "h"
-    :halign "center"
-    :valign "center"
-    :space-evenly true
-    (literal
-      :content leftwm-tags2
+      :content leftwm-tags
     )
   )
 )
 (defwidget right-group []
   (box
     :class "right-group"
-    :orientation "h"
-    :halign "end"
-    :valign "center"
+    :orientation "v"
+    :halign "center"
+    :valign "end"
     :space-evenly false
     (slider-vol)
     (time)
@@ -71,6 +48,7 @@
     :onhover "eww update powermenu-revealer=true"
     :onhoverlost "eww update powermenu-revealer=false"
     (box
+      :orientation "v"
       :space-evenly false
       (button
         :class "power-button"
@@ -78,10 +56,11 @@
         " "
       )
       (revealer
-        :transition "slideleft"
+        :transition "slidedown"
         :reveal powermenu-revealer
         :duration "200ms"
         (box
+          :orientation "v"
           (button
             :class "reboot-button"
             :onclick "reboot"
@@ -109,11 +88,13 @@
     :onhoverlost "eww update vol-revealer=false"
     (box
       :space-evenly "false"
+      :orientation "v"
       (revealer
-        :transition "slideright"
+        :transition "slideup"
         :reveal vol-revealer
         :duration "200ms"
         (scale
+          :orientation "v"
           :min "0"
           :max "101"
           :flipped "true"
@@ -132,10 +113,18 @@
   )
 )
 (defwidget time []
+  (box
+    :orientation "v"
   (button
-    :class "time"
+    :class "hour"
     :onclick "eww open --toggle calendar"
-    time
+    hour
+  )
+  (button
+    :class "minute"
+    :onclick "eww open --toggle calendar"
+    minute
+  )
   )
 )
 (defwidget cal []
@@ -158,11 +147,8 @@
 (defvar powermenu-revealer
   false
 )
-(deflisten leftwm-tags1
-  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/tags1.liquid"
-)
-(deflisten leftwm-tags2
-  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/tags2.liquid"
+(deflisten leftwm-tags
+  "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/tags.liquid"
 )
 (defpoll getvolsym
   :interval "10ms"
@@ -175,9 +161,13 @@
 (defvar vol-revealer
   false
 )
-(defpoll time
+(defpoll hour
   :interval "1s"
-  "date +'%R'"
+  "date +'%H'"
+)
+(defpoll minute
+  :interval "1s"
+  "date +'%M'"
 )
 (defpoll day 
   :interval "10h"
@@ -195,38 +185,24 @@
 )
 
 ;;;Windows;;;
-(defwindow bar1
+(defwindow bar
   :monitor 0
   :geometry (geometry
-    :y "20px"
-    :width "1120px"
-    :height "30px"
-    :anchor "top center"
+    :x "20px"
+    :width "30px"
+    :height "1040px"
+    :anchor "left center"
   )
   :reserve (struts
-    :side "top"
+    :side "left"
     :distance "50px"
   )
-  (bar1)
-)
-(defwindow bar2
-  :monitor 1
-  :geometry (geometry
-    :y "20px"
-    :width "1120px"
-    :height "30px"
-    :anchor "top center"
-  )
-  :reserve (struts
-    :side "top"
-    :distance "50px"
-  )
-  (bar2)
+  (bar)
 )
 (defwindow calendar
   :geometry (geometry
-    :x "1250px" 
-    :y "50px" 
+    :x "70px" 
+    :y "880px" 
     :width "270px"
     :height "60px"
   )
