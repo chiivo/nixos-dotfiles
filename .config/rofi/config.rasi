@@ -29,7 +29,7 @@ configuration {
 window {
 	location: northwest;
 	anchor: northwest;
-  x-offset: 20px;
+  x-offset: 70px;
   y-offset: 20px;
 	background-color: @background;
 	border: 0;
