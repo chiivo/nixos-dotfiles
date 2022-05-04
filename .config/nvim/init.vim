@@ -77,13 +77,13 @@ let g:dashboard_custom_shortcut={
 \ 'book_marks'         : 'SPC f b',
 \ }
 let g:dashboard_custom_shortcut_icon={
-\ 'last_session'				: ' ',
-\ 'find_history'				: 'ﭯ ',
+\ 'last_session'				: ' ',
+\ 'find_history'				: ' ',
 \ 'find_file'						: ' ',
 \ 'new_file'						: ' ',
-\ 'change_colorscheme'	: ' ',
+\ 'change_colorscheme'	: ' ',
 \ 'find_word'						: ' ',
-\ 'book_marks'					: ' ',
+\ 'book_marks'					: ' ',
 \ }
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>
@@ -139,7 +139,7 @@ require('bufferline').setup {
 		-- and so changing this is NOT recommended, this is intended
 		-- as an escape hatch for people who cannot bear it for whatever reason
 		indicator_icon = '▎',
-		buffer_close_icon = '',
+		buffer_close_icon = '',
 		modified_icon = '●',
 		close_icon = '',
 		left_trunc_marker = '',
@@ -245,25 +245,25 @@ let g:nvim_tree_show_icons = {
 " default shows no icon by default
 let g:nvim_tree_icons = {
 	\ 'default': '',
-	\ 'symlink': '',
+	\ 'symlink': '',
 	\ 'git': {
-	\   'unstaged': "✗",
-	\   'staged': "✓",
-	\   'unmerged': "",
-	\   'renamed': "➜",
-	\   'untracked': "★",
-	\   'deleted': "",
-	\   'ignored': "◌"
+	\   'unstaged': "",
+	\   'staged': "",
+	\   'unmerged': "",
+	\   'renamed': "",
+	\   'untracked': "",
+	\   'deleted': "",
+	\   'ignored': ""
 	\   },
 	\ 'folder': {
-	\   'arrow_open': "",
-	\   'arrow_closed': "",
-	\   'default': "",
-	\   'open': "",
+	\   'arrow_open': "",
+	\   'arrow_closed': "",
+	\   'default': "",
+	\   'open': "",
 	\   'empty': "",
 	\   'empty_open': "",
-	\   'symlink': "",
-	\   'symlink_open': "",
+	\   'symlink': "",
+	\   'symlink_open': "",
 	\   }
 	\ }
 
@@ -624,7 +624,7 @@ local comps = {
 	vi_mode = {
 		left = {
 			provider = function()
-				return ''-- .. vi_mode_utils.get_vim_mode()
+				return ''-- .. vi_mode_utils.get_vim_mode()
 			end,
 			hl = function()
 				local val = {
@@ -646,8 +646,8 @@ local comps = {
 				name = 'file_info',
 				opts = {
 					type = 'relative',
-					file_readonly_icon = '  ',
-					file_modified_icon = ''
+					file_readonly_icon = '  ',
+					file_modified_icon = ''
 				}
 			},
 			hl = {
