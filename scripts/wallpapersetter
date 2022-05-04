@@ -24,7 +24,7 @@ nightcheck='false'
 ### Functions ###
 checkmorning() {
 	for i in {100..0}; do
-		gm convert "$morning" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+		gm convert "$morning" -fill "#000" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
 	done
 	morningcheck='false'
 	daycheck='true'
@@ -33,7 +33,7 @@ checkmorning() {
 
 checkday() {
 	for i in {100..0}; do
-		gm convert "$day" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+		gm convert "$day" -fill "#000" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
 	done
 	daycheck='false'
 	eveningcheck='true'
@@ -42,7 +42,7 @@ checkday() {
 
 checkevening() {
 	for i in {100..0}; do
-		gm convert "$evening" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+		gm convert "$evening" -fill "#000" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
 	done
 	eveningcheck='false'
 	nightcheck='true'
@@ -51,7 +51,7 @@ checkevening() {
 
 checknight() {
 	for i in {100..0}; do
-		gm convert "$night" -fill "#262727" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+		gm convert "$night" -fill "#000" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
 	done
 	nightcheck='false'
 	morningcheck='true'
