@@ -52,7 +52,7 @@
       (button
         :class "power-button"
         :onclick "poweroff"
-        " "
+        ""
       )
       (revealer
         :transition "slidedown"
@@ -63,17 +63,17 @@
           (button
             :class "reboot-button"
             :onclick "reboot"
-            " "
+            ""
           )
           (button
             :class "lock-button"
             :onclick "dm-tool lock"
-            " "
+            ""
           )
           (button
             :class "refresh-button"
             :onclick "leftwm command SoftReload"
-            " "
+            ""
           )
         )
       )
