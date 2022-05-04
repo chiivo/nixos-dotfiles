@@ -27,16 +27,16 @@ scrolling:
 
 font:
   normal:
-    family: VictorMono Nerd Font
+    family: monospace
     style: Medium
   bold:
-    family: VictorMono Nerd Font
+    family: monospace
     style: Bold
   italic:
-    family: VictorMono Nerd Font
+    family: monospace
     style: Medium Italic
   bold_italic:
-    family: VictorMono Nerd Font
+    family: monospace
     style: Bold Italic
   size: 12.0
   offset:
