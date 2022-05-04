@@ -16,15 +16,15 @@ getvolsym() {
 	checkmute=$(amixer -D pulse sget Master | grep 'Front Left:' | awk -F'[][]' '{ print $4 }')
 	
 	if [ $checkmute != on ]; then
-		echo ' '
+		echo ''
 	elif [ $(getvol) -lt 30 ]; then
-		echo ' '
+		echo ''
 	elif [ $(getvol) -lt 40 ]; then
-		echo ' '
+		echo ''
 	elif [ $(getvol) -lt 50 ]; then
-		echo '墳 '
+		echo ''
 	elif [ $(getvol) -ge 50 ]; then
-		echo ' '
+		echo ''
 	fi
 }
 
@@ -32,13 +32,13 @@ volumebar () {
 	# Change total_half_dots number and empty dots number to change number of output characters
 	full=""
 	half=""
-	empty=""
+	empty=""
 	volume=$(getvol)
 	total_half_dots=$(( $(echo ${volume} / 5 | cut -f1 -d ".") ))
 	half_dots=$(( ${total_half_dots} % 2 ))
 	full_dots=$(( ( ${total_half_dots} - $(( ${total_half_dots} % 2 )) ) / 2))
 	empty_dots=$(( 10 - ( ${full_dots} + half_dots ) ))
-	bar=$(echo $(echo $(seq -s " " $((${full_dots}+1)) )$(seq -s " " $((${half_dots}+1)) )$(seq -s " " $(($empty_dots + 1)) ) ) | sed 's/[0-9]//g')
+	bar=$(echo $(echo $(seq -s " " $((${full_dots}+1)) )$(seq -s " " $((${half_dots}+1)) )$(seq -s " " $(($empty_dots + 1)) ) ) | sed 's/[0-9]//g')
 
 	echo $bar
 }
