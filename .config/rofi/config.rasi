@@ -35,7 +35,7 @@ window {
 	border: 0;
 	border-radius: 10;
 	padding: 5px;
-	width: 360px;
+	width: 350px;
 }
 
 mainbox {
