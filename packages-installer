@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#Make sure to do 'pacstrap base linux linux-firmware base-devel grub efibootmgr neovim networkmanager' during main arch install
+#Make sure to do 'pacstrap base linux linux-firmware base-devel grub efibootmgr neovim networkmanager' during main arch install and install paru with git
 
 paru -S \
 alacritty \
@@ -28,7 +28,6 @@ flex \
 gawk \
 gcc \
 gettext \
-git \
 graphicsmagick \
 grep \
 groff \
@@ -53,7 +52,6 @@ nvidia-utils \
 obs-studio \
 p7zip \
 pacman \
-paru \
 patch \
 pavucontrol \
 picom-jonaburg-fix \
