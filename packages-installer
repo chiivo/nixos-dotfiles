@@ -6,6 +6,7 @@ paru -S \
 alacritty \
 alsa-plugins \
 alsa-utils \
+artem \
 autoconf \
 automake \
 binutils \
