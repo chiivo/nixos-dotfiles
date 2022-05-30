@@ -1,9 +1,0 @@
-/* get more snippets at https://github.com/kmaasrud/awesome-obsidian */
-/* author: https://github.com/TClark1011 */
-/* source: https://github.com/kmaasrud/awesome-obsidian */
-
-img {
-  border-radius: 10px;
-  box-shadow: 0 1px 3px var(--dark-black), 0 1px 2px var(--dark-black);
-  background-color: var(--dark-black); /* Background color so PNGs with transparent backgrounds don't look weird */
-}
