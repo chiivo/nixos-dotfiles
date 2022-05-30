@@ -67,7 +67,7 @@
           )
           (button
             :class "lock-button"
-            :onclick "dm-tool lock"
+            :onclick "slimlock"
             ""
           )
           (button
