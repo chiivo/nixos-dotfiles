@@ -3,7 +3,7 @@
 
 # Messages (ie: shutdown)
 msg_color               #dddddd
-msg_font                monospase:size=12:bold:dpi=75
+msg_font                monospace:size=12:bold:dpi=75
 msg_x                   50%
 msg_y                   40%
 
