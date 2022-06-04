@@ -1,6 +1,3 @@
-# text04 theme for SLiM
-# by Johannes Winkelmann
-
 # Messages (ie: shutdown)
 msg_color               #dddddd
 msg_font                monospace:size=12:bold:dpi=75
