@@ -14,7 +14,8 @@ morning='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island morning.jpg'
 day='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island day.jpg'
 evening='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island evening.jpg'
 night='/mnt/HDD/Images/Wallpapers/Outset Island/Outset Island night.jpg'
-#Don't touch these
+
+#DON'T TOUCH ANYTHING BELOW HERE
 basecheck='true'
 morningcheck='false'
 daycheck='false'
