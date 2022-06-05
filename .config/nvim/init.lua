@@ -433,7 +433,7 @@ require("indent_blankline").setup {
 }
 
 --Twilight
-	require("twilight").setup {
+require("twilight").setup {
 	dimming = {
 		alpha = 1,
 		color = { "Comment" },
@@ -452,7 +452,7 @@ require("indent_blankline").setup {
 		"call_statement",
 	},
 	exclude = { "dashboard" },
-	}
+}
 vim.cmd([[autocmd VimEnter * Twilight]])
 
 --TrueZen
@@ -689,8 +689,7 @@ table.insert(components.active[3], comps.cap.right)
 
 table.insert(components.inactive[1], comps.inactive)
 
-require('feline').setup(
-{
+require('feline').setup({
 	colors = colors,
 	force_inactive = {
 		filetypes = {
