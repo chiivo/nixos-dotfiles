@@ -1,0 +1,366 @@
+:root {
+  --background: #262727;
+  --light-background: #555657;
+  --lighter-background: #555657;
+  --dark-background: #141515;
+  --darker-background: #141515;
+  --foreground: #dddddd;
+  --current-line: #555657;
+  --comment: #555657;
+  --white: var(--foreground);
+  --white-hover: #dddddd80;
+  --red: #ff8278;
+  --orange: #ffc178;
+  --yellow: #eadc84;
+  --green: #bde077;
+  --purple: #dd91f3;
+  --purple-hover: #dd91f380;
+  --cyan: #8be9fd;
+  --cyan-hover: #8be9fd80;
+  --pink: #f5d1c8;
+  --pink-hover: #f5d1c880;
+
+  --ls-tag-text-opacity: 0.8;
+  --ls-tag-text-hover-opacity: 0.8;
+  --ls-page-text-size: 16px;
+  --ls-page-title-size: 36px;
+  --ls-font-family: monospace;
+  --ls-font-weight: 300;
+  --ls-font-letter-spacing: 0.002em;
+  --ls-font-line-height: 1.5;
+
+  --ls-border-radius-low: 3px;
+  --ls-border-radius-medium: 6px;
+}
+
+.dark-theme,
+html[data-theme="dark"] {
+  --ls-primary-background-color: var(--background);
+  --ls-secondary-background-color: var(--dark-background);
+  --ls-tertiary-background-color: var(--light-background);
+  --ls-quaternary-background-color: var(--light-background);
+  --ls-quinary-background-color: var(--darker-background);
+
+  --ls-active-primary-color: var(--foreground);
+  --ls-active-secondary-color: var(--foreground);
+
+  --ls-primary-text-color: var(--foreground);
+  --ls-secondary-text-color: var(--white-hover);
+
+  --ls-search-background-color: var(--background);
+  --ls-border-color: var(--comment);
+  --ls-secondary-border-color: var(--ls-border-color);
+  --ls-menu-hover-color: var(--light-background);
+  --ls-table-tr-even-background-color: var(--light-background);
+
+  --ls-head-text-color: var(--foreground);
+  --ls-title-text-color: var(--foreground);
+
+  --ls-link-text-color: var(--pink);
+  --ls-link-text-hover-color: var(--pink-hover);
+
+  --ls-link-ref-text-color: var(--pink);
+  --ls-link-ref-text-hover-color: var(--pink-hover);
+  --ls-block-ref-link-text-color: var(--ls-border-color);
+
+  --ls-tag-text-color: var(--purple);
+  --ls-tag-text-hover-color: var(--purple-hover);
+
+  --ls-block-bullet-border-color: var(--current-line);
+  --ls-block-bullet-color: var(--foreground);
+  --ls-block-highlight-color: var(--current-line);
+  --ls-block-properties-background-color: var(--light-background);
+
+  --ls-page-checkbox-color: transparent;
+  --ls-page-checkbox-border-color: var(--comment);
+
+  --ls-page-blockquote-color: var(--foreground);
+  --ls-page-blockquote-bg-color: var(--light-background);
+  --ls-page-blockquote-border-color: var(--yellow);
+  --ls-page-properties-background-color: var(--light-background);
+
+  --ls-page-inline-code-color: var(--orange);
+  --ls-page-inline-code-bg-color: var(--background);
+
+  --ls-scrollbar-background-color: var(--background);
+  --ls-scrollbar-foreground-color: var(--darker-background);
+  --ls-scrollbar-thumb-hover-color: var(--light-background);
+
+  --ls-icon-color: var(--white-hover);
+  --ls-search-icon-color: var(--white-hover);
+  --ls-a-chosen-bg: var(--light-background);
+  --ls-right-sidebar-code-bg-color: var(--light-background);
+  --ls-selection-background-color: var(--comment);
+  --ls-slide-background-color: var(--ls-primary-background-color);
+  --ls-guideline-color: var(--ls-border-color);
+  --color-level-1: var(--ls-secondary-background-color);
+  --color-level-2: var(--ls-primary-background-color);
+  --color-level-3: var(--ls-quaternary-background-color);
+  --color-level-4: var(--ls-tertiary-background-color);
+  --color-level-5: var(--ls-quinary-background-color);
+}
+
+html,
+body {
+  font-weight: var(--ls-font-weight);
+  letter-spacing: var(--ls-font-letter-spacing);
+  line-height: var(--ls-font-line-height);
+  font-size: var(--ls-page-text-size);
+  background-color: #262727;
+}
+
+i {
+  color: var(--yellow);
+}
+
+b {
+  color: var(--orange);
+}
+
+mark {
+  background-color: var(--yellow);
+}
+
+.bg-orange-400 {
+  background-color: var(--orange);
+}
+
+.bg-green-600 {
+  background-color: var(--green);
+}
+
+.bg-red-500 {
+  background-color: var(--red);
+}
+
+.form-checkbox {
+  border: 1px solid var(--ls-page-checkbox-border-color) !important;
+  border-radius: var(--ls-border-radius-low) !important;
+}
+
+.external-link {
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.external-link:hover {
+  color: var(--cyan-hover);
+}
+
+h1.title,
+.ls-block h1,
+.ls-block h2,
+.ls-block h3,
+.ls-block h4,
+.ls-block h5,
+.ls-block h6 {
+  font-weight: 400;
+}
+
+/* Priority tag styling */
+.priority {
+  color: var(--ls-tag-text-color);
+  opacity: 1 !important;
+  font-size: 0px; /* Hide text */
+}
+
+.priority:hover,
+a.tooltip-priority:hover {
+  color: var(--ls-tag-text-hover-color);
+  opacity: 0.5;
+}
+
+a.priority[href="#/page/A"]:before {
+  content: "A";
+  background: var(--red);
+}
+
+a.priority[href="#/page/B"]:before {
+  content: "B";
+  background: var(--yellow);
+}
+
+a.priority[href="#/page/C"]:before {
+  content: "C";
+  background: var(--green);
+}
+
+a.priority:before {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 1px 4px 0px 3px;
+  margin: 0px 2px 0px 0px;
+  border-radius: var(--ls-border-radius-low);
+  color: var(--ls-primary-background-color);
+}
+
+a.tooltip-priority {
+  color: var(--ls-tag-text-color);
+}
+
+.Tooltip__label {
+  background: var(--ls-quinary-background-color);
+}
+
+.Tooltip__label::after {
+  border-bottom-color: var(--ls-quinary-background-color);
+}
+
+.page-reference .bracket {
+  color: var(--ls-border-color);
+  opacity: 0.8;
+}
+
+a.tag {
+  background: var(--purple);
+  border-radius: 3px 3px 3px 3px;
+  padding: 0px 3px;
+  color: var(--dark-background);
+  font-weight: 400;
+}
+
+a.tag:hover {
+  background: transparent;
+  color: (--purple);
+}
+
+/*
+    Name:       Dracula for CodeMirror
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+    Adapted by:    Sly Bouhafs
+    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
+    Adapted for logseq
+*/
+
+html[data-theme="dark"] .CodeMirror {
+  font-family: "FiraCode Nerd Font", "Fire Code", monospace;
+  line-height: 1.2;
+  background: var(--background);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  color: var(--white);
+}
+
+html[data-theme="dark"] .cm-s-default .CodeMirror,
+html[data-theme="dark"] .CodeMirror .CodeMirror-gutters {
+  background-color: transparent;
+  color: var(--white) !important;
+  border: none;
+}
+
+html[data-theme="dark"] .extensions__code-lang {
+  background: var(--light-background);
+}
+
+html[data-theme="dark"] .CodeMirror {
+  border: 5px solid var(--light-background);
+}
+
+html[data-theme="dark"] .CodeMirror .CodeMirror-gutters {
+  color: var(--background);
+}
+html[data-theme="dark"] .CodeMirror .CodeMirror-cursor {
+  border-left: solid thin var(--white);
+}
+html[data-theme="dark"] .CodeMirror .CodeMirror-linenumber {
+  color: var(--comment);
+}
+html[data-theme="dark"] .CodeMirror .CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .CodeMirror .CodeMirror-line {
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .CodeMirror .CodeMirror-line::selection,
+html[data-theme="dark"] .CodeMirror .CodeMirror-line > span::selection,
+html[data-theme="dark"]
+  .cm-s-default
+  .CodeMirror-line
+  > span
+  > span::selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+html[data-theme="dark"] .CodeMirror .CodeMirror-line::-moz-selection,
+html[data-theme="dark"] .CodeMirror .CodeMirror-line > span::-moz-selection,
+html[data-theme="dark"]
+  .cm-s-default
+  .CodeMirror-line
+  > span
+  > span::-moz-selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+html[data-theme="dark"] .CodeMirror span.cm-comment {
+  color: var(--comment);
+}
+html[data-theme="dark"] .CodeMirror span.cm-string,
+html[data-theme="dark"] .CodeMirror span.cm-string-2 {
+  color: var(--yellow);
+}
+html[data-theme="dark"] .CodeMirror span.cm-number {
+  color: var(--purle);
+}
+html[data-theme="dark"] .CodeMirror span.cm-variable {
+  color: var(--green);
+}
+html[data-theme="dark"] .CodeMirror span.cm-variable-2 {
+  color: var(--white);
+}
+html[data-theme="dark"] .CodeMirror span.cm-def {
+  color: var(--green);
+}
+html[data-theme="dark"] .CodeMirror span.cm-operator {
+  color: var(--pink);
+}
+html[data-theme="dark"] .CodeMirror span.cm-keyword {
+  color: var(--pink);
+}
+html[data-theme="dark"] .CodeMirror span.cm-atom {
+  color: var(--purple);
+}
+html[data-theme="dark"] .CodeMirror span.cm-meta {
+  color: var(--white);
+}
+html[data-theme="dark"] .CodeMirror span.cm-tag {
+  color: var(--pink);
+}
+html[data-theme="dark"] .CodeMirror span.cm-attribute {
+  color: var(--green);
+}
+html[data-theme="dark"] .CodeMirror span.cm-qualifier {
+  color: var(--green);
+}
+html[data-theme="dark"] .CodeMirror span.cm-property {
+  color: var(--cyan);
+}
+html[data-theme="dark"] .CodeMirror span.cm-builtin {
+  color: var(--green);
+}
+html[data-theme="dark"] .CodeMirror span.cm-variable-3,
+html[data-theme="dark"] .CodeMirror span.cm-type {
+  color: var(--orange);
+}
+
+html[data-theme="dark"] .CodeMirror .CodeMirror-activeline-background {
+  background: rgba(255, 255, 255, 0.1);
+}
+html[data-theme="dark"] .CodeMirror .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: var(--white) !important;
+}
+
+html[data-theme="dark"] #right-sidebar pre.CodeMirror-line {
+  background: transparent;
+}
+
+/* Changes all icons to the same color */
+.ti {
+  color: var(--ls-icon-color);
+}
+
+/* Changes sidebar link colors to the same color as the icons */
+.left-sidebar-inner a.item > span {
+  color: var(--ls-icon-color);
+}
