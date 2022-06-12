@@ -75,6 +75,8 @@ local db = require('dashboard')
 db.custom_header = {
 	'',
 	'',
+	'',
+	'',
 	' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 	' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
 	' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
@@ -83,44 +85,34 @@ db.custom_header = {
 	' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 	'',
 	'',
+	'',
+	'',
 }
 db.custom_center = {
 	{
 		icon = '  ',
-		desc = 'Last session					',
-		shortcut = 'SPC s l',
-		action ='SessionLoad'
-	},
-	{
-		icon = '  ',
-		desc = 'Recently opened files					',
-		action =  'DashboardFindHistory',
-		shortcut = 'SPC f h'
+		desc = 'New File					',
+		action ='enew',
+		shortcut = ':enew'
 	},
 	{
 		icon = '  ',
 		desc = 'Find  File					',
-		action = 'Telescope find_files find_command=rg,--hidden,--files',
-		shortcut = 'SPC f f'
-	},
-	{
-		icon = '  ',
-		desc ='File Browser					',
-		action =  'Telescope file_browser',
-		shortcut = 'SPC f b'
-	},
-	{
-		icon = '  ',
-		desc = 'Find word					',
-		aciton = 'DashboardFindWord',
-		shortcut = 'SPC f w'
+		action = 'Telescope find_files hidden=true no_ignore=true',
+		shortcut = 'SPC f'
 	},
 	{
 		icon = '  ',
 		desc = 'Open Dotfiles					',
-		action = 'Telescope dotfiles path=' .. home ..'/.dotfiles',
+		action = 'Telescope find_files cwd=~/.config',
 		shortcut = 'SPC f d'
 	},
+	{
+		icon = '  ',
+		desc = 'Update Plugins					',
+		action = 'PlugUpdate',
+		shortcut = ':PlugUpdate'
+	}
 }
 vim.cmd([[
 highlight DashboardHeader guifg = '#f5d1c8'
