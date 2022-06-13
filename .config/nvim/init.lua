@@ -90,7 +90,7 @@ db.custom_header = {
 }
 db.custom_center = {
 	{
-		icon = '  ',
+		icon = '  ',
 		desc = 'New File					',
 		action ='enew',
 		shortcut = ':enew'
@@ -102,7 +102,7 @@ db.custom_center = {
 		shortcut = 'SPC f'
 	},
 	{
-		icon = '  ',
+		icon = '  ',
 		desc = 'Open Dotfiles					',
 		action = 'Telescope find_files cwd=~/.config',
 		shortcut = 'SPC f d'
