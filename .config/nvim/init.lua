@@ -1,28 +1,27 @@
---Vim-Plug
-vim.cmd([[
-call plug#begin()
-Plug 'NvChad/nvim-colorizer.lua'
-Plug 'feline-nvim/feline.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'windwp/nvim-autopairs'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'nvim-treesitter/playground'
-Plug 'akinsho/nvim-bufferline.lua'
-Plug 'glepnir/dashboard-nvim'
-Plug 'Pocco81/TrueZen.nvim'
-Plug 'elkowar/yuck.vim'
-Plug 'rktjmp/lush.nvim'
-Plug '~/.config/nvim/colors/bliss'
-Plug 'Manas140/run.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'folke/twilight.nvim'
-Plug 'nvim-orgmode/orgmode'
-call plug#end()
-]])
+--Packer
+require('packer').startup(function()
+	use 'wbthomason/packer.nvim'
+	use 'NvChad/nvim-colorizer.lua'
+	use 'feline-nvim/feline.nvim'
+	use 'kyazdani42/nvim-web-devicons'
+	use 'lukas-reineke/indent-blankline.nvim'
+	use 'windwp/nvim-autopairs'
+	use 'nvim-lua/popup.nvim'
+	use 'nvim-lua/plenary.nvim'
+	use 'nvim-telescope/telescope.nvim'
+	use 'kyazdani42/nvim-tree.lua'
+	use 'nvim-treesitter/playground'
+	use 'akinsho/nvim-bufferline.lua'
+	use 'glepnir/dashboard-nvim'
+	use 'Pocco81/TrueZen.nvim'
+	use 'elkowar/yuck.vim'
+	use 'rktjmp/lush.nvim'
+	use '~/.config/nvim/colors/bliss'
+	use 'Manas140/run.nvim'
+	use 'nvim-treesitter/nvim-treesitter'
+	use 'folke/twilight.nvim'
+	use 'nvim-orgmode/orgmode'
+end)
 
 --Colors
 local colors = {
@@ -110,8 +109,8 @@ db.custom_center = {
 	{
 		icon = '  ',
 		desc = 'Update Plugins					',
-		action = 'PlugUpdate',
-		shortcut = ':PlugUpdate'
+		action = 'PackerUpdate',
+		shortcut = ':PackerUpdate'
 	}
 }
 vim.cmd([[
