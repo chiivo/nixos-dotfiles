@@ -102,7 +102,7 @@ db.custom_center = {
 	},
 	{
 		icon = '  ',
-		desc = 'Open Dotfiles					',
+		desc = 'Search Dotfiles					',
 		action = 'Telescope find_files cwd=~/.config',
 		shortcut = 'SPC f d'
 	},
