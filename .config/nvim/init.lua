@@ -21,6 +21,7 @@ require('packer').startup(function()
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'folke/twilight.nvim'
 	use 'nvim-orgmode/orgmode'
+	use 'folke/which-key.nvim'
 end)
 
 --Colors
@@ -758,3 +759,6 @@ require('orgmode').setup({
 	org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
 	org_default_notes_file = '~/Dropbox/org/refile.org',
 })
+
+--Which-Key
+require("which-key").setup{}
