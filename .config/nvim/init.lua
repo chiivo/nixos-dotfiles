@@ -768,7 +768,17 @@ require('orgmode').setup({
 })
 
 --Which-Key
-require("which-key").setup{}
+local wk = require("which-key")
+wk.setup{
+	key_labels = {
+		["<space>"] = "SPC"
+	},
+	window = {
+		border = "single" -- none, single, double, shadow
+	},
+}
+wk.register({
+}, { prefix = "<leader>" })
 
 --LuaSnip
 require("luasnip.loaders.from_vscode").lazy_load()
