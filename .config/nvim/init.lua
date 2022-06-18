@@ -770,6 +770,9 @@ require('orgmode').setup({
 --Which-Key
 require("which-key").setup{}
 
+--LuaSnip
+require("luasnip.loaders.from_vscode").lazy_load()
+
 --Nvim-Cmp
 local kind_icons = {
   Text = " ",
