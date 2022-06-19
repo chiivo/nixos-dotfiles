@@ -68,7 +68,6 @@ set smartcase
 set termguicolors
 syntax on
 set laststatus=3
-nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 ]])
 
 --Colorizer
@@ -227,27 +226,8 @@ require('bufferline').setup {
 	}
 }
 
-vim.cmd([[
-"These commands will navigate through buffers in order regardless of which mode you are using
-"e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-nnoremap <silent>b] :BufferLineCycleNext<CR>
-nnoremap <silent>b[ :BufferLineCyclePrev<CR>
-" These commands will move the current buffer backwards or forwards in the bufferline
-nnoremap <silent>b> :BufferLineMoveNext<CR>
-nnoremap <silent>b< :BufferLineMovePrev<CR>
-" These commands will sort buffers by directory, language, or a custom criteria
-nnoremap <silent>be :BufferLineSortByExtension<CR>
-nnoremap <silent>bd :BufferLineSortByDirectory<CR>
-nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
-]])
-
 --NvimTree
 vim.cmd([[
-nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
-"NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
-
 "a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeSymlink guifg='#eadc84'
 highlight NvimTreeRootFolder guifg='#ff8278'
@@ -771,13 +751,37 @@ require('orgmode').setup({
 local wk = require("which-key")
 wk.setup{
 	key_labels = {
-		["<space>"] = "SPC"
+		["<space>"] = "SPC",
+		["<leader>"] = "LDR"
 	},
+  popup_mappings = {
+    scroll_down = 'j', -- binding to scroll down inside the popup
+    scroll_up = 'k', -- binding to scroll up inside the popup
+  },
 	window = {
 		border = "single" -- none, single, double, shadow
 	},
 }
 wk.register({
+	["<leader>"] = { "<cmd>source $MYVIMRC<cr>", "Source Nvim Config" },
+	n = {
+		name = "NvimTree",
+		n = { "<cmd>NvimTreeToggle<cr>", "Toggle NvimTree" },
+		r = { "<cmd>NvimTreeRefresh<cr>", "Refresh NvimTree" }
+	},
+	b = {
+		name = "Bufferline",
+		-- These commands will navigate through buffers in order regardless of which mode you are using
+		["]"] = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
+		["["] = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
+		-- These commands will move the current buffer backwards or forwards in the bufferline
+		[">"] = { "<cmd>BufferLineMoveNext<cr>", "Move Buffer Up" },
+		["<"] = { "<cmd>BufferLineMovePrev<cr>", "Mover Buffer Down" },
+		-- These commands will sort buffers by directory, language, or a custom criteria
+		e = { "<cmd>BufferLineSortByExtension<cr>", "Sort Buffers By Extension" },
+		d = { "<cmd>BufferLineSortByDirectory<cr>", "Sort Buffers By Directory" },
+		a = { "<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<cr>", "Sort Buffer By Alphabet" }
+	}
 }, { prefix = "<leader>" })
 
 --LuaSnip
