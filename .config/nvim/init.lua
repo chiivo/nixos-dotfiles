@@ -100,13 +100,13 @@ db.custom_center = {
 		icon = '  ',
 		desc = 'New File					',
 		action ='enew',
-		shortcut = ':enew'
+		shortcut = 'SPC f n'
 	},
 	{
 		icon = '  ',
 		desc = 'Find  File					',
 		action = 'Telescope find_files hidden=true no_ignore=true',
-		shortcut = 'SPC f'
+		shortcut = 'SPC f s'
 	},
 	{
 		icon = '  ',
@@ -118,7 +118,7 @@ db.custom_center = {
 		icon = '  ',
 		desc = 'Update Plugins					',
 		action = 'PackerUpdate',
-		shortcut = ':PackerUpdate'
+		shortcut = 'SPC p u'
 	}
 }
 vim.cmd([[
