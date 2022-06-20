@@ -20,7 +20,6 @@ require('packer').startup(function()
 	use 'Manas140/run.nvim'
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'folke/twilight.nvim'
-	use 'nvim-orgmode/orgmode'
 	use 'nvim-neorg/neorg'
 	use 'folke/which-key.nvim'
 	use 'hrsh7th/cmp-buffer'
@@ -701,9 +700,9 @@ require'nvim-treesitter.configs'.setup {
 	  -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
 	  -- Using this option may slow down your editor, and you may see some duplicate highlights.
 	  -- Instead of true it can also be a list of languages
-		additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
+		additional_vim_regex_highlighting = {'norg'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
 	},
-	ensure_installed = {'org'}, -- Or run :TSUpdate orgmode
+	ensure_installed = {'norg'}, -- Or run :TSUpdate norg
 	--Treesitter Playground
 	playground = {
 		enable = true,
@@ -725,13 +724,13 @@ require'nvim-treesitter.configs'.setup {
 	}
 }
 
---OrgMode
-require('orgmode').setup_ts_grammar()
-require('orgmode').setup({
-	org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
-	org_default_notes_file = '~/Dropbox/org/refile.org',
-	org_highlight_latex_and_related = 'native'
-})
+--Neorg
+require('neorg').setup {
+	load = {
+		["core.defaults"] = {},
+		["core.norg.concealer"] = {}
+	}
+}
 
 --Which-Key
 local wk = require("which-key")
@@ -777,40 +776,6 @@ wk.register({
 		e = {"<cmd>BufferLineSortByExtension<cr>", "Sort Buffers By Extension"},
 		d = {"<cmd>BufferLineSortByDirectory<cr>", "Sort Buffers By Directory"},
 		a = {"<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<cr>", "Sort Buffer By Alphabet"}
-	},
-	o = {
-		name = 'OrgMode',
-		["$"] = {'Archive Subtree'},
-		["*"] = {'Toggle Heading'},
-		["'"] = {'Edit Special'},
-		[","] = {'Choose Priority'},
-		a = {'Agenda Prompt'},
-		c = {'Capture Prompt'},
-		e = {'Export'}, -- requires emacs or pandoc
-		i = {
-			name = 'Insert',
-			["!"] = {'Inactive Date'},
-			["."] = {'Date'},
-			d = {'Deadline Date'},
-			h = {'Headline'},
-			s = {'Scheduled Date'},
-			t = {'TODO Headline In Current Line'},
-			T = {'TODO Headline In Next Line '}
-		},
-		o = {'Open Link/Date'},
-		r = {'Refile'},
-		t = {'Agenda Set Tags'},
-		x = {
-			name = 'Clock',
-			e = {'Set Effort Estimate Property'},
-			i = {'Clock In'},
-			j = {'Go To Clocked In Headline'},
-			o = {'Clock Out'},
-			q = {'Cancel Active Clock'}
-		},
-		A = {'Archive Current Headline'},
-		J = {'Move Subtree Down'},
-		K = {'Move Subtree Up'},
 	}
 }, { prefix = "<leader>" })
 
