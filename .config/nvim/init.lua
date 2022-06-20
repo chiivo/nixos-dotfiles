@@ -36,11 +36,11 @@ local colors = {
 	darkblack = '#141515',
 	black = '#262727',
 	red = '#ff8278',
-	green = '#bde077',
+	orange = '#ffc178',
 	yellow = '#eadc84',
+	green = '#bde077',
 	blue = '#77bee0',
 	magenta = '#dd91f3',
-	orange = '#ffc178',
 	pink = '#f5d1c8',
 	gray = '#555657',
 	white = '#dddddd'
@@ -836,13 +836,12 @@ cmp.setup{
 		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	},
 	formatting = {
-		fields = { "kind", "abbr", "menu" },
+		fields = { "kind", "abbr" },
 		format = function(entry, vim_item)
 			-- Kind icons
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
-				nvim_lsp = "(LSP)",
 				luasnip = "(Snippet)",
 				buffer = "(Buffer)",
 				path = "(Path)",
@@ -877,3 +876,9 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+vim.cmd ([[
+highlight! CmpItemKindSnippet guifg=#bde077
+highlight! CmpItemKindText guifg=#77bee0
+highlight! CmpItemKindFolder guifg=#77bee0
+highlight! CmpItemKindFile guifg=#dd91f3
+]])
