@@ -21,6 +21,7 @@ require('packer').startup(function()
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'folke/twilight.nvim'
 	use 'nvim-orgmode/orgmode'
+	use 'nvim-neorg/neorg'
 	use 'folke/which-key.nvim'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
