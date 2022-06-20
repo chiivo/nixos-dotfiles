@@ -99,25 +99,19 @@ db.custom_center = {
 		icon = '  ',
 		desc = 'New File					',
 		action ='enew',
-		shortcut = 'SPC f n'
+		shortcut = 'SPC d n'
 	},
 	{
 		icon = '  ',
 		desc = 'Find  File					',
 		action = 'Telescope find_files hidden=true no_ignore=true',
-		shortcut = 'SPC f s'
-	},
-	{
-		icon = '  ',
-		desc = 'Search Dotfiles					',
-		action = 'Telescope find_files cwd=~/.config',
-		shortcut = 'SPC f d'
+		shortcut = 'SPC d s'
 	},
 	{
 		icon = '  ',
 		desc = 'Update Plugins					',
 		action = 'PackerUpdate',
-		shortcut = 'SPC p u'
+		shortcut = 'SPC d u'
 	}
 }
 vim.cmd([[
@@ -768,6 +762,12 @@ wk.setup{
 }
 wk.register({
 	["<leader>"] = { "<cmd>source $MYVIMRC<cr>", "Source Nvim Config" },
+	d = {
+		name = 'Dashboard',
+		n = { '<cmd>enew<cr>', 'New File' },
+		s = { '<cmd>Telescope find_files hidden=true no_ignore=true<cr>', 'Find File' },
+		u = { '<cmd>PackerUpdate<cr>', 'Packer Update'}
+	},
 	n = {
 		name = "NvimTree",
 		n = { "<cmd>NvimTreeToggle<cr>", "Toggle NvimTree" },
