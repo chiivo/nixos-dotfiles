@@ -700,12 +700,10 @@ require'nvim-treesitter.configs'.setup {
 	  -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
 	  -- Using this option may slow down your editor, and you may see some duplicate highlights.
 	  -- Instead of true it can also be a list of languages
-	  additional_vim_regex_highlighting = false,
+		additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
 	},
-}
-
---Treesitter Playground
-require "nvim-treesitter.configs".setup {
+	ensure_installed = {'org'}, -- Or run :TSUpdate orgmode
+	--Treesitter Playground
 	playground = {
 		enable = true,
 		disable = {},
@@ -722,7 +720,7 @@ require "nvim-treesitter.configs".setup {
 			update = 'R',
 			goto_node = '<cr>',
 			show_help = '?',
-		},
+		}
 	}
 }
 
@@ -730,14 +728,6 @@ require "nvim-treesitter.configs".setup {
 -- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
 -- Tree-sitter configuration
-require'nvim-treesitter.configs'.setup {
-  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
-	},
-	ensure_installed = {'org'}, -- Or run :TSUpdate org
-}
 require('orgmode').setup({
 	org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
 	org_default_notes_file = '~/Dropbox/org/refile.org',
