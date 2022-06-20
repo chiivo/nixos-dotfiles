@@ -725,12 +725,11 @@ require'nvim-treesitter.configs'.setup {
 }
 
 --OrgMode
--- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
--- Tree-sitter configuration
 require('orgmode').setup({
 	org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
 	org_default_notes_file = '~/Dropbox/org/refile.org',
+	org_highlight_latex_and_related = 'native'
 })
 
 --Which-Key
@@ -753,35 +752,64 @@ wk.setup{
 	}
 }
 wk.register({
-	["<leader>"] = { "<cmd>source $MYVIMRC<cr>", "Source Nvim Config" },
+	["<leader>"] = {"<cmd>source $MYVIMRC<cr>", "Source Nvim Config"},
 	d = {
 		name = 'Dashboard',
-		n = { '<cmd>enew<cr>', 'New File' },
-		s = { '<cmd>Telescope find_files hidden=true no_ignore=true<cr>', 'Find File' },
-		u = { '<cmd>PackerUpdate<cr>', 'Packer Update'}
+		n = {'<cmd>enew<cr>', 'New File'},
+		s = {'<cmd>Telescope find_files hidden=true no_ignore=true<cr>', 'Find File'},
+		u = {'<cmd>PackerUpdate<cr>', 'Packer Update'}
 	},
 	n = {
 		name = "NvimTree",
-		n = { "<cmd>NvimTreeToggle<cr>", "Toggle NvimTree" },
-		r = { "<cmd>NvimTreeRefresh<cr>", "Refresh NvimTree" }
+		n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
+		r = {"<cmd>NvimTreeRefresh<cr>", "Refresh NvimTree"}
 	},
 	b = {
 		name = "Bufferline",
 		-- These commands will navigate through buffers in order regardless of which mode you are using
-		["]"] = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
-		["["] = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
+		["]"] = {"<cmd>BufferLineCycleNext<cr>", "Next Buffer"},
+		["["] = {"<cmd>BufferLineCyclePrev<cr>", "Previous Buffer"},
 		-- These commands will move the current buffer backwards or forwards in the bufferline
-		[">"] = { "<cmd>BufferLineMoveNext<cr>", "Move Buffer Up" },
-		["<"] = { "<cmd>BufferLineMovePrev<cr>", "Mover Buffer Down" },
+		[">"] = {"<cmd>BufferLineMoveNext<cr>", "Move Buffer Up"},
+		["<"] = {"<cmd>BufferLineMovePrev<cr>", "Mover Buffer Down"},
 		-- These commands will sort buffers by directory, language, or a custom criteria
-		e = { "<cmd>BufferLineSortByExtension<cr>", "Sort Buffers By Extension" },
-		d = { "<cmd>BufferLineSortByDirectory<cr>", "Sort Buffers By Directory" },
-		a = { "<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<cr>", "Sort Buffer By Alphabet" }
+		e = {"<cmd>BufferLineSortByExtension<cr>", "Sort Buffers By Extension"},
+		d = {"<cmd>BufferLineSortByDirectory<cr>", "Sort Buffers By Directory"},
+		a = {"<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<cr>", "Sort Buffer By Alphabet"}
 	},
 	o = {
 		name = 'OrgMode',
-		a = { 'Agenda Prompt' },
-		c = { 'Capture Prompt' }
+		["$"] = {'Archive Subtree'},
+		["*"] = {'Toggle Heading'},
+		["'"] = {'Edit Special'},
+		[","] = {'Choose Priority'},
+		a = {'Agenda Prompt'},
+		c = {'Capture Prompt'},
+		e = {'Export'}, -- requires emacs or pandoc
+		i = {
+			name = 'Insert',
+			["!"] = {'Inactive Date'},
+			["."] = {'Date'},
+			d = {'Deadline Date'},
+			h = {'Headline'},
+			s = {'Scheduled Date'},
+			t = {'TODO Headline In Current Line'},
+			T = {'TODO Headline In Next Line '}
+		},
+		o = {'Open Link/Date'},
+		r = {'Refile'},
+		t = {'Agenda Set Tags'},
+		x = {
+			name = 'Clock',
+			e = {'Set Effort Estimate Property'},
+			i = {'Clock In'},
+			j = {'Go To Clocked In Headline'},
+			o = {'Clock Out'},
+			q = {'Cancel Active Clock'}
+		},
+		A = {'Archive Current Headline'},
+		J = {'Move Subtree Down'},
+		K = {'Move Subtree Up'},
 	}
 }, { prefix = "<leader>" })
 
