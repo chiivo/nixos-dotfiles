@@ -1,11 +1,9 @@
 /*** After each update change "DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING": true in .config/discord/settings.json ***/
 
 /* Font change */
-/*
 ::-webkit-input-placeholder, body, button, input, select, textarea{
-font-family: 'VictorMono Nerd Font';
+font-family: Sans-Serif;
 }
-*/
 
 /*Theme*/
 .theme-dark {
