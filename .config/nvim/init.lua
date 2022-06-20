@@ -759,8 +759,12 @@ wk.setup{
     scroll_up = 'k', -- binding to scroll up inside the popup
   },
 	window = {
-		border = "single" -- none, single, double, shadow
+		border = "single", -- none, single, double, shadow
+		margin = { 0, 0, 0, 0 }
 	},
+	layout = {
+		align = "center"
+	}
 }
 wk.register({
 	["<leader>"] = { "<cmd>source $MYVIMRC<cr>", "Source Nvim Config" },
