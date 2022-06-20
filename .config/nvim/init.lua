@@ -93,6 +93,8 @@ db.custom_header = {
 	'',
 	'',
 	'',
+	'',
+	'',
 }
 db.custom_center = {
 	{
