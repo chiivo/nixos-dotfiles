@@ -785,6 +785,11 @@ wk.register({
 		e = { "<cmd>BufferLineSortByExtension<cr>", "Sort Buffers By Extension" },
 		d = { "<cmd>BufferLineSortByDirectory<cr>", "Sort Buffers By Directory" },
 		a = { "<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<cr>", "Sort Buffer By Alphabet" }
+	},
+	o = {
+		name = 'OrgMode',
+		a = { 'Agenda Prompt' },
+		c = { 'Capture Prompt' }
 	}
 }, { prefix = "<leader>" })
 
@@ -852,7 +857,8 @@ cmp.setup{
 	sources = {
 		{ name = 'luasnip' }, -- For luasnip users.
 		{ name = 'buffer' },
-		{ name = 'path'},
+		{ name = 'path' },
+		{ name = 'orgmode' },
 	},
 	window = {
 		documentation = {
