@@ -734,45 +734,34 @@ require('neorg').setup {
 			config = {
 				icons = {
 		  	  todo = {
-						enabled = true,
 						done = {
-							enabled = true,
 							icon = "",
 						},
 						pending = {
-							enabled = true,
 							icon = "",
 						},
 						undone = {
-							enabled = true,
 							icon = "×",
 						}
 					},
 					quote = {
-						enabled = true,
 						icon = "∣",
-		  	  },
+					},
 					heading = {
-						enabled = true,
 						level_1 = {
-							enabled = true,
 							icon = "◉",
 						},
 						level_2 = {
-							enabled = true,
 							icon = "○",
 						},
 						level_3 = {
-							enabled = true,
 							icon = "✿",
 						},
 						level_4 = {
-							enabled = true,
 							icon = "•",
 						},
 					},
 					marker = {
-						enabled = true,
 						icon = "",
 		  	  }
 				}
