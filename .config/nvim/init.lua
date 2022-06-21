@@ -803,7 +803,7 @@ wk.register({
 		s = {'<cmd>Telescope find_files hidden=true no_ignore=true<cr>', 'Find File'},
 		u = {'<cmd>PackerUpdate<cr>', 'Packer Update'}
 	},
-	n = {
+	t = {
 		name = "NvimTree",
 		n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
 		r = {"<cmd>NvimTreeRefresh<cr>", "Refresh NvimTree"}
