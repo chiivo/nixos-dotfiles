@@ -702,7 +702,7 @@ require'nvim-treesitter.configs'.setup {
 	  -- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = {'norg'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
 	},
-	ensure_installed = {'norg'}, -- Or run :TSUpdate norg
+	ensure_installed = {'bash', 'css','lua', 'norg', 'rust', 'scss', 'toml', 'vim'},
 	--Treesitter Playground
 	playground = {
 		enable = true,
@@ -728,7 +728,7 @@ require'nvim-treesitter.configs'.setup {
 require('neorg').setup {
 	load = {
 		["core.defaults"] = {},
-		["core.export.markdown"] = {},
+		["core.export"] = {},
 		["core.norg.qol.toc"] = {},
 		["core.norg.concealer"] = {
 			config = {
@@ -772,7 +772,13 @@ require('neorg').setup {
 				zen_mode = 'truezen'
 			}
 		},
+		["core.norg.completion"] = {
+			config = {
+				engine = 'nvim-cmp'
+			}
+		},
 		["core.norg.manoeuvre"] = {},
+		["core.integrations.nvim-cmp"] = {},
 	}
 }
 
@@ -888,7 +894,7 @@ cmp.setup{
 		{ name = 'luasnip' }, -- For luasnip users.
 		{ name = 'buffer' },
 		{ name = 'path' },
-		{ name = 'orgmode' },
+		{ name = 'norg' },
 	},
 	window = {
 		documentation = {
