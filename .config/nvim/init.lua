@@ -730,43 +730,7 @@ require('neorg').setup {
 		["core.defaults"] = {},
 		["core.export"] = {},
 		["core.norg.qol.toc"] = {},
-		["core.norg.concealer"] = {
-			config = {
-				icons = {
-		  	  todo = {
-						done = {
-							icon = "",
-						},
-						pending = {
-							icon = "",
-						},
-						undone = {
-							icon = "×",
-						}
-					},
-					quote = {
-						icon = "∣",
-					},
-					heading = {
-						level_1 = {
-							icon = "◉",
-						},
-						level_2 = {
-							icon = "○",
-						},
-						level_3 = {
-							icon = "✿",
-						},
-						level_4 = {
-							icon = "•",
-						},
-					},
-					marker = {
-						icon = "",
-		  	  }
-				}
-			}
-		},
+		["core.norg.concealer"] = {},
 		["core.presenter"] = {
 			config = {
 				zen_mode = 'truezen'
