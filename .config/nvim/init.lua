@@ -21,6 +21,7 @@ require('packer').startup(function()
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'folke/twilight.nvim'
 	use 'nvim-neorg/neorg'
+	use 'jbyuki/nabla.nvim'
 	use 'folke/which-key.nvim'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -790,8 +791,8 @@ wk.register({
 		e = {"<cmd>BufferLineSortByExtension<cr>", "Sort Buffers By Extension"},
 		d = {"<cmd>BufferLineSortByDirectory<cr>", "Sort Buffers By Directory"},
 		a = {"<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<cr>", "Sort Buffer By Alphabet"}
-	}
-}, { prefix = "<leader>" })
+	},
+}, {prefix = "<leader>"})
 
 --LuaSnip
 require("luasnip.loaders.from_vscode").lazy_load()
