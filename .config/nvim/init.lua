@@ -792,6 +792,7 @@ wk.register({
 		d = {"<cmd>BufferLineSortByDirectory<cr>", "Sort Buffers By Directory"},
 		a = {"<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<cr>", "Sort Buffer By Alphabet"}
 	},
+	p = {"<cmd>lua require('nabla').popup({border = 'rounded'})<cr>", "Nabla Popup"}
 }, {prefix = "<leader>"})
 
 --LuaSnip
