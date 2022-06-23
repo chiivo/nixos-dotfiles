@@ -731,7 +731,11 @@ require('neorg').setup {
 		["core.defaults"] = {},
 		["core.export"] = {},
 		["core.norg.qol.toc"] = {},
-		["core.norg.concealer"] = {},
+		["core.norg.concealer"] = {
+			config = {
+				icon_preset = 'varied'
+			}
+		},
 		["core.presenter"] = {
 			config = {
 				zen_mode = 'truezen'
