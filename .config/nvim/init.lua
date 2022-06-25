@@ -30,6 +30,7 @@ require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
+	use 'nvim-orgmode/orgmode'
 end)
 
 --Colors
@@ -53,8 +54,6 @@ colorscheme bliss
 let g:mapleader="\<Space>"
 set clipboard=unnamedplus
 set completeopt=menu,menuone,noselect
-set autoindent
-set smartindent
 set cursorline
 set tabstop=2
 set shiftwidth=2
@@ -684,11 +683,14 @@ require('feline').setup({
 --Treesitter
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"
-	ensure_installed = {},
+	ensure_installed = {'bash', 'css','lua', 'norg', 'rust', 'scss', 'toml', 'vim'},
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
 	-- List of parsers to ignore installing (for "all")
 	ignore_install = {},
+	indent = {
+		enable = true
+	},
 	highlight = {
 	  -- `false` will disable the whole extension
 	  enable = true,
@@ -703,7 +705,6 @@ require'nvim-treesitter.configs'.setup {
 	  -- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = {'norg'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
 	},
-	ensure_installed = {'bash', 'css','lua', 'norg', 'rust', 'scss', 'toml', 'vim'},
 	--Treesitter Playground
 	playground = {
 		enable = true,
@@ -865,6 +866,7 @@ cmp.setup{
 		{ name = 'buffer' },
 		{ name = 'path' },
 		{ name = 'norg' },
+		{ name = 'org' },
 	},
 	window = {
 		documentation = {
@@ -894,3 +896,21 @@ highlight! CmpItemKindText guifg=#77bee0
 highlight! CmpItemKindFolder guifg=#77bee0
 highlight! CmpItemKindFile guifg=#dd91f3
 ]])
+
+--OrgMode
+require('orgmode').setup_ts_grammar()
+-- Tree-sitter configuration
+require'nvim-treesitter.configs'.setup {
+  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+  highlight = {
+    additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
+  },
+  ensure_installed = {'org'}, -- Or run :TSUpdate org
+}
+require('orgmode').setup{
+	mappings = {
+		org = {
+			org_return = ''
+		}
+	}
+}
