@@ -116,12 +116,12 @@
     :orientation "v"
     (button
       :class "hour"
-      :onclick "eww open --toggle calendar"
+      :onclick "~/eww/target/release/eww open --toggle calendar"
       hour
     )
     (button
       :class "minute"
-      :onclick "eww open --toggle calendar"
+      :onclick "~/eww/target/release/eww open --toggle calendar"
       minute
     )
   )
