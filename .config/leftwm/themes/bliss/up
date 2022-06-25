@@ -18,7 +18,7 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.toml" &
 
 ### Eww ###
 killall -q eww;
-eww open bar &
+~/eww/target/release/eww open bar &
 
 ### Bluetooth ###
 killall -q blueman-applet;
