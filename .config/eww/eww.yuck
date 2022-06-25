@@ -44,8 +44,8 @@
 (defwidget powermenu []
   (eventbox
     :class "powermenu"
-    :onhover eww-path "update powermenu-revealer=true"
-    :onhoverlost eww-path "update powermenu-revealer=false"
+    :onhover "~/eww/target/release/eww update powermenu-revealer=true"
+    :onhoverlost "~/eww/target/release/eww update powermenu-revealer=false"
     (box
       :orientation "v"
       :space-evenly false
@@ -83,8 +83,8 @@
 (defwidget slider-vol []
   (eventbox
     :class "slider-vol"
-    :onhover eww-path "update vol-revealer=true"
-    :onhoverlost eww-path "update vol-revealer=false"
+    :onhover "~/eww/target/release/eww update vol-revealer=true"
+    :onhoverlost "~/eww/target/release/eww update vol-revealer=false"
     (box
       :space-evenly "false"
       :orientation "v"
@@ -114,15 +114,13 @@
 (defwidget time []
   (box
     :orientation "v"
-    (button
-      :class "hour"
-      :onclick eww-path "open --toggle calendar"
-      hour
-    )
-    (button
-      :class "minute"
-      :onclick eww-path "open --toggle calendar"
-      minute
+    (eventbox
+      :onhover "~/eww/target/release/eww open calendar"
+      :onhoverlost "~/eww/target/release/eww close calendar"
+      (button
+        :class "time"
+        time
+      )
     )
   )
 )
@@ -143,9 +141,6 @@
 )
 
 ;;;Variables;;;
-(defvar eww-path
-  ~/eww/target/release/eww
-)
 (defvar powermenu-revealer
   false
 )
@@ -163,13 +158,9 @@
 (defvar vol-revealer
   false
 )
-(defpoll hour
+(defpoll time
   :interval "1s"
-  "date +'%H'"
-)
-(defpoll minute
-  :interval "1s"
-  "date +'%M'"
+  "date +'%H%n%M'"
 )
 (defpoll day 
   :interval "10h"

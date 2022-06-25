@@ -103,16 +103,10 @@ $margin: 10px 0px;
 }
 
 //Time
-.hour {
-	margin: 10px 0 0 0;
+.time {
+	margin: $margin;
 }
-.hour:hover {
-	color: $blue;
-}
-.minute {
-	margin: 0 0 10px 0;
-}
-.minute:hover {
+.time:hover {
 	color: $blue;
 }
 
