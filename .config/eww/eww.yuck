@@ -44,8 +44,8 @@
 (defwidget powermenu []
   (eventbox
     :class "powermenu"
-    :onhover "eww update powermenu-revealer=true"
-    :onhoverlost "eww update powermenu-revealer=false"
+    :onhover eww-path "update powermenu-revealer=true"
+    :onhoverlost eww-path "update powermenu-revealer=false"
     (box
       :orientation "v"
       :space-evenly false
@@ -83,8 +83,8 @@
 (defwidget slider-vol []
   (eventbox
     :class "slider-vol"
-    :onhover "eww update vol-revealer=true"
-    :onhoverlost "eww update vol-revealer=false"
+    :onhover eww-path "update vol-revealer=true"
+    :onhoverlost eww-path "update vol-revealer=false"
     (box
       :space-evenly "false"
       :orientation "v"
@@ -116,12 +116,12 @@
     :orientation "v"
     (button
       :class "hour"
-      :onclick "~/eww/target/release/eww open --toggle calendar"
+      :onclick eww-path "open --toggle calendar"
       hour
     )
     (button
       :class "minute"
-      :onclick "~/eww/target/release/eww open --toggle calendar"
+      :onclick eww-path "open --toggle calendar"
       minute
     )
   )
@@ -143,6 +143,9 @@
 )
 
 ;;;Variables;;;
+(defvar eww-path
+  ~/eww/target/release/eww
+)
 (defvar powermenu-revealer
   false
 )
