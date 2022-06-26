@@ -35,6 +35,7 @@ gst-plugins-good \
 gvfs \
 gzip \
 heroic-games-launcher-bin \
+joshuto \
 krita \
 leftwm \
 libtool \
@@ -63,7 +64,6 @@ pkgconf \
 playerctl \
 polymc \
 qt5ct \
-ranger \
 retroarch \
 rofi \
 rpcs3-git \
