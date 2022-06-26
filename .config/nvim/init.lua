@@ -20,8 +20,6 @@ require('packer').startup(function()
 	use 'Manas140/run.nvim'
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'folke/twilight.nvim'
-	use 'nvim-neorg/neorg'
-	use 'jbyuki/nabla.nvim'
 	use 'folke/which-key.nvim'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -30,6 +28,8 @@ require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
+	use 'nvim-neorg/neorg'
+	use 'jbyuki/nabla.nvim'
 	use 'dhruvasagar/vim-table-mode'
 end)
 
@@ -151,19 +151,6 @@ require('bufferline').setup {
 		right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 		left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
 		middle_mouse_command = nil,	-- can be a string | function, see "Mouse actions"
-		-- NOTE: this plugin is designed with this icon in mind,
-		-- and so changing this is NOT recommended, this is intended
-		-- as an escape hatch for people who cannot bear it for whatever reason
-		indicator_icon = '▎',
-		buffer_close_icon = '',
-		modified_icon = '',
-		close_icon = '',
-		left_trunc_marker = '',
-		right_trunc_marker = '',
-		--- name_formatter can be used to change the buffer's label in the bufferline.
-		--- Please note some names can/will break the
-		--- bufferline so use this at your discretion knowing that it has
-		--- some limitations that will *NOT* be fixed.
 		name_formatter = function(buf)  -- buf contains a "name", "path" and "bufnr"
 			-- remove extension from markdown files for example
 			if buf.name:match('%.md') then
@@ -281,41 +268,6 @@ require'nvim-tree'.setup {
         none = "  ",
       },
     },
-		icons = {
-			webdev_colors = true,
-			git_placement = "before",
-			padding = " ",
-			symlink_arrow = " >> ",
-			show = {
-				file = true,
-				folder = true,
-				folder_arrow = true,
-				git = true,
-			},
-			glyphs = {
-				default = '',
-				symlink = '',
-				folder = {
-					arrow_open = "",
-					arrow_closed = "",
-					default = "",
-					open = "",
-					empty = "",
-					empty_open = "",
-					symlink = "",
-					symlink_open = "",
-			  },
-				git = {
-					unstaged = "",
-					staged = "",
-					unmerged = "",
-					renamed = "",
-					untracked = "",
-					deleted = "",
-					ignored = ""
-				},
-  		},
-		},
 		special_files = { 'README.md', 'Makefile', 'MAKEFILE' },
 	},
 	hijack_directories = {
@@ -331,16 +283,6 @@ require'nvim-tree'.setup {
 	system_open = {
 		cmd = nil,
 		args = {},
-	},
-	diagnostics = {
-		enable = false,
-		show_on_dirs = false,
-		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
-		}
 	},
 	filters = {
 		dotfiles = false,
@@ -578,7 +520,7 @@ local comps = {
 	vi_mode = {
 		left = {
 			provider = function()
-				return ''-- .. vi_mode_utils.get_vim_mode()
+				return ''-- .. vi_mode_utils.get_vim_mode()
 			end,
 			hl = function()
 				local val = {
@@ -601,7 +543,6 @@ local comps = {
 				opts = {
 					type = 'relative',
 					file_readonly_icon = '  ',
-					file_modified_icon = ''
 				}
 			},
 			hl = {
@@ -806,31 +747,31 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 --Nvim-Cmp
 local kind_icons = {
-  Text = " ",
-  Method = "m",
-  Function = " ",
-  Constructor = " ",
-  Field = "",
-  Variable = " ",
-  Class = " ",
-  Interface = " ",
-  Module = " ",
-  Property = " ",
-  Unit = " ",
-  Value = " ",
-  Enum = " ",
-  Keyword = " ",
-  Snippet = " ",
-  Color = " ",
-  File = " ",
-  Reference = "*",
-  Folder = " ",
-  EnumMember = " ",
-  Constant = " ",
-  Struct = " ",
-  Event = " ",
-  Operator = " ",
-  TypeParameter = " ",
+	Text = "",
+	Method = "m",
+	Function = "",
+	Constructor = "",
+	Field = "",
+	Variable = "",
+	Class = "",
+	Interface = "",
+	Module = "",
+	Property = "",
+	Unit = "",
+	Value = "",
+	Enum = "",
+	Keyword = "",
+	Snippet = "",
+	Color = "",
+	File = "",
+	Reference = "",
+	Folder = "",
+	EnumMember = "",
+	Constant = "",
+	Struct = "",
+	Event = "",
+	Operator = "",
+	TypeParameter = "",
 }
 local cmp = require'cmp'
 cmp.setup{
