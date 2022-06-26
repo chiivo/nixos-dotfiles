@@ -7,7 +7,7 @@
 - Window Manager: leftwm
 - Wallpaper Drawer: feh
 - Image Viewer: nsxiv
-- Compositer: picom-jonaburg-fix
+- Compositer: picom-animations-git
 - App Launcher: rofi
 - Theme Manager: lxappearance, qt5ct
 - Icon Theme: flatery
