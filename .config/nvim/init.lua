@@ -730,11 +730,9 @@ require'nvim-treesitter.configs'.setup {
 require('neorg').setup {
 	load = {
 		["core.defaults"] = {},
-		["core.export"] = {},
-		["core.norg.qol.toc"] = {},
-		["core.norg.concealer"] = {
+		["core.norg.completion"] = {
 			config = {
-				icon_preset = 'varied'
+				engine = 'nvim-cmp'
 			}
 		},
 		["core.presenter"] = {
@@ -742,12 +740,15 @@ require('neorg').setup {
 				zen_mode = 'truezen'
 			}
 		},
-		["core.norg.completion"] = {
+		["core.norg.qol.toc"] = {},
+		["core.export"] = {},
+		["core.norg.manoeuvre"] = {},
+		["core.norg.concealer"] = {
 			config = {
-				engine = 'nvim-cmp'
+				icon_preset = 'varied'
 			}
 		},
-		["core.norg.manoeuvre"] = {},
+		["core.export.markdown"] = {},
 		["core.integrations.nvim-cmp"] = {},
 	}
 }
