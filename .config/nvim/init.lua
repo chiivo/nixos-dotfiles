@@ -30,7 +30,7 @@ require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
-	use 'nvim-orgmode/orgmode'
+	use 'dhruvasagar/vim-table-mode'
 end)
 
 --Colors
@@ -866,7 +866,6 @@ cmp.setup{
 		{ name = 'buffer' },
 		{ name = 'path' },
 		{ name = 'norg' },
-		{ name = 'org' },
 	},
 	window = {
 		documentation = {
@@ -896,21 +895,3 @@ highlight! CmpItemKindText guifg=#77bee0
 highlight! CmpItemKindFolder guifg=#77bee0
 highlight! CmpItemKindFile guifg=#dd91f3
 ]])
-
---OrgMode
-require('orgmode').setup_ts_grammar()
--- Tree-sitter configuration
-require'nvim-treesitter.configs'.setup {
-  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-  highlight = {
-    additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
-  },
-  ensure_installed = {'org'}, -- Or run :TSUpdate org
-}
-require('orgmode').setup{
-	mappings = {
-		org = {
-			org_return = ''
-		}
-	}
-}
