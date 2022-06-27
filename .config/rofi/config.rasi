@@ -7,8 +7,8 @@ configuration {
 	modi: "drun";
 	font: "monospace 12";
 	display-run: "";
-	display-drun: "";
-	display-window: "";
+	display-drun: "";
+	display-window: "";
 	display-ssh: "SSH";
 	display-combi: "Combi";
 	show-icons: true;
