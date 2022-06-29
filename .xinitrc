@@ -31,4 +31,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 ./scripts/display-setup &
-exec dbus-launch leftwm
+./scripts/mousesettings &
+#exec dbus-launch leftwm
+exec dbus-launch awesome
