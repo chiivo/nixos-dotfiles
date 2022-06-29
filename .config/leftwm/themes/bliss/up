@@ -6,9 +6,6 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 kill $(pgrep -f scripts/wallpapersetter);
 ~/scripts/wallpapersetter &
 
-### Mouse Settings ###
-~/scripts/mousesettings &
-
 ### Compositor ###
 killall -q picom;
 picom --experimental-backends &
