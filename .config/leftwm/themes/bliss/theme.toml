@@ -1,10 +1,6 @@
-border_width = 0
+border_width = 4
 margin = 10
 workspace_margin = 10
 default_border_color = "#262727"
 floating_border_color = "#262727"
 focused_border_color = "#f5d1c8"
-
-#[[gutter]]
-#side = "Top"
-#value = 60
