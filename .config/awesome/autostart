@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+### Wallpaper ###
+kill $(pgrep -f scripts/wallpapersetter);
+~/scripts/wallpapersetter &
+
+### Compositor ###
+killall -q picom;
+picom --experimental-backends &
+
+### Bluetooth ###
+killall -q blueman-applet;
+blueman-applet &
+
+### Discord ###
+discocss &
