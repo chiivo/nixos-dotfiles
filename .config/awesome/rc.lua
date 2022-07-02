@@ -442,7 +442,7 @@ globalkeys = gears.table.join(
 	--Bottom
 	awful.key({ modkey, "Shift" }, "Escape",
 		function()
-			awful.spawn(terminal .. " -e btm")
+			awful.spawn(terminal .. " --class 'Alacritty,Bottom' -e btm")
 		end,
 		{description = "Spawn Bottom", group = "Task Manager"}
 	)
@@ -648,6 +648,7 @@ awful.rules.rules = {
 			class = {
 				"Blueman-manager",
 				"Nsxiv",
+				"Bottom",
 			},
 			--Note that the name property shown in xprop might be set slightly after creation of the client and the name shown there might not match defined rules here.
 			name = {
