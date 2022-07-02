@@ -84,7 +84,7 @@ text_icon_padding = 0
 
 # Defines width in pixels of frame around the notification window.
 # Set to 0 to disable.
-frame_width = 0
+frame_width = 4
 
 # Defines color of the frame around the notification window.
 frame_color = "#f5d1c8"
@@ -282,6 +282,9 @@ history = ctrl+grave
 context = ctrl+shift+period
 
 enable_posix_regex = true
+
+gaps = true
+gap_size = 10
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
