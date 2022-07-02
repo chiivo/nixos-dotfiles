@@ -68,6 +68,7 @@ set smartcase
 set termguicolors
 syntax on
 set laststatus=3
+set linebreak
 ]])
 
 --Colorizer
