@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
 
-### Wallpaper ###
-kill $(pgrep -f scripts/wallpapersetter);
-~/scripts/wallpapersetter &
+run() {
+  if ! pgrep -f "$1" ;
+  then
+    "$@"&
+  fi
+}
 
-### Compositor ###
-killall -q picom;
-picom --experimental-backends &
+#### Wallpaper ###
+run ~/scripts/wallpapersetter
 
-### Bluetooth ###
-killall -q blueman-applet;
-blueman-applet &
+#### Compositor ###
+run picom --experimental-backends
 
-### Discord ###
-discocss &
+#### Bluetooth ###
+run blueman-applet
+
+#### Discord ###
+run discord
