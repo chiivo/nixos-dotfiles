@@ -1,0 +1,44 @@
+### Move To Desktop ### 
+super + {1-5}
+	d='{1-5}'; \
+	bspc desktop -f "$d.local" || bspc desktop -s "$d"
+
+### Move Focused Window To Desktop ###
+super + shift + {1-5}
+	bspc node -d '{1-5}'
+
+### Resize Window ###
+super + shift + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+super + shift + alt + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+### Reset Window Size ###
+super + r
+	bspc node @/ -E
+
+### Kill Window ###
+super + shift + c
+	bspc node -{c,k}
+
+### Restart ###
+super + q
+	bspc wm -r
+	pkill -USR1 -x sxhkd
+
+### Scratchpad ###
+super + Return
+	alacritty --class 'Alacritty,Scratchpad'
+
+### Bottom ###
+super + shift + Escape
+	alacritty --class 'Alacritty,Bottom' -e 'btm'
+
+### Terminal ###
+super + shift + Return
+	alacritty
+
+### Rofi ###
+super + p
+	rofi -show drun
