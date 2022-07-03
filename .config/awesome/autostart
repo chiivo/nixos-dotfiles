@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
 run() {
-  if ! pgrep -f "$1" ;
-  then
-    "$@"&
-  fi
+	if ! pgrep -f "$1"; then
+		"$@"&
+	fi
 }
 
 #### Wallpaper ###
@@ -17,4 +16,8 @@ run picom --experimental-backends
 run blueman-applet
 
 #### Discord ###
-run discord
+if pgrep -f discord; then
+	exit &
+else
+	discocss &
+fi

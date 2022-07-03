@@ -69,13 +69,6 @@ naughty.config.spacing = 10
 naughty.config.defaults.border_width = 4
 naughty.config.defaults.timeout = 10
 naughty.config.defaults.screen = 1
---beautiful.notification_font = "monospace 12"
---beautiful.notification_bg = colors.black
---beautiful.notification_fg = colors.pink
---beautiful.notification_border_color = colors.pink
---beautiful.notification_width = 350
---beautiful.notification_max_height = 300
---beautiful.notification_icon_size = 48
 
 --This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -213,44 +206,17 @@ awful.screen.connect_for_each_screen(
 	function(s)
 		--Each screen has its own tag table.
 		awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
-		--Create an imagebox widget which will contain an icon indicating which layout we're using.
-		--We need one layoutbox per screen.
-		s.mylayoutbox = awful.widget.layoutbox(s)
-		s.mylayoutbox:buttons(
-			gears.table.join(
-				awful.button({ }, 1,
-					function () 
-						awful.layout.inc( 1)
-					end
-				),
-				awful.button({ }, 3,
-					function ()
-						awful.layout.inc(-1)
-					end
-				),
-				awful.button({ }, 4,
-					function ()
-						awful.layout.inc( 1)
-					end
-				),
-				awful.button({ }, 5,
-					function ()
-						awful.layout.inc(-1)
-					end
-				)
-			)
-		)
 		--Create a taglist widget
 		s.mytaglist = awful.widget.taglist {
-			screen  = screen[1],
+			screen  = s,
 			filter  = awful.widget.taglist.filter.all,
 			buttons = taglist_buttons
 		}
 		--Create a tasklist widget
 		s.mytasklist = awful.widget.tasklist {
-			screen  = screen[1],
+			screen  = s,
 			filter  = awful.widget.tasklist.filter.currenttags,
-			buttons = tasklist_buttons
+			buttons = tasklist_buttons,
 		}
 		--Create the wibox
 		s.mywibox = awful.wibar({
@@ -266,17 +232,27 @@ awful.screen.connect_for_each_screen(
 				layout = wibox.layout.fixed.vertical,
 				mylauncher,
 				s.mytaglist,
+				{
+					direction = 'west',
+					widget = wibox.container.rotate,
+				},
 			},
-			{ --Middle widgets
-				layout = wibox.layout.fixed.vertical,
-				s.mytasklist,
+			{	--Middle widgets
+					s.mytasklist,
+					direction = 'west',
+					widget = wibox.container.rotate;
 			},
 			{ --Right widgets
 				layout = wibox.layout.fixed.vertical,
-				wibox.widget.systray(),
-				mytextclock,
-				s.mylayoutbox,
-			},
+				{
+					{
+						mytextclock,
+						layout = wibox.layout.fixed.horizontal
+					},
+					direction = 'west',
+					widget = wibox.container.rotate
+				}
+			}
 		}
 	end
 )

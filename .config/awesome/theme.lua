@@ -54,10 +54,10 @@ theme.border_marked = "#91231c"
 -- Generate taglist squares:
 local taglist_square_size = 10
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
+    taglist_square_size, colors_black
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
+    taglist_square_size, colors.pink
 )
 
 -- Variables set for theming notifications:
@@ -68,9 +68,10 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 theme.notification_font = "monospace 12"
 theme.notification_bg = colors.black
 theme.notification_fg = colors.pink
+theme.notification_border_color = colors.pink
 theme.notification_width = 350
 theme.notification_max_height = 300
-theme.notification_border_color = colors.pink
+theme.notification_icon_size = 48
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
