@@ -51,7 +51,7 @@ do
 			in_error = true
 			naughty.notify({ preset = naughty.config.presets.critical,
 				title = "Oops, an error happened!",
-				text = tostring(err) })
+				text = tostring(err)})
 			in_error = false
 		end
 	)
@@ -59,8 +59,23 @@ end
 
 --Variable definitions
 --Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.font = "monospace 16"
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+--beautiful.font = "monospace bold 16"
+
+--Notification Config
+naughty.config.padding = 20
+naughty.config.spacing = 10
+--naughty.config.icon_dirs = "~/.icons/Flatery-Dark/"
+naughty.config.defaults.border_width = 4
+naughty.config.defaults.timeout = 10
+naughty.config.defaults.screen = 1
+--beautiful.notification_font = "monospace 12"
+--beautiful.notification_bg = colors.black
+--beautiful.notification_fg = colors.pink
+--beautiful.notification_border_color = colors.pink
+--beautiful.notification_width = 350
+--beautiful.notification_max_height = 300
+--beautiful.notification_icon_size = 48
 
 --This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -194,29 +209,10 @@ local tasklist_buttons = gears.table.join(
 	)
 )
 
-local function set_wallpaper(s)
-	--Wallpaper
-	if beautiful.wallpaper then
-		local wallpaper = beautiful.wallpaper
-			--If wallpaper is a function, call it with the screen
-			if type(wallpaper) == "function" then
-				wallpaper = wallpaper(s)
-			end
-		gears.wallpaper.maximized(wallpaper, s, true)
-	end
-end
-
---Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", set_wallpaper)
-
 awful.screen.connect_for_each_screen(
 	function(s)
-		--Wallpaper
-		set_wallpaper(s)
 		--Each screen has its own tag table.
 		awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
-		--Create a promptbox for each screen
-		s.mypromptbox = awful.widget.prompt()
 		--Create an imagebox widget which will contain an icon indicating which layout we're using.
 		--We need one layoutbox per screen.
 		s.mylayoutbox = awful.widget.layoutbox(s)
@@ -246,13 +242,13 @@ awful.screen.connect_for_each_screen(
 		)
 		--Create a taglist widget
 		s.mytaglist = awful.widget.taglist {
-			screen  = s,
+			screen  = screen[1],
 			filter  = awful.widget.taglist.filter.all,
 			buttons = taglist_buttons
 		}
 		--Create a tasklist widget
 		s.mytasklist = awful.widget.tasklist {
-			screen  = s,
+			screen  = screen[1],
 			filter  = awful.widget.tasklist.filter.currenttags,
 			buttons = tasklist_buttons
 		}
@@ -262,7 +258,6 @@ awful.screen.connect_for_each_screen(
 			screen = s,
 			height = 1040,
 			width = 30,
-			y = 20
 		})
 		--Add widgets to the wibox
 		s.mywibox:setup {
@@ -271,9 +266,11 @@ awful.screen.connect_for_each_screen(
 				layout = wibox.layout.fixed.vertical,
 				mylauncher,
 				s.mytaglist,
-				s.mypromptbox,
 			},
-			s.mytasklist, --Middle widget
+			{ --Middle widgets
+				layout = wibox.layout.fixed.vertical,
+				s.mytasklist,
+			},
 			{ --Right widgets
 				layout = wibox.layout.fixed.vertical,
 				wibox.widget.systray(),
@@ -444,7 +441,14 @@ globalkeys = gears.table.join(
 		function()
 			awful.spawn(terminal .. " --class 'Alacritty,Bottom' -e btm")
 		end,
-		{description = "Spawn Bottom", group = "Task Manager"}
+		{description = "Spawn Bottom", group = "launcher"}
+	),
+	--Scratchpad
+	awful.key({ modkey, }, "Return",
+		function()
+			awful.spawn(terminal .. " --class 'Alacritty,Scratchpad'")
+		end,
+		{description = "Spawn Scratchpad", group = "launcher"}
 	)
 )
 --Client Keybindings
@@ -649,6 +653,7 @@ awful.rules.rules = {
 				"Blueman-manager",
 				"Nsxiv",
 				"Bottom",
+				"Scratchpad",
 			},
 			--Note that the name property shown in xprop might be set slightly after creation of the client and the name shown there might not match defined rules here.
 			name = {
@@ -756,15 +761,15 @@ client.connect_signal("unfocus",
 		c.border_color = beautiful.border_normal
 	end
 )
-local function move_mouse_onto_focused_client(c)
-    if mouse.object_under_pointer() ~= c then
-        local geometry = c:geometry()
-        local x = geometry.x + geometry.width/2
-        local y = geometry.y + geometry.height/2
-        mouse.coords({x = x, y = y}, true)
-    end
-end
-client.connect_signal("focus", move_mouse_onto_focused_client)
+--local function move_mouse_onto_focused_client(c)
+--    if mouse.object_under_pointer() ~= c then
+--        local geometry = c:geometry()
+--        local x = geometry.x + geometry.width/2
+--        local y = geometry.y + geometry.height/2
+--        mouse.coords({x = x, y = y}, true)
+--    end
+--end
+--client.connect_signal("focus", move_mouse_onto_focused_client)
 
 --Border
 beautiful.useless_gap = 10
