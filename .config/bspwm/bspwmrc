@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+### Autostart ###
+run() {
+	if ! pgrep -f "$1"; then
+		"$@"&
+	fi
+}
+### SXHKD ###
+killall sxhkd;
+sxhkd &
+
+### Wallpaper ###
+run ~/scripts/wallpapersetter
+
+### Compositor ###
+run picom --experimental-backends
+
+### Bluetooth ###
+run blueman-applet
+
+### Eww ###
+run ~/eww/target/release/eww open bar
+
+### Discord ###
+if pgrep -f discord; then
+	exit &
+else
+	discocss &
+fi
+
+### BSPWM Config ###
+xsetroot -cursor_name left_ptr &
+bspc config focus_follows_pointer true
+bspc monitor DP-2 -d 1 3 4 5
+bspc monitor HDMI-0 -d 2
+bspc config border_width 4
+bspc config window_gap 20
