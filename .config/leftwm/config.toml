@@ -11,7 +11,7 @@ focus_new_windows = true
 ### Window Rules ###
 window_rules = [
 	{window_class = "discord", spawn_on_tag = 2},
-	{window_class = "pentablet", spawn_on_tag = 5, spawn_floating = true}
+	{window_class = "pentablet", spawn_on_tag = 5, spawn_floating = true},
 ]
 
 ### Scratchpads ###
