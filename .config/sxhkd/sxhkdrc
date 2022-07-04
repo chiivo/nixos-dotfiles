@@ -1,3 +1,15 @@
+### Fullscreen ###
+super + f
+	bspc node -t ~fullscreen
+
+### Focus Next ###
+super + j
+	bspc node -f next.local
+
+### Focus Next ###
+super + k
+	bspc node -f prev.local
+
 ### Move To Desktop ### 
 super + {1-5}
 	d='{1-5}'; \
@@ -5,14 +17,14 @@ super + {1-5}
 
 ### Move Focused Window To Desktop ###
 super + shift + {1-5}
-	bspc node -d '{1-5}'
+	bspc node -d '^{1-5}'
 
 ### Resize Window ###
 super + shift + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node -z {left -90 0,bottom 0 90,top 0 -90,right 90 0}
 
 super + shift + alt + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node -z {right -90 0,top 0 90,bottom 0 -90,left 90 0}
 
 ### Reset Window Size ###
 super + r
@@ -42,3 +54,15 @@ super + shift + Return
 ### Rofi ###
 super + p
 	rofi -show drun
+
+### Volume Up ###
+XF86AudioRaiseVolume
+	~/scripts/volume -u
+
+### Volume Down ###
+XF86AudioLowerVolume
+	~/scripts/volume -d
+
+### Volume Mute ###
+XF86AudioMute
+	~/scripts/volume -m
