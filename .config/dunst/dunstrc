@@ -193,8 +193,11 @@ min_icon_size = 16
 # Scale larger icons down to this size, set to 0 to disable
 max_icon_size = 48
 
+#Recursive icon paths
+enable_recursive_icon_lookup = true
+
 # Paths to default icons.
-icon_path = /home/chivo/.icons/Papirus/48x48/status/:/home/chivo/.icons/Papirus/48x48/devices/
+icon_path = /home/chivo/.icons/Flatery-Pink-Dark/
 
 ### History ###
 
