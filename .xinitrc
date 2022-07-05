@@ -33,4 +33,6 @@ fi
 ./scripts/display-setup &
 ./scripts/mousesettings &
 #exec dbus-launch leftwm
-exec dbus-launch awesome
+#exec dbus-launch awesome
+#exec dbus-launch bspwm
+exec dbus-launch herbstluftwm
