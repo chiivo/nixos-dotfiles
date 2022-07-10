@@ -28,7 +28,7 @@ theme.bg_urgent     = colors.red
 theme.bg_minimize   = colors.gray
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = colors.white
+theme.fg_normal     = colors.pink
 theme.fg_focus      = colors.black
 theme.fg_urgent     = colors.black
 theme.fg_minimize   = colors.black
