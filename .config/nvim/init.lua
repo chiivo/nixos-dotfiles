@@ -31,9 +31,10 @@ require('packer').startup(function()
 	use 'nvim-neorg/neorg'
 	use 'jbyuki/nabla.nvim'
 	use 'dhruvasagar/vim-table-mode'
+	use 'numToStr/Comment.nvim'
 end)
 
---Colors
+-- Colors
 local colors = {
 	darkblack = '#141515',
 	black = '#262727',
@@ -48,7 +49,7 @@ local colors = {
 	white = '#dddddd'
 }
 
---Startup
+-- Startup
 vim.cmd([[
 colorscheme bliss
 let g:mapleader="\<Space>"
@@ -71,12 +72,12 @@ set laststatus=3
 set linebreak
 ]])
 
---Colorizer
+-- Colorizer
 require'colorizer'.setup({
 	'*',
 })
 
---Dashboard
+-- Dashboard
 local home = os.getenv('HOME')
 local db = require('dashboard')
 db.custom_header = {
@@ -124,7 +125,7 @@ highlight DashboardShortcut guifg = '#ff8278'
 highlight DashboardFooter guifg = '#dd91f3'
 ]])
 
---Bufferline
+-- Bufferline
 require('bufferline').setup {
 	highlights = {
 		fill = {
@@ -210,7 +211,7 @@ require('bufferline').setup {
 	}
 }
 
---NvimTree
+-- NvimTree
 vim.cmd([[
 "a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeSymlink guifg='#eadc84'
@@ -330,7 +331,7 @@ require'nvim-tree'.setup {
 	}
 }
 
---Nvim-AutoPairs
+-- Nvim-AutoPairs
 require('nvim-autopairs').setup{
 	enable_check_bracket_line = false,
 	fast_wrap = {
@@ -345,7 +346,7 @@ require('nvim-autopairs').setup{
 	}
 }
 
---Indent-BlankLine
+-- Indent-BlankLine
 vim.cmd ([[
 highlight IndentBlanklineIndent1 guifg='#ff8278' gui=nocombine
 highlight IndentBlanklineIndent2 guifg='#ffc178' gui=nocombine
@@ -367,7 +368,7 @@ require("indent_blankline").setup {
 	filetype_exclude = {'dashboard'}
 }
 
---Twilight
+-- Twilight
 require("twilight").setup {
 	dimming = {
 		alpha = 1,
@@ -390,7 +391,7 @@ require("twilight").setup {
 }
 vim.cmd([[autocmd VimEnter * Twilight]])
 
---TrueZen
+-- TrueZen
 require("true-zen").setup({
 	ui = {
 		bottom = {
@@ -460,7 +461,7 @@ require("true-zen").setup({
 	}
 })
 
---Feline
+-- Feline
 local vi_mode_colors = {
 	NORMAL = colors.pink,
 	INSERT = colors.green,
@@ -622,7 +623,7 @@ require('feline').setup({
 	vi_mode_colors = vi_mode_colors
 })
 
---Treesitter
+-- Treesitter
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"
 	ensure_installed = {'bash', 'css','lua', 'norg', 'rust', 'scss', 'toml', 'vim'},
@@ -668,7 +669,7 @@ require'nvim-treesitter.configs'.setup {
 	}
 }
 
---Neorg
+-- Neorg
 require('neorg').setup {
 	load = {
 		["core.defaults"] = {},
@@ -695,7 +696,7 @@ require('neorg').setup {
 	}
 }
 
---Which-Key
+-- Which-Key
 local wk = require("which-key")
 wk.setup{
 	key_labels = {
@@ -743,10 +744,10 @@ wk.register({
 	p = {"<cmd>lua require('nabla').popup({border = 'rounded'})<cr>", "Nabla Popup"}
 }, {prefix = "<leader>"})
 
---LuaSnip
+-- LuaSnip
 require("luasnip.loaders.from_vscode").lazy_load()
 
---Nvim-Cmp
+-- Nvim-Cmp
 local kind_icons = {
 	Text = "",
 	Method = "m",
@@ -838,3 +839,6 @@ highlight! CmpItemKindText guifg=#77bee0
 highlight! CmpItemKindFolder guifg=#77bee0
 highlight! CmpItemKindFile guifg=#dd91f3
 ]])
+
+-- Comment
+require('Comment').setup()
