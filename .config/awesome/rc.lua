@@ -45,7 +45,6 @@ end
 -- Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
--- beautiful.font = "monospace bold 16"
 
 -- Notification Config
 naughty.config.padding = 20
@@ -104,12 +103,13 @@ myawesomemenu = {
 mymainmenu = awful.menu({
 	items = {
 		{ "awesome", myawesomemenu, beautiful.awesome_icon },
-		{ "open terminal", terminal }
+		{ "open terminal", terminal },
+		{ "shutdown",
+			function()
+				awful.spawn.with_shell("poweroff")
+			end
+		}
 	}
-})
-mylauncher = awful.widget.launcher({
-	image = beautiful.awesome_icon,
-	menu = mymainmenu
 })
 
 -- Menubar configuration
