@@ -33,11 +33,11 @@ theme.fg_focus      = colors.black
 theme.fg_urgent     = colors.black
 theme.fg_minimize   = colors.black
 
-theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+theme.useless_gap   = 10
+theme.border_width  = 4
+theme.border_normal = colors.black
+theme.border_focus  = colors.pink
+theme.border_marked = colors.red
 
 -- There are other variable sets
 -- overriding the default one when

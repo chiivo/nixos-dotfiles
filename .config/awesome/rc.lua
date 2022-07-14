@@ -16,20 +16,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
-local colors = {
-	darkblack = '#141515',
-	black = '#262727',
-	red = '#ff8278',
-	orange = '#ffc178',
-	yellow = '#eadc84',
-	green = '#bde077',
-	blue = '#77bee0',
-	magenta = '#dd91f3',
-	pink = '#f5d1c8',
-	gray = '#555657',
-	white = '#dddddd'
-}
-
 -- Error handling
 -- Check if awesome encountered an error during startup and fell back to another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -132,18 +118,23 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
--- Wibar
+-- Create Widgets
 -- Powermenu Widget
 powerbutton = wibox.widget {
 	{
-		widget = wibox.widget.textbox,
-		text = "",
-		valign ="center",
-		align = "center"
+		widget = wibox.container.margin,
+		top = 10,
+		bottom = 10,
+		{
+			widget = wibox.widget.textbox,
+			text = "",
+			valign ="center",
+			align = "center"
+		}
 	}
 }
 powerbutton:buttons(gears.table.join({
-	awful.button({}, 1, function ()
+	awful.button({ }, 1, function ()
 		awful.spawn.with_shell("poweroff")
 	end)
 }))
@@ -181,37 +172,47 @@ clock = wibox.widget {
 	layout = wibox.layout.fixed.vertical,
 }
 
--- Create a wibox for each screen and add it
+-- Tags for each screen
 awful.screen.connect_for_each_screen(
 	function(s)
-		-- Each screen has its own tag table.
 		awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
-		-- Create the wibox
-		bar = awful.wibar({
-			position = "left",
-			screen = s,
-			height = 1040,
-			width = 30,
-		})
-		awful.placement.left(bar, { margins = 20 })
-		bar:struts{ left = 50 }
-		-- Add widgets to the wibox
-		bar:setup {
-			layout = wibox.layout.align.vertical,
-			-- Left widgets
-			powerbutton,
-			-- Middle widgets
-			tags,
-			{ -- Right widgets
-				layout = wibox.layout.fixed.vertical,
-				{
-					layout = wibox.layout.fixed.vertical,
-					clock,
-				}
-			}
-		}
 	end
 )
+
+-- Create the wibox
+bar = awful.wibar({
+	position = "left",
+	height = 1040,
+	width = 30,
+})
+awful.placement.left(bar, { margins = 20 })
+bar:struts{ left = 50 }
+
+-- Add widgets to the wibox
+bar:setup {
+	layout = wibox.layout.align.vertical,
+	{-- Left widgets
+		layout = wibox.layout.fixed.vertical,
+		{
+			layout = wibox.layout.fixed.vertical,
+			powerbutton,
+		}
+	},
+	{-- Middle widgets
+		layout = wibox.layout.fixed.vertical,
+		{
+			layout = wibox.layout.fixed.vertical,
+			tags,
+		}
+	},
+	{ -- Right widgets
+		layout = wibox.layout.fixed.vertical,
+		{
+			layout = wibox.layout.fixed.vertical,
+			clock,
+		}
+	}
+}
 
 -- Mouse bindings
 root.buttons(gears.table.join(
@@ -219,9 +220,9 @@ root.buttons(gears.table.join(
 		function ()
 			mymainmenu:toggle()
 		end
-	),
-	awful.button({ }, 4, awful.tag.viewnext),
-	awful.button({ }, 5, awful.tag.viewprev)
+	)
+	-- awful.button({ }, 4, awful.tag.viewnext),
+	-- awful.button({ }, 5, awful.tag.viewprev)
 ))
 
 -- Global Keybindings
@@ -555,7 +556,7 @@ awful.rules.rules = {
 	{
 		rule = { },
 		properties = {
-			border_width = 4, -- beautiful.border_width,
+			border_width = beautiful.border_width,
 			border_color = beautiful.border_normal,
 			focus = awful.client.focus.filter,
 			raise = true,
@@ -702,11 +703,6 @@ client.connect_signal("unfocus",
 -- 	end
 -- end
 -- client.connect_signal("focus", move_mouse_onto_focused_client)
-
--- Border
-beautiful.useless_gap = 10
-beautiful.border_focus = colors.pink
-beautiful.border_normal = colors.black
 
 -- Autostart
 awful.spawn.with_shell("~/.config/awesome/autostart")
