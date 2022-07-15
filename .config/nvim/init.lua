@@ -32,6 +32,7 @@ require('packer').startup(function()
 	use 'jbyuki/nabla.nvim'
 	use 'dhruvasagar/vim-table-mode'
 	use 'numToStr/Comment.nvim'
+	use 'rcarriga/nvim-notify'
 end)
 
 -- Colors
@@ -842,3 +843,8 @@ highlight! CmpItemKindFile guifg=#dd91f3
 
 -- Comment
 require('Comment').setup()
+
+-- Nvim-Notify
+require("notify").setup({
+	background_colour = '#262727'
+})
