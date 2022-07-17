@@ -28,7 +28,7 @@
 - Out of sync kernel and driver updates can cause system to break
 - Remove gnu-free-fonts, install ttf-symbola (aur) (for alacritty braille to render as dots on graphs)
 - Install ttf-liberation for steam
-- If you need to edit an AUR PKGBUILD, use 'paru --fm nvim -S (pakage name)'
+- If you need to edit an AUR PKGBUILD, use `paru --fm nvim -S (pakage name)`
 - `7z x *.zip -o\*` to extract zip into folder with same name
 - append `/mini` to the "Exec" line in `/etc/xdg/autostart/xppentablet.desktop` to start xp-pen-tablet minimized
 - add `x-gvfs-show` to partition option in `/etc/fstab` to have it appear in thunar
