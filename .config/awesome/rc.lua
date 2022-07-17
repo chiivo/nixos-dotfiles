@@ -50,6 +50,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 naughty.config.padding = 20
 naughty.config.spacing = 10
 naughty.config.icon_dirs = {"/home/chivo/.icons/Flatery-Pink-Dark/"}
+naughty.config.defaults.margin = 10
 naughty.config.defaults.border_width = 4
 naughty.config.defaults.timeout = 10
 naughty.config.defaults.screen = 1
@@ -85,30 +86,27 @@ awful.layout.layouts = {
 
 -- Right Click Menu
 -- Create a launcher widget and a main menu
-myawesomemenu = {
-	{ "hotkeys",
+powermenu = {
+	{ "Power Off",
 		function()
-			hotkeys_popup.show_help(nil, awful.screen.focused())
+			awful.spawn.with_shell("poweroff")
 		end
 	},
-	{ "manual", terminal .. " -e man awesome" },
-	{ "edit config", editor_cmd .. " " .. awesome.conffile },
-	{ "restart", awesome.restart },
-	{ "quit",
+	{ "Reboot",
+		function()
+			awful.spawn.with_shell("reboot")
+		end
+	},
+	{ "Logout",
 		function()
 			awesome.quit()
 		end
-	},
+	}
 }
 mymainmenu = awful.menu({
 	items = {
-		{ "awesome", myawesomemenu, beautiful.awesome_icon },
-		{ "open terminal", terminal },
-		{ "shutdown",
-			function()
-				awful.spawn.with_shell("poweroff")
-			end
-		}
+		{ "Open Terminal", terminal },
+		{ "Power Menu", powermenu }
 	}
 })
 
