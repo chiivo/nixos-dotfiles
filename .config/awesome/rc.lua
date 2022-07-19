@@ -129,21 +129,25 @@ powerbutton = wibox.widget {
 			valign ="center",
 			align = "center"
 		}
-	}
+	},
+	layout = wibox.layout.fixed.vertical,
 }
-powerbutton:buttons(gears.table.join({
-	awful.button({ }, 1, function ()
-		awful.spawn.with_shell("poweroff")
-	end)
-}))
+powerbutton:buttons(gears.table.join(
+	awful.button({ }, 1,
+		function ()
+			awful.spawn.with_shell("poweroff")
+		end
+	)
+))
 -- Tags Widget
 tags = wibox.widget {
 	{
 		widget = wibox.widget.textbox,
-		markup = "t",
+		markup = "a",
 		valign = "center",
 		align = "center"
-	}
+	},
+	layout = wibox.layout.fixed.vertical,
 }
 -- Clock Widget
 clock = wibox.widget {
@@ -155,7 +159,7 @@ clock = wibox.widget {
 			format = "%H",
 			valign = "center",
 			align = "center"
-		},
+		}
 	},
 	{
 		widget = wibox.container.margin,
@@ -165,7 +169,7 @@ clock = wibox.widget {
 			format = "%M",
 			valign = "center",
 			align = "center"
-		},
+		}
 	},
 	layout = wibox.layout.fixed.vertical,
 }
@@ -173,7 +177,7 @@ clock = wibox.widget {
 -- Tags for each screen
 awful.screen.connect_for_each_screen(
 	function(s)
-		awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
+		awful.tag({ "1", "2", "3" }, s, awful.layout.layouts[1])
 	end
 )
 
@@ -191,24 +195,15 @@ bar:setup {
 	layout = wibox.layout.align.vertical,
 	{-- Left widgets
 		layout = wibox.layout.fixed.vertical,
-		{
-			layout = wibox.layout.fixed.vertical,
-			powerbutton,
-		}
+		powerbutton
 	},
 	{-- Middle widgets
-		layout = wibox.layout.fixed.vertical,
-		{
-			layout = wibox.layout.fixed.vertical,
-			tags,
-		}
+		layout = wibox.container.place,
+		tags,
 	},
 	{ -- Right widgets
 		layout = wibox.layout.fixed.vertical,
-		{
-			layout = wibox.layout.fixed.vertical,
-			clock,
-		}
+		clock
 	}
 }
 
