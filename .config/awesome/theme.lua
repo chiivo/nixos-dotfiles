@@ -47,16 +47,20 @@ theme.border_marked = colors.red
 -- mouse_finder_[color|timeout|animate_timeout|radius|factor]
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
--- Generate taglist squares:
+theme.taglist_bg_focus = colors.black
+theme.taglist_fg_focus = colors.pink
+theme.taglist_fg_occupied = colors.white
+theme.taglist_bg_occupied = colors.black
+theme.taglist_fg_empty = colors.gray
+theme.taglist_bg_empty = colors.black
+--[[ -- Generate taglist squares:
 local taglist_square_size = 10
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-	taglist_square_size, colors_black
+	taglist_square_size, colors.black
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 	taglist_square_size, colors.pink
-)
+) ]]
 
 -- Variables set for theming notifications:
 -- notification_font

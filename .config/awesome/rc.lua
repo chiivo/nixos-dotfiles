@@ -142,8 +142,21 @@ powerbutton:buttons(gears.table.join(
 -- Tags Widget
 tags = wibox.widget {
 	{
-		widget = wibox.widget.textbox,
-		markup = "a",
+		widget = awful.widget.taglist ({
+			screen = 1,
+			filter  = awful.widget.taglist.filter.all,
+			layout = {
+				spacing = 10,
+				layout  = wibox.layout.fixed.vertical
+			}
+		})
+	},
+	layout = wibox.layout.fixed.vertical,
+}
+-- Volume Widget
+volume = wibox.widget {
+	{
+		widget = awful.widget.watch('bash -c "~/scripts/volume -s"', .1),
 		valign = "center",
 		align = "center"
 	},
@@ -203,6 +216,7 @@ bar:setup {
 	},
 	{ -- Right widgets
 		layout = wibox.layout.fixed.vertical,
+		volume,
 		clock
 	}
 }
