@@ -140,6 +140,22 @@ powerbutton:buttons(gears.table.join(
 	)
 ))
 -- Tags Widget
+local taglist_buttons = gears.table.join(
+	awful.button({ }, 1, function(t) t:view_only() end),
+	awful.button({ modkey }, 1, function(t)
+		if client.focus then
+			client.focus:move_to_tag(t)
+		end
+	end),
+	awful.button({ }, 3, awful.tag.viewtoggle),
+	awful.button({ modkey }, 3, function(t)
+		if client.focus then
+			client.focus:toggle_tag(t)
+		end
+	end),
+	awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
+	awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
+)
 tags = wibox.widget {
 	{
 		widget = awful.widget.taglist ({
@@ -148,7 +164,8 @@ tags = wibox.widget {
 			layout = {
 				spacing = 10,
 				layout  = wibox.layout.fixed.vertical
-			}
+			},
+			buttons = taglist_buttons
 		})
 	},
 	layout = wibox.layout.fixed.vertical,
@@ -162,6 +179,13 @@ volume = wibox.widget {
 	},
 	layout = wibox.layout.fixed.vertical,
 }
+volume:buttons(gears.table.join(
+	awful.button({ }, 1,
+		function ()
+			awful.spawn.with_shell("~/scripts/volume -m")
+		end
+	)
+))
 -- Clock Widget
 clock = wibox.widget {
 	{
@@ -347,32 +371,32 @@ globalkeys = gears.table.join(
 	-- Screenshot
 	awful.key({ }, "Print",
 		function()
-			awful.spawn.with_shell("scripts/screenshot -a")
+			awful.spawn.with_shell("~/scripts/screenshot -a")
 		end,
 		{description = "Copy Screenshot", group = "Screenshot"}
 	),
 	awful.key({ modkey }, "Print",
 		function()
-			awful.spawn.with_shell("scripts/screenshot -f")
+			awful.spawn.with_shell("~/scripts/screenshot -f")
 		end,
 		{description = "Save Clipboard", group = "Screenshot"}
 	),
 	-- Volume
 	awful.key({ }, "XF86AudioRaiseVolume",
 		function()
-			awful.spawn.with_shell("scripts/volume -u")
+			awful.spawn.with_shell("~/scripts/volume -u")
 		end,
 		{description = "Volume Up", group = "Volume"}
 	),
 	awful.key({ }, "XF86AudioLowerVolume",
 		function()
-			awful.spawn.with_shell("scripts/volume -d")
+			awful.spawn.with_shell("~/scripts/volume -d")
 		end,
 		{description = "Volume Down", group = "Volume"}
 	),
 	awful.key({ }, "XF86AudioMute",
 		function()
-			awful.spawn.with_shell("scripts/volume -m")
+			awful.spawn.with_shell("~/scripts/volume -m")
 		end,
 		{description = "Mute Volume", group = "Volume"}
 	),
@@ -570,8 +594,8 @@ awful.rules.rules = {
 			keys = clientkeys,
 			buttons = clientbuttons,
 			screen = awful.screen.preferred,
-			placement = awful.placement.centered+awful.placement.no_overlap+awful.placement.no_offscreen
-			-- placement = awful.placement.no_overlap+awful.placement.no_offscreen
+			placement = awful.placement.centered+awful.placement.no_overlap+awful.placement.no_offscreen,
+			size_hints_honor = false
 		}
 	},
 	{ 
