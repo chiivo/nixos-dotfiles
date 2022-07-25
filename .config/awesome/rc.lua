@@ -160,10 +160,28 @@ tags = wibox.widget {
 	{
 		widget = awful.widget.taglist ({
 			screen = 1,
-			filter  = awful.widget.taglist.filter.all,
+			filter = awful.widget.taglist.filter.all,
+			style = {
+				shape = gears.shape.circle,
+			},
 			layout = {
 				spacing = 10,
 				layout  = wibox.layout.fixed.vertical
+			},
+			widget_template = {
+				{
+					{
+						{
+							id = "text_role",
+							widget = wibox.widget.textbox,
+						},
+						margins = 6,
+						widget = wibox.container.margin
+					},
+					widget = wibox.container.background
+				},
+				id = "background_role",
+				widget = wibox.container.background
 			},
 			buttons = taglist_buttons
 		})
