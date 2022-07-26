@@ -204,6 +204,16 @@ volume:buttons(gears.table.join(
 		function ()
 			awful.spawn.with_shell("~/scripts/volume -m")
 		end
+	),
+	awful.button({ }, 2,
+		function ()
+			awful.spawn.with_shell("amixer -D pulse sset Master 50%")
+		end
+	),
+	awful.button({ }, 3,
+		function ()
+			awful.spawn.with_shell("pavucontrol")
+		end
 	)
 ))
 -- Clock Widget
