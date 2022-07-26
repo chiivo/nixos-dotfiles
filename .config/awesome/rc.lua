@@ -191,7 +191,9 @@ tags = wibox.widget {
 -- Volume Widget
 volume = wibox.widget {
 	{
-		widget = awful.widget.watch('bash -c "~/scripts/volume -s"', .1),
+		widget = awful.widget.watch('bash -c "~/scripts/volume -s"', .1, function(widget, stdout)
+			widget:set_markup(stdout:gsub("\n", ""))
+		end),
 		valign = "center",
 		align = "center"
 	},
