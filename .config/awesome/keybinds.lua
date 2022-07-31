@@ -1,8 +1,14 @@
 local gears = require("gears")
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
+require("awful.hotkeys_popup.keys")
 
 modkey = "Mod4"
+
+-- This is used later as the default terminal and editor to run.
+terminal = "alacritty"
+editor = os.getenv("nvim") or "nano"
+editor_cmd = terminal .. " -e " .. editor
 
 -- Global Keybindings
 globalkeys = gears.table.join(

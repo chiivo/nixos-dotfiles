@@ -3,6 +3,7 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
+local naughty = require("naughty")
 
 local colors = {
 	darkblack = '#141515',
@@ -74,6 +75,15 @@ theme.notification_border_color = colors.pink
 theme.notification_width = 350
 theme.notification_max_height = 300
 theme.notification_icon_size = 48
+
+-- Notification Config
+naughty.config.padding = 20
+naughty.config.spacing = 10
+naughty.config.icon_dirs = {"/home/chivo/.icons/Flatery-Pink-Dark/"}
+naughty.config.defaults.margin = 10
+naughty.config.defaults.border_width = 4
+naughty.config.defaults.timeout = 10
+naughty.config.defaults.screen = 1
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]

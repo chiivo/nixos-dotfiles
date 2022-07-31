@@ -1,7 +1,9 @@
 local gears = require("gears")
 local awful = require("awful")
+local beautiful = require("beautiful")
 
 modkey = "Mod4"
+terminal = "alacritty"
 
 -- Right Click Menu
 powermenu = {
@@ -56,3 +58,29 @@ clientbuttons = gears.table.join(
 		end
 	)
 )
+
+-- Enable sloppy focus, so that focus follows mouse.
+client.connect_signal("mouse::enter",
+	function(c)
+		c:emit_signal("request::activate", "mouse_enter", {raise = false})
+	end
+)
+client.connect_signal("focus",
+	function(c)
+		c.border_color = beautiful.border_focus
+	end
+)
+client.connect_signal("unfocus",
+	function(c)
+		c.border_color = beautiful.border_normal
+	end
+)
+-- local function move_mouse_onto_focused_client(c)
+-- 	if mouse.object_under_pointer() ~= c then
+-- 		local geometry = c:geometry()
+-- 		local x = geometry.x + geometry.width/2
+-- 		local y = geometry.y + geometry.height/2
+-- 		mouse.coords({x = x, y = y}, true)
+-- 	end
+-- end
+-- client.connect_signal("focus", move_mouse_onto_focused_client)
