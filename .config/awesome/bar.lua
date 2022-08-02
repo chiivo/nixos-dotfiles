@@ -51,27 +51,9 @@ tags = wibox.widget {
 		widget = awful.widget.taglist ({
 			screen = 1,
 			filter = awful.widget.taglist.filter.all,
-			style = {
-				shape = gears.shape.circle,
-			},
 			layout = {
 				spacing = 10,
 				layout  = wibox.layout.fixed.vertical
-			},
-			widget_template = {
-				{
-					{
-						{
-							id = "text_role",
-							widget = wibox.widget.textbox,
-						},
-						margins = 6,
-						widget = wibox.container.margin
-					},
-					widget = wibox.container.background
-				},
-				id = "background_role",
-				widget = wibox.container.background
 			},
 			buttons = taglist_buttons
 		})
@@ -79,8 +61,36 @@ tags = wibox.widget {
 	layout = wibox.layout.fixed.vertical,
 }
 
+tags2 = awful.popup ({
+	widget = {
+		{
+			widget = awful.widget.taglist ({
+				screen = 2,
+				filter = awful.widget.taglist.filter.all,
+				layout = {
+					spacing = 10,
+					layout  = wibox.layout.fixed.vertical
+				},
+				buttons = taglist_buttons
+			})
+		},
+		margins = 5,
+		widget = wibox.container.margin,
+	},
+	ontop = true,
+	x = 70,
+	y = 460,
+	height = 30,
+	visible = false,
+	layout = wibox.layout.fixed.vertical
+})
+
 tags:connect_signal('mouse::enter', function()
-	awful.spawn.with_shell("notify-send 'make screen 2 taglist'")
+	tags2.visible = true
+end)
+
+tags2:connect_signal('mouse::leave', function()
+	tags2.visible = false
 end)
 
 -- Volume Widget
