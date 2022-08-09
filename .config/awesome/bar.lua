@@ -1,6 +1,7 @@
 local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
+require("theme")
 
 modkey = "Mod4"
 
@@ -147,6 +148,101 @@ clock = wibox.widget {
 	},
 	layout = wibox.layout.fixed.vertical,
 }
+
+local styles = {}
+local function rounded_shape(size, partial)
+	if partial then
+		return function(cr, width, height)
+			gears.shape.partially_rounded_rect(cr, width, height,
+				false, true, false, true, 5)
+		end
+	else
+		return function(cr, width, height)
+			gears.shape.rounded_rect(cr, width, height, size)
+		end
+	end
+end
+styles.month = {
+	padding = 0,
+	bg_color = colors.black,
+	shape = rounded_shape(10)
+}
+styles.normal = { shape = rounded_shape(10) }
+styles.focus = {
+	fg_color = colors.black,
+	bg_color = colors.pink,
+	markup = function(t) return '<b>' .. t .. '</b>' end,
+	shape = rounded_shape(10)
+}
+styles.header = {
+	fg_color = colors.pink,
+	markup = function(t) return '<b>' .. t .. '</b>' end,
+	shape = rounded_shape(10)
+}
+styles.weekday = {
+	fg_color = colors.blue,
+	markup = function(t) return '<b>' .. t .. '</b>' end,
+	shape = rounded_shape(10)
+}
+local function decorate_cell(widget, flag, date)
+	if flag=='monthheader' and not styles.monthheader then
+		flag = 'header'
+	end
+	local props = styles[flag] or {}
+	if props.markup and widget.get_text and widget.set_markup then
+		widget:set_markup(props.markup(widget:get_text()))
+	end
+	-- Change bg color for weekends
+	local d = {year=date.year, month=(date.month or 1), day=(date.day or 1)}
+	local weekday = tonumber(os.date('%w', os.time(d)))
+	local default_bg = (weekday==0 or weekday==6) and colors.darkblack or colors.black
+	local ret = wibox.widget {
+		{
+			widget,
+			margins = (props.padding or 4) + (props.border_width or 0),
+			widget = wibox.container.margin
+		},
+		shape = props.shape,
+		shape_border_color = props.border_color or colors.pink,
+		shape_border_width = props.border_width or 0,
+		fg = props.fg_color or colors.pink,
+		bg = props.bg_color or default_bg,
+		widget = wibox.container.background
+	}
+	return ret
+end
+
+calendar = wibox.widget {
+	date = os.date('*t'),
+	fn_embed = decorate_cell,
+  font = 'Monospace 14',
+	start_sunday = true, 
+  widget = wibox.widget.calendar.month
+}
+
+calendarpopup = awful.popup ({
+	widget = {
+		{
+			calendar,
+			layout = wibox.layout.fixed.vertical,
+		},
+		margins = 10,
+		widget = wibox.container.margin
+	},
+	border_width = 0,
+	ontop = true,
+	x = 70,
+	y = 757,
+	visible = false
+})
+
+clock:connect_signal('mouse::enter', function()
+	calendarpopup.visible = true
+end)
+
+clock:connect_signal('mouse::leave', function()
+	calendarpopup.visible = false
+end)
 
 -- Create the wibox
 bar = awful.wibar({
