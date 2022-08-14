@@ -12,14 +12,21 @@ awful.widget.watch([[sh -c "~/scripts/volume -v"]], .1, function(_, stdout)
 	update_prog(volume)
 end)
 
+timeout = gears.timer {
+	timeout = 5,
+	autostart = true,
+	callback = function()
+		volumepopup.visible = false
+	end
+}
+
 function vis_toggle()
   volumepopup.visible = true
-  local hide = timer({ timeout = 5 })
-  hide:connect_signal("timeout", function ()
-		volumepopup.visible = false
-		hide:stop()
-	end)
-	hide:start()
+	if timeout.started then
+		timeout:again()
+	else
+		timeout:start()
+	end
 end
 
 volume_bar = wibox.widget {

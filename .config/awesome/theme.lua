@@ -43,6 +43,8 @@ theme.border_marked = colors.red
 
 theme.taglist_bg_focus = colors.black
 theme.taglist_fg_focus = colors.pink
+theme.taglist_bg_urgent = colors.black
+theme.taglist_fg_urgent = colors.red
 theme.taglist_bg_occupied = colors.black
 theme.taglist_fg_occupied = colors.white
 theme.taglist_bg_empty = colors.black
