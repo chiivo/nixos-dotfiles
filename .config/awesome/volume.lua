@@ -13,7 +13,7 @@ awful.widget.watch([[sh -c "~/scripts/volume -v"]], .1, function(_, stdout)
 end)
 
 timeout = gears.timer {
-	timeout = 5,
+	timeout = 2,
 	autostart = true,
 	callback = function()
 		volumepopup.visible = false
