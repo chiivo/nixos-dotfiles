@@ -7,7 +7,7 @@ run() {
 }
 
 #### Wallpaper ###
-run ~/scripts/wallpapersetter
+# run ~/scripts/wallpapersetter
 
 #### Compositor ###
 run picom --experimental-backends
