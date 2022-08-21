@@ -122,7 +122,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 )
 
 -- App icon theme
-theme.icon_theme = {"/home/chivo/.icons/Flatery-Pink-Dark/"}
+theme.icon_theme = "/home/chivo/.icons/Flatery-Pink-Dark/"
 
 -- Volume Popup
 theme.progressbar_fg = colors.pink

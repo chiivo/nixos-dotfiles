@@ -3,12 +3,13 @@ local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 require("volume")
+require("scratchpads")
 
 modkey = "Mod4"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("nvim") or "nano"
+editor = "nvim" or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Global Keybindings
@@ -161,14 +162,14 @@ globalkeys = gears.table.join(
 	-- Bottom
 	awful.key({ modkey, "Shift" }, "Escape",
 		function()
-			awful.spawn(terminal .. " --class 'Alacritty,Bottom' -e btm")
+			btm_scratch:toggle()
 		end,
 		{description = "Spawn Bottom", group = "launcher"}
 	),
 	-- Scratchpad
 	awful.key({ modkey, }, "Return",
 		function()
-			awful.spawn(terminal .. " --class 'Alacritty,Scratchpad'")
+			term_scratch:toggle()
 		end,
 		{description = "Spawn Scratchpad", group = "launcher"}
 	)
