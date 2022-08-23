@@ -47,23 +47,36 @@ local taglist_buttons = gears.table.join(
 	awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
-tags = wibox.widget {
+tagsone = wibox.widget {
 	{
-		widget = awful.widget.taglist ({
-			screen = 1,
-			filter = awful.widget.taglist.filter.all,
-			layout = {
-				spacing = 10,
-				layout  = wibox.layout.fixed.vertical
-			},
-			buttons = taglist_buttons
-		})
+		widget = wibox.container.margin,
+		left = 5,
+		{
+			widget = awful.widget.taglist ({
+				screen = 1,
+				filter = awful.widget.taglist.filter.all,
+				layout = {
+					spacing = 10,
+					layout  = wibox.layout.fixed.vertical
+				},
+				buttons = taglist_buttons
+			})
+		},
 	},
 	layout = wibox.layout.fixed.vertical,
 }
 
-tags2 = awful.popup ({
-	widget = {
+separator = wibox.widget {
+	widget = wibox.widget.separator,
+	orientation = "horizontal",
+	thickness = 2,
+	span_ratio = .5,
+}
+
+tagstwo = wibox.widget {
+	{
+		widget = wibox.container.margin,
+		left = 5,
 		{
 			widget = awful.widget.taglist ({
 				screen = 2,
@@ -75,24 +88,20 @@ tags2 = awful.popup ({
 				buttons = taglist_buttons
 			})
 		},
-		margins = 5,
-		widget = wibox.container.margin,
 	},
-	ontop = true,
-	x = 70,
-	y = 460,
-	height = 30,
-	visible = false,
-	layout = wibox.layout.fixed.vertical
-})
+	layout = wibox.layout.fixed.vertical,
+}
 
-tags:connect_signal('mouse::enter', function()
-	tags2.visible = true
-end)
-
-tags2:connect_signal('mouse::leave', function()
-	tags2.visible = false
-end)
+middle = wibox.widget {
+	{
+		tagsone,
+		separator,
+		tagstwo,
+		layout = wibox.layout.align.vertical
+	},
+	forced_height = 230,
+	layout = wibox.container.place
+}
 
 -- Volume Widget
 volume = wibox.widget {
@@ -262,7 +271,7 @@ bar:setup {
 	},
 	{-- Middle widgets
 		layout = wibox.container.place,
-		tags,
+		middle
 	},
 	{ -- Right widgets
 		layout = wibox.layout.fixed.vertical,
