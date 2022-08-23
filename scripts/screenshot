@@ -9,14 +9,14 @@ areashot() {
 	maim -usb 2 /tmp/screenshot.png || exit 1;
 	sleep .1;
 	xclip -selection clipboard < /tmp/screenshot.png -t image/png
-	dunstify -i /tmp/screenshot.png 'Screenshot' 'Selection Copied'
+	notify-send -i /tmp/screenshot.png 'Screenshot' 'Selection Copied'
 	mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
 }
 
 fullshot() {
 	maim -usb 2 /mnt/HDD/Images/Screenshots/screenshot.png || exit 1;
 	sleep .1;
-	dunstify -i /mnt/HDD/Images/Screenshots/screenshot.png 'Screenshot' 'Selection Saved'
+	notify-send -i /mnt/HDD/Images/Screenshots/screenshot.png 'Screenshot' 'Selection Saved'
 	mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
 }
 

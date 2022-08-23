@@ -16,13 +16,13 @@ getvolsym() {
 	checkmute=$(amixer -D pulse sget Master | grep 'Front Left:' | awk -F'[][]' '{ print $4 }')
 	
 	if [ $checkmute != on ]; then
-		echo ''
+		echo 'ﱝ'
 	elif [ $(getvol) -lt 30 ]; then
 		echo ''
 	elif [ $(getvol) -lt 40 ]; then
 		echo ''
 	elif [ $(getvol) -lt 50 ]; then
-		echo ''
+		echo '墳'
 	elif [ $(getvol) -ge 50 ]; then
 		echo ''
 	fi
@@ -45,19 +45,19 @@ volumebar () {
 
 volup () {
 	amixer -D pulse sset Master 5%+
-	dunstify -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
+	#notify-send -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
 	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 voldown () {
 	amixer -D pulse sset Master 5%-
-	dunstify -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
+	#notify-send -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
 	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 volmute () {
 	amixer -D pulse sset Master toggle
-	dunstify -a Volume "$(getvolsym) Volume" "$(getvolsym)" -i none
+	#notify-send -a Volume "$(getvolsym) Volume" "$(getvolsym)" -i none
 	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
