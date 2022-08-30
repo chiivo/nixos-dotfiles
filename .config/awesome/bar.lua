@@ -47,6 +47,46 @@ local taglist_buttons = gears.table.join(
 	awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
+--[[ tagsone = awful.widget.taglist({
+	screen = 1,
+	filter = awful.widget.taglist.filter.all,
+	layout = { layout = wibox.layout.fixed.vertical },
+	widget_template = {
+		widget = wibox.container.margin,
+		forced_height = 40,
+		forced_width = 10,
+		create_callback = function(self, c3, _)
+			local indicator = wibox.widget({
+				widget = wibox.container.place,
+				valign = "center",
+				{
+					widget = wibox.container.background,
+					forced_width = 10,
+					shape = gears.shape.rounded_bar,
+				},
+			})
+			self:set_widget(indicator)
+			if c3.selected then
+				self.widget.children[1].bg = theme.taglist_fg_focus
+			elseif #c3:clients() == 0 then
+				self.widget.children[1].bg = theme.taglist_fg_empty
+			else
+				self.widget.children[1].bg = theme.taglist_fg_occupied
+			end
+		end,
+		update_callback = function(self, c3, _)
+			if c3.selected then
+				self.widget.children[1].bg = theme.taglist_fg_focus
+			elseif #c3:clients() == 0 then
+				self.widget.children[1].bg = theme.taglist_fg_empty
+			else
+				self.widget.children[1].bg = theme.taglist_fg_occupied
+			end
+		end,
+	},
+	buttons = taglist_buttons,
+}) ]]
+
 tagsone = wibox.widget {
 	{
 		widget = wibox.container.margin,
@@ -56,7 +96,7 @@ tagsone = wibox.widget {
 				screen = 1,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
-					spacing = 10,
+					spacing = 20,
 					layout  = wibox.layout.fixed.vertical
 				},
 				buttons = taglist_buttons
@@ -82,7 +122,7 @@ tagstwo = wibox.widget {
 				screen = 2,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
-					spacing = 10,
+					spacing = 20,
 					layout  = wibox.layout.fixed.vertical
 				},
 				buttons = taglist_buttons
@@ -99,7 +139,7 @@ middle = wibox.widget {
 		tagstwo,
 		layout = wibox.layout.align.vertical
 	},
-	forced_height = 230,
+	forced_height = 300,
 	layout = wibox.container.place
 }
 
