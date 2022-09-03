@@ -28,7 +28,10 @@ require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
-	use 'nvim-neorg/neorg'
+	use {
+		'nvim-neorg/neorg',
+		tag = '0.0.12'
+	}
 	use 'jbyuki/nabla.nvim'
 	use 'dhruvasagar/vim-table-mode'
 	use 'numToStr/Comment.nvim'
@@ -72,6 +75,9 @@ syntax on
 set laststatus=3
 set linebreak
 ]])
+
+-- Run
+require('run').setup()
 
 -- Colorizer
 require'colorizer'.setup({
@@ -130,19 +136,19 @@ highlight DashboardFooter guifg = '#dd91f3'
 require('bufferline').setup {
 	highlights = {
 		fill = {
-			guibg = colors.darkblack
+			bg = colors.darkblack
 		},
 		separator_selected = {
-			guifg = colors.darkblack,
-			guibg = colors.black
+			fg = colors.darkblack,
+			bg = colors.black
 		},
 		separator_visible = {
-			guifg = colors.darkblack,
-			guibg = colors.black
+			fg = colors.darkblack,
+			bg = colors.black
 		},
 		separator = {
-			guifg = colors.darkblack,
-			guibg = colors.black
+			fg = colors.darkblack,
+			bg = colors.black
 		},
 	},
 	options = {
@@ -671,25 +677,26 @@ require'nvim-treesitter.configs'.setup {
 require('neorg').setup {
 	load = {
 		["core.defaults"] = {},
-		["core.norg.completion"] = {
-			config = {
-				engine = 'nvim-cmp'
-			}
-		},
-		["core.presenter"] = {
-			config = {
-				zen_mode = 'truezen'
-			}
-		},
-		["core.norg.qol.toc"] = {},
-		["core.export"] = {},
-		["core.norg.manoeuvre"] = {},
 		["core.norg.concealer"] = {
 			config = {
 				icon_preset = 'varied'
 			}
 		},
 		["core.export.markdown"] = {},
+		["core.norg.qol.toc"] = {},
+		["core.norg.journal"] = {},
+		["core.norg.manoeuvre"] = {},
+		["core.presenter"] = {
+			config = {
+				zen_mode = 'truezen'
+			}
+		},
+		["core.norg.completion"] = {
+			config = {
+				engine = 'nvim-cmp'
+			}
+		},
+		["core.export"] = {},
 		["core.integrations.nvim-cmp"] = {},
 	}
 }
@@ -739,7 +746,8 @@ wk.register({
 		d = {"<cmd>BufferLineSortByDirectory<cr>", "Sort Buffers By Directory"},
 		a = {"<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<cr>", "Sort Buffer By Alphabet"}
 	},
-	p = {"<cmd>lua require('nabla').popup({border = 'rounded'})<cr>", "Nabla Popup"}
+	p = {"<cmd>lua require('nabla').popup({border = 'rounded'})<cr>", "Nabla Popup"},
+	e = {"<cmd>Run<cr>", "Run Script"}
 }, {prefix = "<leader>"})
 
 -- LuaSnip
