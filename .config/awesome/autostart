@@ -6,6 +6,9 @@ run() {
 	fi
 }
 
+### Mouse ###
+run solaar --window=hide
+
 #### Wallpaper ###
 # run ~/scripts/wallpapersetter
 

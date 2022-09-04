@@ -1,6 +1,7 @@
 local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
+local animation = require("animation")
 require("theme")
 
 modkey = "Mod4"
@@ -47,45 +48,71 @@ local taglist_buttons = gears.table.join(
 	awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
---[[ tagsone = awful.widget.taglist({
-	screen = 1,
-	filter = awful.widget.taglist.filter.all,
-	layout = { layout = wibox.layout.fixed.vertical },
-	widget_template = {
+--[[ tagsone = wibox.widget {
+	{
 		widget = wibox.container.margin,
-		forced_height = 40,
-		forced_width = 10,
-		create_callback = function(self, c3, _)
-			local indicator = wibox.widget({
-				widget = wibox.container.place,
-				valign = "center",
-				{
-					widget = wibox.container.background,
-					forced_width = 10,
-					shape = gears.shape.rounded_bar,
+		left = 5,
+		{
+			widget = awful.widget.taglist({
+				screen = 1,
+				filter = awful.widget.taglist.filter.all,
+				layout = {
+					layout = wibox.layout.fixed.vertical,
+					spacing = 20,
 				},
+				widget_template = {
+					widget = wibox.container.margin,
+					forced_height = 40,
+					forced_width = 10,
+					create_callback = function(self, c3, _)
+						local indicator = wibox.widget({
+							widget = wibox.container.place,
+							valign = "center",
+							{
+								widget = wibox.container.background,
+								forced_width = 5,
+								shape = gears.shape.rounded_bar,
+							},
+						})
+						self.indicator_animation = animation:new({
+							duration = 0.125,
+							easing = animation.easing.linear,
+							update = function(self, pos)
+								indicator.children[1].forced_height = pos
+							end,
+						})
+						self:set_widget(indicator)
+						if c3.selected then
+							self.widget.children[1].bg = beautiful.taglist_fg_focus,
+							self.indicator_animation:set(20)
+						elseif #c3:clients() == 0 then
+							self.widget.children[1].bg = beautiful.taglist_fg_empty,
+							self.indicator_animation:set(10)
+						else
+							self.widget.children[1].bg = beautiful.taglist_fg_occupied,
+							self.indicator_animation:set(10)
+						end
+					end,
+					update_callback = function(self, c3, _)
+						if c3.selected then
+							self.widget.children[1].bg = beautiful.taglist_fg_focus,
+							self.indicator_animation:set(20)
+						elseif #c3:clients() == 0 then
+							self.widget.children[1].bg = beautiful.taglist_fg_empty,
+							self.indicator_animation:set(10)
+						else
+							self.widget.children[1].bg = beautiful.taglist_fg_occupied,
+							self.indicator_animation:set(10)
+						end
+					end,
+				},
+				buttons = taglist_buttons
 			})
-			self:set_widget(indicator)
-			if c3.selected then
-				self.widget.children[1].bg = theme.taglist_fg_focus
-			elseif #c3:clients() == 0 then
-				self.widget.children[1].bg = theme.taglist_fg_empty
-			else
-				self.widget.children[1].bg = theme.taglist_fg_occupied
-			end
-		end,
-		update_callback = function(self, c3, _)
-			if c3.selected then
-				self.widget.children[1].bg = theme.taglist_fg_focus
-			elseif #c3:clients() == 0 then
-				self.widget.children[1].bg = theme.taglist_fg_empty
-			else
-				self.widget.children[1].bg = theme.taglist_fg_occupied
-			end
-		end,
+		},
 	},
-	buttons = taglist_buttons,
-}) ]]
+	layout = wibox.layout.fixed.vertical,
+} ]]
+
 
 tagsone = wibox.widget {
 	{
