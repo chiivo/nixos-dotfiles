@@ -320,29 +320,35 @@ clock:connect_signal('mouse::leave', function()
 	calendarpopup.visible = false
 end)
 
--- Create the wibox
-bar = awful.wibar({
-	position = "left",
-	height = 1040,
-	width = 30,
-})
-awful.placement.left(bar, { margins = 20 })
-bar:struts{ left = 50 }
-
--- Add widgets to the wibox
-bar:setup {
-	layout = wibox.layout.align.vertical,
-	{-- Left widgets
-		layout = wibox.layout.fixed.vertical,
-		powerbutton
-	},
-	{-- Middle widgets
-		layout = wibox.container.place,
-		middle
-	},
-	{ -- Right widgets
-		layout = wibox.layout.fixed.vertical,
-		volume,
-		clock
+-- Create bar
+bar = awful.popup({
+	screen = 1,
+	type = "dock",
+	minimum_height = 600,
+	maximum_height = 600,
+	minimum_width = 30,
+	maximum_width = 30,
+	placement = function()
+		awful.placement.left(bar, { margins = 20})
+	end,
+	widget = {
+		{
+			layout = wibox.layout.align.vertical,
+			{-- Left widgets
+				layout = wibox.layout.fixed.vertical,
+				powerbutton
+			},
+			{-- Middle widgets
+				layout = wibox.container.place,
+				middle
+			},
+			{ -- Right widgets
+				layout = wibox.layout.fixed.vertical,
+				volume,
+				clock
+			}
+		},
+		widget = wibox.container.background
 	}
-}
+})
+bar:struts{ left = 50 }

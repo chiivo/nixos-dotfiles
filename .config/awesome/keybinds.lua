@@ -2,6 +2,7 @@ local gears = require("gears")
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
+require("bar")
 require("volume")
 require("scratchpads")
 
@@ -172,6 +173,17 @@ globalkeys = gears.table.join(
 			term_scratch:toggle()
 		end,
 		{description = "Spawn Scratchpad", group = "launcher"}
+	),
+	-- Toggle Bar
+	awful.key({ modkey, }, "b",
+		function()
+			if bar.visible == true then
+				bar.visible = false
+			else
+				bar.visible = true
+			end 
+		end,
+		{description = "Toggle Bar", group = "screen"}
 	)
 )
 -- Client Keybindings
