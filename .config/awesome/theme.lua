@@ -130,4 +130,9 @@ theme.progressbar_bg = colors.gray
 theme.progressbar_shape = gears.shape.rounded_rect
 theme.progressbar_bar_shape = gears.shape.rounded_rect
 
+-- Window Swallowing
+theme.parent_filter_list = { "vivaldi-stable" } -- class names list of parents that should not be swallowed
+-- theme.child_filter_list = { "Dragon" } -- class names list that should not swallow their parents
+theme.swallowing_filter = true -- whether the filters above should be active
+
 return theme

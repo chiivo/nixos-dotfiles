@@ -1,4 +1,5 @@
 local awful = require("awful")
+local bling = require("bling")
 
 awful.layout.layouts = {
 	-- awful.layout.suit.floating,
@@ -17,6 +18,7 @@ awful.layout.layouts = {
 	-- awful.layout.suit.corner.ne,
 	-- awful.layout.suit.corner.sw,
 	-- awful.layout.suit.corner.se,
+	-- bling.layout.deck
 }
 
 -- Signal function to execute when a new client appears.

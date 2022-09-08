@@ -15,6 +15,7 @@ require("bar")
 require("errors")
 require("volume")
 require("wallpaper")
+require("swallow")
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
