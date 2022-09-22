@@ -850,5 +850,8 @@ require('Comment').setup()
 
 -- Nvim-Notify
 require("notify").setup({
-	background_colour = '#262727'
+	background_colour = '#262727',
+	fps = 144,
+	render = "minimal",
+	stages = "fade"
 })
