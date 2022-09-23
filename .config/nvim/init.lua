@@ -852,6 +852,6 @@ require('Comment').setup()
 require("notify").setup({
 	background_colour = '#262727',
 	fps = 144,
-	render = "minimal",
+	render = "simple",
 	stages = "fade"
 })
