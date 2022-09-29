@@ -80,9 +80,11 @@ set linebreak
 require('run').setup()
 
 -- Colorizer
-require'colorizer'.setup({
-	'*',
-})
+require 'colorizer'.setup {
+	filetypes = {
+		'*',
+	}
+}
 
 -- Dashboard
 local home = os.getenv('HOME')
