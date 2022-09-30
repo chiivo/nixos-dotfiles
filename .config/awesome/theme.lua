@@ -60,7 +60,7 @@ theme.notification_max_height = 300
 theme.notification_icon_size = 48
 naughty.config.padding = 20
 naughty.config.spacing = 10
-naughty.config.icon_dirs = {"/home/chivo/.icons/Flatery-Pink-Dark/"}
+naughty.config.icon_dirs = {"/home/chivo/.icons/Papirus-Dark/"}
 naughty.config.defaults.margin = 10
 naughty.config.defaults.border_width = 4
 naughty.config.defaults.timeout = 10
@@ -131,8 +131,8 @@ theme.progressbar_shape = gears.shape.rounded_rect
 theme.progressbar_bar_shape = gears.shape.rounded_rect
 
 -- Window Swallowing
-theme.parent_filter_list = { "vivaldi-stable" } -- class names list of parents that should not be swallowed
--- theme.child_filter_list = { "Dragon" } -- class names list that should not swallow their parents
+theme.parent_filter_list = { "vivaldi-stable", "Vivaldi-stable" } -- class names list of parents that should not be swallowed
+theme.child_filter_list = { "discord", "vivaldi-stable", "Vivaldi-stable", "chatterino" } -- class names list that should not swallow their parents
 theme.swallowing_filter = true -- whether the filters above should be active
 
 return theme

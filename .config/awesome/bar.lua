@@ -1,6 +1,9 @@
 local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
+local beautiful = require("beautiful")
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 local animation = require("animation")
 require("theme")
 
@@ -10,8 +13,8 @@ modkey = "Mod4"
 powerbutton = wibox.widget {
 	{
 		widget = wibox.container.margin,
-		top = 10,
-		bottom = 10,
+		top = dpi(10),
+		bottom = dpi(10),
 		{
 			widget = wibox.widget.textbox,
 			text = "",
@@ -48,63 +51,82 @@ local taglist_buttons = gears.table.join(
 	awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
---[[ tagsone = wibox.widget {
+tagsone = wibox.widget {
 	{
 		widget = wibox.container.margin,
-		left = 5,
+		left = dpi(5),
 		{
 			widget = awful.widget.taglist({
 				screen = 1,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
 					layout = wibox.layout.fixed.vertical,
-					spacing = 20,
 				},
 				widget_template = {
 					widget = wibox.container.margin,
-					forced_height = 40,
-					forced_width = 10,
+					forced_height = dpi(40),
+					forced_width = dpi(10),
 					create_callback = function(self, c3, _)
 						local indicator = wibox.widget({
 							widget = wibox.container.place,
 							valign = "center",
 							{
 								widget = wibox.container.background,
-								forced_width = 5,
-								shape = gears.shape.rounded_bar,
-							},
+								forced_width = dpi(5),
+								shape = gears.shape.rounded_bar
+							}
 						})
 						self.indicator_animation = animation:new({
 							duration = 0.125,
 							easing = animation.easing.linear,
 							update = function(self, pos)
 								indicator.children[1].forced_height = pos
-							end,
+							end
 						})
 						self:set_widget(indicator)
 						if c3.selected then
-							self.widget.children[1].bg = beautiful.taglist_fg_focus,
-							self.indicator_animation:set(20)
+							self.widget.children[1].bg = colors.pink,
+							self.indicator_animation:set(dpi(20))
 						elseif #c3:clients() == 0 then
-							self.widget.children[1].bg = beautiful.taglist_fg_empty,
-							self.indicator_animation:set(10)
+							self.widget.children[1].bg = colors.pink,
+							self.indicator_animation:set(dpi(10))
 						else
-							self.widget.children[1].bg = beautiful.taglist_fg_occupied,
-							self.indicator_animation:set(10)
+							self.widget.children[1].bg = colors.pink,
+							self.indicator_animation:set(dpi(10))
 						end
 					end,
 					update_callback = function(self, c3, _)
 						if c3.selected then
-							self.widget.children[1].bg = beautiful.taglist_fg_focus,
-							self.indicator_animation:set(20)
+							self.widget.children[1].bg = colors.pink,
+							self.indicator_animation:set(dpi(20))
 						elseif #c3:clients() == 0 then
-							self.widget.children[1].bg = beautiful.taglist_fg_empty,
-							self.indicator_animation:set(10)
+							self.widget.children[1].bg = colors.pink,
+							self.indicator_animation:set(dpi(10))
 						else
-							self.widget.children[1].bg = beautiful.taglist_fg_occupied,
-							self.indicator_animation:set(10)
+							self.widget.children[1].bg = colors.pink,
+							self.indicator_animation:set(dpi(10))
 						end
-					end,
+					end
+				},
+				buttons = taglist_buttons
+			})
+		}
+	},
+	layout = wibox.layout.fixed.vertical
+}
+
+
+--[[ tagsone = wibox.widget {
+	{
+		widget = wibox.container.margin,
+		left = dpi(5),
+		{
+			widget = awful.widget.taglist ({
+				screen = 1,
+				filter = awful.widget.taglist.filter.all,
+				layout = {
+					spacing = dpi(20),
+					layout  = wibox.layout.fixed.vertical
 				},
 				buttons = taglist_buttons
 			})
@@ -113,43 +135,23 @@ local taglist_buttons = gears.table.join(
 	layout = wibox.layout.fixed.vertical,
 } ]]
 
-
-tagsone = wibox.widget {
-	{
-		widget = wibox.container.margin,
-		left = 5,
-		{
-			widget = awful.widget.taglist ({
-				screen = 1,
-				filter = awful.widget.taglist.filter.all,
-				layout = {
-					spacing = 20,
-					layout  = wibox.layout.fixed.vertical
-				},
-				buttons = taglist_buttons
-			})
-		},
-	},
-	layout = wibox.layout.fixed.vertical,
-}
-
 separator = wibox.widget {
 	widget = wibox.widget.separator,
 	orientation = "horizontal",
-	thickness = 2,
+	thickness = dpi(2),
 	span_ratio = .5,
 }
 
 tagstwo = wibox.widget {
 	{
 		widget = wibox.container.margin,
-		left = 5,
+		left = dpi(5),
 		{
 			widget = awful.widget.taglist ({
 				screen = 2,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
-					spacing = 20,
+					spacing = dpi(20),
 					layout  = wibox.layout.fixed.vertical
 				},
 				buttons = taglist_buttons
@@ -166,7 +168,7 @@ middle = wibox.widget {
 		tagstwo,
 		layout = wibox.layout.align.vertical
 	},
-	forced_height = 300,
+	forced_height = dpi(300),
 	layout = wibox.container.place
 }
 
@@ -204,7 +206,7 @@ volume:buttons(gears.table.join(
 clock = wibox.widget {
 	{
 		widget = wibox.container.margin,
-		top = 10,
+		top = dpi(10),
 		{
 			widget = wibox.widget.textclock,
 			format = "%H",
@@ -214,7 +216,7 @@ clock = wibox.widget {
 	},
 	{
 		widget = wibox.container.margin,
-		bottom = 10,
+		bottom = dpi(10),
 		{
 			widget = wibox.widget.textclock,
 			format = "%M",
@@ -302,13 +304,13 @@ calendarpopup = awful.popup ({
 			calendar,
 			layout = wibox.layout.fixed.vertical,
 		},
-		margins = 10,
+		margins = dpi(10),
 		widget = wibox.container.margin
 	},
 	border_width = 0,
 	ontop = true,
-	x = 70,
-	y = 757,
+	x = dpi(70),
+	y = dpi(757),
 	visible = false
 })
 
@@ -324,12 +326,12 @@ end)
 bar = awful.popup({
 	screen = 1,
 	type = "dock",
-	minimum_height = 600,
-	maximum_height = 600,
-	minimum_width = 30,
-	maximum_width = 30,
+	minimum_height = dpi(600),
+	maximum_height = dpi(600),
+	minimum_width = dpi(30),
+	maximum_width = dpi(30),
 	placement = function()
-		awful.placement.left(bar, { margins = 20})
+		awful.placement.left(bar, { margins = dpi(20) })
 	end,
 	widget = {
 		{
@@ -351,4 +353,4 @@ bar = awful.popup({
 		widget = wibox.container.background
 	}
 })
-bar:struts{ left = 50 }
+bar:struts{ left = dpi(50) }

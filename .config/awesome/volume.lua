@@ -1,6 +1,8 @@
 local gears = require("gears")
 local awful = require("awful")
 local beautiful = require("beautiful")
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 local wibox = require("wibox")
 
 update_prog = function(volume)
@@ -32,8 +34,8 @@ end
 volume_bar = wibox.widget {
 	value = nil,
 	max_value = 100,
-	forced_height = 10,
-	forced_width = 200,
+	forced_height = dpi(10),
+	forced_width = dpi(200),
 	widget = wibox.widget.progressbar
 }
 
@@ -43,12 +45,12 @@ volumepopup = awful.popup ({
 			volume_bar,
 			layout = wibox.layout.fixed.vertical,
 		},
-		margins = 10,
+		margins = dpi(10),
 		widget = wibox.container.margin
 	},
-	border_width = 0,
+	border_width = dpi(0),
 	ontop = true,
-	x = 860,
-	y = 1010,
+	x = dpi(860),
+	y = dpi(1010),
 	visible = false
 })
