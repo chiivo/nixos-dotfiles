@@ -65,6 +65,7 @@ set shiftwidth=2
 set guicursor=
 set ignorecase
 set mouse=a
+set mousemodel=extend
 set nocompatible
 set nohlsearch
 set number
