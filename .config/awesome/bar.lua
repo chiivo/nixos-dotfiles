@@ -4,7 +4,6 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
-local animation = require("animation")
 require("theme")
 
 modkey = "Mod4"
@@ -60,53 +59,8 @@ tagsone = wibox.widget {
 				screen = 1,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
-					layout = wibox.layout.fixed.vertical,
-				},
-				widget_template = {
-					widget = wibox.container.margin,
-					forced_height = dpi(40),
-					forced_width = dpi(10),
-					create_callback = function(self, c3, _)
-						local indicator = wibox.widget({
-							widget = wibox.container.place,
-							valign = "center",
-							{
-								widget = wibox.container.background,
-								forced_width = dpi(5),
-								shape = gears.shape.rounded_bar
-							}
-						})
-						self.indicator_animation = animation:new({
-							duration = 0.125,
-							easing = animation.easing.linear,
-							update = function(self, pos)
-								indicator.children[1].forced_height = pos
-							end
-						})
-						self:set_widget(indicator)
-						if c3.selected then
-							self.widget.children[1].bg = colors.pink,
-							self.indicator_animation:set(dpi(20))
-						elseif #c3:clients() == 0 then
-							self.widget.children[1].bg = colors.pink,
-							self.indicator_animation:set(dpi(10))
-						else
-							self.widget.children[1].bg = colors.pink,
-							self.indicator_animation:set(dpi(10))
-						end
-					end,
-					update_callback = function(self, c3, _)
-						if c3.selected then
-							self.widget.children[1].bg = colors.pink,
-							self.indicator_animation:set(dpi(20))
-						elseif #c3:clients() == 0 then
-							self.widget.children[1].bg = colors.pink,
-							self.indicator_animation:set(dpi(10))
-						else
-							self.widget.children[1].bg = colors.pink,
-							self.indicator_animation:set(dpi(10))
-						end
-					end
+					spacing = dpi(20),
+					layout = wibox.layout.fixed.vertical
 				},
 				buttons = taglist_buttons
 			})
@@ -114,26 +68,6 @@ tagsone = wibox.widget {
 	},
 	layout = wibox.layout.fixed.vertical
 }
-
-
---[[ tagsone = wibox.widget {
-	{
-		widget = wibox.container.margin,
-		left = dpi(5),
-		{
-			widget = awful.widget.taglist ({
-				screen = 1,
-				filter = awful.widget.taglist.filter.all,
-				layout = {
-					spacing = dpi(20),
-					layout  = wibox.layout.fixed.vertical
-				},
-				buttons = taglist_buttons
-			})
-		},
-	},
-	layout = wibox.layout.fixed.vertical,
-} ]]
 
 separator = wibox.widget {
 	widget = wibox.widget.separator,
