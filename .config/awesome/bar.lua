@@ -60,7 +60,6 @@ tagsone = wibox.widget {
 				screen = 1,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
-					forced_height = dpi(100),
 					spacing = dpi(20),
 					layout = wibox.layout.fixed.vertical
 				},
@@ -106,7 +105,7 @@ tagsone = wibox.widget {
 							self.bg = colors.gray
 							self.forced_height = dpi(10)
 						else
-							self.bg = colors.gray
+							self.bg = colors.white
 							self.forced_height = dpi(10)
 						end
 					end,
@@ -119,8 +118,8 @@ tagsone = wibox.widget {
 							self.bg = colors.gray
 							self.forced_height = dpi(10)
 						else
-							self.bg = colors.gray
-							self.forced_height = dpi(20)
+							self.bg = colors.white
+							self.forced_height = dpi(10)
 						end
 					end,
 				},
@@ -148,7 +147,6 @@ tagstwo = wibox.widget {
 				screen = 2,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
-					forced_height = dpi(100),
 					spacing = dpi(20),
 					layout = wibox.layout.fixed.vertical
 				},
@@ -194,7 +192,7 @@ tagstwo = wibox.widget {
 							self.bg = colors.gray
 							self.forced_height = dpi(10)
 						else
-							self.bg = colors.gray
+							self.bg = colors.white
 							self.forced_height = dpi(10)
 						end
 					end,
@@ -207,8 +205,8 @@ tagstwo = wibox.widget {
 							self.bg = colors.gray
 							self.forced_height = dpi(10)
 						else
-							self.bg = colors.gray
-							self.forced_height = dpi(20)
+							self.bg = colors.white
+							self.forced_height = dpi(10)
 						end
 					end,
 				},
