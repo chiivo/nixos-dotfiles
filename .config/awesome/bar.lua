@@ -52,15 +52,77 @@ local taglist_buttons = gears.table.join(
 
 tagsone = wibox.widget {
 	{
+		left = dpi(10),
+		right = dpi(10),
 		widget = wibox.container.margin,
-		left = dpi(5),
 		{
 			widget = awful.widget.taglist({
 				screen = 1,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
+					forced_height = dpi(100),
 					spacing = dpi(20),
 					layout = wibox.layout.fixed.vertical
+				},
+				widget_template = {
+					{
+						{
+							{
+								{
+									{
+										id = "index_role",
+										widget = wibox.widget.textbox
+									},
+									widget  = wibox.container.margin
+								},
+								widget = wibox.container.background
+							},
+							layout = wibox.layout.fixed.vertical
+						},
+						widget = wibox.container.margin
+					},
+					bg = colors.pink,
+					shape = gears.shape.rounded_bar,
+					widget = wibox.container.background,
+					-- Add support for hover colors and an index label
+					create_callback = function(self, c3, index, objects, _) --luacheck: no unused args
+						self:get_children_by_id("index_role")[1].markup = ""
+						self:connect_signal("mouse::enter", function()
+							if self.bg ~= colors.white then
+								self.backup = self.bg
+								self.has_backup = true
+							end
+							self.bg = colors.white
+						end)
+						self:connect_signal("mouse::leave", function()
+							if self.has_backup then
+								self.bg = self.backup
+							end
+						end)
+						if c3.selected then
+							self.bg = colors.pink
+							self.forced_height = dpi(30)
+						elseif #c3:clients() == 0 then
+							self.bg = colors.gray
+							self.forced_height = dpi(10)
+						else
+							self.bg = colors.gray
+							self.forced_height = dpi(10)
+						end
+					end,
+					update_callback = function(self, c3, index, objects, _) --luacheck: no unused args
+						self:get_children_by_id("index_role")[1].markup = ""
+						if c3.selected then
+							self.bg = colors.pink
+							self.forced_height = dpi(30)
+						elseif #c3:clients() == 0 then
+							self.bg = colors.gray
+							self.forced_height = dpi(10)
+						else
+							self.bg = colors.gray
+							self.forced_height = dpi(20)
+						end
+					end,
 				},
 				buttons = taglist_buttons
 			})
@@ -78,21 +140,83 @@ separator = wibox.widget {
 
 tagstwo = wibox.widget {
 	{
+		left = dpi(10),
+		right = dpi(10),
 		widget = wibox.container.margin,
-		left = dpi(5),
 		{
-			widget = awful.widget.taglist ({
+			widget = awful.widget.taglist({
 				screen = 2,
 				filter = awful.widget.taglist.filter.all,
 				layout = {
+					forced_height = dpi(100),
 					spacing = dpi(20),
-					layout  = wibox.layout.fixed.vertical
+					layout = wibox.layout.fixed.vertical
+				},
+				widget_template = {
+					{
+						{
+							{
+								{
+									{
+										id = "index_role",
+										widget = wibox.widget.textbox
+									},
+									widget  = wibox.container.margin
+								},
+								widget = wibox.container.background
+							},
+							layout = wibox.layout.fixed.vertical
+						},
+						widget = wibox.container.margin
+					},
+					bg = colors.pink,
+					shape = gears.shape.rounded_bar,
+					widget = wibox.container.background,
+					-- Add support for hover colors and an index label
+					create_callback = function(self, c3, index, objects, _) --luacheck: no unused args
+						self:get_children_by_id("index_role")[1].markup = ""
+						self:connect_signal("mouse::enter", function()
+							if self.bg ~= colors.white then
+								self.backup = self.bg
+								self.has_backup = true
+							end
+							self.bg = colors.white
+						end)
+						self:connect_signal("mouse::leave", function()
+							if self.has_backup then
+								self.bg = self.backup
+							end
+						end)
+						if c3.selected then
+							self.bg = colors.pink
+							self.forced_height = dpi(30)
+						elseif #c3:clients() == 0 then
+							self.bg = colors.gray
+							self.forced_height = dpi(10)
+						else
+							self.bg = colors.gray
+							self.forced_height = dpi(10)
+						end
+					end,
+					update_callback = function(self, c3, index, objects, _) --luacheck: no unused args
+						self:get_children_by_id("index_role")[1].markup = ""
+						if c3.selected then
+							self.bg = colors.pink
+							self.forced_height = dpi(30)
+						elseif #c3:clients() == 0 then
+							self.bg = colors.gray
+							self.forced_height = dpi(10)
+						else
+							self.bg = colors.gray
+							self.forced_height = dpi(20)
+						end
+					end,
 				},
 				buttons = taglist_buttons
 			})
-		},
+		}
 	},
-	layout = wibox.layout.fixed.vertical,
+	layout = wibox.layout.fixed.vertical
 }
 
 middle = wibox.widget {
@@ -102,7 +226,7 @@ middle = wibox.widget {
 		tagstwo,
 		layout = wibox.layout.align.vertical
 	},
-	forced_height = dpi(300),
+	forced_height = dpi(250),
 	layout = wibox.container.place
 }
 
