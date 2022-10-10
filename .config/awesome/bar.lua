@@ -130,27 +130,24 @@ tagstwo = wibox.widget {
 				},
 				widget_template = {
 					{
-						{
-							{
-								{
-									{
-										id = "index_role",
-										widget = wibox.widget.textbox
-									},
-									widget  = wibox.container.margin
-								},
-								widget = wibox.container.background
-							},
-							layout = wibox.layout.fixed.vertical
-						},
-						widget = wibox.container.margin
+						markup = '',
+						widget = wibox.widget.textbox
 					},
-					bg = colors.pink,
 					shape = gears.shape.rounded_bar,
 					widget = wibox.container.background,
-					-- Add support for hover colors and an index label
-					create_callback = function(self, c3, index, objects, _) --luacheck: no unused args
-						self:get_children_by_id("index_role")[1].markup = ""
+					create_callback = function(self, c3, index, objects, _)
+						self.update = function()
+							if c3.selected then
+								self.bg = colors.pink
+								self.forced_height = dpi(30)
+							elseif #c3:clients() == 0 then
+								self.bg = colors.gray
+								self.forced_height = dpi(10)
+							else
+								self.bg = colors.white
+								self.forced_height = dpi(10)
+							end
+						end
 						self:connect_signal("mouse::enter", function()
 							if self.bg ~= colors.white then
 								self.backup = self.bg
@@ -163,29 +160,10 @@ tagstwo = wibox.widget {
 								self.bg = self.backup
 							end
 						end)
-						if c3.selected then
-							self.bg = colors.pink
-							self.forced_height = dpi(30)
-						elseif #c3:clients() == 0 then
-							self.bg = colors.gray
-							self.forced_height = dpi(10)
-						else
-							self.bg = colors.white
-							self.forced_height = dpi(10)
-						end
+						self.update()
 					end,
-					update_callback = function(self, c3, index, objects, _) --luacheck: no unused args
-						self:get_children_by_id("index_role")[1].markup = ""
-						if c3.selected then
-							self.bg = colors.pink
-							self.forced_height = dpi(30)
-						elseif #c3:clients() == 0 then
-							self.bg = colors.gray
-							self.forced_height = dpi(10)
-						else
-							self.bg = colors.white
-							self.forced_height = dpi(10)
-						end
+					update_callback = function(self, c3, index, objects, _)
+						self.update()
 					end,
 				},
 				buttons = taglist_buttons
