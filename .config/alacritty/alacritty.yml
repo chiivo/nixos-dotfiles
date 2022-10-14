@@ -65,7 +65,7 @@ colors:
     focused_match:
       foreground: '#dddddd'
       background: '#262727'
-    bar:
+    colors.footer_bar:
       foreground: '#262727'
       background: '#555657'
   hints:
