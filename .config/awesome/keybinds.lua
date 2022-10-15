@@ -185,6 +185,7 @@ globalkeys = gears.table.join(
 	-- Close Popups
 	awful.key({ modkey }, "Escape",
 		function()
+			systraybutton.text = ""
 			systraypopup.visible = false
 		end,
 		{description = "Close Popups", group = "screen"}
