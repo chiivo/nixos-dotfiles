@@ -228,7 +228,6 @@ clock = wibox.widget {
 	},
 	{
 		widget = wibox.container.margin,
-		bottom = dpi(10),
 		{
 			widget = wibox.widget.textclock,
 			format = "%M",
@@ -334,6 +333,53 @@ clock:connect_signal('mouse::leave', function()
 	calendarpopup.visible = false
 end)
 
+-- Systray
+systraybutton = wibox.widget {
+	widget = wibox.widget.textbox,
+	text = "",
+	valign ="center",
+	align = "center"
+}
+
+systraytoggle = wibox.widget {
+	{
+		widget = wibox.container.margin,
+		top = dpi(10),
+		bottom = dpi(10),
+		systraybutton
+	},
+	layout = wibox.layout.fixed.vertical
+}
+
+systraypopup = awful.popup ({
+	widget = {
+		horizontal = false,
+		forced_height = dpi(100),
+		forced_width = dpi(30),
+		widget = wibox.widget.systray
+	},
+	border_width = 0,
+	ontop = true,
+	x = dpi(70),
+	y = dpi(835),
+	visible = false
+}) 
+
+systraybutton:buttons(gears.table.join(
+	awful.button({ }, 1,
+		function ()
+			if systraybutton.text == "" then
+				systraybutton.text = ""
+				systraypopup.visible = true
+			else
+				systraybutton.text = ""
+				systraypopup.visible = false
+			end
+		end
+	)
+))
+
+
 -- Create bar
 bar = awful.popup({
 	screen = 1,
@@ -359,7 +405,8 @@ bar = awful.popup({
 			{ -- Right widgets
 				layout = wibox.layout.fixed.vertical,
 				volume,
-				clock
+				clock,
+				systraytoggle
 			}
 		},
 		widget = wibox.container.background

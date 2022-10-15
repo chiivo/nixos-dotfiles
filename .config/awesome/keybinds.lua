@@ -26,9 +26,6 @@ globalkeys = gears.table.join(
 	awful.key({ modkey, }, "Right",
 		awful.tag.viewnext,
 		{description = "view next", group = "tag"}),
-	awful.key({ modkey, }, "Escape",
-		awful.tag.history.restore,
-		{description = "go back", group = "tag"}),
 	-- Switch Window Focus
 	awful.key({ modkey, }, "j",
 		function ()
@@ -184,6 +181,13 @@ globalkeys = gears.table.join(
 			end 
 		end,
 		{description = "Toggle Bar", group = "screen"}
+	),
+	-- Close Popups
+	awful.key({ modkey }, "Escape",
+		function()
+			systraypopup.visible = false
+		end,
+		{description = "Close Popups", group = "screen"}
 	)
 )
 -- Client Keybindings
