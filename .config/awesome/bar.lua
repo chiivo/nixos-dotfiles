@@ -336,7 +336,7 @@ end)
 -- Systray
 systraybutton = wibox.widget {
 	widget = wibox.widget.textbox,
-	text = "",
+	text = "",
 	valign ="center",
 	align = "center"
 }
@@ -354,7 +354,7 @@ systraytoggle = wibox.widget {
 systraypopup = awful.popup ({
 	widget = {
 		horizontal = false,
-		forced_height = dpi(100),
+		forced_height = dpi(90),
 		forced_width = dpi(30),
 		widget = wibox.widget.systray
 	},
@@ -368,11 +368,11 @@ systraypopup = awful.popup ({
 systraybutton:buttons(gears.table.join(
 	awful.button({ }, 1,
 		function ()
-			if systraybutton.text == "" then
-				systraybutton.text = ""
+			if systraybutton.text == "" then
+				systraybutton.text = ""
 				systraypopup.visible = true
 			else
-				systraybutton.text = ""
+				systraybutton.text = ""
 				systraypopup.visible = false
 			end
 		end
