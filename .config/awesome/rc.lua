@@ -15,6 +15,7 @@ require("bar")
 require("errors")
 require("volume")
 require("wallpaper")
+-- require("borders")
 -- require("swallow")
 
 -- Menubar configuration

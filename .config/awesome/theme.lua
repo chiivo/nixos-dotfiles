@@ -38,7 +38,7 @@ theme.fg_minimize = colors.black
 theme.useless_gap = 10
 theme.border_width = 4
 theme.border_normal = colors.black
-theme.border_focus = colors.pink
+theme.border_focus = colors.gray
 theme.border_marked = colors.red
 
 theme.taglist_bg_focus = colors.black
