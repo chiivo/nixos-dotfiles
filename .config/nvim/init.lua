@@ -28,10 +28,11 @@ require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
-	use {
+	--[[ use {
 		'nvim-neorg/neorg',
 		tag = '0.0.12' 
-	}
+	} ]]
+	use 'nvim-neorg/neorg'
 	use 'jbyuki/nabla.nvim'
 	use 'dhruvasagar/vim-table-mode'
 	use 'numToStr/Comment.nvim'
@@ -632,7 +633,7 @@ require('feline').setup({
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"
-	ensure_installed = {'bash', 'css','lua', 'norg', 'rust', 'scss', 'toml', 'vim'},
+	ensure_installed = {'bash', 'c', 'css', 'latex', 'lua', 'norg', 'rust', 'scss', 'toml', 'vim'},
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
 	-- List of parsers to ignore installing (for "all")
