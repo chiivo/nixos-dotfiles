@@ -81,13 +81,13 @@ globalkeys = gears.table.join(
 	-- Resize Windows
 	awful.key({ modkey, "Shift" }, "l",
 		function ()
-			awful.tag.incmwfact( 0.04925)
+			awful.tag.incmwfact( 0.051)
 		end,
 		{description = "increase master width factor", group = "layout"}
 	),
 	awful.key({ modkey, "Shift" }, "h",
 		function ()
-			awful.tag.incmwfact(-0.04925)
+			awful.tag.incmwfact(-0.051)
 		end,
 		{description = "decrease master width factor", group = "layout"}
 	),

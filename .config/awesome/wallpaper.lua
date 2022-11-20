@@ -18,4 +18,4 @@ require("theme")
 end) ]]
 
 -- Solid Color
-gears.wallpaper.set(colors.pink)
+gears.wallpaper.set(colors.darkblack)

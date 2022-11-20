@@ -35,10 +35,10 @@ theme.fg_focus = colors.black
 theme.fg_urgent = colors.black
 theme.fg_minimize = colors.black
 
-theme.useless_gap = 10
-theme.border_width = 4
+theme.useless_gap = dpi(10)
+theme.border_width = dpi(4)
 theme.border_normal = colors.black
-theme.border_focus = colors.gray
+theme.border_focus = colors.pink
 theme.border_marked = colors.red
 
 theme.taglist_bg_focus = colors.black
@@ -55,23 +55,23 @@ theme.notification_font = "monospace 12"
 theme.notification_bg = colors.black
 theme.notification_fg = colors.pink
 theme.notification_border_color = colors.pink
-theme.notification_width = 350
-theme.notification_max_height = 400
-theme.notification_icon_size = 48
-naughty.config.padding = 20
-naughty.config.spacing = 10
+theme.notification_width = dpi(350)
+theme.notification_max_height = dpi(400)
+theme.notification_icon_size = dpi(48)
+naughty.config.padding = dpi(20)
+naughty.config.spacing = dpi(10)
 naughty.config.icon_dirs = {"/home/chivo/.icons/Papirus-Dark/"}
-naughty.config.defaults.margin = 10
-naughty.config.defaults.border_width = 4
+naughty.config.defaults.margin = dpi(10)
+naughty.config.defaults.border_width = dpi(4)
 naughty.config.defaults.timeout = 10
 naughty.config.defaults.screen = 1
 
 -- Right-click Menu
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
-theme.menu_height = 30
-theme.menu_width = 200
+theme.menu_height = dpi(30)
+theme.menu_width = dpi(200)
 theme.menu_border_color = colors.pink
-theme.menu_border_width = 4
+theme.menu_border_width = dpi(4)
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
