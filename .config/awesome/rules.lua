@@ -50,7 +50,8 @@ awful.rules.rules = {
 			}
 		},
 		properties = {
-			floating = true
+			floating = true,
+			placement = awful.placement.centered
 		}
 	},
 	-- Add titlebars to normal clients and dialogs
