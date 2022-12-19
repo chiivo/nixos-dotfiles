@@ -1,4 +1,6 @@
 #!/bin/bash
 
-xinput --set-prop 'pointer:''Logitech Gaming Mouse G502' 'libinput Accel Profile Enabled' 0, 1
-xinput --set-prop 'pointer:''Logitech Gaming Mouse G502' 'libinput Accel Speed' 0
+### Use xinput list to find pointer name
+
+xinput --set-prop 'pointer:''Logitech USB Receiver Mouse' 'libinput Accel Profile Enabled' 0, 1
+xinput --set-prop 'pointer:''Logitech USB Receiver Mouse' 'libinput Accel Speed' 0
