@@ -9,7 +9,7 @@ require("scratchpads")
 modkey = "Mod4"
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "alacritty" or "kitty"
 editor = "nvim" or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
