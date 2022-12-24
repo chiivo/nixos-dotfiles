@@ -632,7 +632,7 @@ require('feline').setup({
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"
-	ensure_installed = {'bash', 'c', 'css', 'latex', 'lua', 'norg', 'rust', 'scss', 'toml', 'vim'},
+	ensure_installed = {'bash', 'c', 'css', 'latex', 'lua', 'nix', 'norg', 'rust', 'scss', 'toml', 'vim'},
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
 	-- List of parsers to ignore installing (for "all")
