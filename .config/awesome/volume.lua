@@ -19,6 +19,7 @@ timeout = gears.timer {
 	autostart = true,
 	callback = function()
 		volumepopup.visible = false
+		volumepopup.screen = awful.screen.focused()
 	end
 }
 
@@ -50,7 +51,8 @@ volumepopup = awful.popup ({
 	},
 	border_width = dpi(0),
 	ontop = true,
-	x = dpi(860),
-	y = dpi(1010),
+	placement = function()
+		awful.placement.bottom(volumepopup, { margins = dpi(20) })
+	end,
 	visible = false
 })
