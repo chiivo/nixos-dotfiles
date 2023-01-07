@@ -28,10 +28,6 @@ require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
-	--[[ use {
-		'nvim-neorg/neorg',
-		tag = '0.0.12' 
-	} ]]
 	use 'nvim-neorg/neorg'
 	use 'jbyuki/nabla.nvim'
 	use 'dhruvasagar/vim-table-mode'
@@ -396,7 +392,7 @@ require("twilight").setup {
 		"lua_statement",
 		"call_statement",
 	},
-	exclude = { "dashboard" },
+	exclude = { "dashboard", "norg" },
 }
 vim.cmd([[autocmd VimEnter * Twilight]])
 
