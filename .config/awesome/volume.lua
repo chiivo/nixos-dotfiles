@@ -5,15 +5,6 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local wibox = require("wibox")
 
--- update_prog = function(volume)
--- 	volume_bar.value = volume
--- end
---
--- awful.widget.watch([[sh -c "~/scripts/volume -v"]], .1, function(_, stdout)
--- 	local volume = tonumber(stdout)
--- 	update_prog(volume)
--- end)
-
 function volbarvalupdate()
 	awful.spawn.easy_async_with_shell("sleep .1; ~/scripts/volume -v", function(stdout)
 		local volume = tonumber(stdout)
