@@ -186,17 +186,25 @@ middle = wibox.widget {
 
 -- Volume Widget
 volume = wibox.widget {
-	{
-		widget = awful.widget.watch('bash -c "~/scripts/volume -s"', .1, function(widget, stdout)
-			widget:set_markup(stdout:gsub("\n", ""))
-		end),
-		valign = "center",
-		align = "center"
-	},
-	layout = wibox.layout.fixed.vertical,
+	widget = wibox.widget.textbox,
+	valign = "center",
+	align = "center"
 }
 
-volume:buttons(gears.table.join(
+function volsymupdate()
+	awful.spawn.easy_async_with_shell("~/scripts/volume -s", function(stdout)
+  	volume:set_markup(stdout:gsub("\n", ""))
+	end)
+end
+
+volsymupdate()
+
+volume_widget = wibox.widget {
+	volume,
+	layout = wibox.layout.fixed.vertical
+}
+
+volume_widget:buttons(gears.table.join(
 	awful.button({ }, 1,
 		function ()
 			awful.spawn.with_shell("~/scripts/volume -m")
@@ -404,7 +412,7 @@ bar = awful.popup({
 			},
 			{ -- Right widgets
 				layout = wibox.layout.fixed.vertical,
-				volume,
+				volume_widget,
 				clock,
 				systraytoggle
 			}

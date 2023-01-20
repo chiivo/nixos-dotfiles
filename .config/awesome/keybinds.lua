@@ -139,21 +139,27 @@ globalkeys = gears.table.join(
 	awful.key({ }, "XF86AudioRaiseVolume",
 		function()
 			awful.spawn.with_shell("~/scripts/volume -u")
-			vis_toggle()
+			volsymupdate()
+			volbarvalupdate()
+			volbar_vis_toggle()
 		end,
 		{description = "Volume Up", group = "Volume"}
 	),
 	awful.key({ }, "XF86AudioLowerVolume",
 		function()
 			awful.spawn.with_shell("~/scripts/volume -d")
-			vis_toggle()
+			volsymupdate()
+			volbarvalupdate()
+			volbar_vis_toggle()
 		end,
 		{description = "Volume Down", group = "Volume"}
 	),
 	awful.key({ }, "XF86AudioMute",
 		function()
 			awful.spawn.with_shell("~/scripts/volume -m")
-			vis_toggle()
+			volsymupdate()
+			volbarvalupdate()
+			volbar_vis_toggle()
 		end,
 		{description = "Mute Volume", group = "Volume"}
 	),
