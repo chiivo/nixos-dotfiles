@@ -19,8 +19,7 @@ alias clean='sudo pacman -Rsn $(paru -Qdtq); paru -cc'
 # alias clean='sudo pacman -Rsn $(yay -Qdtq); yay -cc'
 alias remove='sudo pacman -Rs'
 alias btctl='bluetoothctl'
-alias swapoff='sudo swapoff -a'
-alias swapon='sudo swapon -a'
+alias swaptgl='sudo swapoff -a; sudo swapon -a'
 
 #Prompt
 #PS1='\[\e[37m\]\[\e[0m\]\[\e[47;1m\]\[\e[30m\]\w  \[\e[0m\]\[\e[37m\]\[\e[0m\] '
