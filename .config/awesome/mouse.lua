@@ -75,12 +75,14 @@ client.connect_signal("unfocus",
 		c.border_color = beautiful.border_normal
 	end
 )
--- local function move_mouse_onto_focused_client(c)
--- 	if mouse.object_under_pointer() ~= c then
--- 		local geometry = c:geometry()
--- 		local x = geometry.x + geometry.width/2
--- 		local y = geometry.y + geometry.height/2
--- 		mouse.coords({x = x, y = y}, true)
--- 	end
--- end
--- client.connect_signal("focus", move_mouse_onto_focused_client)
+
+-- Mouse follows focus
+local function move_mouse_onto_focused_client(c)
+	if mouse.object_under_pointer() ~= c then
+		local geometry = c:geometry()
+		local x = geometry.x + geometry.width/2
+		local y = geometry.y + geometry.height/2
+		mouse.coords({x = x, y = y}, true)
+	end
+end
+client.connect_signal("focus", move_mouse_onto_focused_client)
