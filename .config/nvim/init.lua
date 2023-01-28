@@ -128,7 +128,7 @@ highlight DashboardProjectTitleIcon guifg = '#77bee0'
 highlight DashboardProjectIcon guifg = '#77bee0'
 highlight DashboardMruTitle guifg = '#ffc178'
 highlight DashboardMruIcon guifg = '#ffc178'
-highlight DashboardFiles guifg = '#dddddd'
+highlight DashboardFiles guifg = '#555657'
 ]])
 
 -- Bufferline
