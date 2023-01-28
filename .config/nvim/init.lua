@@ -85,51 +85,50 @@ require 'colorizer'.setup {
 }
 
 -- Dashboard
-local home = os.getenv('HOME')
 local db = require('dashboard')
-db.custom_header = {
-	'',
-	'',
-	'',
-	'',
-	' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-	' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-	' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-	' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-	' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-	' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-	'',
-	'',
-	'',
-	'',
-	'',
-	'',
-}
-db.custom_center = {
-	{
-		icon = '  ',
-		desc = 'New File					',
-		action ='enew',
-		shortcut = 'SPC d n'
-	},
-	{
-		icon = '  ',
-		desc = 'Find  File					',
-		action = 'Telescope find_files hidden=true no_ignore=true',
-		shortcut = 'SPC d s'
-	},
-	{
-		icon = '  ',
-		desc = 'Update Plugins					',
-		action = 'PackerUpdate',
-		shortcut = 'SPC d u'
-	}
+db.setup {
+	theme = 'hyper',
+	config = {
+		week_header = {
+			enable = true,
+		},
+		shortcut = {
+			{
+				desc = ' Update',
+				group = '@property',
+				action = 'PackerUpdate',
+				key = 'u'
+			},
+      {
+				desc = ' Files',
+        group = 'Label',
+        action = 'Telescope find_files',
+        key = 'f',
+      },
+      {
+				desc = ' Apps',
+        group = 'DiagnosticHint',
+        action = 'Telescope app',
+        key = 'a',
+      },
+      {
+        desc = ' dotfiles',
+        group = 'Number',
+        action = 'Telescope dotfiles',
+        key = 'd',
+      },
+    },
+  },
 }
 vim.cmd([[
 highlight DashboardHeader guifg = '#f5d1c8'
-highlight DashboardCenter guifg = '#77bee0'
-highlight DashboardShortcut guifg = '#ff8278'
 highlight DashboardFooter guifg = '#dd91f3'
+highlight DashboardProjectTitle guifg = '#77bee0'
+highlight DashboardProjectTitleIcon guifg = '#77bee0'
+highlight DashboardProjectIcon guifg = '#77bee0'
+highlight DashboardMruTitle guifg = '#ffc178'
+highlight DashboardMruIcon guifg = '#ffc178'
+highlight DashboardFiles guifg = '#dddddd'
 ]])
 
 -- Bufferline
@@ -720,12 +719,6 @@ wk.setup{
 }
 wk.register({
 	["<leader>"] = {"<cmd>source $MYVIMRC<cr>", "Source Nvim Config"},
-	d = {
-		name = 'Dashboard',
-		n = {'<cmd>enew<cr>', 'New File'},
-		s = {'<cmd>Telescope find_files hidden=true no_ignore=true<cr>', 'Find File'},
-		u = {'<cmd>PackerUpdate<cr>', 'Packer Update'}
-	},
 	t = {
 		name = "NvimTree",
 		n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
