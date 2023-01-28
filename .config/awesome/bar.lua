@@ -198,6 +198,8 @@ function volsymupdate()
 end
 
 volsymupdate()
+volsymupdate()
+volsymupdate()
 
 volume_widget = wibox.widget {
 	volume,
