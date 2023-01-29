@@ -55,14 +55,14 @@ theme.notification_font = "monospace 12"
 theme.notification_bg = colors.black
 theme.notification_fg = colors.pink
 theme.notification_border_color = colors.pink
-theme.notification_width = dpi(350)
+theme.notification_width = dpi(358)
 theme.notification_max_height = dpi(400)
 theme.notification_icon_size = dpi(48)
 naughty.config.padding = dpi(20)
 naughty.config.spacing = dpi(10)
 naughty.config.icon_dirs = {"/home/chivo/.icons/Papirus-Dark/"}
 naughty.config.defaults.margin = dpi(10)
-naughty.config.defaults.border_width = dpi(4)
+naughty.config.defaults.border_width = dpi(0)
 naughty.config.defaults.timeout = 10
 naughty.config.defaults.screen = 1
 

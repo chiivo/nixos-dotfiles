@@ -39,7 +39,8 @@ awful.rules.rules = {
 			class = {
 				"Blueman-manager",
 				"Nsxiv",
-				"Bottom",
+				"scratchpad",
+				"btm",
 			},
 			-- Note that the name property shown in xprop might be set slightly after creation of the client and the name shown there might not match defined rules here.
 			name = {
@@ -51,6 +52,7 @@ awful.rules.rules = {
 		},
 		properties = {
 			floating = true,
+			border_width = 0,
 			placement = awful.placement.centered
 		}
 	},
