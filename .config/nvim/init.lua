@@ -117,8 +117,14 @@ db.setup {
         action = 'Telescope dotfiles',
         key = 'd',
       },
-    },
-  },
+      {
+        desc = 'Quit',
+        group = '@property',
+        action = 'q',
+        key = 'q',
+      }
+    }
+  }
 }
 vim.cmd([[
 highlight DashboardHeader guifg = '#f5d1c8'
