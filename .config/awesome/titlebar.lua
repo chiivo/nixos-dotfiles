@@ -42,6 +42,13 @@ client.connect_signal("property::floating", function(c)
   end
 end)
 
+-- fix fullscreen apps stretching offscreen
+client.connect_signal("property::fullscreen", function(c)
+	if c.fullscreen then
+		awful.titlebar.hide(c)
+	end
+end)
+
 -- show titlebars when layout is set to floating
 awful.tag.attached_connect_signal(nil, "property::layout", function(t)
   local float = t.layout.name == "floating"
