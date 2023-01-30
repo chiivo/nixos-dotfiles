@@ -12,8 +12,6 @@ function volbarvalupdate()
 	end)
 end
 
-volbarvalupdate()
-
 timeout = gears.timer {
 	timeout = 2,
 	autostart = true,

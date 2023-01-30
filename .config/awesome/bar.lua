@@ -197,10 +197,6 @@ function volsymupdate()
 	end)
 end
 
-volsymupdate()
-volsymupdate()
-volsymupdate()
-
 volume_widget = wibox.widget {
 	volume,
 	layout = wibox.layout.fixed.vertical
@@ -215,6 +211,7 @@ volume_widget:buttons(gears.table.join(
 	awful.button({ }, 2,
 		function ()
 			awful.spawn.with_shell("amixer -D pulse sset Master 50%")
+			volsymupdate()
 		end
 	),
 	awful.button({ }, 3,
@@ -423,3 +420,5 @@ bar = awful.popup({
 	}
 })
 bar:struts{ left = dpi(50) }
+
+volsymupdate()

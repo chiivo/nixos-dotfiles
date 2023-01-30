@@ -57,13 +57,18 @@ theme.notification_fg = colors.pink
 theme.notification_border_color = colors.pink
 theme.notification_width = dpi(358)
 theme.notification_max_height = dpi(400)
-theme.notification_icon_size = dpi(48)
 naughty.config.padding = dpi(20)
 naughty.config.spacing = dpi(10)
-naughty.config.icon_dirs = {"/home/chivo/.icons/Papirus-Dark/"}
+theme.notification_icon_size = dpi(48)
+naughty.config.icon_dirs = {"/home/chivo/.icons/Papirus-Dark"}
+naughty.config.icon_formats = {
+	"png",
+	"jpg",
+	"svg"
+}
 naughty.config.defaults.margin = dpi(10)
 naughty.config.defaults.border_width = dpi(0)
-naughty.config.defaults.timeout = 10
+naughty.config.defaults.timeout = 0
 naughty.config.defaults.screen = 1
 
 -- Right-click Menu
