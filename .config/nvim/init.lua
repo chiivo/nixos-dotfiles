@@ -132,8 +132,8 @@ highlight DashboardFooter guifg = '#dd91f3'
 highlight DashboardProjectTitle guifg = '#77bee0'
 highlight DashboardProjectTitleIcon guifg = '#77bee0'
 highlight DashboardProjectIcon guifg = '#77bee0'
-highlight DashboardMruTitle guifg = '#ffc178'
-highlight DashboardMruIcon guifg = '#ffc178'
+highlight DashboardMruTitle guifg = '#bde077'
+highlight DashboardMruIcon guifg = '#bde077'
 highlight DashboardFiles guifg = '#555657'
 ]])
 
