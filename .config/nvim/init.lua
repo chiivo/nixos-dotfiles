@@ -118,7 +118,7 @@ db.setup {
         key = 'd',
       },
       {
-        desc = 'Quit',
+        desc = '󰿅 Quit',
         group = '@property',
         action = 'q',
         key = 'q',
