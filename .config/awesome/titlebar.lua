@@ -26,9 +26,9 @@ client.connect_signal("request::titlebars", function(c)
 		bg_focus = colors.pink
 	}):setup {
 		{
-			buttons = buttons,
 			layout  = wibox.layout.align.horizontal
 		},
+		buttons = buttons,
 		layout = wibox.layout.align.horizontal
 	}
 end)
