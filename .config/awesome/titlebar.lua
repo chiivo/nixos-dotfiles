@@ -35,11 +35,30 @@ end)
 
 -- show titlebar when client is floating
 client.connect_signal("property::floating", function(c)
-  if c.floating and not (c.requests_no_titlebar or c.fullscreen) then
-    awful.titlebar.show(c, "left")
+  if c.floating and not (c.requests_no_titlebar or c.fullscreen or c.maximized) then
+    awful.titlebar.show(c, 'left')
+		c.border_width = dpi(0)
   else
     awful.titlebar.hide(c, 'left')
   end
+end)
+
+-- toggle titlebar when client is maximized
+client.connect_signal("property::maximized", function(c)
+  if c.maximized then
+    awful.titlebar.hide(c, 'left')
+	else
+		awful.titlebar.show(c, 'left')
+	end
+end)
+
+-- toggle titlebar when client is fullscreen
+client.connect_signal("property::fullscreen", function(c)
+  if c.fullscreen then
+    awful.titlebar.hide(c, 'left')
+	else
+		awful.titlebar.show(c, 'left')
+	end
 end)
 
 -- show titlebars when layout is set to floating
