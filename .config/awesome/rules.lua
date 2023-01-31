@@ -52,7 +52,6 @@ awful.rules.rules = {
 		},
 		properties = {
 			floating = true,
-			border_width = 0,
 			placement = awful.placement.centered
 		}
 	},

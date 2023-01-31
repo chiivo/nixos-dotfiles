@@ -21,7 +21,7 @@ client.connect_signal("request::titlebars", function(c)
 
 	titlebar = awful.titlebar(c, {
 		size = dpi(30),
-		position = 'top',
+		position = 'left',
 		bg_normal = colors.gray,
 		bg_focus = colors.pink
 	}):setup {
@@ -35,18 +35,11 @@ end)
 
 -- show titlebar when client is floating
 client.connect_signal("property::floating", function(c)
-  if c.floating and not c.requests_no_titlebar then
-    awful.titlebar.show(c)
+  if c.floating and not (c.requests_no_titlebar or c.fullscreen) then
+    awful.titlebar.show(c, "left")
   else
-    awful.titlebar.hide(c)
+    awful.titlebar.hide(c, 'left')
   end
-end)
-
--- fix fullscreen apps stretching offscreen
-client.connect_signal("property::fullscreen", function(c)
-	if c.fullscreen then
-		awful.titlebar.hide(c)
-	end
 end)
 
 -- show titlebars when layout is set to floating
@@ -60,12 +53,12 @@ end)
 -- titlebars are always shown when layout is set to floating
 awful.tag.attached_connect_signal(nil, "tagged", function(t, c)
   if t.layout.name == "floating" then
-    awful.titlebar.show(c)
+    awful.titlebar.show(c, 'left')
   end
 end)
 
 -- set border width to 0 for floating or maximized clients
-screen.connect_signal("arrange", function (s)
+screen.connect_signal("arrange", function(s)
 	-- local max = s.selected_tag.layout.name == "max"
 	-- local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
 	for _, c in pairs(s.clients) do
