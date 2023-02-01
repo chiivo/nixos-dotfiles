@@ -91,8 +91,10 @@ tagsone = wibox.widget {
 							self.bg = colors.white
 						end)
 						self:connect_signal("mouse::leave", function()
-							if self.has_backup then
+							if self.has_backup and not c3.selected then
 								self.bg = self.backup
+							elseif c3.selected then
+								self.bg = colors.pink
 							end
 						end)
 						self.update()
@@ -156,8 +158,10 @@ tagstwo = wibox.widget {
 							self.bg = colors.white
 						end)
 						self:connect_signal("mouse::leave", function()
-							if self.has_backup then
+							if self.has_backup and not c3.selected then
 								self.bg = self.backup
+							elseif c3.selected then
+								self.bg = colors.pink
 							end
 						end)
 						self.update()

@@ -248,7 +248,7 @@ clientkeys = gears.table.join(
 		end,
 		{description = "minimize", group = "client"}
 	),
-	-- Unminimized
+	-- Unminimize Window
 	awful.key({ modkey, "Control" }, "n",
 		function ()
 			local c = awful.client.restore()
