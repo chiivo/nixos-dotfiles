@@ -68,7 +68,7 @@ naughty.config.icon_formats = {
 }
 naughty.config.defaults.margin = dpi(10)
 naughty.config.defaults.border_width = dpi(0)
-naughty.config.defaults.timeout = 0
+naughty.config.defaults.timeout = 10
 naughty.config.defaults.screen = 1
 
 -- Right-click Menu
