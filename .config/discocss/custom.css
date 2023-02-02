@@ -106,14 +106,14 @@ font-family: Sans-Serif;
 .chatContent-3KubbW {
 	margin: 10px;
 	border-radius: 10px;
-	background-color: #141515;
+	background-color: var(--dark-black);
 }
 /*Main Page Background*/
 .peopleColumn-1wMU14 {
 	background-color: var(--black);
 }
 /*Sidebar*/
-.sidebar-1tnWFu {
+.sidebar-1tnWFu.hasNotice-1s68so{
 	margin: 10px 0;
 	padding: 0 10px;
 	border-radius: 10px;
