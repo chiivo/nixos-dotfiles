@@ -180,11 +180,7 @@ globalkeys = gears.table.join(
 	-- Toggle Bar
 	awful.key({ modkey, }, "b",
 		function()
-			if bar.visible == true then
-				bar.visible = false
-			else
-				bar.visible = true
-			end 
+			bartoggle()
 		end,
 		{description = "Toggle Bar", group = "screen"}
 	),
@@ -202,6 +198,7 @@ clientkeys = gears.table.join(
 	-- Set Fullscreen
 	awful.key({ modkey, }, "f",
 		function (c)
+			bartoggle()
 			c.fullscreen = not c.fullscreen
 			c:raise()
 		end,

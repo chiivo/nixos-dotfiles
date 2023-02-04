@@ -1,6 +1,7 @@
 local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
+local screen = screen.primary
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
@@ -9,7 +10,7 @@ require("theme")
 modkey = "Mod4"
 
 -- Powermenu Widget
-powerbutton = wibox.widget {
+local powerbutton = wibox.widget {
 	{
 		widget = wibox.container.margin,
 		top = dpi(10),
@@ -50,7 +51,7 @@ local taglist_buttons = gears.table.join(
 	awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
-tagsone = wibox.widget {
+local tagsone = wibox.widget {
 	{
 		left = dpi(10),
 		right = dpi(10),
@@ -110,14 +111,14 @@ tagsone = wibox.widget {
 	layout = wibox.layout.fixed.vertical
 }
 
-separator = wibox.widget {
+local separator = wibox.widget {
 	widget = wibox.widget.separator,
 	orientation = "horizontal",
 	thickness = dpi(2),
 	span_ratio = .5,
 }
 
-tagstwo = wibox.widget {
+local tagstwo = wibox.widget {
 	{
 		left = dpi(10),
 		right = dpi(10),
@@ -177,7 +178,7 @@ tagstwo = wibox.widget {
 	layout = wibox.layout.fixed.vertical
 }
 
-middle = wibox.widget {
+local middle = wibox.widget {
 	{
 		tagsone,
 		separator,
@@ -189,7 +190,7 @@ middle = wibox.widget {
 }
 
 -- Volume Widget
-volume = wibox.widget {
+local volume = wibox.widget {
 	widget = wibox.widget.textbox,
 	valign = "center",
 	align = "center"
@@ -201,7 +202,7 @@ function volsymupdate()
 	end)
 end
 
-volume_widget = wibox.widget {
+local volume_widget = wibox.widget {
 	volume,
 	layout = wibox.layout.fixed.vertical
 }
@@ -226,7 +227,7 @@ volume_widget:buttons(gears.table.join(
 ))
 
 -- Clock Widget
-clock = wibox.widget {
+local clock = wibox.widget {
 	{
 		widget = wibox.container.margin,
 		top = dpi(10),
@@ -312,7 +313,7 @@ local function decorate_cell(widget, flag, date)
 	return ret
 end
 
-calendar = wibox.widget {
+local calendar = wibox.widget {
 	date = os.date('*t'),
 	fn_embed = decorate_cell,
   font = 'Monospace 14',
@@ -320,7 +321,7 @@ calendar = wibox.widget {
   widget = wibox.widget.calendar.month
 }
 
-calendarpopup = awful.popup ({
+local calendarpopup = awful.popup ({
 	widget = {
 		{
 			calendar,
@@ -345,14 +346,14 @@ clock:connect_signal('mouse::leave', function()
 end)
 
 -- Systray
-systraybutton = wibox.widget {
+local systraybutton = wibox.widget {
 	widget = wibox.widget.textbox,
 	text = "",
 	valign ="center",
 	align = "center"
 }
 
-systraytoggle = wibox.widget {
+local systraytoggle = wibox.widget {
 	{
 		widget = wibox.container.margin,
 		top = dpi(10),
@@ -362,7 +363,7 @@ systraytoggle = wibox.widget {
 	layout = wibox.layout.fixed.vertical
 }
 
-systraypopup = awful.popup ({
+local systraypopup = awful.popup ({
 	widget = {
 		horizontal = false,
 		forced_height = dpi(90),
@@ -392,37 +393,43 @@ systraybutton:buttons(gears.table.join(
 
 
 -- Create bar
-bar = awful.popup({
+local bar = wibox ({
+	x = dpi(20),
+	y = (screen.geometry.height - 600) / 2,
 	screen = 1,
-	type = "dock",
-	minimum_height = dpi(600),
-	maximum_height = dpi(600),
-	minimum_width = dpi(30),
-	maximum_width = dpi(30),
-	placement = function()
-		awful.placement.left(bar, { margins = dpi(20) })
-	end,
-	widget = {
-		{
-			layout = wibox.layout.align.vertical,
-			{-- Left widgets
-				layout = wibox.layout.fixed.vertical,
-				powerbutton
-			},
-			{-- Middle widgets
-				layout = wibox.container.place,
-				middle
-			},
-			{ -- Right widgets
-				layout = wibox.layout.fixed.vertical,
-				volume_widget,
-				clock,
-				systraytoggle
-			}
-		},
-		widget = wibox.container.background
-	}
+	height = dpi(600),
+	width = dpi(30),
+	visible = true,
+	ontop = true
 })
+bar:setup {
+	{
+		layout = wibox.layout.align.vertical,
+		{-- Left widgets
+			layout = wibox.layout.fixed.vertical,
+			powerbutton
+		},
+		{-- Middle widgets
+			layout = wibox.container.place,
+			middle
+		},
+		{ -- Right widgets
+			layout = wibox.layout.fixed.vertical,
+			volume_widget,
+			clock,
+			systraytoggle
+		}
+	},
+	widget = wibox.container.background
+}
 bar:struts{ left = dpi(50) }
+
+function bartoggle()
+	if bar.visible == true then
+		bar.visible = false
+	else
+		bar.visible = true
+	end 
+end
 
 volsymupdate()
