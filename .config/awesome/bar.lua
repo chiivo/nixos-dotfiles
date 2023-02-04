@@ -424,6 +424,14 @@ bar:setup {
 }
 bar:struts{ left = dpi(50) }
 
+client.connect_signal("property::fullscreen", function(c)
+  if c.fullscreen then
+		bar.ontop = false
+	else
+		bar.ontop = true
+	end
+end)
+
 function bartoggle()
 	if bar.visible == true then
 		bar.visible = false
