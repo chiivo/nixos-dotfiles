@@ -29,8 +29,6 @@ configuration {
 window {
 	location: center;
 	anchor: center;
-/*  x-offset: 70px;
-  y-offset: 20px;*/
 	background-color: @background;
 	border: 4;
 	border-radius: 10;
