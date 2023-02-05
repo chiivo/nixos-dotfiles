@@ -6,7 +6,7 @@ modkey = "Mod4"
 terminal = "alacritty"
 
 -- Right Click Menu
-powermenu = {
+local powermenu = {
 	{ "Power Off",
 		function()
 			awful.spawn.with_shell("poweroff")
@@ -23,22 +23,27 @@ powermenu = {
 		end
 	}
 }
-mymainmenu = awful.menu({
+local menu = awful.menu({
 	items = {
-		{ "Open Terminal", terminal },
+		{ "Terminal", terminal },
 		{ "Power Menu", powermenu }
 	}
 })
 
+-- Menu Mouse Buttons
 root.buttons(gears.table.join(
 	awful.button({ }, 3,
 		function ()
-			mymainmenu:toggle()
+			menu:show()
+		end
+	),
+	awful.button({ }, 1,
+		function ()
+			menu:hide()
 		end
 	)
-	-- awful.button({ }, 4, awful.tag.viewnext),
-	-- awful.button({ }, 5, awful.tag.viewprev)
 ))
+
 clientbuttons = gears.table.join(
 	awful.button({ }, 1,
 		function (c)

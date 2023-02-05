@@ -440,4 +440,6 @@ function bartoggle()
 	end 
 end
 
-volsymupdate()
+if awesome.startup then
+	volsymupdate()
+end

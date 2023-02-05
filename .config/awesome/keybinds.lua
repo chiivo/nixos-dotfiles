@@ -198,7 +198,6 @@ clientkeys = gears.table.join(
 	-- Set Fullscreen
 	awful.key({ modkey, }, "f",
 		function (c)
-			-- bartoggle()
 			c.fullscreen = not c.fullscreen
 			c:raise()
 		end,
