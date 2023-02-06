@@ -16,13 +16,13 @@ getvolsym() {
 	checkmute=$(amixer -D pulse sget Master | grep 'Front Left:' | awk -F'[][]' '{ print $4 }')
 	
 	if [ $checkmute != on ]; then
-		echo 'ﱝ'
+		echo '󰖁'
 	elif [ $(getvol) -lt 30 ]; then
 		echo ''
 	elif [ $(getvol) -lt 40 ]; then
 		echo ''
 	elif [ $(getvol) -lt 50 ]; then
-		echo '墳'
+		echo '󰕾'
 	elif [ $(getvol) -ge 50 ]; then
 		echo ''
 	fi
