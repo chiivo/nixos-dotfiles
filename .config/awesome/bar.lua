@@ -17,7 +17,7 @@ local powerbutton = wibox.widget {
 		bottom = dpi(10),
 		{
 			widget = wibox.widget.textbox,
-			text = "",
+			text = "󰴈",
 			valign ="center",
 			align = "center"
 		}
@@ -28,7 +28,7 @@ local powerbutton = wibox.widget {
 powerbutton:buttons(gears.table.join(
 	awful.button({ }, 1,
 		function ()
-			awful.spawn.with_shell("poweroff")
+			awful.spawn.with_shell("rofi -show")
 		end
 	)
 ))
@@ -395,7 +395,7 @@ systraybutton:buttons(gears.table.join(
 -- Create bar
 local bar = wibox ({
 	x = dpi(20),
-	y = (screen.geometry.height - 600) / 2,
+	y = (screen.geometry.height - dpi(600)) / 2,
 	screen = 1,
 	height = dpi(600),
 	width = dpi(30),
@@ -440,6 +440,9 @@ function bartoggle()
 	end 
 end
 
-if awesome.startup then
-	volsymupdate()
-end
+-- Run volsymupdate() every second
+local t = timer({ timeout = 1 })
+t:connect_signal("timeout", function()
+  volsymupdate()
+end)
+t:start()
