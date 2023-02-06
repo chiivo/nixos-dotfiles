@@ -529,7 +529,7 @@ local comps = {
 	vi_mode = {
 		left = {
 			provider = function()
-				return ''-- .. vi_mode_utils.get_vim_mode()
+				return '󰴈'-- .. vi_mode_utils.get_vim_mode()
 			end,
 			hl = function()
 				local val = {
