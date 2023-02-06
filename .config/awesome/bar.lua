@@ -211,6 +211,7 @@ volume_widget:buttons(gears.table.join(
 	awful.button({ }, 1,
 		function ()
 			awful.spawn.with_shell("~/scripts/volume -m")
+			volsymupdate()
 		end
 	),
 	awful.button({ }, 2,
