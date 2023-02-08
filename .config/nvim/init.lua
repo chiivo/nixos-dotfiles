@@ -112,7 +112,7 @@ db.setup {
         key = 'a',
       },
       {
-        desc = ' dotfiles',
+        desc = ' Dotfiles',
         group = 'Number',
         action = 'Telescope dotfiles',
         key = 'd',
