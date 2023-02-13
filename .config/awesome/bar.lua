@@ -333,8 +333,8 @@ local calendarpopup = awful.popup ({
 	},
 	border_width = 0,
 	ontop = true,
-	x = dpi(70),
-	y = dpi(757),
+	x = dpi(69),
+	y = dpi(803),
 	visible = false
 })
 
@@ -373,8 +373,8 @@ local systraypopup = awful.popup ({
 	},
 	border_width = 0,
 	ontop = true,
-	x = dpi(70),
-	y = dpi(835),
+	x = dpi(69),
+	y = dpi(1031),
 	visible = false
 }) 
 
@@ -396,9 +396,9 @@ systraybutton:buttons(gears.table.join(
 -- Create bar
 local bar = wibox ({
 	x = dpi(20),
-	y = (screen.geometry.height - dpi(600)) / 2,
+	y = (screen.geometry.height - (screen.geometry.height - dpi(40))) / 2,
 	screen = 1,
-	height = dpi(600),
+	height = screen.geometry.height - dpi(40),
 	width = dpi(30),
 	visible = true,
 	ontop = true

@@ -24,11 +24,12 @@ local theme = {}
 
 theme.font = "monospace bold 16"
 
+theme.bg_systray = colors.black
+
 theme.bg_normal = colors.black
 theme.bg_focus = colors.pink
 theme.bg_urgent = colors.red
 theme.bg_minimize = colors.gray
-theme.bg_systray = theme.bg_normal
 
 theme.fg_normal = colors.pink
 theme.fg_focus = colors.black
@@ -55,12 +56,14 @@ theme.notification_font = "monospace 12"
 theme.notification_bg = colors.black
 theme.notification_fg = colors.pink
 theme.notification_border_color = colors.pink
-theme.notification_width = dpi(358)
+theme.notification_width = dpi(360)
 theme.notification_max_height = dpi(400)
 naughty.config.padding = dpi(20)
 naughty.config.spacing = dpi(10)
-theme.notification_icon_size = dpi(48)
-naughty.config.icon_dirs = {"/home/chivo/.icons/Papirus-Dark"}
+theme.notification_icon_size = 48
+naughty.config.icon_dirs = {
+	"/home/chivo/.icons/Papirus-Dark"
+}
 naughty.config.icon_formats = {
 	"png",
 	"jpg",
