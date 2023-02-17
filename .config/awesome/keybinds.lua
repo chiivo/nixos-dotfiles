@@ -15,6 +15,20 @@ editor_cmd = terminal .. " -e " .. editor
 
 -- Global Keybindings
 globalkeys = gears.table.join(
+	
+	-- Unminimize Window
+	awful.key({ modkey, "Control" }, "n",
+		function ()
+			local c = awful.client.restore()
+			-- Focus restored client
+			if c then
+				c:emit_signal(
+					"request::activate", "key.unminimize", {raise = true}
+				)
+			end
+		end,
+		{description = "restore minimized", group = "client"}
+	),
 	-- Help Screen
 	awful.key({ modkey, }, "s",
 		hotkeys_popup.show_help,
@@ -243,19 +257,6 @@ clientkeys = gears.table.join(
 			c.minimized = true
 		end,
 		{description = "minimize", group = "client"}
-	),
-	-- Unminimize Window
-	awful.key({ modkey, "Control" }, "n",
-		function ()
-			local c = awful.client.restore()
-			-- Focus restored client
-			if c then
-				c:emit_signal(
-					"request::activate", "key.unminimize", {raise = true}
-				)
-			end
-		end,
-		{description = "restore minimized", group = "client"}
 	),
 	-- Maximize Window
 	awful.key({ modkey, }, "m",

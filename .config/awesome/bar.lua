@@ -26,7 +26,7 @@ local powerbutton = wibox.widget {
 }
 
 powerbutton:buttons(gears.table.join(
-	awful.button({ }, 1,
+	awful.button({}, 1,
 		function ()
 			awful.spawn.with_shell("rofi -show")
 		end
@@ -35,20 +35,9 @@ powerbutton:buttons(gears.table.join(
 
 -- Tags Widget
 local taglist_buttons = gears.table.join(
-	awful.button({ }, 1, function(t) t:view_only() end),
-	awful.button({ modkey }, 1, function(t)
-		if client.focus then
-			client.focus:move_to_tag(t)
-		end
-	end),
-	awful.button({ }, 3, awful.tag.viewtoggle),
-	awful.button({ modkey }, 3, function(t)
-		if client.focus then
-			client.focus:toggle_tag(t)
-		end
-	end),
-	awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
-	awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
+	awful.button({}, 1, function(t)
+		t:view_only()
+	end)
 )
 
 local tagsone = wibox.widget {
@@ -178,6 +167,67 @@ local tagstwo = wibox.widget {
 	layout = wibox.layout.fixed.vertical
 }
 
+-- Tasklist Widget
+local tasklist_buttons = {
+	awful.button({}, 1, function(c)
+		if c == client.focus then
+			c.minimized = true
+		else
+			c.minimized = false
+			if not c:isvisible() then
+				awful.tag.viewonly(c:tags()[1])
+			end
+			client.focus = c
+			c:raise()
+		end
+	end),
+	awful.button({}, 2, function(c)
+		c:kill()
+	end),
+	awful.button({}, 3, function()
+		awful.menu.client_list({theme = {width = 250}})
+	end)
+}
+
+local tasklist = awful.widget.tasklist {
+	screen = 1,
+	filter = awful.widget.tasklist.filter.currenttags,
+	buttons = tasklist_buttons,
+	layout = {
+		spacing = dpi(10),
+		layout = wibox.layout.fixed.vertical
+	},
+	widget_template = {
+		{
+			{
+				{
+					id = 'icon_role',
+					widget = wibox.widget.imagebox
+				},
+				margins = dpi(2),
+				widget  = wibox.container.margin
+			},
+			id = 'background_role',
+			widget = wibox.container.background,
+			shape = function(cr, width, height)
+				gears.shape.rounded_rect(cr, width, height, 4)
+			end
+		},
+		margins = dpi(2),
+		widget  = wibox.container.margin,
+		create_callback = function(self, c, index, objects)
+			self:get_children_by_id('icon_role')[1].image = c.icon
+			self:connect_signal('mouse::enter', function()
+				self.backup = self.bg
+				self.bg = colors.gray
+			end)
+			self:connect_signal('mouse::leave', function()
+				self.bg = self.backup
+			end)
+		end
+	} 
+}
+
 local middle = wibox.widget {
 	{
 		tagsone,
@@ -208,19 +258,23 @@ local volume_widget = wibox.widget {
 }
 
 volume_widget:buttons(gears.table.join(
-	awful.button({ }, 1,
+	awful.button({}, 1,
 		function ()
 			awful.spawn.with_shell("~/scripts/volume -m")
 			volsymupdate()
+			volbarvalupdate()
+			volbar_vis_toggle()
 		end
 	),
-	awful.button({ }, 2,
+	awful.button({}, 2,
 		function ()
 			awful.spawn.with_shell("amixer -D pulse sset Master 50%")
 			volsymupdate()
+			volbarvalupdate()
+			volbar_vis_toggle()
 		end
 	),
-	awful.button({ }, 3,
+	awful.button({}, 3,
 		function ()
 			awful.spawn.with_shell("pavucontrol")
 		end
@@ -265,7 +319,7 @@ local function rounded_shape(size, partial)
 	end
 end
 styles.month = {
-	padding = 0,
+	padding = dpi(0),
 	bg_color = colors.black,
 	shape = rounded_shape(10)
 }
@@ -379,7 +433,7 @@ local systraypopup = awful.popup ({
 }) 
 
 systraybutton:buttons(gears.table.join(
-	awful.button({ }, 1,
+	awful.button({}, 1,
 		function ()
 			if systraybutton.text == "" then
 				systraybutton.text = ""
@@ -416,6 +470,7 @@ bar:setup {
 		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.vertical,
+			tasklist,
 			volume_widget,
 			clock,
 			systraytoggle
