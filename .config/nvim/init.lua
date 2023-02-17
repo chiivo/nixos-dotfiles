@@ -96,7 +96,7 @@ db.setup {
 			{
 				desc = ' Update',
 				group = '@property',
-				action = 'PackerUpdate',
+				action = 'execute "PackerUpdate" | TSUpdate all',
 				key = 'u'
 			},
       {
