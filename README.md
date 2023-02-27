@@ -1,5 +1,5 @@
 # <p align="center">🌸 Bliss 🌸</p>
-![image](https://user-images.githubusercontent.com/13358601/215355860-3587e119-986c-46e9-8832-5fd103b8cefc.png)
+![image](https://user-images.githubusercontent.com/13358601/221479020-b8ecb8c6-ae86-468d-890f-d337314a849e.png)
 ## Software
 - Distro: arch
 - AUR Helper: paru
