@@ -197,14 +197,6 @@ globalkeys = gears.table.join(
 			bartoggle()
 		end,
 		{description = "Toggle Bar", group = "screen"}
-	),
-	-- Close Popups
-	awful.key({ modkey }, "Escape",
-		function()
-			systraybutton.text = ""
-			systraypopup.visible = false
-		end,
-		{description = "Close Popups", group = "screen"}
 	)
 )
 -- Client Keybindings
@@ -243,13 +235,6 @@ clientkeys = gears.table.join(
 		end,
 		{description = "move to screen", group = "client"}
 	),
-	-- Toggle Keep on Top
-	awful.key({ modkey, }, "t",
-		function (c)
-			c.ontop = not c.ontop
-		end,
-		{description = "toggle keep on top", group = "client"}
-	),
 	-- Minimize Window
 	awful.key({ modkey, }, "n",
 		function (c)
@@ -265,21 +250,6 @@ clientkeys = gears.table.join(
 			c:raise()
 		end,
 		{description = "(un)maximize", group = "client"}
-	),
-	-- Unmaximize Window
-	awful.key({ modkey, "Control" }, "m",
-		function (c)
-			c.maximized_vertical = not c.maximized_vertical
-			c:raise()
-		end,
-		{description = "(un)maximize vertically", group = "client"}
-	),
-	awful.key({ modkey, "Shift" }, "m",
-		function (c)
-			c.maximized_horizontal = not c.maximized_horizontal
-			c:raise()
-		end,
-		{description = "(un)maximize horizontally", group = "client"}
 	)
 )
 

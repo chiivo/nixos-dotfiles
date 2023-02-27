@@ -13,7 +13,7 @@ run solaar --window=hide
 # run ~/scripts/wallpapersetter
 
 #### Compositor ###
-run picom --experimental-backends
+run picom
 
 #### Bluetooth ###
 run blueman-applet

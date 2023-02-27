@@ -9,23 +9,23 @@ require("theme")
 
 modkey = "Mod4"
 
--- Powermenu Widget
-local powerbutton = wibox.widget {
+-- Symbol Widget
+local symbol = wibox.widget {
 	{
-		widget = wibox.container.margin,
-		top = dpi(10),
-		bottom = dpi(10),
 		{
 			widget = wibox.widget.textbox,
 			text = "󰴈",
 			valign ="center",
 			align = "center"
-		}
+		},
+		widget = wibox.container.margin,
+		top = dpi(10),
+		bottom = dpi(10)
 	},
 	layout = wibox.layout.fixed.vertical,
 }
 
-powerbutton:buttons(gears.table.join(
+symbol:buttons(gears.table.join(
 	awful.button({}, 1,
 		function ()
 			awful.spawn.with_shell("rofi -show")
@@ -167,67 +167,6 @@ local tagstwo = wibox.widget {
 	layout = wibox.layout.fixed.vertical
 }
 
--- Tasklist Widget
-local tasklist_buttons = {
-	awful.button({}, 1, function(c)
-		if c == client.focus then
-			c.minimized = true
-		else
-			c.minimized = false
-			if not c:isvisible() then
-				awful.tag.viewonly(c:tags()[1])
-			end
-			client.focus = c
-			c:raise()
-		end
-	end),
-	awful.button({}, 2, function(c)
-		c:kill()
-	end),
-	awful.button({}, 3, function()
-		awful.menu.client_list({theme = {width = 250}})
-	end)
-}
-
-local tasklist = awful.widget.tasklist {
-	screen = 1,
-	filter = awful.widget.tasklist.filter.currenttags,
-	buttons = tasklist_buttons,
-	layout = {
-		spacing = dpi(10),
-		layout = wibox.layout.fixed.vertical
-	},
-	widget_template = {
-		{
-			{
-				{
-					id = 'icon_role',
-					widget = wibox.widget.imagebox
-				},
-				margins = dpi(2),
-				widget  = wibox.container.margin
-			},
-			id = 'background_role',
-			widget = wibox.container.background,
-			shape = function(cr, width, height)
-				gears.shape.rounded_rect(cr, width, height, 4)
-			end
-		},
-		margins = dpi(2),
-		widget  = wibox.container.margin,
-		create_callback = function(self, c, index, objects)
-			self:get_children_by_id('icon_role')[1].image = c.icon
-			self:connect_signal('mouse::enter', function()
-				self.backup = self.bg
-				self.bg = colors.gray
-			end)
-			self:connect_signal('mouse::leave', function()
-				self.bg = self.backup
-			end)
-		end
-	} 
-}
-
 local middle = wibox.widget {
 	{
 		tagsone,
@@ -295,6 +234,7 @@ local clock = wibox.widget {
 	},
 	{
 		widget = wibox.container.margin,
+		bottom = dpi(10),
 		{
 			widget = wibox.widget.textclock,
 			format = "%M",
@@ -400,53 +340,6 @@ clock:connect_signal('mouse::leave', function()
 	calendarpopup.visible = false
 end)
 
--- Systray
-local systraybutton = wibox.widget {
-	widget = wibox.widget.textbox,
-	text = "",
-	valign ="center",
-	align = "center"
-}
-
-local systraytoggle = wibox.widget {
-	{
-		widget = wibox.container.margin,
-		top = dpi(10),
-		bottom = dpi(10),
-		systraybutton
-	},
-	layout = wibox.layout.fixed.vertical
-}
-
-local systraypopup = awful.popup ({
-	widget = {
-		horizontal = false,
-		forced_height = dpi(90),
-		forced_width = dpi(30),
-		widget = wibox.widget.systray
-	},
-	border_width = 0,
-	ontop = true,
-	x = dpi(69),
-	y = dpi(1031),
-	visible = false
-}) 
-
-systraybutton:buttons(gears.table.join(
-	awful.button({}, 1,
-		function ()
-			if systraybutton.text == "" then
-				systraybutton.text = ""
-				systraypopup.visible = true
-			else
-				systraybutton.text = ""
-				systraypopup.visible = false
-			end
-		end
-	)
-))
-
-
 -- Create bar
 local bar = wibox ({
 	x = dpi(20),
@@ -462,7 +355,7 @@ bar:setup {
 		layout = wibox.layout.align.vertical,
 		{-- Left widgets
 			layout = wibox.layout.fixed.vertical,
-			powerbutton
+			symbol
 		},
 		{-- Middle widgets
 			layout = wibox.container.place,
@@ -470,7 +363,6 @@ bar:setup {
 		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.vertical,
-			tasklist,
 			volume_widget,
 			clock,
 			systraytoggle

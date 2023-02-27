@@ -26,10 +26,23 @@ client.connect_signal("request::titlebars", function(c)
 		bg_focus = colors.pink
 	}):setup {
 		{
-			layout  = wibox.layout.align.horizontal
+			{
+				awful.titlebar.widget.closebutton(c),
+				awful.titlebar.widget.maximizedbutton(c),
+				spacing = dpi(10),
+				layout = wibox.layout.fixed.vertical
+			},
+			top = dpi(10),
+			bottom = dpi(4),
+			left = dpi(4),
+			right = dpi(4),
+			widget = wibox.container.margin,
 		},
-		buttons = buttons,
-		layout = wibox.layout.align.horizontal
+		{
+			buttons = buttons,
+			layout  = wibox.layout.flex.vertical
+		},
+		layout = wibox.layout.align.vertical
 	}
 end)
 
@@ -43,23 +56,30 @@ client.connect_signal("property::floating", function(c)
   end
 end)
 
--- toggle titlebar when client is maximized
+-- toggle titlebar maximized
 client.connect_signal("property::maximized", function(c)
   if c.maximized then
     awful.titlebar.hide(c, 'left')
-	else
+	elseif c.floating then
 		awful.titlebar.show(c, 'left')
 	end
 end)
 
--- toggle titlebar when client is fullscreen
-client.connect_signal("property::fullscreen", function(c)
-  if c.fullscreen then
+-- toggle titlebar tiled
+client.connect_signal("property::tiled", function(c)
+  if c.tiled then
     awful.titlebar.hide(c, 'left')
-	else
-		awful.titlebar.show(c, 'left')
 	end
 end)
+
+-- toggle titlebar when client is fullscreen
+--[[ client.connect_signal("property::fullscreen", function(c)
+  if c.fullscreen then
+    awful.titlebar.hide(c, 'left')
+	elseif c.floating then
+		awful.titlebar.show(c, 'left')
+	end
+end) ]]
 
 -- show titlebars when layout is set to floating
 awful.tag.attached_connect_signal(nil, "property::layout", function(t)

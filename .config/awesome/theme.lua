@@ -3,7 +3,7 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local gears = require("gears")
 local gfs = require("gears.filesystem")
-local themes_path = gfs.get_themes_dir()
+local themes_path = gfs.get_configuration_dir()
 local naughty = require("naughty")
 
 colors = {
@@ -82,10 +82,17 @@ theme.menu_border_color = colors.pink
 theme.menu_border_width = dpi(0)
 
 -- Define the image to load
-theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
-theme.titlebar_close_button_focus = themes_path.."default/titlebar/close_focus.png"
-theme.titlebar_minimize_button_normal = themes_path.."default/titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus = themes_path.."default/titlebar/minimize_focus.png"
+theme.titlebar_maximized_button_normal_inactive = gears.color.recolor_image(themes_path.."circle.svg", colors.black)
+theme.titlebar_maximized_button_focus_inactive = gears.color.recolor_image(themes_path.."circle.svg", colors.green)
+theme.titlebar_maximized_button_normal_active = gears.color.recolor_image(themes_path.."circle.svg", colors.black)
+theme.titlebar_maximized_button_focus_active = gears.color.recolor_image(themes_path.."circle.svg", colors.green)
+theme.titlebar_close_button_normal = gears.color.recolor_image(themes_path.."circle.svg", colors.black)
+theme.titlebar_close_button_focus = gears.color.recolor_image(themes_path.."circle.svg", colors.red)
+
+-- theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
+-- theme.titlebar_close_button_focus = themes_path.."default/titlebar/close_focus.png"
+-- theme.titlebar_minimize_button_normal = themes_path.."default/titlebar/minimize_normal.png"
+-- theme.titlebar_minimize_button_focus = themes_path.."default/titlebar/minimize_focus.png"
 theme.titlebar_ontop_button_normal_inactive = themes_path.."default/titlebar/ontop_normal_inactive.png"
 theme.titlebar_ontop_button_focus_inactive  = themes_path.."default/titlebar/ontop_focus_inactive.png"
 theme.titlebar_ontop_button_normal_active = themes_path.."default/titlebar/ontop_normal_active.png"
@@ -98,10 +105,10 @@ theme.titlebar_floating_button_normal_inactive = themes_path.."default/titlebar/
 theme.titlebar_floating_button_focus_inactive = themes_path.."default/titlebar/floating_focus_inactive.png"
 theme.titlebar_floating_button_normal_active = themes_path.."default/titlebar/floating_normal_active.png"
 theme.titlebar_floating_button_focus_active = themes_path.."default/titlebar/floating_focus_active.png"
-theme.titlebar_maximized_button_normal_inactive = themes_path.."default/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive = themes_path.."default/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active = themes_path.."default/titlebar/maximized_focus_active.png"
+-- theme.titlebar_maximized_button_normal_inactive = themes_path.."default/titlebar/maximized_normal_inactive.png"
+-- theme.titlebar_maximized_button_focus_inactive = themes_path.."default/titlebar/maximized_focus_inactive.png"
+-- theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
+-- theme.titlebar_maximized_button_focus_active = themes_path.."default/titlebar/maximized_focus_active.png"
 
 -- Wallpaper
 theme.wallpaper = themes_path.."default/background.png"
@@ -130,7 +137,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 )
 
 -- App icon theme
-theme.icon_theme = "/home/chivo/.icons/Flatery-Pink-Dark/"
+theme.icon_theme = "Flatery-Pink-Dark"
 
 -- Volume Popup
 theme.progressbar_fg = colors.pink
