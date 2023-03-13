@@ -1,0 +1,115 @@
+* Package Manager
+#+begin_src emacs-lisp
+  (setq package-enable-at-startup nil)
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+	 (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+	(bootstrap-version 6))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+	  (url-retrieve-synchronously
+	   "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+	   'silent 'inhibit-cookies)
+	(goto-char (point-max))
+	(eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+#+end_src
+
+* Theme
+#+begin_src emacs-lisp
+  (load-theme 'bliss t) ; Load theme
+#+end_src
+
+* Emacs Configuration
+#+begin_src emacs-lisp
+  (setq inhibit-startup-message t ; Don't show splash screen
+	visible-bell t ; flash bell on error
+	cursor-type 'bar) ; Change cursor type
+  (tool-bar-mode -1) ; button gui
+  (scroll-bar-mode -1) ; scrollbar
+  (menu-bar-mode -1) ; menu bar
+  (global-display-line-numbers-mode) ; numbers on the side
+  (global-visual-line-mode)
+  ;; (global-hl-line-mode)
+  ;; (pixel-scroll-precision-mode) ; smooth scrolling
+  ;; (recentf-mode 1)
+#+end_src
+
+* Dashboard
+#+begin_src emacs-lisp
+  (straight-use-package 'dashboard)
+  (straight-use-package 'page-break-lines)
+  (straight-use-package 'projectile)
+  (straight-use-package 'all-the-icons)
+  (require 'dashboard)
+  (dashboard-setup-startup-hook)
+  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard") ;; set title
+  (setq dashboard-startup-banner 'logo) ;; Set the banner
+  ;; Value can be
+  ;; - nil to display no banner
+  ;; - 'official which displays the official emacs logo
+  ;; - 'logo which displays an alternative emacs logo
+  ;; - 1, 2 or 3 which displays one of the text banners
+  ;; - "path/to/your/image.gif", "path/to/your/image.png" or "path/to/your/text.txt" which displays whatever gif/image/text you would prefer
+  ;; - a cons of '("path/to/your/image.png" . "path/to/your/text.txt")
+  (setq dashboard-center-content t) ;; center content
+  (setq dashboard-show-shortcuts nil) ;; show shortcuts
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-items '((recents  . 5)
+			  (bookmarks . 5)))
+#+end_src
+
+* Evil
+#+begin_src emacs-lisp
+  (straight-use-package 'evil)
+  (straight-use-package 'evil-commentary)
+  (straight-use-package 'evil-leader)
+  (require 'evil)
+  (require 'evil-commentary)
+  (require 'evil-leader)
+  (evil-mode)
+  (setq evil-normal-state-cursor 'bar)
+  (evil-set-undo-system 'undo-redo)
+  (evil-commentary-mode)
+  (global-evil-leader-mode)
+  (evil-leader/set-leader "<SPC>")
+#+end_src
+
+* Treemacs
+#+begin_src emacs-lisp
+  (straight-use-package 'treemacs)
+  (straight-use-package 'treemacs-evil)
+#+end_src
+
+* Which-Key
+#+begin_src emacs-lisp
+  (straight-use-package 'which-key)
+  (require 'which-key)
+  (which-key-mode)
+  (setq which-key-allow-evil-operators t)
+  (setq which-key-show-operator-state-maps t)
+  (evil-define-key nil evil-normal-state-map
+    " t" '("Treemacs" . treemacs)
+    "  " '("Reload Config" . (lambda() (interactive)(load-file "~/.config/emacs/init.el"))))
+#+end_src
+
+* Focus
+#+begin_src emacs-lisp
+  (straight-use-package 'focus)
+  (require 'focus)
+  (focus-mode)
+  (add-to-list 'focus-mode-to-thing '(prog-mode . paragraph))
+  (add-to-list 'focus-mode-to-thing '(text-mode . paragraph))
+#+end_src
+
+* Centered-Cursor
+#+begin_src emacs-lisp
+  (straight-use-package 'centered-cursor-mode)
+  (global-centered-cursor-mode)
+#+end_src
+
+#+begin_src emacs-lisp
+  ;; (setq left-margin-width 1 right-margin-width 1) ; Define new widths.
+  ;; (set-window-buffer nil (current-buffer)) ; Use them now.
+#+end_src
