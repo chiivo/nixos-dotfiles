@@ -25,6 +25,7 @@
   (cursor (:background white))
   (region (:background gray))
   (fringe (:background black))
+  (success (:foreground pink :weight 'bold))
   
   (mode-line (:background black))
   (mode-line-inactive (:background gray))
@@ -38,10 +39,10 @@
   
   (font-lock-comment-delimiter-face (:inherit font-lock-comment-face))
   (font-lock-comment-face (:foreground gray :slant 'italic))
-  (font-lock-keyword-face (:foreground purple))
+  (font-lock-keyword-face (:foreground green))
   (font-lock-constant-face (:foreground blue))
   (font-lock-string-face (:foreground orange))
-  (font-lock-builtin-face (:foreground green))
+  (font-lock-builtin-face (:foreground purple))
 
   (focus-unfocused (:foreground gray))
   
@@ -49,14 +50,14 @@
   (line-number-current-line (:foreground pink :weight 'bold))
   
   (org-block (:foreground white))
-  (org-level-1 (:foreground purple :fontfamily "sans-serif" :height 160))
-  (org-level-2 (:foreground blue :fontfamily "sans-serif" :height 150))
-  (org-level-3 (:foreground green :fontfamily "sans-serif" :height 140))
-  (org-level-6 (:foreground yellow :fontfamily "sans-serif" :height 130))
-  (org-level-5 (:foreground orange :fontfamily "sans-serif" :height 120))
-  (org-level-6 (:foreground red :fontfamily "sans-serif"))
-  (org-level-7 (:foreground white :fontfamily "sans-serif"))
-  (org-level-8 (:foreground pink :fontfamily "sans-serif"))
+  (org-level-1 (:foreground purple :fontfamily "sans-serif" :weight 'bold :height 160))
+  (org-level-2 (:foreground blue :fontfamily "sans-serif" :weight 'bold :height 150))
+  (org-level-3 (:foreground green :fontfamily "sans-serif" :weight 'bold :height 140))
+  (org-level-6 (:foreground yellow :fontfamily "sans-serif" :weight 'bold :height 130))
+  (org-level-5 (:foreground orange :fontfamily "sans-serif" :weight 'bold :height 120))
+  (org-level-6 (:foreground red :fontfamily "sans-serif" :weight 'bold))
+  (org-level-7 (:foreground white :fontfamily "sans-serif" :weight 'bold))
+  (org-level-8 (:foreground pink :fontfamily "sans-serif" :weight 'bold))
 
   (fixed-pitch-serif (:fontfamily "serif"))
  ))

@@ -16,7 +16,6 @@
 #+end_src
 
 * Theme
-Load a custom theme with autothemer
 #+begin_src emacs-lisp
 (straight-use-package 'autothemer)
 (load-theme 'bliss t) ; Load theme
@@ -94,14 +93,14 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 org-src-tab-acts-natively t
 org-confirm-babel-evaluate nil
 org-src-preserve-indentation nil
-org-src-tab-acts-natively t
 org-edit-src-content-indentation 0)
 (straight-use-package 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode)))
 #+end_src
 
-* Markdown Mode
+* Language Support
 #+begin_src emacs-lisp
+(straight-use-package 'lua-mode)
 (straight-use-package 'markdown-mode)
 #+end_src
 
