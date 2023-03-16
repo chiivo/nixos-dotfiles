@@ -1,4 +1,4 @@
-#+TITLE: <p align="center">🌸 Bliss 🌸</p>
+#+TITLE: 🌸 Bliss 🌸
 [[https://user-images.githubusercontent.com/13358601/221479020-b8ecb8c6-ae86-468d-890f-d337314a849e.png]]
 * Software
 - Distro: arch
@@ -22,14 +22,29 @@
 - Terminal Stuff: macchina, cbonsai, shell-color-scripts
 - Apps: blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3-git, polymc (jre-openjdk), obs-studio, chatterino2-7tv-git (gst-plugins-good), bottom, blueman, xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst, jp2a, wmctrl, playerctl, graphicsmagick, piper (or solaar)
 ** Reminders
-- To make executable bash file: `chmod +x /script/path`
-- Change ownership: `chown (username) /file/path`
-- In `/etc/pacman.conf`: ParallelDownloads=4, uncomment multilib and color
+- To make executable bash file:
+#+begin_src bash
+chmod +x /script/path
+#+end_src
+- Change ownership:
+#+begin_src bash
+chown (username) /file/path
+#+end_src
+- To enable multilib library, go to `/etc/pacman.conf` and edit: ParallelDownloads=4, uncomment multilib and color
+- Install `ttf-liberation` for steam
 - Out of sync kernel and driver updates can cause system to break
-- Remove gnu-free-fonts, install ttf-symbola (aur) (for alacritty braille to render as dots on graphs)
-- Install ttf-liberation for steam
-- If you need to edit an AUR PKGBUILD, use `paru --fm nvim -S (pakage name)`
-- `7z x *.zip -o\*` to extract zip into folder with same name
+- Remove `gnu-free-fonts`, install `ttf-symbola` (aur) for alacritty to braille to render as dots on graphs
+- If you need to edit an AUR PKGBUILD:
+  #+begin_src bash
+  paru --fm nvim -S (pakage name)
+  #+end_src
+- To extract zip into folder with same name:
+  #+begin_src bash
+  7z x *.zip -o\*
+  #+end_src
 - append `/mini` to the "Exec" line in `/etc/xdg/autostart/xppentablet.desktop` to start xp-pen-tablet minimized
 - add `x-gvfs-show` to partition option in `/etc/fstab` to have it appear in thunar
-- Change grub timeout with `se /etc/defaults/grub` and run `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+- Change grub timeout with `se /etc/defaults/grub` and run:
+  #+begin_src
+  sudo grub-mkconfig -o /boot/grub/grub.cfg
+  #+end_src 
