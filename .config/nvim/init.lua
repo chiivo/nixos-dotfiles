@@ -29,6 +29,7 @@ require('packer').startup(function()
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
 	use 'nvim-neorg/neorg'
+	use 'nvim-orgmode/orgmode'
 	use 'jbyuki/nabla.nvim'
 	use 'dhruvasagar/vim-table-mode'
 	use 'numToStr/Comment.nvim'
@@ -397,7 +398,7 @@ require("twilight").setup {
 		"lua_statement",
 		"call_statement",
 	},
-	exclude = { "dashboard", "norg" },
+	exclude = { "dashboard", "norg", "org" },
 }
 vim.cmd([[autocmd VimEnter * Twilight]])
 
@@ -633,7 +634,7 @@ require('feline').setup({
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"
-	ensure_installed = {'bash', 'c', 'css', 'latex', 'lua', 'nix', 'norg', 'rust', 'scss', 'toml', 'vim'},
+	ensure_installed = {'bash', 'c', 'css', 'latex', 'lua', 'nix', 'norg', 'org', 'rust', 'scss', 'toml', 'vim'},
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
 	-- List of parsers to ignore installing (for "all")
@@ -704,6 +705,25 @@ require('neorg').setup {
 	}
 }
 
+-- Orgmode
+-- Load custom treesitter grammar for org filetype
+require('orgmode').setup_ts_grammar()
+-- Treesitter configuration
+require('nvim-treesitter.configs').setup {
+  -- If TS highlights are not enabled at all, or disabled via `disable` prop,
+  -- highlighting will fallback to default Vim syntax highlighting
+  highlight = {
+    enable = true,
+    -- Required for spellcheck, some LaTex highlights and
+    -- code block highlights that do not have ts grammar
+    additional_vim_regex_highlighting = {'org'},
+  },
+  ensure_installed = {'org'}, -- Or run :TSUpdate org
+}
+require('orgmode').setup({
+  org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
+  org_default_notes_file = '~/Dropbox/org/refile.org',
+})
 -- Which-Key
 local wk = require("which-key")
 wk.setup{
@@ -813,6 +833,7 @@ cmp.setup{
 		{ name = 'buffer' },
 		{ name = 'path' },
 		{ name = 'norg' },
+		{ name = 'org' },
 	},
 	window = {
 		documentation = {
