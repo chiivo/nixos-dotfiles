@@ -26,6 +26,7 @@
   (region (:background gray))
   (fringe (:background black))
   (success (:foreground pink :weight 'bold))
+  (error (:foreground red :weight 'bold))
   
   (mode-line (:background black))
   (mode-line-inactive (:background gray))
@@ -43,6 +44,9 @@
   (font-lock-constant-face (:foreground blue))
   (font-lock-string-face (:foreground orange))
   (font-lock-builtin-face (:foreground purple))
+  (font-lock-type-face (:foreground green))
+
+  (widget-button-pressed (:foreground pink :weight 'bold))
 
   (focus-unfocused (:foreground gray))
   

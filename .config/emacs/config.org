@@ -84,13 +84,13 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 (setq dashboard-show-shortcuts nil) ;; show shortcuts
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
-(setq dashboard-items '((recents  . 5)))
+(setq dashboard-items '((recents  . 10)))
 (setq dashboard-set-navigator t)
 (setq dashboard-navigator-buttons
 `((;; line1
 (" " "Update" "Update Packages with Straight (u)"
-(lambda (&rest _) (straight-pull-all))font-lock-constant-face)
-(" " "Search" "Find a file, or write a new one (f)"
+(lambda (&rest _)(straight-pull-all))font-lock-constant-face)
+(" " "Search" "Find a file (f)"
 (lambda (&rest _)(interactive)(call-interactively 'find-file))font-lock-string-face)
 (" " "Quit" "Quit Emacs (q)"
 (lambda (&rest _)(interactive)(save-buffers-kill-emacs))font-lock-builtin-face)
@@ -107,96 +107,110 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 ;; (dashboard-add-shortcut "q" "Quit" 'dashboard-find-file)
 #+end_src
 
+* Treesitter
+#+begin_src emacs-lisp
+(straight-use-package 'tree-sitter)
+(straight-use-package 'tree-sitter-langs)
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
+#+end_src
+
 * YASnippet
-	#+begin_src emacs-lisp
-	(straight-use-package 'yasnippet)
-	(straight-use-package 'yasnippet-snippets)
-	(require 'yasnippet)
-	(require 'yasnippet-snippets)
-	(yas-global-mode)
-	(yas-reload-all)
-	(add-hook 'prog-mode-hook #'yas-minor-mode)
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'yasnippet)
+(straight-use-package 'yasnippet-snippets)
+(require 'yasnippet)
+(require 'yasnippet-snippets)
+(yas-global-mode)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+#+end_src
 
 * Org Mode Config
-	#+begin_src emacs-lisp
-	(setq org-src-preserve-indentation nil
-				org-src-tab-acts-natively t
-				org-edit-src-content-indentation 0
-				org-src-fontify-natively t
-				org-confirm-babel-evaluate nil)
-	(add-hook 'org-mode-hook 'org-indent-mode)
-	(straight-use-package 'org-bullets)
-	(add-hook 'org-mode-hook (lambda () (org-bullets-mode)))
-	#+end_src
+#+begin_src emacs-lisp
+(setq org-src-preserve-indentation nil
+org-src-tab-acts-natively t
+org-edit-src-content-indentation 0
+org-src-fontify-natively t
+org-confirm-babel-evaluate nil)
+(add-hook 'org-mode-hook 'org-indent-mode)
+(straight-use-package 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode)))
+#+end_src
 
 * Auto-Complete
-	#+begin_src emacs-lisp
-	(straight-use-package 'auto-complete)
-	(require 'auto-complete)
-	(global-auto-complete-mode)
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'auto-complete)
+(require 'auto-complete)
+(global-auto-complete-mode)
+#+end_src
 
 * Language Support
-	#+begin_src emacs-lisp
-	(straight-use-package 'lua-mode)
-	(straight-use-package 'markdown-mode)
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'lua-mode)
+(straight-use-package 'markdown-mode)
+#+end_src
 
 * Evil
-	#+begin_src emacs-lisp
-	(straight-use-package 'evil)
-	(straight-use-package 'evil-collection)
-	(straight-use-package 'evil-commentary)
-	(straight-use-package 'evil-anzu)
-	(setq evil-want-keybinding nil)
-	(require 'evil)
-	(require 'evil-collection)
-	(require 'evil-commentary)
-	(with-eval-after-load 'evil
-	(require 'evil-anzu))
-	(evil-mode)
-	(evil-collection-init)
-	(setq evil-normal-state-cursor 'bar)
-	(evil-set-undo-system 'undo-redo)
-	(evil-commentary-mode)
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'evil)
+(straight-use-package 'evil-collection)
+(straight-use-package 'evil-commentary)
+(straight-use-package 'evil-anzu)
+(setq evil-want-keybinding nil)
+(require 'evil)
+(require 'evil-collection)
+(require 'evil-commentary)
+(with-eval-after-load 'evil
+(require 'evil-anzu))
+(evil-mode)
+(evil-collection-init)
+(setq evil-normal-state-cursor 'bar)
+(evil-set-undo-system 'undo-redo)
+(evil-commentary-mode)
+#+end_src
 
 * NeoTree
-	#+begin_src emacs-lisp
-	(straight-use-package 'neotree)
-	(setq neo-smart-open t)
-	(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'neotree)
+(setq neo-smart-open t)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+#+end_src
 
 * Which-Key
-	#+begin_src emacs-lisp
-	(straight-use-package 'which-key)
-	(require 'which-key)
-	(which-key-mode)
-	(setq which-key-allow-evil-operators t)
-	(setq which-key-show-operator-state-maps t)
-	(evil-define-key nil evil-normal-state-map
-		" t" '("NeoTree" . neotree-toggle)
-		"  " '("Reload Config" . (lambda() (interactive)(load-file "~/.config/emacs/init.el"))))
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'which-key)
+(require 'which-key)
+(which-key-mode)
+(setq which-key-allow-evil-operators t)
+(setq which-key-show-operator-state-maps t)
+(evil-define-key nil evil-normal-state-map
+" t" '("NeoTree" . neotree-toggle)
+"  " '("Reload Config" . (lambda() (interactive)(load-file "~/.config/emacs/init.el"))))
+#+end_src
 
 * Centered-Cursor
-	#+begin_src emacs-lisp
-	(straight-use-package 'centered-cursor-mode)
-	(global-centered-cursor-mode)
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'centered-cursor-mode)
+(global-centered-cursor-mode)
+#+end_src
 
 * Rainbow-Mode
-	#+begin_src emacs-lisp
-	(straight-use-package 'rainbow-mode)
-	(require 'rainbow-mode)
-	(rainbow-mode)
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'rainbow-mode)
+#+end_src
+
+* Focus
+#+begin_src emacs-lisp
+(straight-use-package 'focus)
+(require 'focus)
+(add-to-list 'focus-mode-to-thing '(prog-mode . paragraph))
+(add-to-list 'focus-mode-to-thing '(text-mode . paragraph))
+#+end_src
 
 * Smartparens
-	#+begin_src emacs-lisp
-	(straight-use-package 'smartparens)
-	(require 'smartparens-config)
-	(smartparens-global-mode)
-	#+end_src
+#+begin_src emacs-lisp
+(straight-use-package 'smartparens)
+(require 'smartparens-config)
+(smartparens-global-mode)
+#+end_src
