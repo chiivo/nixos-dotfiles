@@ -21,7 +21,7 @@
 - Font Packages: ttf-liberation, ttf-symbola
 - Terminal Stuff: macchina, cbonsai, shell-color-scripts
 - Apps: blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3-git, polymc (jre-openjdk), obs-studio, chatterino2-7tv-git (gst-plugins-good), bottom, blueman, xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst, jp2a, wmctrl, playerctl, graphicsmagick, piper (or solaar)
-** Reminders
+* Reminders
 - To make executable bash file:
 #+begin_src bash
 chmod +x /script/path
