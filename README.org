@@ -35,16 +35,16 @@ chown (username) /file/path
 - Out of sync kernel and driver updates can cause system to break
 - Remove `gnu-free-fonts`, install `ttf-symbola` (aur) for alacritty to braille to render as dots on graphs
 - If you need to edit an AUR PKGBUILD:
-  #+begin_src bash
-  paru --fm nvim -S (pakage name)
-  #+end_src
+#+begin_src bash
+paru --fm nvim -S (pakage name)
+#+end_src
 - To extract zip into folder with same name:
-  #+begin_src bash
-  7z x *.zip -o\*
-  #+end_src
+#+begin_src bash
+7z x *.zip -o\*
+#+end_src
 - append `/mini` to the "Exec" line in `/etc/xdg/autostart/xppentablet.desktop` to start xp-pen-tablet minimized
 - add `x-gvfs-show` to partition option in `/etc/fstab` to have it appear in thunar
 - Change grub timeout with `se /etc/defaults/grub` and run:
-  #+begin_src
-  sudo grub-mkconfig -o /boot/grub/grub.cfg
-  #+end_src 
+#+begin_src
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+#+end_src 
