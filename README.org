@@ -1,5 +1,5 @@
-* <p align="center">🌸 Bliss 🌸</p>
-![image](https://user-images.githubusercontent.com/13358601/221479020-b8ecb8c6-ae86-468d-890f-d337314a849e.png)
+#+TITLE: <p align="center">🌸 Bliss 🌸</p>
+[[[[https://user-images.githubusercontent.com/13358601/221479020-b8ecb8c6-ae86-468d-890f-d337314a849e.png]]]]
 * Software
 - Distro: arch
 - AUR Helper: paru
