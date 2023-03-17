@@ -63,6 +63,13 @@
   (org-level-7 (:foreground white :fontfamily "sans-serif" :weight 'bold))
   (org-level-8 (:foreground pink :fontfamily "sans-serif" :weight 'bold))
 
+  (centaur-tabs-default (:foreground gray :background gray))
+  ;; (centaur-tabs-active-bar-face (:background red))
+  (centaur-tabs-selected (:foreground white :background black :fontfamily "monospace" :height 140))
+  (centaur-tabs-selected-modified (:foreground white :background black :fontfamily "monospace" :height 140))
+  (centaur-tabs-unselected (:foreground white :background gray :fontfamily "monospace" :height 140))
+  (centaur-tabs-unselected-modified (:foreground white :background gray :fontfamily "monospace" :height 140))
+
   (fixed-pitch-serif (:fontfamily "serif"))
  ))
 

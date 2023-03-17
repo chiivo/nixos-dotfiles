@@ -107,6 +107,21 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 ;; (dashboard-add-shortcut "q" "Quit" 'dashboard-find-file)
 #+end_src
 
+* Centaur-Tabs
+#+begin_src emacs-lisp
+(straight-use-package 'centaur-tabs)
+(require 'centaur-tabs)
+(centaur-tabs-mode t)
+(centaur-tabs-headline-match)
+(setq centaur-tabs-style "wave")
+(setq centaur-tabs-height 30)
+(setq centaur-tabs-set-icons t)
+(setq centaur-tabs-gray-out-icons 'buffer)
+(setq centaur-tabs-set-bar 'over)
+(setq centaur-tabs-set-modified-marker t)
+(centaur-tabs-change-fonts "monospace" 140)
+#+end_src
+
 * Treesitter
 #+begin_src emacs-lisp
 (straight-use-package 'tree-sitter)
@@ -119,11 +134,8 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 #+begin_src emacs-lisp
 (straight-use-package 'yasnippet)
 (straight-use-package 'yasnippet-snippets)
-(require 'yasnippet)
-(require 'yasnippet-snippets)
-(yas-global-mode)
-(yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)
+(setq yas-snippet-dirs '("~/.config/emacs/straight/repos/yasnippet-snippets/snippets/"))
+(yas-global-mode t)
 #+end_src
 
 * Org Mode Config
@@ -142,7 +154,11 @@ org-confirm-babel-evaluate nil)
 #+begin_src emacs-lisp
 (straight-use-package 'auto-complete)
 (require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
 (global-auto-complete-mode)
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 #+end_src
 
 * Language Support
@@ -198,6 +214,12 @@ org-confirm-babel-evaluate nil)
 * Rainbow-Mode
 #+begin_src emacs-lisp
 (straight-use-package 'rainbow-mode)
+(define-globalized-minor-mode global-rainbow-mode rainbow-mode
+(lambda ()
+(when (not (memq major-mode
+(list 'org-agenda-mode)))
+(rainbow-mode 1))))
+(global-rainbow-mode 1 )
 #+end_src
 
 * Focus
