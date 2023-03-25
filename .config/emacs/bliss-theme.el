@@ -70,6 +70,16 @@
   (centaur-tabs-unselected (:foreground white :background gray :fontfamily "monospace" :height 140))
   (centaur-tabs-unselected-modified (:foreground white :background gray :fontfamily "monospace" :height 140))
 
+  (rainbow-delimiters-depth-1-face (:foreground red))
+  (rainbow-delimiters-depth-2-face (:foreground orange))
+  (rainbow-delimiters-depth-3-face (:foreground yellow))
+  (rainbow-delimiters-depth-4-face (:foreground green))
+  (rainbow-delimiters-depth-5-face (:foreground blue))
+  (rainbow-delimiters-depth-6-face (:foreground purple))
+  (rainbow-delimiters-depth-7-face (:foreground gray))
+  (rainbow-delimiters-depth-8-face (:foreground dark-black))
+  (rainbow-delimiters-depth-9-face (:foreground pink))
+
   (fixed-pitch-serif (:fontfamily "serif"))
  ))
 

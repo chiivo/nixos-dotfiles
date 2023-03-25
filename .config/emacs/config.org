@@ -60,6 +60,21 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 (setq doom-modeline-highlight-modified-buffer-name nil)
 (setq doom-modeline-buffer-position nil)
 (setq doom-modeline-percent-position nil)
+;; (setq-default mode-line-format
+;;               '("%e"
+;;                 (:eval
+;;                  (let ((evil-mode-string (upcase (symbol-name evil-state))))
+;;                    (propertize evil-mode-string 'face '(:weight bold))))
+;;                 "  "
+;;                 (:propertize (:eval (shorten-directory default-directory 30))
+;;                              face mode-line-folder-face)
+;;                 (:eval (propertize "%b" 'face 'mode-line-filename-face))
+;;                 "  "
+;;                 (:propertize mode-name
+;;                              face mode-line-mode-name-face)
+;;                 "  "
+;;                 mode-line-misc-info
+;;                 mode-line-end-spaces))
 #+end_src
 
 * Dashboard
@@ -69,8 +84,10 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 (straight-use-package 'projectile)
 (straight-use-package 'all-the-icons)
 (require 'dashboard)
+(require 'page-break-lines)
 (require 'all-the-icons)
 (dashboard-setup-startup-hook)
+(add-hook 'dashboard-mode-hook 'centaur-tabs-local-mode)
 (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard") ;; set title
 (setq dashboard-startup-banner 'logo) ;; Set the banner
 ;; Value can be
@@ -84,7 +101,8 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 (setq dashboard-show-shortcuts nil) ;; show shortcuts
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
-(setq dashboard-items '((recents  . 10)))
+(setq dashboard-items '((bookmarks . 5)
+(recents  . 10)))
 (setq dashboard-set-navigator t)
 (setq dashboard-navigator-buttons
 `((;; line1
@@ -105,6 +123,7 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 ;; (dashboard-add-shortcut "u" "Update" 'dashboard-find-file)
 ;; (dashboard-add-shortcut "f" "Find Files" 'dashboard-find-file)
 ;; (dashboard-add-shortcut "q" "Quit" 'dashboard-find-file)
+(global-page-break-lines-mode)
 #+end_src
 
 * Centaur-Tabs
@@ -156,6 +175,9 @@ org-confirm-babel-evaluate nil)
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
+(setq ac-sources '(ac-source-yasnippet
+ac-source-abbrev
+ac-source-words-in-same-mode-buffers))
 (global-auto-complete-mode)
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
@@ -191,6 +213,7 @@ org-confirm-babel-evaluate nil)
 (straight-use-package 'neotree)
 (setq neo-smart-open t)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(setq neo-window-width 30)
 #+end_src
 
 * Which-Key
@@ -217,9 +240,17 @@ org-confirm-babel-evaluate nil)
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
 (lambda ()
 (when (not (memq major-mode
-(list 'org-agenda-mode)))
+(list 'org-agenda-mode
+'dashboard-mode)))
 (rainbow-mode 1))))
 (global-rainbow-mode 1 )
+#+end_src
+
+* Rainbow-Delimiters
+#+begin_src emacs-lisp
+(straight-use-package 'rainbow-delimiters) 
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 #+end_src
 
 * Focus
@@ -235,4 +266,9 @@ org-confirm-babel-evaluate nil)
 (straight-use-package 'smartparens)
 (require 'smartparens-config)
 (smartparens-global-mode)
+#+end_src
+
+* Writeroom-Mode
+#+begin_src emacs-lisp
+(straight-use-package 'writeroom-mode)
 #+end_src
