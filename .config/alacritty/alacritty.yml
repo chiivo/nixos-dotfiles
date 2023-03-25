@@ -141,8 +141,6 @@ shell:
 
 working_directory: None
 
-alt_send_esc: true
-
 ipc_socket: true
 
 mouse:
