@@ -7,7 +7,8 @@ local themes_path = gfs.get_configuration_dir()
 local naughty = require("naughty")
 
 colors = {
-	darkblack = '#141515',
+	-- darkblack = '#141515',
+	darkblack = '#191a1a',
 	black = '#262727',
 	red = '#ff8278',
 	orange = '#ffc178',
