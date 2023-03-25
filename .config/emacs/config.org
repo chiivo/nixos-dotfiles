@@ -1,5 +1,6 @@
 * Package Manager
 #+begin_src emacs-lisp
+
 (setq package-enable-at-startup nil)
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -13,16 +14,20 @@
 (goto-char (point-max))
 (eval-print-last-sexp)))
 (load bootstrap-file nil 'nomessage))
+
 #+end_src
 
 * Theme
 #+begin_src emacs-lisp
+
 (straight-use-package 'autothemer)
 (load-theme 'bliss t) ; Load theme
+
 #+end_src
 
 * Garbage Collection
 #+begin_src emacs-lisp
+
 ;; Using garbage magic hack.
 (straight-use-package 'gcmh)
 (gcmh-mode)
@@ -33,10 +38,12 @@ gc-cons-percentage 0.6)
 (add-hook 'emacs-startup-hook(lambda()(message "*** Emacs loaded in %s with %d garbage collections."(format "%.2f seconds"(float-time(time-subtract after-init-time before-init-time)))gcs-done)))
 ;; Silence compiler warnings as they can be pretty disruptive
 (setq comp-async-report-warnings-errors nil)
+
 #+end_src
 
 * Emacs Config
 #+begin_src emacs-lisp
+
 (setq inhibit-startup-message t ; don't show splash screen
 visible-bell t ; flash bell on error
 cursor-type 'bar ; change cursor type
@@ -46,12 +53,17 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 (tool-bar-mode -1) ; button gui
 (scroll-bar-mode -1) ; scrollbar
 (menu-bar-mode -1) ; menu bar
-(global-display-line-numbers-mode) ; numbers on the side
 (global-visual-line-mode) ;wrap text 
+(global-display-line-numbers-mode) ; numbers on the side
+(dolist (mode '(dashboard-mode-hook ; hide line numbers depending on mode
+neotree-mode-hook))
+(add-hook mode (lambda () (display-line-numbers-mode 0))))
+
 #+end_src
 
 * Doom Modeline
 #+begin_src emacs-lisp
+
 (straight-use-package 'doom-modeline)
 (require 'doom-modeline)
 (doom-modeline-mode)
@@ -75,10 +87,12 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 ;;                 "  "
 ;;                 mode-line-misc-info
 ;;                 mode-line-end-spaces))
+
 #+end_src
 
 * Dashboard
 #+begin_src emacs-lisp
+
 (straight-use-package 'dashboard)
 (straight-use-package 'page-break-lines)
 (straight-use-package 'projectile)
@@ -124,10 +138,12 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 ;; (dashboard-add-shortcut "f" "Find Files" 'dashboard-find-file)
 ;; (dashboard-add-shortcut "q" "Quit" 'dashboard-find-file)
 (global-page-break-lines-mode)
+
 #+end_src
 
 * Centaur-Tabs
 #+begin_src emacs-lisp
+
 (straight-use-package 'centaur-tabs)
 (require 'centaur-tabs)
 (centaur-tabs-mode t)
@@ -139,38 +155,47 @@ display-line-numbers-width-start t) ; calculate max num of line to keep line num
 (setq centaur-tabs-set-bar 'over)
 (setq centaur-tabs-set-modified-marker t)
 (centaur-tabs-change-fonts "monospace" 140)
+
 #+end_src
 
 * Treesitter
 #+begin_src emacs-lisp
+
 (straight-use-package 'tree-sitter)
 (straight-use-package 'tree-sitter-langs)
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+
 #+end_src
 
 * YASnippet
 #+begin_src emacs-lisp
+
 (straight-use-package 'yasnippet)
 (straight-use-package 'yasnippet-snippets)
 (setq yas-snippet-dirs '("~/.config/emacs/straight/repos/yasnippet-snippets/snippets/"))
 (yas-global-mode t)
+
 #+end_src
 
 * Org Mode Config
 #+begin_src emacs-lisp
+
 (setq org-src-preserve-indentation nil
-org-src-tab-acts-natively t
-org-edit-src-content-indentation 0
+;; org-src-tab-acts-natively t
+org-src-tab-acts-natively nil
+;; org-edit-src-content-indentation 0
 org-src-fontify-natively t
 org-confirm-babel-evaluate nil)
 (add-hook 'org-mode-hook 'org-indent-mode)
 (straight-use-package 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode)))
+
 #+end_src
 
 * Auto-Complete
 #+begin_src emacs-lisp
+
 (straight-use-package 'auto-complete)
 (require 'auto-complete)
 (require 'auto-complete-config)
@@ -181,16 +206,20 @@ ac-source-words-in-same-mode-buffers))
 (global-auto-complete-mode)
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
+
 #+end_src
 
 * Language Support
 #+begin_src emacs-lisp
+
 (straight-use-package 'lua-mode)
 (straight-use-package 'markdown-mode)
+
 #+end_src
 
 * Evil
 #+begin_src emacs-lisp
+
 (straight-use-package 'evil)
 (straight-use-package 'evil-collection)
 (straight-use-package 'evil-commentary)
@@ -206,18 +235,22 @@ ac-source-words-in-same-mode-buffers))
 (setq evil-normal-state-cursor 'bar)
 (evil-set-undo-system 'undo-redo)
 (evil-commentary-mode)
+
 #+end_src
 
 * NeoTree
 #+begin_src emacs-lisp
+
 (straight-use-package 'neotree)
 (setq neo-smart-open t)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (setq neo-window-width 30)
+
 #+end_src
 
 * Which-Key
 #+begin_src emacs-lisp
+
 (straight-use-package 'which-key)
 (require 'which-key)
 (which-key-mode)
@@ -226,16 +259,20 @@ ac-source-words-in-same-mode-buffers))
 (evil-define-key nil evil-normal-state-map
 " t" '("NeoTree" . neotree-toggle)
 "  " '("Reload Config" . (lambda() (interactive)(load-file "~/.config/emacs/init.el"))))
+
 #+end_src
 
 * Centered-Cursor
 #+begin_src emacs-lisp
+
 (straight-use-package 'centered-cursor-mode)
 (global-centered-cursor-mode)
+
 #+end_src
 
 * Rainbow-Mode
 #+begin_src emacs-lisp
+
 (straight-use-package 'rainbow-mode)
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
 (lambda ()
@@ -244,31 +281,40 @@ ac-source-words-in-same-mode-buffers))
 'dashboard-mode)))
 (rainbow-mode 1))))
 (global-rainbow-mode 1 )
+
 #+end_src
 
 * Rainbow-Delimiters
 #+begin_src emacs-lisp
+
 (straight-use-package 'rainbow-delimiters) 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 #+end_src
 
 * Focus
 #+begin_src emacs-lisp
+
 (straight-use-package 'focus)
 (require 'focus)
 (add-to-list 'focus-mode-to-thing '(prog-mode . paragraph))
 (add-to-list 'focus-mode-to-thing '(text-mode . paragraph))
+
 #+end_src
 
 * Smartparens
 #+begin_src emacs-lisp
+
 (straight-use-package 'smartparens)
 (require 'smartparens-config)
 (smartparens-global-mode)
+
 #+end_src
 
 * Writeroom-Mode
 #+begin_src emacs-lisp
+
 (straight-use-package 'writeroom-mode)
+
 #+end_src

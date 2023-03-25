@@ -6,7 +6,8 @@
  ((((class color) (min-colors #xFFFFFF)))
 
   ;; Define color palette
-  (dark-black "#161515")
+  ;; (dark-black "#141515")
+  (dark-black "#191a1a")
   (black "#262727")
   (gray "#555657")
   (white "#dddddd")
@@ -53,7 +54,7 @@
   (line-number (:foreground gray))
   (line-number-current-line (:foreground pink :weight 'bold))
   
-  (org-block (:foreground white))
+  (org-block (:background dark-black))
   (org-level-1 (:foreground purple :fontfamily "sans-serif" :weight 'bold :height 160))
   (org-level-2 (:foreground blue :fontfamily "sans-serif" :weight 'bold :height 150))
   (org-level-3 (:foreground green :fontfamily "sans-serif" :weight 'bold :height 140))
