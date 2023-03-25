@@ -12,7 +12,8 @@ font-family: Sans-Serif;
 	--white: #dddddd;
 	--gray: #555657;
 	--black: #262727;
-	--dark-black: #141515;
+	/* --dark-black: #141515; */
+	--dark-black: #191a1a;
 	--pink: #f5d1c8;
 	--red: #ff8278;
 	--orange: #ffc178;
