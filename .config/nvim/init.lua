@@ -38,7 +38,8 @@ end)
 
 -- Colors
 local colors = {
-	darkblack = '#141515',
+	-- darkblack = '#141515',
+	darkblack = '#191a1a',
 	black = '#262727',
 	red = '#ff8278',
 	orange = '#ffc178',
