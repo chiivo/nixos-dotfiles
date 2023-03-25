@@ -18,12 +18,16 @@ run picom
 ### Bluetooth ###
 run blueman-applet
 
-### Emacs ###
-run emacs --daemon
-
 ### Discord ###
 if pgrep -f discord; then
 	exit &
 else
 	discocss &
 fi
+
+### Emacs ###
+# if pgrep -f emacs; then
+# 	exit &
+# else
+# 	emacs --daemon &
+# fi
