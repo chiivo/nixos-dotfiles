@@ -45,7 +45,8 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local darkblack = '#141515'
+-- local darkblack = '#141515'
+local darkblack = '#191a1a'
 local black = '#262727'
 local gray = '#555657'
 local red = '#ff8278'
