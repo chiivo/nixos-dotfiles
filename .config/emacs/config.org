@@ -188,6 +188,14 @@ ac-source-words-in-same-mode-buffers))
 (ac-set-trigger-key "<tab>")
 #+end_src
 
+* Vertico
+#+begin_src emacs-lisp
+(straight-use-package 'vertico)
+(require 'vertico)
+(vertico-mode)
+#+end_src
+
+
 * Language Support
 #+begin_src emacs-lisp
 (straight-use-package 'lua-mode)

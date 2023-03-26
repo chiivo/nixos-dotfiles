@@ -28,6 +28,10 @@
   (fringe (:background black))
   (success (:foreground pink :weight 'bold))
   (error (:foreground red :weight 'bold))
+
+  (popup-face (:foreground white :background dark-black))
+  (popup-menu-selection-face (:foreground black :background pink :weight 'semi-bold))
+  (ac-completion-face (:foreground gray :weight 'semi-bold :underline "on"))
   
   (mode-line (:background black))
   (mode-line-inactive (:background gray))
@@ -55,8 +59,8 @@
   (line-number-current-line (:foreground pink :weight 'bold))
   
   (org-block (:foreground white))
-  (org-block-begin-line (:background dark-black))
-  (org-block-end-line (:background dark-black))
+  (org-block-begin-line (:foreground gray :background dark-black :slant 'italic))
+  (org-block-end-line (:foreground gray :background dark-black :slant 'italic))
   (org-level-1 (:foreground purple :font "sans-serif" :weight 'bold :height 160))
   (org-level-2 (:foreground blue :font "sans-serif" :weight 'bold :height 150))
   (org-level-3 (:foreground green :font "sans-serif" :weight 'bold :height 140))
@@ -68,10 +72,10 @@
 
   (centaur-tabs-default (:foreground gray :background gray))
   ;; (centaur-tabs-active-bar-face (:background red))
-  (centaur-tabs-selected (:foreground white :background black :font "monospace" :height 140))
-  (centaur-tabs-selected-modified (:foreground white :background black :font "monospace" :height 140))
-  (centaur-tabs-unselected (:foreground white :background gray :font "monospace" :height 140))
-  (centaur-tabs-unselected-modified (:foreground white :background gray :font "monospace" :height 140))
+  (centaur-tabs-selected (:foreground white :background black :fontfamily "monospace" :height 140))
+  (centaur-tabs-selected-modified (:foreground white :background black :fontfamily "monospace" :height 140))
+  (centaur-tabs-unselected (:foreground white :background gray :fontfamily "monospace" :height 140))
+  (centaur-tabs-unselected-modified (:foreground white :background gray :fontfamily "monospace" :height 140))
 
   (rainbow-delimiters-depth-1-face (:foreground red))
   (rainbow-delimiters-depth-2-face (:foreground orange))
