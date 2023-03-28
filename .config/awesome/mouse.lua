@@ -3,9 +3,9 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 
 modkey = "Mod4"
-terminal = "alacritty"
+terminal = "alacritty" or "kitty"
 
--- Right Click Menu
+-- Right Click Variables
 local powermenu = {
 	{ "Power Off",
 		function()
@@ -23,10 +23,27 @@ local powermenu = {
 		end
 	}
 }
+
+local screenshot = {
+	{ "Area",
+		function()
+			awful.spawn.with_shell("~/scripts/screenshot -a")
+		end
+	},
+	{ "Fullscreen",
+		function()
+			awful.spawn.with_shell("~/scripts/screenshot -f")
+		end
+	}
+}
+
+-- Right Click Menu Setup
 local menu = awful.menu({
 	items = {
+		{ "Power Menu", powermenu },
+		{ "Emacs", "emacs" },
 		{ "Terminal", terminal },
-		{ "Power Menu", powermenu }
+		{ "Screenshot", screenshot },
 	}
 })
 

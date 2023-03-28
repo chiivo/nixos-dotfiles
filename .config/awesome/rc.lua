@@ -5,6 +5,10 @@ require("awful.autofocus")
 local beautiful = require("beautiful")
 local menubar = require("menubar")
 
+-- Autostart
+awful.spawn.with_shell("~/.config/awesome/autostart")
+
+-- Awesome Startup
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 require("rules")
 require("layouts")
@@ -32,6 +36,3 @@ gears.timer({
 		collectgarbage("collect")
 	end,
 })
-
--- Autostart
-awful.spawn.with_shell("~/.config/awesome/autostart")
