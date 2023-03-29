@@ -4,23 +4,23 @@
 - Distro: arch
 - AUR Helper: paru
 - Display Manager: slim
-- Window Manager: leftwm
+- Window Manager: awesome
 - Wallpaper Drawer: feh
 - Image Viewer: nsxiv
-- Compositer: picom-animations-git
+- Compositer: picom-pijulius-git
 - App Launcher: rofi
 - Theme Manager: lxappearance, qt5ct
 - Icon Theme: flatery
 - Widget Theme: orchis
 - Mouse Cursor: phinger
 - Terminal: alacritty
-- Text Editor: neovim
-- Browser: vivaldi
+- Text Editor: emacs, neovim
+- Browser: firefox
 - File Managers: thunar (gvfs, tumbler), joshuto (p7zip)
 - Video Player: mpv
 - Font Packages: ttf-liberation, ttf-symbola
-- Terminal Stuff: macchina, cbonsai, shell-color-scripts
-- Apps: blender, krita, eww, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3-git, polymc (jre-openjdk), obs-studio, chatterino2-7tv-git (gst-plugins-good), bottom, blueman, xp-pen-tablet, zathura (zathura-pdf-mupdf), dunst, jp2a, wmctrl, playerctl, graphicsmagick, piper (or solaar)
+- Terminal Stuff: nitch, cbonsai, shell-color-scripts
+- Apps: blender, krita, discord (discocss), spotify, steam, heroic games launcher, retroarch, rpcs3-git, prismlauncher, obs-studio, chatterino2-git (gst-plugins-good), bottom, blueman, xp-pen-tablet, zathura (zathura-pdf-mupdf), artem, graphicsmagick, piper (or solaar)
 * Reminders
 - To make executable bash file:
 #+begin_src bash
