@@ -137,6 +137,13 @@ org-confirm-babel-evaluate nil)
 (add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
 
+* Org-Roam
+#+begin_src emacs-lisp
+(straight-use-package 'org-roam)
+(setq org-roam-directory "/mnt/HDD/Notes")
+#+end_src
+
+
 * YASnippet
 #+begin_src emacs-lisp
 (straight-use-package 'yasnippet)
