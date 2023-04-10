@@ -1,5 +1,5 @@
 #+TITLE: 🌸 Bliss 🌸
-image.png
+
 * Software
 - Distro: arch
 - AUR Helper: paru
