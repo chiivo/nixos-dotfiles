@@ -1,5 +1,5 @@
 #+TITLE: 🌸 Bliss 🌸
-file:screenshot.png
+[[screenshot.png]]
 * Software
 - Distro: arch
 - AUR Helper: paru
