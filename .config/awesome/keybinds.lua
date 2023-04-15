@@ -139,13 +139,13 @@ globalkeys = gears.table.join(
 	-- Screenshot
 	awful.key({ }, "Print",
 		function()
-			awful.spawn.with_shell("~/scripts/screenshot -a")
+			awful.spawn.with_shell("~/scripts/screenshot -c")
 		end,
 		{description = "Copy Screenshot", group = "Screenshot"}
 	),
 	awful.key({ modkey }, "Print",
 		function()
-			awful.spawn.with_shell("~/scripts/screenshot -f")
+			awful.spawn.with_shell("~/scripts/screenshot -s")
 		end,
 		{description = "Save Clipboard", group = "Screenshot"}
 	),

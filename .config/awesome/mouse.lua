@@ -25,12 +25,12 @@ local powermenu = {
 }
 
 local screenshot = {
-	{ "Area",
+	{ "Copy",
 		function()
 			awful.spawn.with_shell("~/scripts/screenshot -a")
 		end
 	},
-	{ "Fullscreen",
+	{ "Save",
 		function()
 			awful.spawn.with_shell("~/scripts/screenshot -f")
 		end
