@@ -1,0 +1,125 @@
+#!/bin/sh
+
+# Display Manager
+read -p "Which diplay manager do you want to install?: " displaymanager
+
+# Window Manager
+read -p "Which window manager do you want to install?: " windowmanager
+
+# AUR Helpr
+read -p "Which AUR helper do you want to install?: " helper
+
+# Terminal
+read -p "Which terminal do you want to install?: " terminal
+
+# Browser
+read -p "Which browser do you want to install?: " browser
+
+# Art Packages
+art=""
+while [ "$art" != "y" ] && [ "$art" != "n" ]; do
+    read -p "Would you like to install art related packages? (y/n): " art
+    if [ "$art" != "y" ] && [ "$art" != "n" ]; then
+	echo "Input not accepted"
+    fi
+done
+
+# Game Packages
+game=""
+while [ "$game" != "y" ] && [ "$game" != "n" ]; do
+    read -p "Would you like to install game related packages? (y/n): " game
+    if [ "$game" != "y" ] && [ "$game" != "n" ]; then
+	echo "Input not accepted"
+    fi
+done
+
+
+# Installation
+sudo pacman -S git
+
+if [ "$helper" = "paru"]; then
+    sudo pacman -S --needed base-devel
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
+elif [ "$helper" = "yay"]; then
+    sudo pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+fi
+
+if [ "$helper" = "paru" ]; then
+    helper = "paru --skipreview"
+fi
+
+sudo $helper -S\
+     # Base packages
+     $displaymanager\
+     $windowmanager\
+     picom-pijulius-git\
+     
+     # Terminal apps
+     $terminal\
+     neovim\
+     joshuto\
+     nsxiv\
+     zathura\
+     zathura-pdf-mupdf\
+     mpv\
+     maim\
+     bottom\
+     
+     cbonsai\
+     nitch-git\
+     shell-color-scripts-git\
+
+     # Theming related stuff
+     lxappearance\
+     qt5ct\
+
+     # Audio Stuff
+     pipewire-pulse\
+     pipewire-alsa\
+     pipewire-jack\
+     alsa-utils\
+     blueman\
+     pavucontrol\
+     spotify\
+
+     # File Manager
+     thunar\
+     gvfs\
+     tumbler\
+     
+     # Other Stuff
+     rofi\
+     $browser\
+     emacs\
+     discord\
+     discocss-git
+
+if [ "$art" = "y"]; then
+    sudo $helper -S\
+	 blender\
+	 krita\
+	 lycheeslicer\
+	 xp-pen-tablet
+fi
+
+
+if [ "$game" = "y"]; then
+    sudo $helper -S\
+	 steam\
+	 heroic-games-launcher-bin\
+	 prismlauncher\
+	 jre8-openjdk\
+	 retroarch\
+	 rpcs3-git\
+	 
+	 chatterino2-git\
+	 gst-plugins-good\
+	 obs-studio\
+
+	 godot
+fi
