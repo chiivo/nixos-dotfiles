@@ -103,25 +103,30 @@ font-family: Sans-Serif;
 	--status-danger-text: #fff;
 	--focus-primary: hsl(197,calc(var(--saturation-factor, 1)*100%),47.8%);
 }
+
 /*Chat Background*/
 .chatContent-3KubbW {
 	margin: 10px;
 	border-radius: 10px;
 	background-color: var(--dark-black);
 }
+
 /*Main Page Background*/
 .peopleColumn-1wMU14 {
 	background-color: var(--black);
 }
+
 /*Sidebar*/
 .sidebar-1tnWFu {
 	margin: 10px 0;
 	padding: 0 10px;
 	border-radius: 10px;
 }
+
 /*Chat Input*/
 .inner-NQg18Y.sansAttachButton-1ERHue {
 	padding: 0;
+	border-radius: 10px;
 	background-color: var(--black);
 }
 .form-3gdLxP {
@@ -129,12 +134,8 @@ font-family: Sans-Serif;
 	padding: 0;
 	border-radius: 10px;
 }
-.attachButton-_ACFSu.attachButton-1ijpt9.button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-2sR_-F {
-	padding: 10px;
-	border-radius: 10px;
-	background-color: var(--black);
-}
 .attachWrapper-3slhXI {
+	padding: 0 0 0 10px;
 	background-color: var(--black);
 }
 .expression-picker-chat-input-button.buttonContainer-2lnNiN {
@@ -143,18 +144,15 @@ font-family: Sans-Serif;
 .buttons-uaqb-5 {
 	background-color: var(--black);
 }
-.button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-2sR_-F {
-	margin: 0 2px;
-	border-radius: 10px;
-	background-color: var(--black);
-}
 button[aria-label="Select emoji"] {
 	padding: 4px 10px 4px 4px;
 }
+
 /*Threads*/
 .resizeHandle-PBRzPC {
 	display: none;
 }
+
 /*Messages*/
 .mentioned-Tre-dv:before {
 	display: none;
@@ -163,6 +161,7 @@ button[aria-label="Select emoji"] {
 	margin: 5px 10px;
 	border-radius: 10px;
 }
+
 /*Right Click Menu*/
 .layer-2aCOJ3 {
 	margin: -10px;
