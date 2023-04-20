@@ -678,21 +678,21 @@ require'nvim-treesitter.configs'.setup {
 require('neorg').setup {
 	load = {
 		["core.defaults"] = {},
-		["core.norg.concealer"] = {
+		["core.concealer"] = {
 			config = {
 				icon_preset = 'varied'
 			}
 		},
 		["core.export.markdown"] = {},
-		["core.norg.qol.toc"] = {},
-		["core.norg.journal"] = {},
-		["core.norg.manoeuvre"] = {},
+		["core.qol.toc"] = {},
+		["core.journal"] = {},
+		["core.manoeuvre"] = {},
 		["core.presenter"] = {
 			config = {
 				zen_mode = 'truezen'
 			}
 		},
-		["core.norg.completion"] = {
+		["core.completion"] = {
 			config = {
 				engine = 'nvim-cmp'
 			}
