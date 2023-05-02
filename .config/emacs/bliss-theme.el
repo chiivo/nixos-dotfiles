@@ -28,10 +28,13 @@
   (fringe (:background black))
   (success (:foreground pink :weight 'bold))
   (error (:foreground red :weight 'bold))
+  (highlight (:foreground black :background blue :weight 'bold))
 
-  (popup-face (:foreground white :background dark-black))
-  (popup-menu-selection-face (:foreground black :background pink :weight 'semi-bold))
-  (ac-completion-face (:foreground gray :weight 'semi-bold :underline "on"))
+  (completions-common-part (:foreground green :weight 'semi-bold))
+  (corfu-default (:foreground pink :weight 'semi-bold))
+  (corfu-border (:background dark-black))
+  (corfu-current (:foreground white :background gray :weight 'semi-bold))
+  (corfu-bar (:background gray))
   
   (mode-line (:background black))
   (mode-line-inactive (:background gray))

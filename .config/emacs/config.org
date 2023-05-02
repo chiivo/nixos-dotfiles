@@ -143,7 +143,6 @@ org-confirm-babel-evaluate nil)
 (setq org-roam-directory "/mnt/HDD/Notes")
 #+end_src
 
-
 * YASnippet
 #+begin_src emacs-lisp
 (straight-use-package 'yasnippet)
@@ -152,18 +151,19 @@ org-confirm-babel-evaluate nil)
 (yas-global-mode t)
 #+end_src
 
-* Auto-Complete
+* Corfu
 #+begin_src emacs-lisp
-(straight-use-package 'auto-complete)
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-(setq ac-sources '(ac-source-yasnippet
-ac-source-abbrev
-ac-source-words-in-same-mode-buffers))
-(global-auto-complete-mode)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
+(straight-use-package 'corfu)
+(require 'corfu)
+(setq corfu-cycle t
+corfu-auto t
+corfu-auto-prefix 2
+corfu-auto-delay 0
+corfu-quit-at-boundary 'separator
+corfu-echo-documentation 0.25
+corfu-preview-current 'insert
+corfu-preselect-first nil)
+(global-corfu-mode)
 #+end_src
 
 * Vertico
