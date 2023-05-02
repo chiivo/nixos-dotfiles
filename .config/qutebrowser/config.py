@@ -114,6 +114,19 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:90.0) Gecko
 # Type: FormatString
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
 
+# Which method of blocking ads should be used.  Support for Adblock Plus
+# (ABP) syntax blocklists using Brave's Rust library requires the
+# `adblock` Python package to be installed, which is an optional
+# dependency of qutebrowser. It is required when either `adblock` or
+# `both` are selected.
+# Type: String
+# Valid values:
+#   - auto: Use Brave's ABP-style adblocker if available, host blocking otherwise
+#   - adblock: Use Brave's ABP-style adblocker
+#   - hosts: Use hosts blocking
+#   - both: Use both hosts blocking and Brave's ABP-style adblocker
+c.content.blocking.method = 'both'
+
 # Load images automatically in web pages.
 # Type: Bool
 config.set('content.images', True, 'chrome-devtools://*')
@@ -203,7 +216,8 @@ c.tabs.title.alignment = 'center'
 # the current web page. * `{title_sep}`: The string `" - "` if a title
 # is set, empty otherwise. * `{index}`: Index of this tab. *
 # `{aligned_index}`: Index of this tab padded with spaces to have the
-# same   width. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
+# same   width. * `{relative_index}`: Index of this tab relative to the
+# current tab. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
 # Page scroll position. * `{host}`: Host of the current web page. *
 # `{backend}`: Either `webkit` or `webengine` * `{private}`: Indicates
 # when private mode is enabled. * `{current_url}`: URL of the current
@@ -568,19 +582,19 @@ c.colors.tabs.even.bg = '#262727'
 
 # Foreground color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.fg = '#f5d1c8'
+c.colors.tabs.selected.odd.fg = '#262727'
 
 # Background color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.bg = '#555657'
+c.colors.tabs.selected.odd.bg = '#f5d1c8'
 
 # Foreground color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.fg = '#f5d1c8'
+c.colors.tabs.selected.even.fg = '#262727'
 
 # Background color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.bg = '#555657'
+c.colors.tabs.selected.even.bg = '#f5d1c8'
 
 # Background color of pinned unselected even tabs.
 # Type: QtColor
@@ -595,7 +609,7 @@ c.colors.webpage.bg = '#dddddd'
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = 'CaskaydiaCove Nerd Font'
+c.fonts.default_family = 'monospace'
 
 # Default font size to use. Whenever "default_size" is used in a font
 # setting, it's replaced with the size listed here. Valid values are
@@ -612,3 +626,15 @@ c.fonts.contextmenu = 'default_size default_family'
 # Font used for the debugging console.
 # Type: Font
 c.fonts.debug_console = 'default_size default_family'
+
+# Font used for prompts.
+# Type: Font
+c.fonts.prompts = 'default_size sans-serif'
+
+# Font family for serif fonts.
+# Type: FontFamily
+c.fonts.web.family.serif = 'serif'
+
+# Font family for sans-serif fonts.
+# Type: FontFamily
+c.fonts.web.family.sans_serif = 'sans-serif'
