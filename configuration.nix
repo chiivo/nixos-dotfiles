@@ -103,7 +103,6 @@
 		retroarch
 		nsxiv
 		zathura
-		numlockx
 	];
 
 	fonts.fonts = with pkgs; [
