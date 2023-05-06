@@ -1,22 +1,21 @@
 #+TITLE: 🌸 Bliss 🌸
 [[screenshot.png]]
 * Software
-- Distro: arch
-- AUR Helper: paru
-- Display Manager: slim
+- Distro: nixos
+- Display Manager: lightdm
+- Greeter: lightdm-mini-greeter
 - Window Manager: awesome
-- Wallpaper Drawer: feh
 - Image Viewer: nsxiv
-- Compositer: picom-pijulius-git
+- Compositer: picom
 - App Launcher: rofi
-- Theme Manager: lxappearance, qt5ct
-- Icon Theme: flatery
+- Theme Manager: lxappearance
+- Icon Theme: papirus
 - Widget Theme: orchis
 - Mouse Cursor: phinger
 - Terminal: alacritty
 - Text Editor: emacs, neovim
 - Browser: firefox
-- File Managers: thunar (gvfs, tumbler), joshuto (p7zip)
+- File Managers: thunar, joshuto
 - Video Player: mpv
 - Font Packages: ttf-liberation, ttf-symbola
 - Terminal Stuff: nitch, cbonsai, shell-color-scripts
