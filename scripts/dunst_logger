@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 #set -euo pipefail
 
 # Because certain programs like to insert their own newlines and fuck up my format (im looking at you thunderbird)
