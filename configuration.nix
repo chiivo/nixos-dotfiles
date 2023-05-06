@@ -103,6 +103,7 @@
 		retroarch
 		nsxiv
 		zathura
+		sound-theme-freedesktop
 	];
 
 	fonts.fonts = with pkgs; [
