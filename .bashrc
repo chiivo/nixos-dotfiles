@@ -10,20 +10,15 @@ alias pw='nvim /mnt/HDD/thewords.txt'
 alias v='nvim'
 alias se='sudoedit'
 alias shutdown='poweroff'
-alias update='sudo pacman -Syyu && paru -Syua --skipreview --nodevel; sudo pacman -Rsn $(paru -Qdtq); paru -cc'
-alias update-git='sudo pacman -Syyu && paru -Syua --skipreview; sudo pacman -Rsn $(paru -Qdtq); paru -cc'
-alias install='sudo pacman -S || paru -S --skipreview'
-alias clean='sudo pacman -Rsn $(paru -Qdtq); paru -cc'
-# alias update='sudo pacman -Syyu && yay -Syua --nodevel; sudo pacman -Rsn $(yay -Qdtq); yay -cc'
-# alias install='sudo pacman -S || yay -S'
-# alias clean='sudo pacman -Rsn $(yay -Qdtq); yay -cc'
+alias update='sudo nixos-rebuild switch --upgrade'
+alias clean='sudo nix-collect-garbage -d'
 alias remove='sudo pacman -Rs'
 alias btctl='bluetoothctl'
 alias swaptgl='sudo swapoff -a; sudo swapon -a'
 
 #Prompt
 #PS1='\[\e[37m\]\[\e[0m\]\[\e[47;1m\]\[\e[30m\]\w  \[\e[0m\]\[\e[37m\]\[\e[0m\] '
-PS1='\[\e[37;1m\]\w   \[\e[0m\]'
+PS1='\[\e[37;1m\]\w 󰴈  \[\e[0m\]'
 
 #Startup
 r=$((RANDOM%15))
