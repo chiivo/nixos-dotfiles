@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ### Use xinput list to find pointer name
 
