@@ -1,5 +1,5 @@
 local awful = require("awful")
-local bling = require("bling")
+-- local bling = require("bling")
 
 awful.layout.layouts = {
 	-- awful.layout.suit.floating,

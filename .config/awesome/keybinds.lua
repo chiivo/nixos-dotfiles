@@ -4,7 +4,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 require("bar")
 require("volume")
-require("scratchpads")
+-- require("scratchpads")
 
 modkey = "Mod4"
 

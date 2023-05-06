@@ -6,8 +6,12 @@ run() {
 	fi
 }
 
+### Screen ###
+run ~/scripts/display-setup
+
 ### Mouse ###
 run solaar --window=hide
+# run ~/scripts/mousesettings
 
 ### Wallpaper ###
 # run ~/scripts/wallpapersetter

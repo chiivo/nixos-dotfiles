@@ -1,6 +1,6 @@
 local awful = require("awful")
 local gears = require("gears")
-local bling = require("bling")
+-- local bling = require("bling")
 require("theme")
 
 -- Tile
