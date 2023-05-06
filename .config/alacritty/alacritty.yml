@@ -38,7 +38,7 @@ font:
   size: 12.0
   offset:
     x: 0
-    y: -4
+    y: 0
   glyph_offset:
     x: 0
     y: 0
@@ -134,10 +134,10 @@ cursor:
 
 live_config_reload: true
 
-shell:
-  program: /bin/bash
-  args:
-    - --login
+# shell:
+#   program: /bin/bash
+#   args:
+#     - --login
 
 working_directory: None
 
