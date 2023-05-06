@@ -46,19 +46,19 @@ volumebar () {
 volup () {
 	amixer sset Master 5%+
 	#notify-send -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+	mpv /nix/store/wbqfsm2x7wdddx7jbla8qiiwh2gbwvsz-system-path/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 voldown () {
 	amixer sset Master 5%-
 	#notify-send -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+	mpv /nix/store/wbqfsm2x7wdddx7jbla8qiiwh2gbwvsz-system-path/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 volmute () {
 	amixer sset Master toggle
 	#notify-send -a Volume "$(getvolsym) Volume" "$(getvolsym)" -i none
-	mpv /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+	mpv /nix/store/wbqfsm2x7wdddx7jbla8qiiwh2gbwvsz-system-path/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 case "$1" in
