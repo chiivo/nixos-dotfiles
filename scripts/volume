@@ -28,7 +28,7 @@ getvolsym() {
 	fi
 }
 
-volumebar () {
+volumebar() {
 	# Change total_half_dots number and empty dots number to change number of output characters
 	full=""
 	half=""
@@ -43,22 +43,22 @@ volumebar () {
 	echo $bar
 }
 
-volup () {
+volup() {
 	amixer sset Master 5%+
 	#notify-send -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
-	mpv /nix/store/wbqfsm2x7wdddx7jbla8qiiwh2gbwvsz-system-path/share/sounds/freedesktop/stereo/audio-volume-change.oga
+	mpv /run/current-system/sw/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
-voldown () {
+voldown() {
 	amixer sset Master 5%-
 	#notify-send -a Volume "$(getvolsym) Volume" "$(volumebar)" -i none
-	mpv /nix/store/wbqfsm2x7wdddx7jbla8qiiwh2gbwvsz-system-path/share/sounds/freedesktop/stereo/audio-volume-change.oga
+	mpv /run/current-system/sw/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
-volmute () {
+volmute() {
 	amixer sset Master toggle
 	#notify-send -a Volume "$(getvolsym) Volume" "$(getvolsym)" -i none
-	mpv /nix/store/wbqfsm2x7wdddx7jbla8qiiwh2gbwvsz-system-path/share/sounds/freedesktop/stereo/audio-volume-change.oga
+	mpv /run/current-system/sw/share/sounds/freedesktop/stereo/audio-volume-change.oga
 }
 
 case "$1" in
