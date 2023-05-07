@@ -89,7 +89,6 @@
 		emacs
 		blender
 		krita
-		# solaar
 		picom
 		discord
 		discocss
@@ -104,6 +103,8 @@
 		nsxiv
 		zathura
 		sound-theme-freedesktop
+		vial
+		numlockx
 	];
 
 	fonts.fonts = with pkgs; [
@@ -123,11 +124,27 @@
 	# };
 
 	# List services that you want to enable:
+	# Audio
+	security.rtkit.enable = true;
+	services.pipewire = {
+		enable = true;
+		alsa.enable = true;
+		alsa.support32Bit = true;
+		pulse.enable = true;
+		jack.enable = true;
+	};
+
 	# LightDM and Window Manager
 	services.xserver = {
 		enable = true;
 		displayManager = {
-			lightdm.enable = true;
+			lightdm = {
+				enable = true;
+				extraConfig = ''
+					[Seat:*]
+					greeter-setup-script=/nix/store/5psh0ik878wqiiw7fsjphwywjxv2w7lk-system-path/bin/numlockx on
+				'';
+			};
 			defaultSession = "none+awesome";
 			lightdm.greeters.mini = {
 				enable = true;
@@ -155,6 +172,11 @@
 	hardware.bluetooth.enable = true;
 	services.blueman.enable = true;
 
+	# Keyboard
+/* 	services.udev.extraRules = ''
+		KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+	''; */
+
 	# Mouse
 	services.xserver = {
 		libinput.enable = true;
@@ -175,16 +197,6 @@
 		enable = true;
   	remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
 		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-	};
-
-	# Piwire
-	security.rtkit.enable = true;
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-		jack.enable = true;
 	};
 
 	# Enable the OpenSSH daemon.
