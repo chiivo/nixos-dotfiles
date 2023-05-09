@@ -24,21 +24,21 @@ scrolling:
 
 font:
   normal:
-    family: monospace
+    family: VictorMono Nerd Font
     style: Medium
   bold:
-    family: monospace
+    family: VictorMono Nerd Font
     style: Bold
   italic:
-    family: monospace
+    family: VictorMono Nerd Font
     style: Medium Italic
   bold_italic:
-    family: monospace
+    family: VictorMono Nerd Font
     style: Bold Italic
   size: 12.0
   offset:
     x: 0
-    y: 0
+    y: -4
   glyph_offset:
     x: 0
     y: 0
@@ -117,7 +117,7 @@ bell:
   color: '#dddddd'
   command:
     program: mpv
-    args: ["/usr/share/sounds/freedesktop/stereo/bell.oga"]
+    args: ["/run/current-system/sw/share/sounds/freedesktop/stereo/bell.oga"]
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
