@@ -11,9 +11,9 @@
 		];
 
 	# Bootloader.
-	boot.loader.grub.enable = true;
-	boot.loader.grub.device = "/dev/sda";
-	boot.loader.grub.useOSProber = true;
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
+	boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
 	networking.hostName = "nixos"; # Define your hostname.
 	# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -63,8 +63,7 @@
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
-		gcc
-		libinput
+  		gcc
 		wget
 		git
 		p7zip
@@ -100,6 +99,7 @@
 		heroic
 		prismlauncher
 		retroarch
+		rpcs3
 		nsxiv
 		zathura
 		sound-theme-freedesktop
@@ -107,7 +107,7 @@
 		numlockx
 	];
 
-	fonts.fonts = with pkgs; [
+  	fonts.fonts = with pkgs; [
 		(nerdfonts.override {
 			fonts = [
 				"VictorMono"
@@ -142,7 +142,7 @@
 				enable = true;
 				extraConfig = ''
 					[Seat:*]
-					greeter-setup-script=/nix/store/5psh0ik878wqiiw7fsjphwywjxv2w7lk-system-path/bin/numlockx on
+					greeter-setup-script=/run/current-system/sw/bin/numlockx on
 				'';
 			};
 			defaultSession = "none+awesome";
@@ -167,7 +167,7 @@
 			enable = true;
 		};
 	};
-	
+
 	# Bluetooth
 	hardware.bluetooth.enable = true;
 	services.blueman.enable = true;
@@ -176,7 +176,7 @@
 	services.udev.extraRules = ''
 		KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
 	''; 
-
+	
 	# Mouse
 	services.xserver = {
 		libinput.enable = true;
@@ -195,24 +195,26 @@
 	# Steam
 	programs.steam = {
 		enable = true;
-  	remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+		remotePlay.openFirewall = true;
+		dedicatedServer.openFirewall = true;
+
 	};
 
-	# Enable the OpenSSH daemon.
-	# services.openssh.enable = true;
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
 
-	# Open ports in the firewall.
-	# networking.firewall.allowedTCPPorts = [ ... ];
-	# networking.firewall.allowedUDPPorts = [ ... ];
-	# Or disable the firewall altogether.
-	# networking.firewall.enable = false;
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
-	# This value determines the NixOS release from which the default
-	# settings for stateful data, like file locations and database versions
-	# on your system were taken. It‘s perfectly fine and recommended to leave
-	# this value at the release version of the first install of this system.
-	# Before changing this value read the documentation for this option
-	# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-	system.stateVersion = "22.11"; # Did you read the comment?
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "22.11"; # Did you read the comment?
+
 }
