@@ -22,7 +22,7 @@
 
  ;; Customize faces
  (
-  (default (:font "monospace" :foreground white :background black :weight 'semi-bold))
+  (default (:font "VictorMono Nerd Font" :foreground white :background black :weight 'semi-bold))
   (cursor (:background white))
   (region (:background gray))
   (fringe (:background black))
@@ -75,10 +75,10 @@
 
   (centaur-tabs-default (:foreground gray :background gray))
   (centaur-tabs-active-bar-face (:background pink))
-  (centaur-tabs-selected (:foreground white :background black :fontfamily "monospace" :height 140))
-  (centaur-tabs-selected-modified (:foreground white :background black :fontfamily "monospace" :height 140))
-  (centaur-tabs-unselected (:foreground white :background gray :fontfamily "monospace" :height 140))
-  (centaur-tabs-unselected-modified (:foreground white :background gray :fontfamily "monospace" :height 140))
+  (centaur-tabs-selected (:foreground white :background black :fontfamily "VictorMono Nerd Font" :height 140))
+  (centaur-tabs-selected-modified (:foreground white :background black :fontfamily "VictorMono Nerd Font" :height 140))
+  (centaur-tabs-unselected (:foreground white :background gray :fontfamily "VictorMono Nerd Font" :height 140))
+  (centaur-tabs-unselected-modified (:foreground white :background gray :fontfamily "VictorMono Nerd Font" :height 140))
 
   (rainbow-delimiters-depth-1-face (:foreground red))
   (rainbow-delimiters-depth-2-face (:foreground orange))
