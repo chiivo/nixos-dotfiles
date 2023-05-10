@@ -63,7 +63,7 @@
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
-  		gcc
+		gcc
 		wget
 		git
 		p7zip
@@ -107,7 +107,7 @@
 		numlockx
 	];
 
-  	fonts.fonts = with pkgs; [
+  fonts.fonts = with pkgs; [
 		(nerdfonts.override {
 			fonts = [
 				"VictorMono"
