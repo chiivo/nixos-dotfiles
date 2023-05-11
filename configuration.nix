@@ -103,7 +103,7 @@
 		nsxiv
 		zathura
 		sound-theme-freedesktop
-		vial
+		via
 		numlockx
 	];
 
