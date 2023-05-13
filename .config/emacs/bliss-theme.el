@@ -22,7 +22,7 @@
 
  ;; Customize faces
  (
-  (default (:font "VictorMono Nerd Font" :foreground white :background black :weight 'semi-bold))
+  (default (:font "VictorMono Nerd Font" :foreground white :background black :weight 'medium))
   (cursor (:background white))
   (region (:background gray))
   (fringe (:background black))
@@ -30,10 +30,10 @@
   (error (:foreground red :weight 'bold))
   (highlight (:foreground black :background blue :weight 'bold))
 
-  (completions-common-part (:foreground green :weight 'semi-bold))
-  (corfu-default (:foreground pink :weight 'semi-bold))
+  (completions-common-part (:foreground green :weight 'medium))
+  (corfu-default (:foreground pink :weight 'medium))
   (corfu-border (:background dark-black))
-  (corfu-current (:foreground white :background gray :weight 'semi-bold))
+  (corfu-current (:foreground white :background gray :weight 'medium))
   (corfu-bar (:background gray))
   
   (mode-line (:background black))
@@ -64,14 +64,14 @@
   (org-block (:foreground white :background dark-black))
   (org-block-begin-line (:foreground gray :background dark-black :slant 'italic))
   (org-block-end-line (:foreground gray :background dark-black :slant 'italic))
-  (org-level-1 (:foreground purple :font "sans-serif" :weight 'bold :height 160))
-  (org-level-2 (:foreground blue :font "sans-serif" :weight 'bold :height 150))
-  (org-level-3 (:foreground green :font "sans-serif" :weight 'bold :height 140))
-  (org-level-4 (:foreground yellow :font "sans-serif" :weight 'bold :height 130))
-  (org-level-5 (:foreground orange :font "sans-serif" :weight 'bold :height 120))
-  (org-level-6 (:foreground red :font "sans-serif" :weight 'bold))
-  (org-level-7 (:foreground white :font "sans-serif" :weight 'bold))
-  (org-level-8 (:foreground pink :font "sans-serif" :weight 'bold))
+  (org-level-1 (:foreground purple :font "sans" :weight 'bold :height 160))
+  (org-level-2 (:foreground blue :font "sans" :weight 'bold :height 150))
+  (org-level-3 (:foreground green :font "sans" :weight 'bold :height 140))
+  (org-level-4 (:foreground yellow :font "sans" :weight 'bold :height 130))
+  (org-level-5 (:foreground orange :font "sans" :weight 'bold :height 120))
+  (org-level-6 (:foreground red :font "sans" :weight 'bold))
+  (org-level-7 (:foreground white :font "sans" :weight 'bold))
+  (org-level-8 (:foreground pink :font "sans" :weight 'bold))
 
   (centaur-tabs-default (:foreground gray :background gray))
   (centaur-tabs-active-bar-face (:background pink))
@@ -90,7 +90,7 @@
   (rainbow-delimiters-depth-8-face (:foreground dark-black))
   (rainbow-delimiters-depth-9-face (:foreground pink))
 
-  (fixed-pitch-serif (:fontfamily "serif"))
+  (fixed-pitch (:fontfamily "serif"))
  ))
 
 (provide-theme 'bliss)
