@@ -107,13 +107,24 @@
 		numlockx
 	];
 
-  fonts.fonts = with pkgs; [
-		(nerdfonts.override {
-			fonts = [
-				"VictorMono"
-			];
-		})
-	];
+  fonts = {
+	enableDefaultFonts = true;
+		fonts = with pkgs; [
+			/* (nerdfonts.override {
+				fonts = [
+					"VictorMono"
+				];
+			}) */
+			victor-mono
+		];
+		fontconfig = {
+			defaultFonts = {
+				serif = [ "Redaction" ];
+				sansSerif = [ "Liberation Sans" ];
+				monospace = [ "VictorMono" "Powerline Extra Symbols" "Font Awesome 6 Pro" "Font Awesome 6 Brands" ];
+			};
+		};
+	};
 
 	# Some programs need SUID wrappers, can be configured further or are
 	# started in user sessions.
