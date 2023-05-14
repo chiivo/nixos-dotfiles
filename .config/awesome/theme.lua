@@ -23,7 +23,7 @@ colors = {
 
 local theme = {}
 
-theme.font = "VictorMono Nerd Font Medium 16"
+theme.font = "monospace Medium 16"
 
 theme.bg_systray = colors.black
 

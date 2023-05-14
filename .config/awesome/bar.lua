@@ -14,7 +14,7 @@ local symbol = wibox.widget {
 	{
 		{
 			widget = wibox.widget.textbox,
-			text = "󰴈",
+			text = "",
 			valign ="center",
 			align = "center"
 		},
