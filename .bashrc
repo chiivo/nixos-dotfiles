@@ -18,7 +18,7 @@ alias swaptgl='sudo swapoff -a; sudo swapon -a'
 
 #Prompt
 #PS1='\[\e[37m\]\[\e[0m\]\[\e[47;1m\]\[\e[30m\]\w  \[\e[0m\]\[\e[37m\]\[\e[0m\] '
-PS1='\[\e[37;1m\]\w 󰴈  \[\e[0m\]'
+PS1='\[\e[37;1m\]\w   \[\e[0m\]'
 
 #Startup
 r=$((RANDOM%15))
