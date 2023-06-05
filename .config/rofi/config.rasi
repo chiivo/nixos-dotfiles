@@ -5,9 +5,9 @@
 
 configuration {
 	modi: "drun";
-	font: "VictorMono Nerd Font Medium 12";
+	font: "monospace Medium 12";
 	display-run: "";
-	display-drun: "󰴈";
+	display-drun: "";
 	display-window: "";
 	display-ssh: "SSH";
 	display-combi: "Combi";
