@@ -58,7 +58,10 @@
 	};
 
 	# Allow unfree packages
-	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config = {
+		allowUnfree = true;
+		cudaSupport = true;
+	};
 
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
@@ -130,6 +133,10 @@
 	# };
 
 	# List services that you want to enable:
+	# GPU
+	services.xserver.videoDrivers = [ "nvidia" ];
+	hardware.opengl.enable = true;
+
 	# Audio
 	security.rtkit.enable = true;
 	services.pipewire = {
