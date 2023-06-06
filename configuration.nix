@@ -108,6 +108,7 @@
 		sound-theme-freedesktop
 		via
 		numlockx
+		wine-staging
 	];
 
   fonts = {
