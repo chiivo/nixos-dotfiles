@@ -6,13 +6,13 @@ export EDITOR='nvim'
 
 #Aliases
 alias ls='ls --color=auto'
-alias pw='nvim /mnt/HDD/thewords.txt'
+alias pw='nvim /mnt/SSD/thewords.txt'
 alias v='nvim'
 alias se='sudoedit'
 alias shutdown='poweroff'
 alias update='sudo nixos-rebuild switch --upgrade'
 alias clean='sudo nix-collect-garbage -d'
-alias remove='sudo pacman -Rs'
+alias config='se /etc/nixos/configuration.nix'
 alias btctl='bluetoothctl'
 alias swaptgl='sudo swapoff -a; sudo swapon -a'
 
