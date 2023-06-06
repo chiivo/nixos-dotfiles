@@ -133,7 +133,7 @@
 	# };
 
 	# List services that you want to enable:
-	# GPU
+	# Video Drivers
 	services.xserver.videoDrivers = [ "nvidia" ];
 	hardware.opengl.enable = true;
 
