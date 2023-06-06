@@ -18,7 +18,7 @@ require("theme")
 end) ]]
 
 -- Tiled Wallpaper
-gears.wallpaper.tiled("/mnt/HDD/Images/Wallpapers/Tile-Pokemon/Gastly.png", s)
+gears.wallpaper.tiled("/mnt/SSD/Images/Wallpapers/Tile-Pokemon/Gastly.png", s)
 
 -- Solid Color
 -- gears.wallpaper.set(colors.darkblack)
