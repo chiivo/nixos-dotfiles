@@ -114,6 +114,11 @@
   fonts = {
 	enableDefaultFonts = true;
 		fonts = with pkgs; [
+			comfortaa
+			julia-mono
+			noto-fonts
+			noto-fonts-emoji
+			scientifica
 			victor-mono
 		];
 		fontconfig = {
