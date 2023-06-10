@@ -60,7 +60,6 @@
 	# Allow unfree packages
 	nixpkgs.config = {
 		allowUnfree = true;
-		cudaSupport = true;
 	};
 
 	# List packages installed in system profile. To search, run:
@@ -89,7 +88,9 @@
 		gvfs
 		firefox
 		emacs
-		blender
+		(blender.override {
+			cudaSupport = true;
+		})
 		krita
 		picom
 		discord
@@ -119,6 +120,7 @@
 			noto-fonts
 			noto-fonts-emoji
 			scientifica
+			symbola
 			victor-mono
 		];
 		fontconfig = {
