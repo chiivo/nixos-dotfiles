@@ -110,6 +110,7 @@
 		via
 		numlockx
 		wine-staging
+		spotify
 	];
 
   fonts = {
