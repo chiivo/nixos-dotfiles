@@ -111,6 +111,7 @@
 		numlockx
 		wine-staging
 		spotify
+		godot_4
 	];
 
   fonts = {
