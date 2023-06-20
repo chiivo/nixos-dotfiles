@@ -33,9 +33,9 @@ temperature_type = "c"
 #temperature_type = "fahrenheit"
 #temperature_type = "celsius"
 # The default time interval (in milliseconds).
-default_time_value = 60000
+# default_time_value = 60000
 # The time delta on each zoom in/out action (in milliseconds).
-time_delta = 15000
+# time_delta = 15000
 # Hides the time scale.
 hide_time = false
 # Override layout default widget
