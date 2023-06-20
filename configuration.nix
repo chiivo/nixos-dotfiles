@@ -112,6 +112,7 @@
 		wine-staging
 		spotify
 		godot_4
+		ardour
 	];
 
   fonts = {
@@ -129,7 +130,7 @@
 			defaultFonts = {
 				serif = [ "Redaction" ];
 				sansSerif = [ "Liberation Sans" ];
-				monospace = [ "VictorMono" "Powerline Extra Symbols" "Font Awesome 6 Pro" "Font Awesome 6 Brands" ];
+				monospace = [ "VictorMono" "Symbola" "Powerline Extra Symbols" "Font Awesome 6 Pro" "Font Awesome 6 Brands" ];
 			};
 		};
 	};
