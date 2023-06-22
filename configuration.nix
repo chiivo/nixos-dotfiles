@@ -66,6 +66,8 @@
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
 		gcc
+		cmake
+		cope
 		wget
 		git
 		p7zip
@@ -85,6 +87,7 @@
 		xfce.thunar
 		xfce.tumbler
 		xfce.xfconf
+		xfce.thunar-archive-plugin
 		gvfs
 		firefox
 		emacs
@@ -109,10 +112,11 @@
 		sound-theme-freedesktop
 		via
 		numlockx
-		wine-staging
+		wineWowPackages.staging
 		spotify
 		godot_4
 		ardour
+		guitarix
 	];
 
   fonts = {
