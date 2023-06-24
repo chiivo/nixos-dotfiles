@@ -67,7 +67,6 @@
 	environment.systemPackages = with pkgs; [
 		gcc
 		cmake
-		cope
 		wget
 		git
 		p7zip
@@ -116,6 +115,7 @@
 		spotify
 		godot_4
 		ardour
+		musescore
 		guitarix
 	];
 
