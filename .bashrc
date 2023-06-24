@@ -22,11 +22,11 @@ PS1='\[\e[37;1m\]\w   \[\e[0m\]'
 
 #Startup
 r=$((RANDOM%15))
-  command[0]='nitch'
-  command[1]='nitch'
-  command[2]='nitch'
-  command[3]='nitch'
-  command[4]='nitch'
+  command[0]='neofetch'
+  command[1]='neofetch'
+  command[2]='neofetch'
+  command[3]='neofetch'
+  command[4]='neofetch'
   command[5]='sleep .1; cbonsai -L 27 -p'
   command[6]='sleep .1; cbonsai -L 27 -p'
   command[7]='sleep .1; cbonsai -L 27 -p'
