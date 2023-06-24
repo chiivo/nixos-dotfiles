@@ -74,7 +74,7 @@
 		bottom
 		neovim
 		cbonsai
-		nitch
+		neofetch
 		phinger-cursors
 		papirus-icon-theme
 		orchis-theme
