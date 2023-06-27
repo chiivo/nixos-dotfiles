@@ -5,6 +5,8 @@
 { config, pkgs, ... }:
 
 {
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 	imports =
 		[ # Include the results of the hardware scan.
 			./hardware-configuration.nix
@@ -193,6 +195,15 @@
 		};
 		windowManager.awesome = {
 			enable = true;
+			/* package = (pkgs.awesome.overrideAttrs (oldAttrs: rec {
+				version = "4.3";
+				src = pkgs.fetchFromGitHub {
+					owner = "awesomewm";
+					repo = "awesome";
+					rev = "c539e0e4350a42f813952fc28dd8490f42d934b3";
+					sha256 = "sha256-EDAL7NnLF2BiVI8DAlEciiZtDmwXOzCPypGTrlN/OoQ=";
+				};
+			})); */
 		};
 	};
 
