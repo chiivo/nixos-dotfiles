@@ -85,11 +85,13 @@
 		pavucontrol
 		alacritty
 		joshuto
-		xfce.thunar
-		xfce.tumbler
+		(xfce.thunar.override {
+			thunarPlugins = with pkgs.xfce; [
+				thunar-archive-plugin
+				thunar-volman
+			];
+		})
 		xfce.xfconf
-		xfce.thunar-archive-plugin
-		gvfs
 		firefox
 		emacs
 		(blender.override {
@@ -119,6 +121,8 @@
 		ardour
 		musescore
 		guitarix
+		yabridge
+		yabridgectl
 	];
 
   fonts = {
@@ -244,7 +248,7 @@
 	};
 
 	# Thunar
-	services.gvfs.enable = true;
+	# services.gvfs.enable = true;
 	services.tumbler.enable = true;
 
 	# Steam
