@@ -5,8 +5,6 @@
 { config, pkgs, ... }:
 
 {
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 	imports =
 		[ # Include the results of the hardware scan.
 			./hardware-configuration.nix
@@ -71,7 +69,7 @@
 		cmake
 		wget
 		git
-		p7zip
+		gnome.file-roller
 		alsa-utils
 		bottom
 		neovim
@@ -248,7 +246,7 @@
 	};
 
 	# Thunar
-	# services.gvfs.enable = true;
+	services.gvfs.enable = true;
 	services.tumbler.enable = true;
 
 	# Steam
