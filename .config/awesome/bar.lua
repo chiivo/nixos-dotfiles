@@ -311,7 +311,7 @@ end
 local calendar = wibox.widget {
 	date = os.date('*t'),
 	fn_embed = decorate_cell,
-  font = 'VictorMono Nerd Font Medium 14',
+  font = 'monospace 14',
 	start_sunday = true, 
   widget = wibox.widget.calendar.month
 }
@@ -328,7 +328,7 @@ local calendarpopup = awful.popup ({
 	border_width = 0,
 	ontop = true,
 	x = dpi(70),
-	y = dpi(725),
+	y = dpi(802),
 	visible = false
 })
 
