@@ -3,16 +3,16 @@ require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 	use 'NvChad/nvim-colorizer.lua'
 	use 'feline-nvim/feline.nvim'
-	use 'kyazdani42/nvim-web-devicons'
+	use 'nvim-tree/nvim-web-devicons'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'windwp/nvim-autopairs'
 	use 'nvim-lua/popup.nvim'
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
-	use 'kyazdani42/nvim-tree.lua'
+	use 'nvim-tree/nvim-tree.lua'
 	use 'nvim-treesitter/playground'
 	use 'akinsho/nvim-bufferline.lua'
-	use 'glepnir/dashboard-nvim'
+	use 'nvimdev/dashboard-nvim'
 	use 'Pocco81/true-zen.nvim'
 	use 'elkowar/yuck.vim'
 	use 'rktjmp/lush.nvim'
@@ -91,9 +91,8 @@ local db = require('dashboard')
 db.setup {
 	theme = 'hyper',
 	config = {
-		week_header = {
-			enable = true,
-		},
+		week_header = { enable = true },
+		project = { enable = false },
 		shortcut = {
 			{
 				desc = ' Update',
