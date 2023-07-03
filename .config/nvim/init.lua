@@ -96,31 +96,31 @@ db.setup {
 		},
 		shortcut = {
 			{
-				desc = ' Update',
+				desc = ' Update',
 				group = '@property',
 				action = 'execute "PackerUpdate" | TSUpdate all',
 				key = 'u'
 			},
       {
-				desc = ' Files',
+				desc = ' Files',
         group = 'Label',
         action = 'Telescope find_files',
         key = 'f',
       },
       {
-				desc = ' Apps',
+				desc = ' Apps',
         group = 'DiagnosticHint',
         action = 'Telescope app',
         key = 'a',
       },
       {
-        desc = ' Dotfiles',
+        desc = ' Dotfiles',
         group = 'Number',
         action = 'Telescope dotfiles',
         key = 'd',
       },
       {
-        desc = '󰿅 Quit',
+        desc = ' Quit',
         group = '@property',
         action = 'q',
         key = 'q',
