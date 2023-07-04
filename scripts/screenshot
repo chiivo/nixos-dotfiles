@@ -10,14 +10,14 @@ areacopy() {
 	sleep .1;
 	xclip -selection clipboard < /tmp/screenshot.png -t image/png
 	notify-send -i /tmp/screenshot.png 'Screenshot' 'Selection Copied'
-	mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
+	mpv /run/current-system/sw/share/sounds/freedesktop/stereo/camera-shutter.oga
 }
 
 areasave() {
 	maim -usb 2 /mnt/SSD/Images/Screenshots/screenshot.png || exit 1;
 	sleep .1;
 	notify-send -i /mnt/SSD/Images/Screenshots/screenshot.png 'Screenshot' 'Selection Saved'
-	mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
+	mpv /run/current-system/sw/share/sounds/freedesktop/stereo/camera-shutter.oga
 }
 
 case "$1" in
