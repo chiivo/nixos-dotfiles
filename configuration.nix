@@ -5,6 +5,8 @@
 { config, pkgs, ... }:
 
 {
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 	imports =
 		[ # Include the results of the hardware scan.
 			./hardware-configuration.nix
@@ -92,9 +94,9 @@
 		xfce.xfconf
 		firefox
 		emacs
-		(blender.override {
-			cudaSupport = true;
-		})
+		# (blender.override {
+		# 	cudaSupport = true;
+		# })
 		krita
 		picom
 		discord
@@ -121,6 +123,7 @@
 		guitarix
 		yabridge
 		yabridgectl
+		hydrogen
 	];
 
   fonts = {
@@ -186,6 +189,7 @@
 					show-password-label = false
 					password-alignment = center
 					[greeter-theme]
+					font = "monospace"
 					background-image = ""
 					background-color = "#262727"
 					window-color = "#262727"
@@ -254,7 +258,6 @@
 		enable = true;
 		remotePlay.openFirewall = true;
 		dedicatedServer.openFirewall = true;
-
 	};
 
   # Enable the OpenSSH daemon.
