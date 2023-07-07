@@ -94,9 +94,9 @@
 		xfce.xfconf
 		firefox
 		emacs
-		# (blender.override {
-		# 	cudaSupport = true;
-		# })
+		(blender.override {
+			cudaSupport = true;
+		})
 		krita
 		picom
 		discord
