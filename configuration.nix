@@ -125,6 +125,7 @@
 		yabridgectl
 		hydrogen
 		easyeffects
+		calf
 		soundux
 	];
 
