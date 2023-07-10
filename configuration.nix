@@ -124,6 +124,8 @@
 		yabridge
 		yabridgectl
 		hydrogen
+		easyeffects
+		soundux
 	];
 
   fonts = {
@@ -160,6 +162,7 @@
 	hardware.opengl.enable = true;
 
 	# Audio
+	programs.dconf.enable = true;
 	security.rtkit.enable = true;
 	services.pipewire = {
 		enable = true;
