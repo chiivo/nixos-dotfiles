@@ -126,6 +126,7 @@
 		hydrogen
 		easyeffects
 		calf
+		carla
 		soundux
 	];
 
