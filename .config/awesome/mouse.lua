@@ -7,7 +7,7 @@ terminal = "alacritty" or "kitty"
 
 -- Right Click Variables
 local powermenu = {
-	{ "Power Off",
+	{ "Shut Down",
 		function()
 			awful.spawn.with_shell("poweroff")
 		end
@@ -27,12 +27,12 @@ local powermenu = {
 local screenshot = {
 	{ "Copy",
 		function()
-			awful.spawn.with_shell("~/scripts/screenshot -a")
+			awful.spawn.with_shell("~/scripts/screenshot -c")
 		end
 	},
 	{ "Save",
 		function()
-			awful.spawn.with_shell("~/scripts/screenshot -f")
+			awful.spawn.with_shell("~/scripts/screenshot -s")
 		end
 	}
 }
