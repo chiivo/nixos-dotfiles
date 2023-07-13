@@ -118,12 +118,11 @@
 		wineWowPackages.staging
 		spotify
 		godot_4
-		ardour
+		reaper
 		musescore
 		guitarix
 		yabridge
 		yabridgectl
-		hydrogen
 		easyeffects
 		calf
 		lsp-plugins
