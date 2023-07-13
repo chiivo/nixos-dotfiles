@@ -126,6 +126,7 @@
 		hydrogen
 		easyeffects
 		calf
+		lsp-plugins
 		carla
 		soundux
 	];
