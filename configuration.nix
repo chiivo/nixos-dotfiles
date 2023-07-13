@@ -125,8 +125,6 @@
 		yabridgectl
 		easyeffects
 		calf
-		lsp-plugins
-		carla
 		soundux
 	];
 
