@@ -119,7 +119,6 @@
 		spotify
 		godot_4
 		reaper
-		bitwig-studio
 		qjackctl
 		musescore
 		guitarix
