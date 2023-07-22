@@ -98,7 +98,7 @@
 			cudaSupport = true;
 		})
 		krita
-		picom
+		picom-next
 		discord
 		discocss
 		maim
