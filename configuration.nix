@@ -131,12 +131,14 @@
 	];
 
   fonts = {
-	enableDefaultFonts = true;
+		enableDefaultFonts = true;
 		fonts = with pkgs; [
 			comfortaa
 			julia-mono
 			noto-fonts
 			noto-fonts-emoji
+			noto-fonts-cjk-serif
+			noto-fonts-cjk-sans
 			scientifica
 			symbola
 			victor-mono
@@ -145,7 +147,13 @@
 			defaultFonts = {
 				serif = [ "Redaction" ];
 				sansSerif = [ "Liberation Sans" ];
-				monospace = [ "VictorMono" "Symbola" "Powerline Extra Symbols" "Font Awesome 6 Pro" "Font Awesome 6 Brands" ];
+				monospace = [
+					"VictorMono"
+					"Symbola"
+					"Powerline Extra Symbols"
+					"Font Awesome 6 Pro"
+					"Font Awesome 6 Brands"
+				];
 			};
 		};
 	};
