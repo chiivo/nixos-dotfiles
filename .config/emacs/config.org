@@ -182,20 +182,33 @@ corfu-preselect-first nil)
 * Evil
 #+begin_src emacs-lisp
 (straight-use-package 'evil)
+(straight-use-package 'evil-leader)
 (straight-use-package 'evil-collection)
 (straight-use-package 'evil-commentary)
 (straight-use-package 'evil-anzu)
 (setq evil-want-keybinding nil)
 (require 'evil)
+(require 'evil-leader)
 (require 'evil-collection)
 (require 'evil-commentary)
 (with-eval-after-load 'evil
 (require 'evil-anzu))
+(global-evil-leader-mode)
 (evil-mode)
 (evil-collection-init)
 (setq evil-normal-state-cursor 'bar)
 (evil-set-undo-system 'undo-redo)
 (evil-commentary-mode)
+#+end_src
+
+* Evil Leader
+#+begin_src emacs-lisp
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+"<SPC>" '("Reload Config" . (lambda() (interactive)(load-file "~/.config/emacs/init.el")))
+"t" '("NeoTree" . neotree-toggle)
+"+" 'text-scale-increase
+"-" 'text-scale-decrease)
 #+end_src
 
 * NeoTree
@@ -213,9 +226,6 @@ corfu-preselect-first nil)
 (which-key-mode)
 (setq which-key-allow-evil-operators t)
 (setq which-key-show-operator-state-maps t)
-(evil-define-key nil evil-normal-state-map
-" t" '("NeoTree" . neotree-toggle)
-"  " '("Reload Config" . (lambda() (interactive)(load-file "~/.config/emacs/init.el"))))
 #+end_src
 
 * Centered-Cursor
