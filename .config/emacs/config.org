@@ -96,6 +96,7 @@ neotree-mode-hook))
 ;; (dashboard-add-shortcut "f" "Find Files" 'dashboard-find-file)
 ;; (dashboard-add-shortcut "q" "Quit" 'dashboard-find-file)
 (global-page-break-lines-mode)
+(setq initial-buffer-choice (lambda () (switch-to-buffer "*dashboard*")))
 #+end_src
 
 * Centaur-Tabs
