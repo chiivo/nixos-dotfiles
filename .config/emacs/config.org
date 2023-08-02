@@ -225,9 +225,9 @@
   :states 'normal
   :prefix "SPC"
   "SPC" '("Reload config" . (lambda() (interactive)(load-file "~/.config/emacs/init.el")))
-  "f" '("Find file"(find-file))
-  "+" '("Scale text up"(text-scale-increase))
-  "-" '("Scale text down"(text-scale-decrease)))
+  "f" 'find-file
+  "+" 'text-scale-increase
+  "-" 'text-scale-decrease)
 #+end_src
 
 * NeoTree
