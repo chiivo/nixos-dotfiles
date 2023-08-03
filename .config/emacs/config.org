@@ -1,284 +1,273 @@
 * Theme
 #+begin_src emacs-lisp
-  (straight-use-package 'autothemer)
-  (load-theme 'bliss t) ; Load theme
+(straight-use-package 'autothemer)
+(load-theme 'bliss t) ; Load theme
 #+end_src
 
 * Garbage Collection
 #+begin_src emacs-lisp
-  ;; Using garbage magic hack.
-  (straight-use-package 'gcmh)
-  (gcmh-mode)
-  ;; Setting garbage collection threshold
-  (setq gc-cons-threshold 402653184
-  gc-cons-percentage 0.6)
-  ;; Profile emacs startup
-  (add-hook 'emacs-startup-hook(lambda()(message "*** Emacs loaded in %s with %d garbage collections."(format "%.2f seconds"(float-time(time-subtract after-init-time before-init-time)))gcs-done)))
-  ;; Silence compiler warnings as they can be pretty disruptive
-  (setq comp-async-report-warnings-errors nil)
+;; Using garbage magic hack.
+(straight-use-package 'gcmh)
+(gcmh-mode)
+;; Setting garbage collection threshold
+(setq gc-cons-threshold 402653184
+gc-cons-percentage 0.6)
+;; Profile emacs startup
+(add-hook 'emacs-startup-hook(lambda()(message "*** Emacs loaded in %s with %d garbage collections."(format "%.2f seconds"(float-time(time-subtract after-init-time before-init-time)))gcs-done)))
+;; Silence compiler warnings as they can be pretty disruptive
+(setq comp-async-report-warnings-errors nil)
 #+end_src
 
 * Emacs Config
 #+begin_src emacs-lisp
-  (setq inhibit-startup-message t ; don't show splash screen
-  visible-bell t ; flash bell on error
-  cursor-type 'bar ; change cursor type
-  mouse-autoselect-window t ; focus follows mouse
-  display-line-numbers-width-start t) ; calculate max num of line to keep line numbers from jiggling
-  (delete-selection-mode t) ; replace highlighted text when typing
-  (tool-bar-mode -1) ; button gui
-  (scroll-bar-mode -1) ; scrollbar
-  (menu-bar-mode -1) ; menu bar
-  (global-visual-line-mode) ; wrap text 
-  (global-display-line-numbers-mode) ; numbers on the side
-  (dolist (mode '(dashboard-mode-hook ; hide line numbers depending on mode
-  neotree-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
-  (global-prettify-symbols-mode) ;converts some words to symbols 
+(setq inhibit-startup-message t ; don't show splash screen
+visible-bell t ; flash bell on error
+cursor-type 'bar ; change cursor type
+mouse-autoselect-window t ; focus follows mouse
+display-line-numbers-width-start 1) ; calculate max num of line to keep line numbers from jiggling
+(delete-selection-mode t) ; replace highlighted text when typing
+(tool-bar-mode -1) ; button gui
+(scroll-bar-mode -1) ; scrollbar
+(menu-bar-mode -1) ; menu bar
+(global-visual-line-mode) ; wrap text 
+(global-display-line-numbers-mode) ; numbers on the side
+(dolist (mode '(dashboard-mode-hook ; hide line numbers depending on mode
+neotree-mode-hook))
+(add-hook mode (lambda () (display-line-numbers-mode 0))))
+(global-prettify-symbols-mode) ;converts some words to symbols 
 #+end_src
 
 * Doom Modeline
 #+begin_src emacs-lisp
-  (straight-use-package 'doom-modeline)
-  (require 'doom-modeline)
-  (doom-modeline-mode)
-  (setq doom-modeline-height 30)
-  (setq doom-modeline-buffer-file-name-style 'truncate-nil)
-  (setq doom-modeline-highlight-modified-buffer-name nil)
-  (setq doom-modeline-buffer-position nil)
-  (setq doom-modeline-percent-position nil)
+(straight-use-package 'doom-modeline)
+(require 'doom-modeline)
+(doom-modeline-mode)
+(setq doom-modeline-height 30)
+(setq doom-modeline-buffer-file-name-style 'truncate-nil)
+(setq doom-modeline-highlight-modified-buffer-name nil)
+(setq doom-modeline-buffer-position nil)
+(setq doom-modeline-percent-position nil)
 #+end_src
 
 * Dashboard
 #+begin_src emacs-lisp
-  (straight-use-package 'dashboard)
-  (straight-use-package 'page-break-lines)
-  (straight-use-package 'projectile)
-  (straight-use-package 'all-the-icons)
-  (require 'dashboard)
-  (require 'page-break-lines)
-  (require 'all-the-icons)
-  (dashboard-setup-startup-hook)
-  (add-hook 'dashboard-mode-hook 'centaur-tabs-local-mode)
-  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard") ;; set title
-  (setq dashboard-startup-banner 'logo) ;; Set the banner
-  ;; Value can be
-  ;; - nil to display no banner
-  ;; - 'official which displays the official emacs logo
-  ;; - 'logo which displays an alternative emacs logo
-  ;; - 1, 2 or 3 which displays one of the text banners
-  ;; - "path/to/your/image.gif", "path/to/your/image.png" or "path/to/your/text.txt" which displays whatever gif/image/text you would prefer
-  ;; - a cons of '("path/to/your/image.png" . "path/to/your/text.txt")
-  (setq dashboard-center-content t) ;; center content
-  (setq dashboard-show-shortcuts nil) ;; show shortcuts
-  (setq dashboard-set-heading-icons t)
-  (setq dashboard-set-file-icons t)
-  (setq dashboard-items '((bookmarks . 5)
-  (recents  . 10)))
-  (setq dashboard-set-navigator t)
-  (setq dashboard-navigator-buttons
-  `((;; line1
-  (" " "Update" "Update Packages with Straight (u)"
-  (lambda (&rest _)(straight-pull-all))font-lock-constant-face)
-  (" " "Search" "Find a file (f)"
-  (lambda (&rest _)(interactive)(call-interactively 'find-file))font-lock-string-face)
-  (" " "Quit" "Quit Emacs (q)"
-  (lambda (&rest _)(interactive)(save-buffers-kill-emacs))font-lock-builtin-face)
-  ;; "<" ">"
-  ))
-  ;; line 2
-  ;; (("linkedin" nil "Linkedin"
-  ;; (lambda (&rest _) (browse-url "homepage")))
-  ;; ("⚑" nil "Show flags"
-  ;; (lambda (&rest _) (message "flag")) error))
-  )
-  ;; (dashboard-add-shortcut "u" "Update" 'dashboard-find-file)
-  ;; (dashboard-add-shortcut "f" "Find Files" 'dashboard-find-file)
-  ;; (dashboard-add-shortcut "q" "Quit" 'dashboard-find-file)
-  (global-page-break-lines-mode)
-  (setq initial-buffer-choice (lambda () (switch-to-buffer "*dashboard*")))
+(straight-use-package 'dashboard)
+(straight-use-package 'page-break-lines)
+(straight-use-package 'projectile)
+(straight-use-package 'all-the-icons)
+(require 'dashboard)
+(require 'page-break-lines)
+(require 'all-the-icons)
+(dashboard-setup-startup-hook)
+(add-hook 'dashboard-mode-hook 'centaur-tabs-local-mode)
+(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard") ;; set title
+(setq dashboard-startup-banner 'logo) ;; Set the banner
+;; Value can be
+;; - nil to display no banner
+;; - 'official which displays the official emacs logo
+;; - 'logo which displays an alternative emacs logo
+;; - 1, 2 or 3 which displays one of the text banners
+;; - "path/to/your/image.gif", "path/to/your/image.png" or "path/to/your/text.txt" which displays whatever gif/image/text you would prefer
+;; - a cons of '("path/to/your/image.png" . "path/to/your/text.txt")
+(setq dashboard-center-content t) ;; center content
+(setq dashboard-show-shortcuts nil) ;; show shortcuts
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+(setq dashboard-items '((bookmarks . 5)
+(recents  . 10)))
+(setq dashboard-set-navigator t)
+(setq dashboard-navigator-buttons
+`((;; line1
+(" " "Update" "Update Packages with Straight (u)"
+(lambda (&rest _)(straight-pull-all))font-lock-constant-face)
+(" " "Search" "Find a file (f)"
+(lambda (&rest _)(interactive)(call-interactively 'find-file))font-lock-string-face)
+(" " "Quit" "Quit Emacs (q)"
+(lambda (&rest _)(interactive)(save-buffers-kill-emacs))font-lock-builtin-face)
+;; "<" ">"
+))
+;; line 2
+;; (("linkedin" nil "Linkedin"
+;; (lambda (&rest _) (browse-url "homepage")))
+;; ("⚑" nil "Show flags"
+;; (lambda (&rest _) (message "flag")) error))
+)
+;; (dashboard-add-shortcut "u" "Update" 'dashboard-find-file)
+;; (dashboard-add-shortcut "f" "Find Files" 'dashboard-find-file)
+;; (dashboard-add-shortcut "q" "Quit" 'dashboard-find-file)
+(global-page-break-lines-mode)
+(setq initial-buffer-choice 'dashboard-open)
 #+end_src
 
 * Centaur-Tabs
 #+begin_src emacs-lisp
-  (straight-use-package 'centaur-tabs)
-  (require 'centaur-tabs)
-  (centaur-tabs-headline-match)
-  (centaur-tabs-change-fonts "monospace" 140)
-  (setq centaur-tabs-style "rounded")
-  (setq centaur-tabs-set-bar 'under)
-  (setq x-underline-at-descent-line t)
-  (setq centaur-tabs-height 30)
-  (setq centaur-tabs-set-icons t)
-  (setq centaur-tabs-gray-out-icons 'buffer)
-  (setq centaur-tabs-set-modified-marker t)
-  ;; (setq centaur-tabs-label-fixed-length 10)
-  (centaur-tabs-mode t)
+(straight-use-package 'centaur-tabs)
+(require 'centaur-tabs)
+(centaur-tabs-headline-match)
+(centaur-tabs-change-fonts "monospace" 140)
+(setq centaur-tabs-style "rounded")
+(setq centaur-tabs-set-bar 'under)
+(setq x-underline-at-descent-line t)
+(setq centaur-tabs-height 30)
+(setq centaur-tabs-set-icons t)
+(setq centaur-tabs-gray-out-icons 'buffer)
+(setq centaur-tabs-set-modified-marker t)
+;; (setq centaur-tabs-label-fixed-length 10)
+(centaur-tabs-mode t)
 #+end_src
 
 * Treesitter
 #+begin_src emacs-lisp
-  (straight-use-package 'tree-sitter)
-  (straight-use-package 'tree-sitter-langs)
-  (require 'tree-sitter)
-  (require 'tree-sitter-langs)
+(straight-use-package 'tree-sitter)
+(straight-use-package 'tree-sitter-langs)
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 #+end_src
 
 * Org Mode Config
 #+begin_src emacs-lisp
-  (straight-use-package 'org-superstar)
-  (require 'org-superstar)
-  (add-hook 'org-mode-hook (lambda () (org-superstar-mode)))
-  (setq org-src-preserve-indentation nil
-  org-src-tab-acts-natively nil
-  org-edit-src-content-indentation 0
-  org-src-fontify-natively t
-  org-confirm-babel-evaluate nil)
-  (add-hook 'org-mode-hook 'org-indent-mode)
+(straight-use-package 'org-superstar)
+(require 'org-superstar)
+(add-hook 'org-mode-hook (lambda () (org-superstar-mode)))
+(electric-indent-mode -1)
+(setq org-src-tab-acts-natively nil)
+(setq org-edit-src-content-indentation 0)
+(setq org-confirm-babel-evaluate nil)
+(add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
 
 * Org-Roam
 #+begin_src emacs-lisp
-  (straight-use-package 'org-roam)
-  (setq org-roam-directory "/mnt/HDD/Notes")
+(straight-use-package 'org-roam)
+(setq org-roam-directory "/mnt/SSD/Notes")
 #+end_src
 
 * YASnippet
 #+begin_src emacs-lisp
-  (straight-use-package 'yasnippet)
-  (straight-use-package 'yasnippet-snippets)
-  (setq yas-snippet-dirs '("~/.config/emacs/straight/repos/yasnippet-snippets/snippets/"))
-  (yas-global-mode t)
+(straight-use-package 'yasnippet)
+(straight-use-package 'yasnippet-snippets)
+(setq yas-snippet-dirs '("~/.config/emacs/straight/repos/yasnippet-snippets/snippets/"))
+(yas-global-mode t)
 #+end_src
 
 * Corfu
 #+begin_src emacs-lisp
-  (straight-use-package 'corfu)
-  (require 'corfu)
-  (setq corfu-cycle t
-  corfu-auto t
-  corfu-auto-prefix 2
-  corfu-auto-delay 0
-  corfu-quit-at-boundary 'separator
-  corfu-echo-documentation 0.25
-  corfu-preview-current 'insert
-  corfu-preselect-first nil)
-  (global-corfu-mode)
+(straight-use-package 'corfu)
+(require 'corfu)
+(setq corfu-cycle t
+corfu-auto t
+corfu-auto-prefix 2
+corfu-auto-delay 0
+corfu-quit-at-boundary 'separator
+corfu-echo-documentation 0.25
+corfu-preview-current 'insert
+corfu-preselect-first nil)
+(global-corfu-mode)
 #+end_src
 
 * Vertico
 #+begin_src emacs-lisp
-  (straight-use-package 'vertico)
-  (require 'vertico)
-  (vertico-mode)
+(straight-use-package 'vertico)
+(require 'vertico)
+(vertico-mode)
 #+end_src
 
 * Language Support
 #+begin_src emacs-lisp
-  (straight-use-package 'lua-mode)
-  (straight-use-package 'markdown-mode)
+(straight-use-package 'lua-mode)
+(straight-use-package 'markdown-mode)
 #+end_src
 
 * Evil
 #+begin_src emacs-lisp
-  (straight-use-package 'evil)
-  (straight-use-package 'evil-collection)
-  (straight-use-package 'evil-commentary)
-  (straight-use-package 'evil-anzu)
-  (setq evil-want-keybinding nil)
-  (require 'evil)
-  (require 'evil-collection)
-  (require 'evil-commentary)
-  (with-eval-after-load 'evil
-  (require 'evil-anzu))
-  (evil-mode)
-  (evil-collection-init)
-  (setq evil-normal-state-cursor 'bar)
-  (evil-set-undo-system 'undo-redo)
-  (evil-commentary-mode)
+(straight-use-package 'evil)
+(straight-use-package 'evil-collection)
+(straight-use-package 'evil-commentary)
+(straight-use-package 'evil-anzu)
+(setq evil-want-keybinding nil)
+(require 'evil)
+(require 'evil-collection)
+(require 'evil-commentary)
+(with-eval-after-load 'evil
+(require 'evil-anzu))
+(evil-mode)
+(evil-collection-init)
+(setq evil-normal-state-cursor 'bar)
+(evil-set-undo-system 'undo-redo)
+(evil-commentary-mode)
 #+end_src
-
-# * Evil Leader
-# #+begin_src emacs-lisp
-#   (evil-leader/set-leader "<SPC>")
-#   (evil-leader/set-key
-#   "<SPC>" '("Reload Config" . (lambda() (interactive)(load-file "~/.config/emacs/init.el")))
-#   "t" '("NeoTree" . neotree-toggle)
-#   "+" 'text-scale-increase
-#   "-" 'text-scale-decrease)
-# #+end_src
 
 * Which-Key
 #+begin_src emacs-lisp
-  (straight-use-package 'which-key)
-  (require 'which-key)
-  (which-key-mode)
-  (setq which-key-allow-evil-operators t)
-  (setq which-key-show-operator-state-maps t)
+(straight-use-package 'which-key)
+(require 'which-key)
+(which-key-mode)
+(setq which-key-allow-evil-operators t)
+(setq which-key-show-operator-state-maps t)
 #+end_src
 
 * General
 #+begin_src emacs-lisp
-  (straight-use-package 'general)
-  (require 'general)
-  (general-define-key
-  :states 'normal
-  :prefix "SPC"
-  "SPC" '((lambda() (interactive)(load-file "~/.config/emacs/init.el")) :wk "Reload config")
-  "f" '(find-file :wk "Find file")
-  "+" '(text-scale-increase :wk "Scale text up")
-  "-" '(text-scale-decrease :wk "Scale text down"))
+(straight-use-package 'general)
+(require 'general)
+(general-define-key
+:states 'normal
+:prefix "SPC"
+"SPC" '((lambda() (interactive)(load-file "~/.config/emacs/init.el")) :wk "Reload config")
+"f" '(find-file :wk "Find file")
+"+" '(text-scale-increase :wk "Scale text up")
+"-" '(text-scale-decrease :wk "Scale text down"))
 #+end_src
 
 * NeoTree
 #+begin_src emacs-lisp
-  (straight-use-package 'neotree)
-  (setq neo-smart-open t)
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-window-width 30)
+(straight-use-package 'neotree)
+(setq neo-smart-open t)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(setq neo-window-width 30)
 #+end_src
 
 * Centered-Cursor
 #+begin_src emacs-lisp
-  (straight-use-package 'centered-cursor-mode)
-  (global-centered-cursor-mode)
+(straight-use-package 'centered-cursor-mode)
+(global-centered-cursor-mode)
 #+end_src
 
 * Rainbow-Mode
 #+begin_src emacs-lisp
-  (straight-use-package 'rainbow-mode)
-  (define-globalized-minor-mode global-rainbow-mode rainbow-mode
-  (lambda ()
-  (when (not (memq major-mode
-  (list 'org-agenda-mode
-  'dashboard-mode)))
-  (rainbow-mode 1))))
-  (global-rainbow-mode 1 )
+(straight-use-package 'rainbow-mode)
+(define-globalized-minor-mode global-rainbow-mode rainbow-mode
+(lambda ()
+(when (not (memq major-mode
+(list 'org-agenda-mode
+'dashboard-mode)))
+(rainbow-mode 1))))
+(global-rainbow-mode 1 )
 #+end_src
 
 * Rainbow-Delimiters
 #+begin_src emacs-lisp
-  (straight-use-package 'rainbow-delimiters) 
-  (require 'rainbow-delimiters)
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(straight-use-package 'rainbow-delimiters) 
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 #+end_src
 
 * Focus
 #+begin_src emacs-lisp
-  (straight-use-package 'focus)
-  (require 'focus)
-  (add-to-list 'focus-mode-to-thing '(prog-mode . paragraph))
-  (add-to-list 'focus-mode-to-thing '(text-mode . paragraph))
+(straight-use-package 'focus)
+(require 'focus)
+(add-to-list 'focus-mode-to-thing '(prog-mode . paragraph))
+(add-to-list 'focus-mode-to-thing '(text-mode . paragraph))
 #+end_src
 
 * Smartparens
 #+begin_src emacs-lisp
-  (straight-use-package 'smartparens)
-  (require 'smartparens-config)
-  (smartparens-global-mode)
+(straight-use-package 'smartparens)
+(require 'smartparens-config)
+(smartparens-global-mode)
 #+end_src
 
 * Writeroom-Mode
 #+begin_src emacs-lisp
-  (straight-use-package 'writeroom-mode)
+(straight-use-package 'writeroom-mode)
 #+end_src
