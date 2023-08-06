@@ -120,19 +120,19 @@
 		godot_4
 		reaper
 		bitwig-studio
-		carla
-		musescore
 		guitarix
-		yabridge
-		yabridgectl
 		easyeffects
 		calf
+		carla
+		musescore
+		yabridge
+		yabridgectl
 		soundux
 	];
 
   fonts = {
-		enableDefaultFonts = true;
-		fonts = with pkgs; [
+		# enableDefaultFonts = true;
+		packages = with pkgs; [
 			comfortaa
 			julia-mono
 			noto-fonts
