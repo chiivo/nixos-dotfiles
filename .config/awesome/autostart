@@ -26,12 +26,13 @@ run blueman-applet
 if pgrep -f discord; then
 	exit &
 else
-	discocss &
+	# discocss &
+	discord &
 fi
 
 ### Emacs ###
-# if pgrep -f emacs; then
-# 	exit &
-# else
-# 	emacs --daemon &
-# fi
+if pgrep -f emacs; then
+	exit &
+else
+	emacs --daemon &
+fi

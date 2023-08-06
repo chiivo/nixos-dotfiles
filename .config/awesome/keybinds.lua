@@ -105,13 +105,6 @@ globalkeys = gears.table.join(
 		end,
 		{description = "decrease master width factor", group = "layout"}
 	),
-	-- Right Click Menu with Keybind
-	awful.key({ modkey, }, "w",
-		function ()
-			mymainmenu:show()
-		end,
-		{description = "show main menu", group = "awesome"}
-	),
 	-- Open Terminal
 	awful.key({ modkey, "Shift" }, "Return",
 		function ()
