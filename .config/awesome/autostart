@@ -36,3 +36,10 @@ if pgrep -f emacs; then
 else
 	emacs --daemon &
 fi
+
+### Steam ###
+if pgrep -f steam; then
+	exit &
+else
+	steam &
+fi
