@@ -23,6 +23,15 @@ awful.rules.rules = {
 	},
 	{ 
 		rule = {
+			class = "steam"
+		},
+		properties = {
+			screen = 1,
+			tag = "2"
+		}
+	},
+	{ 
+		rule = {
 			class = "discord"
 		},
 		properties = {
@@ -38,16 +47,18 @@ awful.rules.rules = {
 			},
 			class = {
 				"Blueman-manager",
+				".blueman-manager-wrapped",
 				"Nsxiv",
 				"scratchpad",
 				"btm",
 			},
 			-- Note that the name property shown in xprop might be set slightly after creation of the client and the name shown there might not match defined rules here.
 			name = {
-				"Event Tester",  -- xev.
+				"Event Tester", -- xev.
+				"Welcome", -- bitwig
 			},
 			role = {
-				"pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
 			}
 		},
 		properties = {
