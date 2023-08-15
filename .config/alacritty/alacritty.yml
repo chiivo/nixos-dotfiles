@@ -16,7 +16,6 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  gtk_theme_variant: None
 
 scrolling:
   history: 10000
