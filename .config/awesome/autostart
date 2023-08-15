@@ -41,5 +41,5 @@ fi
 if pgrep -f steam; then
 	exit &
 else
-	steam &
+	steam -silent &
 fi
