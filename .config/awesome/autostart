@@ -38,8 +38,8 @@ else
 fi
 
 ### Steam ###
-# if pgrep -f steam; then
-# 	exit &
-# else
-# 	steam -silent &
-# fi
+if pgrep -f steam; then
+	exit &
+else
+	steam -silent &
+fi
