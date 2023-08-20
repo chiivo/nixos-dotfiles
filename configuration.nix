@@ -120,6 +120,7 @@
 		godot_4
 		reaper
 		bitwig-studio
+		vital
 		guitarix
 		easyeffects
 		calf
