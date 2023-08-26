@@ -1,0 +1,103 @@
+#!/usr/bin/env sh
+
+help() {
+	echo '	-i,			install packages from main repos'
+	echo '	-a,			install packages from aur'
+}
+
+pkgsinstall() {
+	sudo pacman -S \
+
+		#Display Manager
+		lightdm \
+	
+		# Window Manager
+		awesome \
+
+		# Terminal App Stuff
+		git \
+		neovim \
+		nsxiv \
+		zathura \
+		rofi \
+		numlockx \
+		maim \
+		xclip \
+		mpv \
+		wine-staging \
+		fontconfig \
+
+		# General
+		alacritty \
+		emacs \
+		firefox \
+		thunar \
+		thunar-archive-plugin \
+		thunar-volman \
+		tumbler \
+		discord \
+		spotify \
+		pavucontrol \
+		blueman \
+		lxappearance \
+		solaar \
+
+		# Art Stuff
+		krita \
+		blender \
+
+		# Audio Stuff
+		sound-theme-freedesktop \
+		musescore \
+		yabridge \
+		yabridgectl \
+		carla \
+		calf \
+		easyeffects \
+
+		# Game Stuff
+		steam \
+		retroarch \
+		godot \
+
+		# Fonts
+		noto-fonts \
+		noto-fonts-cjk \
+		noto-fonts-emoji
+}
+
+aurinstall() {
+	paru -S --skipreview \
+
+		# Display Greeter
+		lightdm-mini-greeter \
+
+		# Terminal App Stuff
+		joshuto-bin \
+		shell-color-scripts \
+
+		# General
+		orchis-theme-git \
+		phinger-cursors \
+		vial-appimage \
+
+		# Music Stuff
+		bitwig-studio \
+
+		# Game Stuff
+		prismlauncher \
+		heroic-games-launcher-bin \
+		# rpcs3-git \
+		soundux \
+
+		# Fonts
+		ttf-comfortaa \
+		otf-symbola \
+		ttf-victor-mono
+}
+
+case "$1" in
+	-i) pkgsinstall;;
+	-a) aurinstall;;
+	*) help;;
+esac
