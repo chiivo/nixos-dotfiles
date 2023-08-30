@@ -56,6 +56,7 @@ awful.rules.rules = {
 			name = {
 				"Event Tester", -- xev.
 				"Welcome", -- bitwig
+				"Friends List", -- steam friends list
 			},
 			role = {
 				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
