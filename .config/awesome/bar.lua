@@ -348,7 +348,6 @@ local bar = wibox ({
 	height = screen.geometry.height - dpi(40),
 	width = dpi(30),
 	visible = true,
-	ontop = true
 })
 bar:setup {
 	{
@@ -372,13 +371,13 @@ bar:setup {
 }
 bar:struts{ left = dpi(50) }
 
-client.connect_signal("property::fullscreen", function(c)
-  if c.fullscreen then
-		bar.ontop = false
-	else
-		bar.ontop = true
-	end
-end)
+-- client.connect_signal("property::fullscreen", function(c)
+--   if c.fullscreen then
+-- 		bar.ontop = false
+-- 	else
+-- 		bar.ontop = true
+-- 	end
+-- end)
 
 function bartoggle()
 	if bar.visible == true then
